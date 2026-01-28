@@ -3,28 +3,22 @@ name: Deploy to cPanel
 on:
   push:
     branches:
-      - main  # Pokreće se svaki put kada pushujete u 'main' granu
+      - main
 
 jobs:
-  ftp-deploy:
-    name: Upload to cPanel via FTP
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2  # Preuzima kod iz repozitorijuma
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Deploy files via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Copy files to cPanel via SSH
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          local-dir: ./
-          server-dir: ${{ secrets.FTP_DIRECTORY }}
-          exclude: |
-            **/.git*
-            **/.github*
-            **/README.md
-            **/node_modules/*
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USER }}
+          key: ${{ secrets.CPANEL_SSH_KEY }}
+          source: "./"
+          target: "/home/platypus/staging.platypusseo.com"
+          overwrite: true
