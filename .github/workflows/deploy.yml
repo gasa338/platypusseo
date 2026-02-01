@@ -1,24 +1,35 @@
-name: Deploy to cPanel
+name: Deploy WordPress to cPanel
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]  # Kada push-ujete na main branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Copy files to cPanel via SSH
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.CPANEL_HOST }}
-          username: ${{ secrets.CPANEL_USER }}
-          key: ${{ secrets.CPANEL_SSH_KEY }}
-          source: "./"
-          target: "/home/platypus/staging.platypusseo.com"
-          overwrite: true
+    # 1. Checkout kod sa GitHub-a
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    # 2. Setup SSH key za cPanel
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+    
+    # 3. Kopiranje WordPress fajlova na server
+    - name: Deploy WordPress files
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.SSH_PORT || 22 }}
+        source: "./*"                    # SVI fajlovi iz repozitorijuma
+        target: "/home/platypus/staging.platypusseo.com"
+        overwrite: true
+        strip_components: 0
