@@ -267,5 +267,5 @@ if (defined('JETPACK__VERSION')) {
 
 
 // Uključite custom ACF field type
-require_once get_template_directory() . '/acf-image-select/acf-image-select.php';
-require_once get_template_directory() . '/acf-advanced-title/acf-advanced-title.php';
+// require_once get_template_directory() . '/acf-image-select/acf-image-select.php';
+// require_once get_template_directory() . '/acf-advanced-title/acf-advanced-title.php';
