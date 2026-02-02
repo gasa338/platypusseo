@@ -43,7 +43,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
                     <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
                 <?php if (!empty($data['features'])): ?>
-                    <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="grid sm:grid-cols-2 gap-6 mb-6">
                         <?php foreach ($data['features'] as $key => $value): ?>
                             <div class="flex gap-4" style="opacity: 1; transform: none;">
                                 <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 <?php echo esc_attr($color_mode == 'dark' ? 'bg-white/10' : 'bg-primary/10'); ?>">
@@ -55,15 +55,20 @@ $color_mode = $data['color_mode'] ?? 'dark';
                                 </div>
                                 <div>
                                     <?php if (!empty($value['title'])): ?>
-                                    <h3 class="font-semibold mb-1 <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground'); ?>"><?php echo esc_html($value['title']); ?></h3>
+                                        <h3 class="font-semibold mb-1 <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground'); ?>"><?php echo esc_html($value['title']); ?></h3>
                                     <?php endif; ?>
                                     <?php if (!empty($value['text'])): ?>
-                                    <p class="text-sm <?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?>"><?php echo esc_html($value['text']); ?></p>
+                                        <p class="text-sm <?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?>"><?php echo esc_html($value['text']); ?></p>
                                     <?php endif; ?>
                                 </div>
                             </div>
                         <?php endforeach; ?>
                     </div>
+                <?php endif; ?>
+
+
+                <?php if (!empty($data['link_1']) && $data['use_link_1'] == 'yes') : ?>
+                    <?php echo _link_1($data['link_1']); ?>
                 <?php endif; ?>
             </div>
         </div>
