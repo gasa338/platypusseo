@@ -4,7 +4,8 @@ $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('hero_4');
 
-$bg_image = get_image($data['bg_image']);
+$bg_image = get_image($data['background_image']);
+// dd($bg_image);
 
 $text_color = $data['text_color'] ?? '#ffffff';
 $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
@@ -27,6 +28,9 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
 </style>
 
 <section id="<?php echo esc_attr($anchor); ?>" class="hero-4-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="<?php echo $bg_image['url']; ?>" alt="" class="w-full h-full object-cover">
+    </div>
     <div class="absolute inset-0 bg-gradient-hero"></div>
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-glow"></div>
     <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 1.5s;"></div>
