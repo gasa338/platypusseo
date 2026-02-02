@@ -7,7 +7,7 @@ $blocks_class = isset($block['className']) ? $block['className'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('feature_4');
 $background_color = $data['background_color'] ?? '#fff';
-$reverse = $data['reverse'] ?? 'no';
+$reverse = $data['revers'] ?? 'no';
 $color_mode = $data['color_mode'] ?? 'dark';
 ?>
 <style>
