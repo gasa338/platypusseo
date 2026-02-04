@@ -18,7 +18,6 @@ $background_color = $data['background_color'] ?? "#000";
 
     .logo-scroll:hover {
         animation-play-state: paused;
-        opacity: 1;
     }
 
     @keyframes logo-scroll {
@@ -57,7 +56,7 @@ $background_color = $data['background_color'] ?? "#000";
     </div>
 
     <?php if (!empty($data['text']) && $data['use_text'] == 'yes'): ?>
-        <div class="flex justify-center text-muted-foreground max-w-4xl mx-auto pb-12">
+        <div class="flex justify-center text-muted-foreground max-w-5xl mx-auto">
             <?php echo apply_filters('the_content', $data['text']); ?>
         </div>
     <?php endif; ?>
