@@ -4,7 +4,6 @@ $blocks_id = $block['id'];
 $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('cta_light');
-$bg_image = get_image($data['background_image']);
 $layout = $data['layout'] ?? 'default';
 
 $btn_layout = $data['btn_layout'] ?? 'dark';

@@ -17,15 +17,15 @@ $color_mode = $data['color_mode'] ?? 'dark';
     <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
             <div class="max-w-2xl">
-                <?php if ($data['top_title']) : ?>
+                <?php if (!empty($data['top_title'])) : ?>
                     <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
                 <?php endif; ?>
                 <?php echo _heading($data['title'], 'font-display text-4xl md:text-5xl font-bold mb-6 text-foreground'); ?>
-                <?php if ($data['text']) : ?>
+                <?php if (!empty($data['text'])) : ?>
                     <p class="text-muted-foreground text-lg font-body"><?php echo $data['text']; ?></p>
                 <?php endif; ?>
             </div>
-            <?php if ($data['link']) : ?>
+            <?php if (!empty($data['link'])) : ?>
                 <a href="<?php echo $data['link']['url']; ?>" target="<?php echo $data['link']['target']; ?>" name="<?php echo $data['link']['title']; ?>" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50 h-12 rounded-lg px-8 text-base self-start md:self-auto"><?php echo $data['link']['title']; ?>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4">
                         <path d="M7 7h10v10"></path>
@@ -35,7 +35,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
             <?php endif; ?>
         </div>
 
-        <?php if ($data['items']) : ?>
+        <?php if (!empty($data['items'])) : ?>
             <div class="grid md:grid-cols-3 gap-6 ">
                 <?php foreach ($data['items'] as $item) : ?>
                     <div>

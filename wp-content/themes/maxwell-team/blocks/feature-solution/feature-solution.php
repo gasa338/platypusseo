@@ -8,6 +8,7 @@ $text_color = $data['text_color'] ?? 'inherit';
 $background_color = $data['background_color'] ?? "transparent";
 $color_mode = $data['color_mode'] ?? 'dark';
 $layout = $data['layout'] ?? 'left';
+$box_title = $data['box_title'] ?? 'small';
 
 $grid_columns = $data['column_number'] ?? 'two';
 $grid_classes = '';
@@ -66,7 +67,9 @@ switch ($grid_columns) {
                                 </div>
                             <?php endif; ?>
                             <?php if ($solution['title']): ?>
-                                <h3 class="font-display font-bold <?php echo $box_title == "small" ? 'text-xl' : 'text-4xl'; ?> <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-gradient'); ?> mb-3"><?php echo esc_html($solution['title']); ?></h3>
+                                <h3 class="font-display font-bold <?php echo $box_title == "small" ? 'text-xl' : 'text-4xl'; ?> <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-gradient'); ?> mb-3">
+                                    <?php echo esc_html($solution['title']); ?>
+                                </h3>
                             <?php endif; ?>
                             <?php if ($solution['text']): ?>
                                 <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?>">

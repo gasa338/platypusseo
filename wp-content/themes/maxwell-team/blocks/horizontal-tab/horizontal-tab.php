@@ -6,6 +6,7 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('horizontal_tab');
 $text_color = $data['text_color'] ?? 'inherit';
 $background_color = $data['background_color'] ?? "transparent";
+$reverse = $data['reverse'] ?? false;
 ?>
 <style>
     /* Koristite istu klasu kao u HTML-u - cta-2- */
