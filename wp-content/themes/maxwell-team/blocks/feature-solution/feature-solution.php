@@ -7,6 +7,7 @@ $data = get_field('feature_solution');
 $text_color = $data['text_color'] ?? 'inherit';
 $background_color = $data['background_color'] ?? "transparent";
 $color_mode = $data['color_mode'] ?? 'dark';
+$layout = $data['layout'] ?? 'left';
 
 $grid_columns = $data['column_number'] ?? 'two';
 $grid_classes = '';
@@ -54,7 +55,7 @@ switch ($grid_columns) {
             <?php if ($data['solutions']): ?>
                 <div class="grid <?php echo $grid_classes; ?>">
                     <?php foreach ($data['solutions'] as $solution): ?>
-                        <div class="p-8 rounded-2xl <?php echo esc_attr($color_mode == 'dark' ? 'bg-white/5 border-white/10 hover:border-accent/50' : 'bg-card/50 border-border hover:border-primary/50'); ?> border transition-colors group" style="opacity: 1; transform: none;">
+                        <div class="p-8 rounded-2xl <?php echo esc_attr($color_mode == 'dark' ? 'bg-white/5 border-white/10 hover:border-accent/50' : 'bg-card/50 border-border hover:border-primary/50'); ?> <?php echo $layout == 'center' ? " flex flex-col items-center justify-center text-center " : "" ?> border transition-colors group">
                             <?php if ($solution['icon']): ?>
                                 <div class="w-14 h-14 rounded-xl <?php echo esc_attr($color_mode == 'dark' ? 'bg-accent/20 group-hover:bg-accent/30' : 'bg-primary/10 group-hover:bg-primary/20'); ?> flex items-center justify-center mb-6 transition-colors">
                                     <?php if (!empty($solution['icon']['subtype'] == 'svg+xml')) : ?>
@@ -65,10 +66,12 @@ switch ($grid_columns) {
                                 </div>
                             <?php endif; ?>
                             <?php if ($solution['title']): ?>
-                                <h3 class="font-display text-xl font-bold <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground'); ?> mb-3"><?php echo esc_html($solution['title']); ?></h3>
+                                <h3 class="font-display font-bold <?php echo $box_title == "small" ? 'text-xl' : 'text-4xl'; ?> <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-gradient'); ?> mb-3"><?php echo esc_html($solution['title']); ?></h3>
                             <?php endif; ?>
                             <?php if ($solution['text']): ?>
-                                <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?>"><?php echo $solution['text']; ?></div>
+                                <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?>">
+                                    <?php echo $solution['text']; ?>
+                                </div>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
