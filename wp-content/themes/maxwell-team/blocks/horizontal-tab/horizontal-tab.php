@@ -88,9 +88,11 @@ $reverse = $data['reverse'] ?? false;
 
                                     <div class="max-w-4xl mx-auto">
                                         <div class="text-center mb-12">
-                                            <h3 class="font-display text-3xl font-bold mb-4 text-foreground"><?php echo $content['title']; ?></h3>
-                                            <?php if (!empty($content['text'])): ?>
-                                                <p class="text-lg text-muted-foreground max-w-2xl mx-auto"><?php echo $content['text']; ?></p>
+                                            <?php if (!empty($content['title'])): ?>
+                                                <h3 class="font-display text-3xl font-bold mb-4 text-foreground"><?php echo $content['title']; ?></h3>
+                                            <?php endif; ?>
+                                            <?php if (!empty($content['content'])): ?>
+                                                <div class="text-lg text-muted-foreground max-w-2xl mx-auto"><?php echo apply_filters('the_content', $content['content']); ?></div>
                                             <?php endif; ?>
                                         </div>
 
