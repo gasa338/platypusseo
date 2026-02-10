@@ -1388,6 +1388,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
+.space-y-32 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(8rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(8rem * var(--tw-space-y-reverse));
+}
+
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1644,6 +1650,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-section-light {
   background-color: hsl(var(--section-light));
+}
+
+.bg-section-medium {
+  background-color: hsl(var(--section-medium));
 }
 
 .bg-transparent {
@@ -2361,6 +2371,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: hsl(var(--section-dark));
 }
 
+.bg-section-medium {
+  background-color: hsl(var(--section-medium));
+}
+
 .bg-section-light {
   background-color: hsl(var(--section-light));
 }
@@ -2716,6 +2730,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 768px) {
+  .md\:order-1 {
+    order: 1;
+  }
+
+  .md\:order-2 {
+    order: 2;
+  }
+
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -2833,6 +2855,14 @@ h1, h2, h3, h4, h5, h6 {
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .md\:pl-16 {
+    padding-left: 4rem;
+  }
+
+  .md\:pr-16 {
+    padding-right: 4rem;
   }
 
   .md\:text-center {

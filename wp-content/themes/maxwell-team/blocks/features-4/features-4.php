@@ -28,10 +28,6 @@ $color_mode = $data['color_mode'] ?? 'dark';
                         <?php endif; ?>
                         <div class="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent"></div>
                     </div>
-                    <div class="absolute -bottom-6 -right-6 bg-card border border-border rounded-xl p-4 shadow-xl" style="opacity: 1; transform: none;">
-                        <div class="text-2xl font-bold text-primary">AI-Ready</div>
-                        <div class="text-sm text-muted-foreground">Content Strategy</div>
-                    </div>
                 </div>
             </div>
             <div class="<?php echo esc_attr($reverse == 'yes' ? 'order-2' : 'order-1'); ?>">
