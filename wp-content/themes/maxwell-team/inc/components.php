@@ -40,7 +40,7 @@ function _link_1($link, $class = '')
 function _link_2($link, $class = '')
 {
 ?>
-    <a href="<?php echo esc_url($link['url']); ?>"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50 h-14 rounded-xl px-10 text-lg"><?php echo esc_html($link['title']); ?></button></a>
+    <a href="<?php echo esc_url($link['url']); ?>"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50 h-14 rounded-xl px-10 text-lg <?php echo esc_attr($class); ?>"><?php echo esc_html($link['title']); ?></button></a>
 <?php
 }
 
@@ -57,7 +57,7 @@ function _link_3($link, $class = '')
     </a>
 <?php
 }
-function link_4($link, $class = '')
+function _link_4($link, $class = '')
 {
 ?>
     <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>" title="<?php echo esc_attr($link['title']); ?>" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground font-semibold glow-primary hover:scale-105 h-14 rounded-xl px-10 text-lg group <?php echo esc_attr($class); ?>">
@@ -95,6 +95,21 @@ function link_inline_arrow($link, $class = '')
             class="w-4 h-3 ml-2 transition-transform duration-200 ease-in-out group-hover:translate-x-1">
             <path fill="currentColor" d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
         </svg>
+    </a>
+<?php
+}
+
+function _link_6($link, $class = '')
+{
+?>
+    <a href="<?php echo esc_url($link['url']); ?>">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-transparent hover:border-primary/50 h-14 rounded-xl px-10 text-lg border-white/30 text-white hover:bg-white/10 <?php echo esc_attr($class); ?>">
+            <?php echo esc_html($link['title']); ?>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+            </svg>
+        </button>
     </a>
 <?php
 }
