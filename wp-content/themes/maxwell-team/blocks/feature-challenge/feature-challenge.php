@@ -28,9 +28,29 @@ $background_color = $data['background_color'] ?? "transparent";
             <?php if (!empty($data['challenges'])): ?>
                 <div class="grid md:grid-cols-2 gap-6">
                     <?php foreach ($data['challenges'] as $challenge): ?>
-                        <div class="p-6 rounded-xl bg-card border border-border" style="opacity: 1; transform: none;">
-                            <h3 class="font-semibold text-foreground mb-2"><?php echo esc_html($challenge['title']); ?></h3>
-                            <p class="text-muted-foreground"><?php echo $challenge['text']; ?></p>
+                        <div class="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300">
+                            <div class="flex gap-4">
+                                <?php if (!empty($challenge['icon'])) : ?>
+                                    <div class="flex-shrink-0">
+                                        <?php if ($challenge['icon']['subtype'] == 'svg+xml') : ?>
+                                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all">
+                                                <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 text-primary transition-colors group-hover:text-white'); ?>
+                                            </div>
+                                        <?php else : ?>
+                                            <img src="<?php echo esc_url($challenge['icon']['url']); ?>" alt="<?php echo esc_attr($challenge['icon']['alt']); ?>" class="w-6 h-6 text-primary transition-colors">
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+
+                                <div class="flex-1">
+                                    <?php if (!empty($challenge['title'])) : ?>
+                                        <h3 class="font-semibold mb-2 text-foreground group-hover:text-primary transition-colors"><?php echo esc_html($challenge['title']); ?></h3>
+                                    <?php endif; ?>
+                                    <?php if (!empty($challenge['text'])) : ?>
+                                        <div class="mb-4"><?php echo apply_filters('the_content', $challenge['text']); ?></div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
