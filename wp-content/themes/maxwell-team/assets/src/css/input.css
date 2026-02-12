@@ -176,6 +176,10 @@
   .maxwell-content ul li a {
     @apply hover:text-secondary transition-colors duration-200;
   }
+
+  .maxwell-content blockquote {
+    @apply text-primary font-medium pt-4 border-l-4 border-primary pl-6 bg-primary/5 py-4 rounded-r-lg;
+  }
 }
 
 @keyframes float {
