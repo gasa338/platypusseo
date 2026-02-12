@@ -45,7 +45,7 @@ $layout = $data['layout'] ?? 'left';
                     <div class="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
                         <?php echo $key + 1; ?>
                     </div>
-                    <div>
+                    <div class="max-w-md">
                         <?php if ($step['title']): ?>
                         <h3 class="text-2xl font-semibold text-foreground mb-3">
                             <?php echo $step['title']; ?>
@@ -53,7 +53,7 @@ $layout = $data['layout'] ?? 'left';
                         <?php endif; ?>
 
                         <?php if ($step['text']): ?>
-                        <div class="text-muted-foreground max-w-md">
+                        <div class="text-muted-foreground">
                             <?php echo $step['text']; ?>
                         </div>
                         <?php endif; ?>
