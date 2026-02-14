@@ -1107,4 +1107,28 @@ if (function_exists('acf_register_block_type')) {
 		),
 		'render_template' => 'blocks/text-component/text-component.php',
 	));
+
+	/**
+	 * ==============================
+	 * Text with boxes Block
+	 * ==============================
+	 */
+	acf_register_block_type(array(
+		'name' => 'text-with-boxes',
+		'title' => 'Text with boxes',
+		'description' => 'Text with boxes block',
+		'category' => 'maxwell-blocks',
+		'mode' => 'preview',
+		'icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+			<circle cx="12" cy="12" r="10" fill="none" stroke="#ff0000" stroke-width="2"/>
+			<text x="12" y="16" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" fill="#ff0000" font-weight="bold"> M </text>
+		</svg>',
+		'supports' => array(
+			'align' => true,
+			'mode' => true,
+			'jsx' => true,
+			'anchor' => true,
+		),
+		'render_template' => 'blocks/text-with-boxes/text-with-boxes.php',
+	));
 }
