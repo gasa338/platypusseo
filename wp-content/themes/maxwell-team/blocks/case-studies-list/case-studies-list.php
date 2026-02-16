@@ -40,11 +40,11 @@ $data = get_field('case_studies_list');
                                     </div>
                                     <?php if (!empty($item['outcomes'])) : ?>
                                         <div class=" lg:w-[380px] shrink-0 p-6 rounded-xl bg-section-light border border-border">
-                                            <p class="text-xs text-muted-foreground font-body uppercase tracking-wider mb-4 font-medium">Outcomes</p>
+                                            <p class="text-muted-foreground font-body uppercase tracking-wider mb-4 font-medium">Outcomes</p>
 
                                             <ul class="space-y-3">
                                                 <?php foreach ($item['outcomes'] as $outcome) : ?>
-                                                    <li class="flex items-start gap-3 text-foreground font-body text-sm">
+                                                    <li class="flex items-start gap-3 text-foreground font-body">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-4 h-4 text-primary mt-0.5 shrink-0">
                                                             <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                                                             <path d="m9 11 3 3L22 4"></path>
@@ -54,7 +54,7 @@ $data = get_field('case_studies_list');
                                             </ul>
                                             <?php if (!empty($item['link'])) : ?>
                                                 <div class="mt-6 pt-4 border-t border-border">
-                                                    <a class="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all font-body" href="<?php echo $item['link']['url']; ?>"><?php echo $item['link']['title']; ?>
+                                                    <a class="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all font-body" href="<?php echo $item['link']['url']; ?>"><?php echo $item['link']['title']; ?>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4">
                                                             <path d="M5 12h14"></path>
                                                             <path d="m12 5 7 7-7 7"></path>
