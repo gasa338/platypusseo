@@ -180,6 +180,24 @@
   .maxwell-content blockquote {
     @apply text-primary font-medium pt-4 border-l-4 border-primary px-6 bg-primary/5 py-2 rounded-r-lg;
   }
+
+/**
+ * top title styles
+ */
+ .top-title-light-frame {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-primary/15 mb-8;
+ }
+ .top-title-light {
+    @apply text-primary text-sm font-medium tracking-wider uppercase mb-4 block;
+ }
+ .top-title-dark-frame {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-primary/15 mb-8;
+ }
+ .top-title-dark {
+    @apply text-primary text-sm font-medium tracking-wider uppercase mb-4 block;
+ }
+
+
 }
 
 @keyframes float {
