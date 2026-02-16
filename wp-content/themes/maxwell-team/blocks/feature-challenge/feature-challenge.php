@@ -30,7 +30,7 @@ $layout_right = $data['layout_right'] ?? 'default';
                         <?php endif; ?>
                         <?php echo _heading($data['title'], 'font-display text-4xl font-bold mb-8 text-foreground'); ?>
                         <?php if (!empty($data['text'])): ?>
-                            <div class="text-lg text-muted-foreground mb-12" style="opacity: 1; transform: none;"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                            <div class="text-lg text-muted-foreground mb-12 maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                         <?php endif; ?>
                     </div>
 
