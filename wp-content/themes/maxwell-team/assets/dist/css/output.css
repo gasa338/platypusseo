@@ -2417,9 +2417,10 @@ h1, h2, h3, h4, h5, h6 {
   border-left-width: 4px;
   border-color: hsl(var(--primary));
   background-color: hsl(var(--primary) / 0.05);
-  padding-bottom: 1rem;
-  padding-top: 1rem;
   padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0.5rem;
+  padding-top: 1rem;
   font-weight: 500;
   color: hsl(var(--primary));
 }
@@ -2859,6 +2860,10 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0px;
   }
 
+  .md\:p-10 {
+    padding: 2.5rem;
+  }
+
   .md\:p-12 {
     padding: 3rem;
   }
@@ -2941,6 +2946,10 @@ h1, h2, h3, h4, h5, h6 {
     width: 66.666667%;
   }
 
+  .lg\:w-\[380px\] {
+    width: 380px;
+  }
+
   .lg\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -2967,6 +2976,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .lg\:flex-row-reverse {
     flex-direction: row-reverse;
+  }
+
+  .lg\:items-start {
+    align-items: flex-start;
   }
 
   .lg\:items-center {
