@@ -14,12 +14,12 @@ $data = get_field('contact_form_1');
                 <?php if (!empty($data['data'])) : ?>
                     <div class="space-y-6">
                         <?php foreach ($data['data'] as $item): ?>
-                            <div class="flex items-start gap-4 px-6 py-4 rounded-xl bg-accent/20 border border-accent/80 transition-transform duration-300 hover:translate-y-1">
+                            <div class="flex items-start gap-4 px-6 py-4 rounded-xl bg-accent/20 border border-accent/80 transition-transform duration-300 group">
                                 <?php if (!empty($item['icon'])): ?>
-                                    <div class="w-18 h-18 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all">
+                                    <div class="w-18 h-18 rounded-lg bg-accent flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-105 transition-all">
                                         <?php
                                         if (!empty($item['icon']['subtype'] == 'svg+xml')) {
-                                            echo maxwell_render_svg($item['icon']['url'], 'w-16 h-16 rounded-md p-2 text-accent shrink-0 group-hover:text-white');
+                                            echo maxwell_render_svg($item['icon']['url'], 'w-16 h-16 rounded-md p-2 text-white shrink-0 group-hover:text-white');
                                         } else {
                                         ?>
                                             <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-20 h-20">
