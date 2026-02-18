@@ -11,20 +11,20 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
 ?>
 <style>
     .hero-1-<?php echo esc_attr($blocks_id); ?>,
-    .hero-1-<?php echo esc_attr($blocks_id); ?> p,
-    .hero-1-<?php echo esc_attr($blocks_id); ?> h1,
-    .hero-1-<?php echo esc_attr($blocks_id); ?> h2,
-    .hero-1-<?php echo esc_attr($blocks_id); ?> h3,
-    .hero-1-<?php echo esc_attr($blocks_id); ?> h4,
-    .hero-1-<?php echo esc_attr($blocks_id); ?> h5,
-    .hero-1-<?php echo esc_attr($blocks_id); ?> h6,
-    .hero-1-<?php echo esc_attr($blocks_id); ?> span,
-    .hero-1-<?php echo esc_attr($blocks_id); ?> ul,
-    .hero-1-<?php echo esc_attr($blocks_id); ?> li {
+    .hero-1-<?php echo esc_attr($blocks_id); ?>p,
+    .hero-1-<?php echo esc_attr($blocks_id); ?>h1,
+    .hero-1-<?php echo esc_attr($blocks_id); ?>h2,
+    .hero-1-<?php echo esc_attr($blocks_id); ?>h3,
+    .hero-1-<?php echo esc_attr($blocks_id); ?>h4,
+    .hero-1-<?php echo esc_attr($blocks_id); ?>h5,
+    .hero-1-<?php echo esc_attr($blocks_id); ?>h6,
+    .hero-1-<?php echo esc_attr($blocks_id); ?>span,
+    .hero-1-<?php echo esc_attr($blocks_id); ?>ul,
+    .hero-1-<?php echo esc_attr($blocks_id); ?>li {
         color: <?php echo esc_attr($text_color); ?> !important;
     }
 
-    .hero-1-<?php echo esc_attr($blocks_id); ?> .overlay {
+    .hero-1-<?php echo esc_attr($blocks_id); ?>.overlay {
         background-color: <?php echo esc_attr($overlay_color); ?> !important;
     }
 </style>
@@ -48,11 +48,14 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
                     <div class="mt-2 sm:mt-6 break-words whitespace-normal maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
 
-                <?php if ($data['link_1']): ?>
-                    <div class="mt-4 sm:mt-8">
+                <div class="mt-4 sm:mt-8">
+                    <?php if ($data['link_1']): ?>
                         <?php _link_1($data['link_1']); ?>
-                    </div>
-                <?php endif; ?>
+                    <?php endif; ?>
+                    <?php if ($data['link_2']): ?>
+                        <?php _link_2($data['link_2']) ?>
+                    <?php endif; ?>
+                </div>
 
                 <div class="mt-8 sm:mt-16">
                     <?php if ($data['clutch'] && $data['use_clutch'] == 'yes'): ?>
