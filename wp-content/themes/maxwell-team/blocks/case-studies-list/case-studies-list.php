@@ -35,7 +35,7 @@ $data = get_field('case_studies_list');
                                             <p class="font-display text-xl text-primary font-semibold mb-4"><?php echo $item['name']; ?></p>
                                         <?php endif; ?>
                                         <?php if (!empty($item['text'])) : ?>
-                                            <div class="text-muted-foreground font-body leading-relaxed mb-4 maxwell-content"><?php echo apply_filters('the_content', $item['text']); ?></div>
+                                            <div class="font-body mb-4 maxwell-content"><?php echo apply_filters('the_content', $item['text']); ?></div>
                                         <?php endif; ?>
                                     </div>
                                     <?php if (!empty($item['outcomes'])) : ?>

@@ -26,23 +26,23 @@ module.exports = {
         
         // Custom heading sizes za responsive
         'h1-mobile': ['40px', { lineHeight: '44px' }],
-        'h1-tablet': ['48px', { lineHeight: '52px' }],
-        'h1-desktop': ['58px', { lineHeight: '64px' }],
+        'h1-tablet': ['44px', { lineHeight: '48px' }],
+        'h1-desktop': ['52px', { lineHeight: '56px' }],
 
-        'h2-mobile': ['28px', { lineHeight: '32px' }],
-        'h2-tablet': ['36px', { lineHeight: '40px' }],
-        'h2-desktop': ['45px', { lineHeight: '50px' }],
+        'h2-mobile': ['24px', { lineHeight: '28px' }],
+        'h2-tablet': ['32px', { lineHeight: '36px' }],
+        'h2-desktop': ['42px', { lineHeight: '46px' }],
 
-        'h3-mobile': ['18px', { lineHeight: '22px' }],
-        'h3-tablet': ['20px', { lineHeight: '24px' }],
-        'h3-desktop': ['22px', { lineHeight: '26px' }],
+        'h3-mobile': ['20px', { lineHeight: '24px' }],
+        'h3-tablet': ['22px', { lineHeight: '26px' }],
+        'h3-desktop': ['26px', { lineHeight: '30px' }],
 
-        'h4-mobile': ['16px', { lineHeight: '20px' }],
-        'h4-tablet': ['18px', { lineHeight: '22px' }],
-        'h4-desktop': ['20px', { lineHeight: '24px' }],
+        'h4-mobile': ['18px', { lineHeight: '22px' }],
+        'h4-tablet': ['20px', { lineHeight: '24px' }],
+        'h4-desktop': ['22px', { lineHeight: '26px' }],
 
-        'h5-mobile': ['14px', { lineHeight: '18px' }],
-        'h5-tablet': ['16px', { lineHeight: '20px' }],
+        'h5-mobile': ['18px', { lineHeight: '20px' }],
+        'h5-tablet': ['18px', { lineHeight: '24px' }],
         'h5-desktop': ['18px', { lineHeight: '22px' }],
 
         'h6-mobile': ['14px', { lineHeight: '18px' }],
