@@ -28,7 +28,7 @@ $layout_right = $data['layout_right'] ?? 'default';
                         <?php if ($data['top_title']): ?>
                             <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                         <?php endif; ?>
-                        <?php echo _heading($data['title'], 'font-display text-4xl font-bold mb-8 text-foreground'); ?>
+                        <?php echo _heading($data['title'], 'mb-8 text-foreground'); ?>
                         <?php if (!empty($data['text'])): ?>
                             <div class="text-lg text-muted-foreground mb-12 maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                         <?php endif; ?>
@@ -74,7 +74,7 @@ $layout_right = $data['layout_right'] ?? 'default';
                     <?php if ($data['top_title']): ?>
                         <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                     <?php endif; ?>
-                    <?php echo _heading($data['title'], 'font-display text-4xl font-bold mb-8 text-foreground'); ?>
+                    <?php echo _heading($data['title'], 'mb-8 text-foreground'); ?>
                     <?php if (!empty($data['text'])): ?>
                         <div class="text-lg text-muted-foreground mb-12" style="opacity: 1; transform: none;"><?php echo apply_filters('the_content', $data['text']); ?></div>
                     <?php endif; ?>

@@ -10,7 +10,7 @@ $data = get_field('contact_form_1');
     <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-6 gap-12 max-w-7xl mx-auto">
             <div class="lg:col-span-2">
-                <?php echo _heading($data['title'], 'text-5xl mb-6'); ?>
+                <?php echo _heading($data['title'], ' mb-6'); ?>
                 <?php if (!empty($data['data'])) : ?>
                     <div class="space-y-6">
                         <?php foreach ($data['data'] as $item): ?>

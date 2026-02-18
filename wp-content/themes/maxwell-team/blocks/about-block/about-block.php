@@ -58,7 +58,7 @@ $lists_type = [
                 <?php if (!empty($data['top_title'])): ?>
                     <span class="mb-4 block maxwell-top-title"><?php echo esc_html($data['top_title']); ?></span>
                 <?php endif; ?>
-                <?php echo _heading($data['title'], 'font-display text-4xl md:text-5xl font-bold mb-6 text-foreground') ?>
+                <?php echo _heading($data['title']) ?>
                 <?php if (!empty($data['text'])): ?>
                     <div class="maxwell-content mb-2"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>

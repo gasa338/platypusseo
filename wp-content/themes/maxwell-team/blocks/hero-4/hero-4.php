@@ -56,7 +56,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
             <?php endif; ?>
             <?php endif; ?>
 
-            <?php echo _heading($data['title'], 'font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-foreground text-center mb-6'); ?>
+            <?php echo _heading($data['title'], 'text-foreground mb-6'); ?>
             <?php if (!empty($data['text'])): ?>
                 <div class="maxwell-content mb-6 text-xl"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>

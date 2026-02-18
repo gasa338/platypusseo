@@ -43,7 +43,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
     <div class="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-y-4 lg:items-center lg:grid-cols-2 xl:grid-cols-2">
             <div class="text-center xl:col-span-1 lg:text-left md:px-16 lg:px-0 xl:pr-20">
-                <?php echo _heading($data['title'], 'font-display text-4xl md:text-5xl font-bold mb-8 text-foreground'); ?>
+                <?php echo _heading($data['title'], 'mb-8 text-foreground'); ?>
                 <?php if ($data['text']): ?>
                     <div class="mt-2 sm:mt-6 break-words whitespace-normal maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>

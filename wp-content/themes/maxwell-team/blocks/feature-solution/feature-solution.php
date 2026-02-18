@@ -46,7 +46,7 @@ switch ($grid_columns) {
             <?php if ($data['top_title']): ?>
                 <span class="<?php echo esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-primary'); ?> text-sm font-medium tracking-wider uppercase mb-4 block text-center" style="opacity: 1; transform: none;"><?php echo esc_html($data['top_title']); ?></span>
             <?php endif; ?>
-            <?php echo _heading($data['title'], 'font-display text-4xl md:text-5xl font-bold mb-8 ' . esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground') . ' text-center'); ?>
+            <?php echo _heading($data['title'], 'mb-8 ' . esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground') . ' text-center'); ?>
 
             <?php if ($data['text']): ?>
                 <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?> text-lg text-center max-w-2xl mx-auto mb-16" style="opacity: 1; transform: none;"><?php echo apply_filters('the_content', $data['text']); ?></div>

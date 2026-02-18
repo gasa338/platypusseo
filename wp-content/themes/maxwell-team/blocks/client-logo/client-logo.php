@@ -34,7 +34,7 @@ $background_color = $data['background_color'] ?? "#000";
 <section id="<?php echo esc_attr($anchor); ?>" class="bg-background overflow-hidden client-logo-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _padding($data['padding']); ?>>
     <div class="container mx-auto px-6 text-center">
         <?php if (!empty($data['title']) && $data['use_title'] == 'yes'): ?>
-            <?php echo _heading($data['title'], 'text-3xl md:text-4xl font-bold text-foreground mb-8'); ?>
+            <?php echo _heading($data['title'], 'mb-8 text-foreground'); ?>
         <?php endif; ?>
     </div>
 

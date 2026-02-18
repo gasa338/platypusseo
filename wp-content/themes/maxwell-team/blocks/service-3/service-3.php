@@ -48,7 +48,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                     <span class="mb-4 block maxwell-top-title text-accent text-sm font-medium tracking-wider uppercase"><?php echo esc_html($data['top_title']); ?></span>
                 <?php endif; ?> 
                 <?php if (!empty($data['title'])): ?>
-                    <?php echo _heading($data['title'], 'font-display text-4xl md:text-5xl font-bold mb-6 text-white') ?>
+                    <?php echo _heading($data['title'], 'mb-6 text-white') ?>
                 <?php endif; ?>
                 <?php if (!empty($data['text'])): ?>
                     <div class="text-white/70 text-lg mb-8 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>

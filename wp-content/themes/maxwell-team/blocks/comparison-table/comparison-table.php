@@ -70,7 +70,7 @@ $data = get_field('comparison_table');
                 <?php if ($data['top_title']): ?>
                     <span class="text-primary font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                 <?php endif; ?>
-                <?php echo _heading($data['title'], 'font-display text-4xl mb-8'); ?>
+                <?php echo _heading($data['title'], 'mb-8'); ?>
                 <?php if (!empty($data['text'])): ?>
                     <div class="mb-12 maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>

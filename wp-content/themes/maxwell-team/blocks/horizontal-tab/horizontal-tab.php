@@ -48,7 +48,7 @@ $reverse = $data['reverse'] ?? false;
                 <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
             <?php endif; ?>
 
-            <?php echo _heading($data['title'], 'font-display text-4xl md:text-5xl font-bold text-foreground'); ?>
+            <?php echo _heading($data['title'], ''); ?>
         </div>
         <div>
 

@@ -26,17 +26,17 @@ $block_list = get_post_meta(get_the_ID(), '_acf_blocks_list', true);
     <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center">
             <?php if (!empty($data['title'])) : ?>
-                <?php print_heading($block_list, $block_name, $data['title'], 'h2-responsive mb-4'); ?>
+                <?php _heading($data['title'], 'mb-4'); ?>
             <?php endif; ?>
             <?php if (!empty($data['description'])) : ?>
                 <div class="content-list-link mb-8 opacity-90 text-xl"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php endif; ?>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <?php if (!empty($data['link_1'])) : ?>
-                    <?php link_1($data['link_1']) ?>
+                    <?php _link_1($data['link_1']) ?>
                 <?php endif; ?>
                 <?php if (!empty($data['link_2'])) : ?>
-                    <?php link_2($data['link_2']) ?>
+                    <?php _link_2($data['link_2']) ?>
                 <?php endif; ?>
             </div>
         </div>

@@ -20,7 +20,7 @@ $layout = $data['layout'] ?? 'left';
                     <?php echo $data['top_title']; ?>
                 </span>
             <?php endif; ?>
-            <?php echo _heading($data['title'], 'text-4xl font-bold text-foreground mt-4 mb-6 leading-tight'); ?>
+            <?php echo _heading($data['title'], 'mt-4 mb-6'); ?>
             <?php if ($data['text']): ?>
                 <div class="text-muted-foreground max-w-sm">
                     <?php echo apply_filters('the_content', $data['text']); ?>

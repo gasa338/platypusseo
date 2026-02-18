@@ -17,7 +17,7 @@ $data = get_field('faq_1');
             <?php if (!empty($data['top_title'])) : ?>
                 <p class="maxwell-top-title"><?php echo $data['top_title']; ?></p>
             <?php endif; ?>
-            <?php echo _heading($data['title'], 'text-4xl md:text-5xl font-bold mb-6 text-foreground') ?>
+            <?php echo _heading($data['title'], 'mb-6 text-foreground') ?>
             <?php if (!empty($data['description'])) : ?>
                 <div class="mx-auto mt-4"><?php echo apply_filters('the_content', $data['description']); ?></div>
             <?php endif; ?>

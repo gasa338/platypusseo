@@ -13,7 +13,7 @@ $data = get_field('text_with_boxes');
             <?php if (!empty($data['top_title'])): ?>
                 <span class="text-accent text-sm font-medium tracking-wider uppercase mb-4 block font-body"><?php echo esc_html($data['top_title']); ?></span>
             <?php endif; ?>
-            <?php echo _heading($data['title'], 'font-display text-3xl md:text-4xl font-bold mb-8 text-primary-foreground') ?>
+            <?php echo _heading($data['title'], 'mb-8 text-primary-foreground') ?>
             <?php if (!empty($data['content'])): ?>
                 <?php foreach ($data['content'] as $content): ?>
                     <?php if ($content['acf_fc_layout'] == 'text' && !empty($content['text'])): ?>

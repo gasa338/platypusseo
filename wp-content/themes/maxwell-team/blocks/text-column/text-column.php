@@ -15,7 +15,7 @@ $background_color = $data['background_color'] ?? "#000";
 
     <!-- Intro -->
     <div class="max-w-3xl mb-12">
-      <?php echo _heading($data['title'], 'text-3xl md:text-4xl font-bold text-foreground mb-8'); ?>
+      <?php echo _heading($data['title'], 'text-foreground mb-8'); ?>
       <?php if (!empty($data['text'])): ?>
         <div class="text-xl text-muted-foreground leading-relaxed">
           <?php echo apply_filters('the_content', $data['text']); ?>

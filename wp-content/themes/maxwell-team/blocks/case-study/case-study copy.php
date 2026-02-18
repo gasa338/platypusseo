@@ -20,7 +20,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
                 <?php if (!empty($data['top_title'])) : ?>
                     <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
                 <?php endif; ?>
-                <?php echo _heading($data['title'], 'font-display text-4xl md:text-5xl font-bold mb-6 text-foreground'); ?>
+                <?php echo _heading($data['title'], 'mb-6 text-foreground'); ?>
                 <?php if (!empty($data['text'])) : ?>
                     <p class="text-muted-foreground text-lg font-body"><?php echo $data['text']; ?></p>
                 <?php endif; ?>

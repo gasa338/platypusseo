@@ -26,7 +26,7 @@ $background_color = $data['background_color'] ?? "#000";
     <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/20 rounded-full blur-3xl"></div>
     <div class="container mx-auto px-6 relative z-10">
         <div class="max-w-3xl mx-auto text-center">
-            <?php echo _heading($data['title'], 'font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white text-center'); ?>
+            <?php echo _heading($data['title'], 'mb-6 text-white'); ?>
             <?php if (!empty($data['text'])) : ?>
                 <div class="text-lg md:text-xl text-white/70 mb-10"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>

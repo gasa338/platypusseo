@@ -33,7 +33,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
                 <?php if (!empty($data['top_title'])): ?>
                     <span class="<?php echo esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-primary'); ?> text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                 <?php endif; ?>
-                <?php echo _heading($data['title'], 'font-display text-4xl md:text-5xl font-bold mb-6 ' . esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground')) ?>
+                <?php echo _heading($data['title'], 'mb-6 ' . esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground')) ?>
                 <?php if (!empty($data['text'])): ?>
                     <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>

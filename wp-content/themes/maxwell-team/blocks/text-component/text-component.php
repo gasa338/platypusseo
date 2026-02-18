@@ -16,7 +16,7 @@ $layout = $data['layout'] ?? 'vertical';
           <?php if ($data['top_title']): ?>
             <span class="text-primary font-body text-sm font-semibold tracking-widest uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
           <?php endif; ?>
-          <?php echo _heading($data['title'], 'font-display text-3xl md:text-4xl lg:text-5xl mb-10 '. esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground')); ?>
+          <?php echo _heading($data['title'], 'mb-10 '. esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground')); ?>
         </div>
         <div class="md:col-span-4">
           <?php if ($data['text']): ?>
@@ -31,7 +31,7 @@ $layout = $data['layout'] ?? 'vertical';
         <?php if ($data['top_title']): ?>
           <span class="text-primary font-body text-sm font-semibold tracking-widest uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
         <?php endif; ?>
-        <?php echo _heading($data['title'], 'font-display text-3xl md:text-4xl lg:text-5xl mb-10 '. esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground')); ?>
+        <?php echo _heading($data['title'], 'mb-10 '. esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground')); ?>
         <?php if ($data['text']): ?>
           <div class="text-lg <?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?> text-left maxwell-content">
             <?php echo apply_filters('the_content', $data['text']); ?>

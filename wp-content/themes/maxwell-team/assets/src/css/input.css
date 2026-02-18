@@ -154,9 +154,6 @@
     animation: fade-in 0.8s ease-out forwards;
   }
 
-
-  
-
   .maxwell-content p {
     @apply mb-3;
   }
@@ -181,9 +178,6 @@
     @apply text-primary font-medium pt-4 border-l-4 border-primary px-6 bg-primary/5 py-2 rounded-r-lg;
   }
 
-/**
- * top title styles
- */
  .top-title-light-frame {
     @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-primary/15 mb-8;
  }
@@ -196,8 +190,38 @@
  .top-title-dark {
     @apply text-primary text-sm font-medium tracking-wider uppercase mb-4 block;
  }
+}
 
+@layer components {
+  /* H1 Styles */
+  .h1-responsive {
+    @apply font-heading font-bold text-h1-mobile md:text-h1-tablet lg:text-h1-desktop;
+  }
 
+  /* H2 Styles */
+  .h2-responsive {
+    @apply font-heading font-semibold text-h2-mobile md:text-h2-tablet lg:text-h2-desktop;
+  }
+
+  /* H3 Styles */
+  .h3-responsive {
+    @apply font-heading font-semibold text-h3-mobile md:text-h3-tablet lg:text-h3-desktop;
+  }
+
+  /* H4 Styles */
+  .h4-responsive {
+    @apply font-heading font-medium text-h4-mobile md:text-h4-tablet lg:text-h4-desktop;
+  }
+
+  /* H5 Styles */
+  .h5-responsive {
+    @apply font-heading font-medium text-h5-mobile md:text-h5-tablet lg:text-h5-desktop;
+  }
+
+  /* H6 Styles */
+  .h6-responsive {
+    @apply font-heading font-medium text-h6-mobile md:text-h6-tablet lg:text-h6-desktop;
+  }
 }
 
 @keyframes float {

@@ -14,7 +14,7 @@ $data = get_field('case_studies_list');
                 <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block font-body"><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
             <?php if (!empty($data['title'])) : ?>
-                <?php echo _heading($data['title'], 'font-display text-3xl md:text-4xl font-bold mb-16 text-foreground'); ?>
+                <?php echo _heading($data['title'], 'mb-16'); ?>
             <?php endif; ?>
             <?php if (!empty($data['items'])) : ?>
                 <div class="space-y-6">
