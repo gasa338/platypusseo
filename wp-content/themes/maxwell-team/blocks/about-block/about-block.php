@@ -55,7 +55,7 @@ $lists_type = [
             <?php endif; ?>
             <!-- col End -->
 
-            <div>
+            <div class="md:sticky md:top-24 self-start">
                 <?php if (!empty($data['top_title'])): ?>
                     <span class="mb-4 block maxwell-top-title"><?php echo esc_html($data['top_title']); ?></span>
                 <?php endif; ?>
