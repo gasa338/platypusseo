@@ -30,8 +30,8 @@ module.exports = {
         'h1-desktop': ['52px', { lineHeight: '56px' }],
 
         'h2-mobile': ['24px', { lineHeight: '28px' }],
-        'h2-tablet': ['32px', { lineHeight: '36px' }],
-        'h2-desktop': ['42px', { lineHeight: '46px' }],
+        'h2-tablet': ['28px', { lineHeight: '32px' }],
+        'h2-desktop': ['38px', { lineHeight: '42px' }],
 
         'h3-mobile': ['20px', { lineHeight: '24px' }],
         'h3-tablet': ['22px', { lineHeight: '26px' }],

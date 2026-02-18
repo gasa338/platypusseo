@@ -682,15 +682,15 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 768px) {
   .h2-responsive {
-    font-size: 32px;
-    line-height: 36px;
+    font-size: 28px;
+    line-height: 32px;
   }
 }
 
 @media (min-width: 1024px) {
   .h2-responsive {
-    font-size: 42px;
-    line-height: 46px;
+    font-size: 38px;
+    line-height: 42px;
   }
 }
 
