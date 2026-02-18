@@ -80,15 +80,7 @@ $layout = $data['layout'] ?? 'default';
                                                                 <h3 class="font-display text-2xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
                                                             <?php endif; ?>
                                                             <?php if ($item['main_text']) : ?>
-                                                                <p class="text-muted-foreground text-sm font-body mb-4 line-clamp-2"><?php echo $item['main_text']; ?></p>
-                                                            <?php endif; ?>
-                                                            <?php if ($item['highlight_text']) : ?>
-                                                                <div class="p-3 rounded-xl bg-primary/5 border border-primary/10 mb-4">
-                                                                    <p class="text-sm font-medium text-foreground"><?php echo $item['highlight_text']; ?></p>
-                                                                </div>
-                                                            <?php endif; ?>
-                                                            <?php if ($item['review_text']) : ?>
-                                                                <blockquote class="text-sm text-muted-foreground italic border-l-2 border-primary pl-3"><?php echo $item['review_text']; ?></blockquote>
+                                                                <div class="mb-4 maxwell-content"><?php echo apply_filters('the_content', $item['main_text']); ?></div>
                                                             <?php endif; ?>
                                                         </div>
                                                     </div>
