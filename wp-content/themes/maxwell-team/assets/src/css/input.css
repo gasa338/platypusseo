@@ -163,7 +163,7 @@
   }
 
   .maxwell-content ul li::marker {
-    @apply text-secondary;
+    @apply text-primary;
   }
 
   .maxwell-content ul li {
