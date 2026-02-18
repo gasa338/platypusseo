@@ -10,16 +10,16 @@ $data = get_field('contact_form_1');
     <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-6 gap-12 max-w-7xl mx-auto">
             <div class="lg:col-span-2">
-                <?php echo _heading($data['title'], 'font-heading text-5xl font-bold text-primary mb-6'); ?>
+                <?php echo _heading($data['title'], 'text-5xl mb-6'); ?>
                 <?php if (!empty($data['data'])) : ?>
                     <div class="space-y-6">
                         <?php foreach ($data['data'] as $item): ?>
                             <div class="flex items-start gap-4 px-6 py-4 rounded-xl bg-accent/20 border border-accent/80 transition-transform duration-300 hover:translate-y-1">
                                 <?php if (!empty($item['icon'])): ?>
-                                    <div class="w-18 h-18 rounded-xl bg-primary/5 flex items-center justify-center flex-shrink-0">
+                                    <div class="w-18 h-18 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all">
                                         <?php
                                         if (!empty($item['icon']['subtype'] == 'svg+xml')) {
-                                            echo maxwell_render_svg($item['icon']['url'], 'w-16 h-16 !text-secondary rounded-md p-2');
+                                            echo maxwell_render_svg($item['icon']['url'], 'w-16 h-16 rounded-md p-2 text-accent shrink-0 group-hover:text-white');
                                         } else {
                                         ?>
                                             <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-20 h-20">
@@ -38,10 +38,10 @@ $data = get_field('contact_form_1');
             </div>
             <div class="lg:col-span-4 bg-white rounded-2xl p-8 border border-border/50 shadow-lg">
                 <?php if (!empty($data['form_title'])) : ?>
-                    <h2 class="font-heading text-3xl font-bold text-primary mb-6"><?php echo esc_html($data['form_title']); ?></h2>
+                    <h2 class="text-3xl mb-6"><?php echo esc_html($data['form_title']); ?></h2>
                 <?php endif; ?>
                 <?php if (!empty($data['form_text'])) : ?>
-                    <div class="text-muted-foreground mb-8"><?php echo apply_filters('the_content', $data['form_text']); ?></div>
+                    <div class="mb-8"><?php echo apply_filters('the_content', $data['form_text']); ?></div>
                 <?php endif; ?>
                 <?php echo do_shortcode('[contact-form-7 id="' . $data['choose_form'] . '"]'); ?>
             </div>
