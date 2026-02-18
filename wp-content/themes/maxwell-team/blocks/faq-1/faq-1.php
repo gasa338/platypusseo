@@ -16,13 +16,11 @@ $data = get_field('faq_1');
         <div class="max-w-2xl mx-auto text-center">
             <?php if (!empty($data['top_title'])) : ?>
                 <p class="maxwell-top-title"><?php echo $data['top_title']; ?></p>
-                <?php endif; ?>
-                <?php if (!empty($data['title'])) : ?>
-                    <h2 class="h2-responsive"><?php echo $data['title']; ?></h2>
-                <?php endif; ?>
-                <?php if (!empty($data['description'])) : ?>
-                    <div class="mx-auto mt-4"><?php echo apply_filters('the_content', $data['description']); ?></div>
-                <?php endif; ?>
+            <?php endif; ?>
+            <?php echo _heading($data['title'], 'text-4xl md:text-5xl font-bold mb-6 text-foreground') ?>
+            <?php if (!empty($data['description'])) : ?>
+                <div class="mx-auto mt-4"><?php echo apply_filters('the_content', $data['description']); ?></div>
+            <?php endif; ?>
         </div>
 
         <div class="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16 accordion-container-<?php echo $blocks_id; ?>">
@@ -31,7 +29,7 @@ $data = get_field('faq_1');
                     <div class="accordion-item transition-all duration-200 bg-white border-b border-gray-200 shadow-sm rounded-xl cursor-pointer hover:bg-gray-50">
                         <button type="button" class="accordion-button flex items-center justify-between w-full px-4 py-5 sm:p-6">
                             <div class="flex justify-between items-center w-full">
-                                <span class="text-left text-lg font-semibold text-primary"><?php echo $item['question']; ?></span>
+                                <span class="text-left text-lg font-semibold text-foreground"><?php echo $item['question']; ?></span>
                                 <svg class="w-6 h-6 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                 </svg>

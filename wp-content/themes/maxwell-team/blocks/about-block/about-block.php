@@ -42,7 +42,6 @@ $lists_type = [
     }
 </style>
 
-
 <section id="<?php echo esc_attr($anchor); ?>" class="about-block-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing_spacing']); ?>>
     <div class="container mx-auto px-6">
         <div class="grid gap-6 grid-cols-1 md:grid-cols-2">
