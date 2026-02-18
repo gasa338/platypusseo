@@ -10,6 +10,7 @@ $background_color = $data['background_color'] ?? "#000";
 ?>
 <style>
     .logo-scroll {
+        height: 100px;
         display: flex;
         column-gap: 4rem;
         /* ⬅️ HORIZONTALNI RAZMAK */
