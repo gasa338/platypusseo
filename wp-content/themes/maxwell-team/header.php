@@ -133,7 +133,7 @@
 								</button>
 								<div id="services-mobile" class="hidden pl-8 space-y-1">
 									<?php foreach ($children as $child) : ?>
-										<a href="<?php echo $child->url; ?>" class="flex items-center px-3 py-2 text-gray-600 hover:bg-blue-50 rounded-md">
+										<a href="<?php echo $child->url; ?>" class="flex items-center px-3 py-2 text-gray-600 hover:bg-blue-50 rounded-md no-underline">
 											<?php
 											$menu_items = get_field('menu_items', $child->ID);
 											if (!empty($menu_items['icon']) && $menu_items['icon']['subtype'] == 'svg+xml') : ?>
@@ -154,45 +154,13 @@
 							</div>
 
 						<?php else: ?>
-							<a href="#" class="flex items-center px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">
+							<a href="<?php echo $item->url; ?>" class="flex items-center px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md no-underline">
 								<i class="fas fa-home mr-2"></i>
 								<span><?php echo $item->title; ?></span>
 							</a>
 						<?php endif; ?>
 					<?php endif; ?>
 				<?php endforeach; ?>
-
-				<div>
-					<button class="flex items-center w-full px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md" onclick="toggleSubmenu('products-mobile')">
-						<span>Products</span>
-						<i class="fas fa-chevron-down ml-auto text-xs"></i>
-					</button>
-					<div id="products-mobile" class="hidden pl-8 space-y-1">
-						<a href="#" class="flex items-center px-3 py-2 text-gray-600 hover:bg-blue-50 rounded-md">
-							<i class="fas fa-laptop mr-3"></i>
-							<span>Product A</span>
-						</a>
-						<a href="#" class="flex items-center px-3 py-2 text-gray-600 hover:bg-blue-50 rounded-md">
-							<i class="fas fa-mobile-alt mr-3"></i>
-							<span>Product B</span>
-						</a>
-						<a href="#" class="flex items-center px-3 py-2 text-gray-600 hover:bg-blue-50 rounded-md">
-							<i class="fas fa-tablet-alt mr-3"></i>
-							<span>Product C</span>
-						</a>
-					</div>
-				</div>
-
-				<a href="#" class="flex items-center px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md">
-					<i class="fas fa-info-circle mr-2"></i>
-					<span>About</span>
-				</a>
-
-				<div class="pt-2">
-					<a href="#" class="block bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition font-medium text-center">
-						Get Started
-					</a>
-				</div>
 			</nav>
 		</div>
 	</header>
