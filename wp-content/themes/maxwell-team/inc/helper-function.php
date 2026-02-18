@@ -217,3 +217,45 @@ function _title_position($position = 'left', $width = 'medium')
     // Kombinovanje klasa
     return $positionClasses[$position] . ' ' . $widthClasses[$width];
 }
+
+// U functions.php ili custom plugin
+add_filter('acf/load_field/name=choose_form', 'populate_cf7_forms_in_acf');
+// Ili ako koristite key umesto name:
+// add_filter('acf/load_field/key=field_choose_form', 'populate_cf7_forms_in_acf');
+
+function populate_cf7_forms_in_acf($field) {
+    // Proveri da li je to polje koje želimo da popunimo
+    if ($field['name'] === 'choose_form' || $field['_name'] === 'choose_form') {
+        
+        // Resetuj choices array
+        $field['choices'] = array();
+        
+        // Dodaj praznu opciju
+        $field['choices'][''] = '— Izaberite formu —';
+        
+        // Preuzmi sve CF7 forme
+        $forms = get_posts(array(
+            'post_type' => 'wpcf7_contact_form',
+            'numberposts' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC',
+            'post_status' => 'publish'
+        ));
+        
+        // Popuni choices sa formama
+        foreach ($forms as $form) {
+            $field['choices'][$form->ID] = $form->post_title . ' (ID: ' . $form->ID . ')';
+        }
+        
+        // Opsionalno: dodaj poruku ako nema formi
+        if (empty($forms)) {
+            $field['choices'][''] = 'Nema dostupnih Contact Form 7 formi';
+            $field['disabled'] = true;
+        }
+        
+        // Opsionalno: postavi defaultnu vrednost
+        // $field['default_value'] = '';
+    }
+    
+    return $field;
+}
