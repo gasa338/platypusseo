@@ -2,7 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+/* OPTIMIZOVANI FONTOVI - local() + woff2 */
+/* manrope-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Manrope/WEB/fonts/Manrope-Regular.woff2') format('woff2');
+}
+
+/* manrope-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/Manrope/WEB/fonts/Manrope-SemiBold.woff2') format('woff2');
+}
+
+/* manrope-700 - latin */
+@font-face {
+  font-display: swap;
+
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Manrope/WEB/fonts/Manrope-Bold.woff2') format('woff2');
+}
+
+/* inter-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Inter/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+/* inter-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Inter/inter-v20-latin-500.woff2') format('woff2');
+}
+
+/* inter-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/Inter/inter-v20-latin-600.woff2') format('woff2');
+}
+
+/* inter-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Inter/inter-v20-latin-700.woff2') format('woff2');
+}
+
+
 
 @layer base {
   :root {
@@ -18,7 +83,7 @@
     /* Deep blue from logo - #004CBF to #00255F */
     --primary: 217 100% 37%;
     --primary-foreground: 0 0% 100%;
-    
+
     /* Darker primary variant */
     --primary-dark: 220 100% 19%;
 
@@ -31,7 +96,7 @@
     /* Light blue accent from logo - #96B9E6 */
     --accent: 215 60% 74%;
     --accent-foreground: 220 100% 19%;
-    
+
     /* Accent backgrounds */
     --accent-light: 214 60% 95%;
     --accent-medium: 215 55% 85%;
@@ -43,23 +108,18 @@
     --input: 214 35% 85%;
     --ring: 217 100% 37%;
 
-    --radius: 0.75rem;
-
     /* Custom tokens - deeper blues */
-    --glow-primary: 0 8px 30px hsl(217 100% 37% / 0.2);
+    /* --glow-primary: 0 8px 30px hsl(217 100% 37% / 0.2);
     --glow-subtle: 0 4px 20px hsl(217 100% 37% / 0.1);
     --gradient-primary: linear-gradient(135deg, hsl(217 100% 37%), hsl(220 100% 19%));
     --gradient-subtle: linear-gradient(180deg, hsl(214 45% 96%), hsl(0 0% 100%));
     --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(214 45% 98%));
     --gradient-hero: radial-gradient(ellipse at top, hsl(217 100% 37% / 0.08), transparent 60%);
-    
+     */
     /* Section backgrounds */
-    --section-dark: 220 100% 19%;
+    /* --section-dark: 220 100% 19%;
     --section-medium: 217 80% 30%;
     --section-light: 214 60% 95%;
-
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 220 60% 15%;
@@ -68,7 +128,7 @@
     --sidebar-accent: 214 45% 93%;
     --sidebar-accent-foreground: 220 60% 15%;
     --sidebar-border: 214 35% 85%;
-    --sidebar-ring: 217 100% 37%;
+    --sidebar-ring: 217 100% 37%; */
   }
 }
 
@@ -78,12 +138,30 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
-    font-family: var(--font-body);
+    font-family: theme('fontFamily.body');
+    font-weight: 400;
+    font-size: 1rem;
+    /* color: theme('colors.body'); */
+    /* background-color: #F2F0EE !important; */
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: theme('fontFamily.heading');
+    font-weight: 600;
+    line-height: 1.2;
+    color: hsl(var(--foreground));
+  }
+
+  p, span, li, div {
+    font-family: theme('fontFamily.body');
+    font-weight: 400;
+    font-size: 1rem;
+    color: hsl(var(--foreground));
   }
 }
 
@@ -116,24 +194,24 @@
   .bg-gradient-card {
     background-image: var(--gradient-card);
   }
-  
+
   /* Section background utilities */
   .bg-section-dark {
     background-color: hsl(var(--section-dark));
   }
-  
+
   .bg-section-medium {
     background-color: hsl(var(--section-medium));
   }
-  
+
   .bg-section-light {
     background-color: hsl(var(--section-light));
   }
-  
+
   .bg-accent-light {
     background-color: hsl(var(--accent-light));
   }
-  
+
   .bg-accent-medium {
     background-color: hsl(var(--accent-medium));
   }
@@ -178,21 +256,25 @@
     @apply text-primary font-medium pt-4 border-l-4 border-primary px-6 bg-primary/5 py-2 rounded-r-lg;
   }
 
- .top-title-light-frame {
+  .top-title-light-frame {
     @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-primary/15 mb-8;
- }
- .top-title-light {
+  }
+
+  .top-title-light {
     @apply text-primary text-sm font-medium tracking-wider uppercase mb-4 block;
- }
- .top-title-dark-frame {
+  }
+
+  .top-title-dark-frame {
     @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-primary/15 mb-8;
- }
- .top-title-dark {
+  }
+
+  .top-title-dark {
     @apply text-primary text-sm font-medium tracking-wider uppercase mb-4 block;
- }
+  }
 }
 
 @layer components {
+
   /* H1 Styles */
   .h1-responsive {
     @apply font-heading font-bold text-h1-mobile md:text-h1-tablet lg:text-h1-desktop;
@@ -225,27 +307,47 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes slide-up {
-  from { 
-    opacity: 0; 
-    transform: translateY(30px); 
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

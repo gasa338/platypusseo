@@ -18,9 +18,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
         body: ['Inter', 'sans-serif'],
-        heading: ['Montserrat', 'sans-serif'],
+        heading: ['Manrope', 'sans-serif'],
       },
       fontSize: {
         

@@ -581,28 +581,27 @@ video {
   --border: 214 35% 85%;
   --input: 214 35% 85%;
   --ring: 217 100% 37%;
-  --radius: 0.75rem;
   /* Custom tokens - deeper blues */
-  --glow-primary: 0 8px 30px hsl(217 100% 37% / 0.2);
-  --glow-subtle: 0 4px 20px hsl(217 100% 37% / 0.1);
-  --gradient-primary: linear-gradient(135deg, hsl(217 100% 37%), hsl(220 100% 19%));
-  --gradient-subtle: linear-gradient(180deg, hsl(214 45% 96%), hsl(0 0% 100%));
-  --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(214 45% 98%));
-  --gradient-hero: radial-gradient(ellipse at top, hsl(217 100% 37% / 0.08), transparent 60%);
+  /* --glow-primary: 0 8px 30px hsl(217 100% 37% / 0.2);
+    --glow-subtle: 0 4px 20px hsl(217 100% 37% / 0.1);
+    --gradient-primary: linear-gradient(135deg, hsl(217 100% 37%), hsl(220 100% 19%));
+    --gradient-subtle: linear-gradient(180deg, hsl(214 45% 96%), hsl(0 0% 100%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(214 45% 98%));
+    --gradient-hero: radial-gradient(ellipse at top, hsl(217 100% 37% / 0.08), transparent 60%);
+     */
   /* Section backgrounds */
-  --section-dark: 220 100% 19%;
-  --section-medium: 217 80% 30%;
-  --section-light: 214 60% 95%;
-  --font-display: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
-  --sidebar-background: 0 0% 98%;
-  --sidebar-foreground: 220 60% 15%;
-  --sidebar-primary: 217 100% 37%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 214 45% 93%;
-  --sidebar-accent-foreground: 220 60% 15%;
-  --sidebar-border: 214 35% 85%;
-  --sidebar-ring: 217 100% 37%;
+  /* --section-dark: 220 100% 19%;
+    --section-medium: 217 80% 30%;
+    --section-light: 214 60% 95%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 60% 15%;
+    --sidebar-primary: 217 100% 37%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 45% 93%;
+    --sidebar-accent-foreground: 220 60% 15%;
+    --sidebar-border: 214 35% 85%;
+    --sidebar-ring: 217 100% 37%; */
 }
 
 * {
@@ -610,16 +609,30 @@ video {
 }
 
 body {
-  background-color: hsl(var(--background));
   font-family: Inter, sans-serif;
-  color: hsl(var(--foreground));
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  /* color: theme('colors.body'); */
+  /* background-color: #F2F0EE !important; */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
+h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+  font-family: Manrope, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: hsl(var(--foreground));
+}
+
+p, span, li, div {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(var(--foreground));
 }
 
 .\!container {
@@ -651,7 +664,7 @@ h1, h2, h3, h4, h5, h6 {
 /* H1 Styles */
 
 .h1-responsive {
-  font-family: Montserrat, sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 40px;
   line-height: 44px;
   font-weight: 700;
@@ -674,7 +687,7 @@ h1, h2, h3, h4, h5, h6 {
 /* H2 Styles */
 
 .h2-responsive {
-  font-family: Montserrat, sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 24px;
   line-height: 28px;
   font-weight: 600;
@@ -697,7 +710,7 @@ h1, h2, h3, h4, h5, h6 {
 /* H3 Styles */
 
 .h3-responsive {
-  font-family: Montserrat, sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
@@ -720,7 +733,7 @@ h1, h2, h3, h4, h5, h6 {
 /* H4 Styles */
 
 .h4-responsive {
-  font-family: Montserrat, sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 18px;
   line-height: 22px;
   font-weight: 500;
@@ -2149,10 +2162,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Inter, sans-serif;
 }
 
-.font-display {
-  font-family: Playfair Display, serif;
-}
-
 .\!text-lg {
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
@@ -2579,8 +2588,109 @@ h1, h2, h3, h4, h5, h6 {
   color: hsl(var(--primary));
 }
 
+/* OPTIMIZOVANI FONTOVI - local() + woff2 */
+
+/* manrope-regular - latin */
+
+@font-face {
+  font-display: swap;
+
+  font-family: 'Manrope';
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  src: url('../fonts/Manrope/WEB/fonts/Manrope-Regular.woff2') format('woff2');
+}
+
+/* manrope-600 - latin */
+
+@font-face {
+  font-display: swap;
+
+  font-family: 'Manrope';
+
+  font-style: normal;
+
+  font-weight: 600;
+
+  src: url('../fonts/Manrope/WEB/fonts/Manrope-SemiBold.woff2') format('woff2');
+}
+
+/* manrope-700 - latin */
+
+@font-face {
+  font-display: swap;
+
+  font-family: 'Manrope';
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  src: url('../fonts/Manrope/WEB/fonts/Manrope-Bold.woff2') format('woff2');
+}
+
+/* inter-regular - latin */
+
+@font-face {
+  font-display: swap;
+
+  font-family: 'Inter';
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  src: url('../fonts/Inter/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+/* inter-500 - latin */
+
+@font-face {
+  font-display: swap;
+
+  font-family: 'Inter';
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  src: url('../fonts/Inter/inter-v20-latin-500.woff2') format('woff2');
+}
+
+/* inter-600 - latin */
+
+@font-face {
+  font-display: swap;
+
+  font-family: 'Inter';
+
+  font-style: normal;
+
+  font-weight: 600;
+
+  src: url('../fonts/Inter/inter-v20-latin-600.woff2') format('woff2');
+}
+
+/* inter-700 - latin */
+
+@font-face {
+  font-display: swap;
+
+  font-family: 'Inter';
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  src: url('../fonts/Inter/inter-v20-latin-700.woff2') format('woff2');
+}
+
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
 
@@ -2590,7 +2700,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.5;
   }
 
