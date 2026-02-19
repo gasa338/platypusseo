@@ -54,7 +54,7 @@ $reverse = $data['reverse'] ?? false;
 
             <div dir="ltr" data-orientation="horizontal" class="w-full tab-container">
                 <?php if (!empty($data['tabs'])): ?>
-                    <div class="items-center justify-center text-muted-foreground w-full max-w-2xl mx-auto flex h-auto p-2 bg-card border border-border rounded-xl mb-12 tab-buttons">
+                    <div class="items-center justify-center w-full max-w-fit mx-auto flex h-auto p-2 bg-card border border-border rounded-xl mb-12 tab-buttons">
                         <?php foreach ($data['tabs'] as $key_tab => $tab): ?>
                             <div class="flex-1">
                                 <button
