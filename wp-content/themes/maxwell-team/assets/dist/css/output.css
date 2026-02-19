@@ -630,7 +630,6 @@ p, span, li, div {
   font-family: Inter, sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  color: hsl(var(--foreground));
 }
 
 .\!container {
@@ -2339,10 +2338,6 @@ p, span, li, div {
 
 .text-white\/60 {
   color: rgb(255 255 255 / 0.6);
-}
-
-.text-white\/70 {
-  color: rgb(255 255 255 / 0.7);
 }
 
 .text-white\/80 {

@@ -151,7 +151,6 @@
     font-family: theme('fontFamily.body');
     font-weight: 400;
     font-size: 1rem;
-    color: hsl(var(--foreground));
   }
 }
 
