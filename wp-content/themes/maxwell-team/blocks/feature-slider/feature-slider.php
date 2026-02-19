@@ -112,7 +112,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                     </div>
                                     <div class="flex flex-row md:flex-col gap-6 right-side">
                                         <div class="flex-1 bg-card rounded-2xl p-6 border border-border flex flex-col justify-center">
-                                            <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center mb-4">
+                                            <div class="w-10 h-10 rounded-xl bg-accent flex items-center justify-center mb-4">
                                                 <?php if ($slide['left_top']['icon']['subtype'] == 'svg+xml') : ?>
                                                     <?php echo maxwell_render_svg($slide['left_top']['icon']['url'], 'w-5 h-5 text-primary'); ?>
                                                 <?php else : ?>
@@ -127,7 +127,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                             <?php endif; ?>
                                         </div>
                                         <div class="flex-1 bg-primary rounded-2xl p-6 flex flex-col justify-center text-primary-foreground" style="opacity: 1; transform: none; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;">
-                                            <div class="w-10 h-10 rounded-lg bg-primary-foreground/20 flex items-center justify-center mb-4">
+                                            <div class="w-10 h-10 rounded-xl bg-primary-foreground/20 flex items-center justify-center mb-4">
                                                 <?php if ($slide['left_bottom']['icon']['subtype'] == 'svg+xml') : ?>
                                                     <?php echo maxwell_render_svg($slide['left_bottom']['icon']['url'], 'w-5 h-5 text-primary-foreground'); ?>
                                                 <?php else : ?>

@@ -61,7 +61,7 @@ $reverse = $data['reverse'] ?? false;
                                     type="button"
                                     role="tab"
                                     data-tab-index="<?php echo $key_tab; ?>"
-                                    class="tab-button whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg transition-all <?php echo $key_tab === 0 ? 'bg-primary text-white' : 'bg-transparent text-muted-foreground'; ?>"
+                                    class="tab-button whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl transition-all <?php echo $key_tab === 0 ? 'bg-primary text-white' : 'bg-transparent text-muted-foreground'; ?>"
                                     <?php echo $key_tab === 0 ? 'aria-selected="true"' : 'aria-selected="false"'; ?>>
                                     <?php if (!empty($tab['icon']['subtype']) && $tab['icon']['subtype'] == 'svg+xml'): ?>
                                         <?php echo maxwell_render_svg($tab['icon']['url'], 'w-4 h-4'); ?>
@@ -101,7 +101,7 @@ $reverse = $data['reverse'] ?? false;
                                                 <?php foreach ($content['items'] as $item): ?>
                                                     <div class="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors">
                                                         <div class="flex items-start gap-4">
-                                                            <div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center shrink-0">
+                                                            <div class="w-8 h-8 rounded-xl bg-accent flex items-center justify-center shrink-0">
                                                                 <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
                                                                     <?php echo maxwell_render_svg($item['icon']['url'], 'w-4 h-4 text-primary'); ?>
                                                                 <?php else : ?>

@@ -44,7 +44,7 @@ $layout_right = $data['layout_right'] ?? 'default';
                                             <?php if (!empty($challenge['icon'])) : ?>
                                                 <div class="flex-shrink-0">
                                                     <?php if ($challenge['icon']['subtype'] == 'svg+xml') : ?>
-                                                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all">
+                                                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all">
                                                             <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 text-primary transition-colors group-hover:text-white'); ?>
                                                         </div>
                                                     <?php else : ?>
@@ -87,7 +87,7 @@ $layout_right = $data['layout_right'] ?? 'default';
                                     <?php if (!empty($challenge['icon'])) : ?>
                                         <div class="flex-shrink-0">
                                             <?php if ($challenge['icon']['subtype'] == 'svg+xml') : ?>
-                                                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all">
+                                                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all">
                                                     <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 text-primary transition-colors group-hover:text-white'); ?>
                                                 </div>
                                             <?php else : ?>

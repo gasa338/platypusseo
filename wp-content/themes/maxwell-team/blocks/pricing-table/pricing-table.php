@@ -124,7 +124,7 @@ $data = get_field('pricing_table');
 
                         <?php if (!empty($item['data'])) : ?>
                             <?php foreach ($item['data'] as $route) : ?>
-                                <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+                                <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
                                     <h4 class="font-semibold"><?php echo esc_html($route['route']); ?></h4>
                                     <p class="text-sm text-gray-500 mb-2">~<?php echo esc_html($route['distance']); ?> | ~<?php echo esc_html($route['time']); ?></p>
                                     <div class="flex justify-between items-center mb-3">

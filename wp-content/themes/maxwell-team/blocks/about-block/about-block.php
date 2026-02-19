@@ -48,7 +48,7 @@ $lists_type = [
             <?php if (!empty($data['image'])): $image = get_image($data['image']); ?>
                 <div class="flex justify-center">
                     <div class="inline-block rounded-xl border border-primary/20 bg-primary/10 p-6">
-                        <img src="<?php echo $image['url']; ?>" class="rounded-lg" alt="<?php echo $image['alt']; ?>" srcset="<?php echo $image['url']; ?>" />
+                        <img src="<?php echo $image['url']; ?>" class="rounded-xl" alt="<?php echo $image['alt']; ?>" srcset="<?php echo $image['url']; ?>" />
                     </div>
                 </div>
             <?php endif; ?>

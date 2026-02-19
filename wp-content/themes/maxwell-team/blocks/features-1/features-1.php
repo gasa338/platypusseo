@@ -109,7 +109,7 @@ $data = get_field('features_1');
                 <?php if ($total_items > 6) : ?>
                     <div class="text-center mt-12 load-more-container">
                         <button type="button"
-                            class="tour-load-more bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                            class="tour-load-more bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
                             data-items-per-load="6"
                             data-total-items="<?php echo $total_items; ?>"
                             data-text-load-more="<?php echo esc_attr__('Read more', 'maxwell-team'); ?>"
