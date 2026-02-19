@@ -139,7 +139,7 @@ $reverse = $data['reverse'] ?? false;
                                             <div class="<?php echo esc_attr($reverse == 'yes' ? 'order-2' : 'order-1'); ?>">
                                                 <h3 class="font-display text-4xl md:text-5xl font-bold mb-6"><?php echo esc_html($data['title']); ?></h3>
                                                 <?php if (!empty($data['text'])): ?>
-                                                    <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                                                    <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                                                 <?php endif; ?>
                                             </div>
                                         </div>

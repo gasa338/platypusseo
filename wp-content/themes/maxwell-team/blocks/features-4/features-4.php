@@ -35,7 +35,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
                 <?php endif; ?>
                 <?php echo _heading($data['title'], 'mb-6 ' . esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground')) ?>
                 <?php if (!empty($data['text'])): ?>
-                    <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                    <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
                 <?php if (!empty($data['features'])): ?>
                     <div class="grid sm:grid-cols-2 gap-6 mb-6">
@@ -53,7 +53,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
                                         <h3 class="font-semibold mb-1 <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground'); ?>"><?php echo esc_html($value['title']); ?></h3>
                                     <?php endif; ?>
                                     <?php if (!empty($value['text'])): ?>
-                                        <p class="text-sm <?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?>"><?php echo esc_html($value['text']); ?></p>
+                                        <p class="text-sm <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?>"><?php echo esc_html($value['text']); ?></p>
                                     <?php endif; ?>
                                 </div>
                             </div>

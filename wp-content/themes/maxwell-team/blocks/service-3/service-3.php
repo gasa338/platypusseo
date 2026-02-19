@@ -51,7 +51,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                     <?php echo _heading($data['title'], 'mb-6 text-white') ?>
                 <?php endif; ?>
                 <?php if (!empty($data['text'])): ?>
-                    <div class="text-white/70 text-lg mb-8 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                    <div class="text-white text-lg mb-8 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
 <?php if (!empty($data['number'])): ?>
                     <div class="grid grid-cols-3 gap-6 mb-8">

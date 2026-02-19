@@ -20,7 +20,7 @@ $layout = $data['layout'] ?? 'vertical';
         </div>
         <div class="md:col-span-4">
           <?php if ($data['text']): ?>
-            <div class="text-lg <?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?> text-left maxwell-content">
+            <div class="text-lg <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?> text-left maxwell-content">
               <?php echo apply_filters('the_content', $data['text']); ?>
             </div>
           <?php endif; ?>
@@ -33,7 +33,7 @@ $layout = $data['layout'] ?? 'vertical';
         <?php endif; ?>
         <?php echo _heading($data['title'], 'mb-10 '. esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground')); ?>
         <?php if ($data['text']): ?>
-          <div class="text-lg <?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?> text-left maxwell-content">
+          <div class="text-lg <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?> text-left maxwell-content">
             <?php echo apply_filters('the_content', $data['text']); ?>
           </div>
         <?php endif; ?>

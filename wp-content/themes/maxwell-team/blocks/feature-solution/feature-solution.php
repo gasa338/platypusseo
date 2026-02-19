@@ -49,7 +49,7 @@ switch ($grid_columns) {
             <?php echo _heading($data['title'], 'mb-8 ' . esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground') . ' text-center'); ?>
 
             <?php if ($data['text']): ?>
-                <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?> text-lg text-center max-w-2xl mx-auto mb-16" style="opacity: 1; transform: none;"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?> text-lg text-center max-w-2xl mx-auto mb-16" style="opacity: 1; transform: none;"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
             </div>
 
@@ -72,7 +72,7 @@ switch ($grid_columns) {
                                 </h3>
                             <?php endif; ?>
                             <?php if ($solution['text']): ?>
-                                <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/70' : 'text-muted-foreground'); ?>">
+                                <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?>">
                                     <?php echo $solution['text']; ?>
                                 </div>
                             <?php endif; ?>
