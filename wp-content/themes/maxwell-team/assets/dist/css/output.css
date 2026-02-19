@@ -678,7 +678,7 @@ p, span, li, div {
 @media (min-width: 1024px) {
   .h1-responsive {
     font-size: 52px;
-    line-height: 56px;
+    line-height: 65px;
   }
 }
 
@@ -700,8 +700,8 @@ p, span, li, div {
 
 @media (min-width: 1024px) {
   .h2-responsive {
-    font-size: 38px;
-    line-height: 42px;
+    font-size: 32px;
+    line-height: 44px;
   }
 }
 
