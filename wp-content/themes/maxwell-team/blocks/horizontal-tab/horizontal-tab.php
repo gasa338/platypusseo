@@ -89,7 +89,7 @@ $reverse = $data['reverse'] ?? false;
                                     <div class="max-w-4xl mx-auto">
                                         <div class="text-center mb-12">
                                             <?php if (!empty($content['title'])): ?>
-                                                <h3 class="font-display text-3xl font-bold mb-4 text-foreground"><?php echo $content['title']; ?></h3>
+                                                <h3 class=" text-3xl font-bold mb-4 text-foreground"><?php echo $content['title']; ?></h3>
                                             <?php endif; ?>
                                             <?php if (!empty($content['content'])): ?>
                                                 <div class="text-lg text-muted-foreground max-w-2xl mx-auto"><?php echo apply_filters('the_content', $content['content']); ?></div>
@@ -137,7 +137,7 @@ $reverse = $data['reverse'] ?? false;
                                                 </div>
                                             </div>
                                             <div class="<?php echo esc_attr($reverse == 'yes' ? 'order-2' : 'order-1'); ?>">
-                                                <h3 class="font-display text-4xl md:text-5xl font-bold mb-6"><?php echo esc_html($data['title']); ?></h3>
+                                                <h3 class=" text-4xl md:text-5xl font-bold mb-6"><?php echo esc_html($data['title']); ?></h3>
                                                 <?php if (!empty($data['text'])): ?>
                                                     <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                                                 <?php endif; ?>

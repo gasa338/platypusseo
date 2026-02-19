@@ -14,7 +14,7 @@ $layout = $data['layout'] ?? 'vertical';
       <div class="grid grid-cols-1 md:grid-cols-6 gap-12 max-w-7xl mx-auto">
         <div class="md:col-span-2">
           <?php if ($data['top_title']): ?>
-            <span class="text-primary font-body text-sm font-semibold tracking-widest uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
+            <span class="text-primary  text-sm font-semibold tracking-widest uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
           <?php endif; ?>
           <?php echo _heading($data['title'], 'mb-10 '. esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground')); ?>
         </div>
@@ -29,7 +29,7 @@ $layout = $data['layout'] ?? 'vertical';
     <?php else: ?>
       <div class="max-w-4xl mx-auto text-center">
         <?php if ($data['top_title']): ?>
-          <span class="text-primary font-body text-sm font-semibold tracking-widest uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
+          <span class="text-primary  text-sm font-semibold tracking-widest uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
         <?php endif; ?>
         <?php echo _heading($data['title'], 'mb-10 '. esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground')); ?>
         <?php if ($data['text']): ?>

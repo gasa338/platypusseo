@@ -67,7 +67,7 @@ switch ($grid_columns) {
                                 </div>
                             <?php endif; ?>
                             <?php if ($solution['title']): ?>
-                                <h3 class="font-display font-bold <?php echo $box_title == "small" ? 'text-xl' : 'text-4xl'; ?> <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-gradient'); ?> mb-3">
+                                <h3 class=" font-bold <?php echo $box_title == "small" ? 'text-xl' : 'text-4xl'; ?> <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-gradient'); ?> mb-3">
                                     <?php echo esc_html($solution['title']); ?>
                                 </h3>
                             <?php endif; ?>

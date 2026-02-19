@@ -75,7 +75,7 @@ $lists_type = [
                                     <?php endif; ?>
                                 </div>
                                 <?php if (!empty($item['title'])): ?>
-                                    <h3 class="text-lg font-body">
+                                    <h3 class="text-lg ">
                                         <?php echo esc_html($item['title']); ?>
                                     </h3>
                                 <?php endif; ?>

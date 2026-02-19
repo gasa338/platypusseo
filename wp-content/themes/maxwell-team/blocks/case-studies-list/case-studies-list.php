@@ -11,7 +11,7 @@ $data = get_field('case_studies_list');
         <div>
 
             <?php if (!empty($data['top_title'])) : ?>
-                <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block font-body"><?php echo $data['top_title']; ?></span>
+                <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block "><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
             <?php if (!empty($data['title'])) : ?>
                 <?php echo _heading($data['title'], 'mb-16'); ?>
@@ -25,26 +25,26 @@ $data = get_field('case_studies_list');
                                     <div class="flex-1">
                                         <?php if (!empty($item['tag'])) : ?>
                                             <div class="flex flex-wrap gap-2 mb-4">
-                                                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium font-body"><?php echo $item['tag']; ?></span>
+                                                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium "><?php echo $item['tag']; ?></span>
                                             </div>
                                         <?php endif; ?>
                                         <?php if (!empty($item['title'])) : ?>
-                                            <h3 class="font-display text-2xl md:text-3xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
+                                            <h3 class=" text-2xl md:text-3xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
                                         <?php endif; ?>
                                         <?php if (!empty($item['name'])) : ?>
-                                            <p class="font-display text-xl text-primary font-semibold mb-4"><?php echo $item['name']; ?></p>
+                                            <p class=" text-xl text-primary font-semibold mb-4"><?php echo $item['name']; ?></p>
                                         <?php endif; ?>
                                         <?php if (!empty($item['text'])) : ?>
-                                            <div class="font-body mb-4 maxwell-content"><?php echo apply_filters('the_content', $item['text']); ?></div>
+                                            <div class=" mb-4 maxwell-content"><?php echo apply_filters('the_content', $item['text']); ?></div>
                                         <?php endif; ?>
                                     </div>
                                     <?php if (!empty($item['outcomes'])) : ?>
                                         <div class=" lg:w-[380px] shrink-0 p-6 rounded-xl bg-section-light border border-border">
-                                            <p class="text-muted-foreground font-body uppercase tracking-wider mb-4 font-medium">Outcomes</p>
+                                            <p class="text-muted-foreground  uppercase tracking-wider mb-4 font-medium">Outcomes</p>
 
                                             <ul class="space-y-3">
                                                 <?php foreach ($item['outcomes'] as $outcome) : ?>
-                                                    <li class="flex items-start gap-3 text-foreground font-body">
+                                                    <li class="flex items-start gap-3 text-foreground ">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-4 h-4 text-primary mt-0.5 shrink-0">
                                                             <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                                                             <path d="m9 11 3 3L22 4"></path>
@@ -54,7 +54,7 @@ $data = get_field('case_studies_list');
                                             </ul>
                                             <?php if (!empty($item['link'])) : ?>
                                                 <div class="mt-6 pt-4 border-t border-border">
-                                                    <a class="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all font-body" href="<?php echo $item['link']['url']; ?>"><?php echo $item['link']['title']; ?>
+                                                    <a class="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all " href="<?php echo $item['link']['url']; ?>"><?php echo $item['link']['title']; ?>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4">
                                                             <path d="M5 12h14"></path>
                                                             <path d="m12 5 7 7-7 7"></path>

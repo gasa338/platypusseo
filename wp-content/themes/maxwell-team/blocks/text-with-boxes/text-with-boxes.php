@@ -11,13 +11,13 @@ $data = get_field('text_with_boxes');
     <div class="container mx-auto px-6 relative z-10">
         <div class="max-w-4xl mx-auto">
             <?php if (!empty($data['top_title'])): ?>
-                <span class="text-accent text-sm font-medium tracking-wider uppercase mb-4 block font-body"><?php echo esc_html($data['top_title']); ?></span>
+                <span class="text-accent text-sm font-medium tracking-wider uppercase mb-4 block "><?php echo esc_html($data['top_title']); ?></span>
             <?php endif; ?>
             <?php echo _heading($data['title'], 'mb-8 text-primary-foreground') ?>
             <?php if (!empty($data['content'])): ?>
                 <?php foreach ($data['content'] as $content): ?>
                     <?php if ($content['acf_fc_layout'] == 'text' && !empty($content['text'])): ?>
-                        <div class="text-xl text-primary-foreground/80 font-body leading-relaxed mb-10 max-w-3xl maxwell-content">
+                        <div class="text-xl text-primary-foreground/80  leading-relaxed mb-10 max-w-3xl maxwell-content">
                             <?php echo apply_filters('the_content', $content['text']) ?>
                         </div>
                     <?php endif; ?>
@@ -34,7 +34,7 @@ $data = get_field('text_with_boxes');
                                         <img src="<?php echo esc_url($item['icon']['url']); ?>" alt="<?php echo esc_attr($item['icon']['alt']); ?>" class="w-6 h-6 text-primary transition-colors">
                                     <?php endif; ?>
                                     <?php if (!empty($item['title'])): ?>
-                                        <span class="text-primary-foreground font-body font-medium"><?php echo esc_html($item['title']); ?></span>
+                                        <span class="text-primary-foreground  font-medium"><?php echo esc_html($item['title']); ?></span>
                                     <?php endif; ?>
                                 </div>
                             <?php endforeach; ?>

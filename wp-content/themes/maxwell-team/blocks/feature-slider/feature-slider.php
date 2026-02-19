@@ -102,7 +102,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                             
                                             <div>
                                                 <?php if (!empty($slide['title'])): ?>
-                                                    <h3 class="font-display text-3xl md:text-4xl font-bold mb-4 text-foreground"><?php echo $slide['title']; ?></h3>
+                                                    <h3 class=" text-3xl md:text-4xl font-bold mb-4 text-foreground"><?php echo $slide['title']; ?></h3>
                                                 <?php endif; ?>
                                                 <?php if (!empty($slide['text'])): ?>
                                                     <div class="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed"><?php echo apply_filters('the_content', $slide['text']); ?></div>
@@ -120,7 +120,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                                 <?php endif; ?>
                                             </div>
                                             <?php if (!empty($slide['left_top']['number'])): ?>
-                                                <div class="font-display text-4xl font-bold text-gradient mb-2"><?php echo $slide['left_top']['number']; ?></div>
+                                                <div class=" text-4xl font-bold text-gradient mb-2"><?php echo $slide['left_top']['number']; ?></div>
                                             <?php endif; ?>
                                             <?php if (!empty($slide['left_top']['text'])): ?>
                                                 <div class="text-muted-foreground"><?php echo $slide['left_top']['text']; ?></div>
@@ -135,7 +135,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                                 <?php endif; ?>
                                             </div>
                                             <?php if (!empty($slide['left_bottom']['number'])): ?>
-                                                <div class="font-display text-4xl font-bold mb-2"><?php echo $slide['left_bottom']['number']; ?></div>
+                                                <div class=" text-4xl font-bold mb-2"><?php echo $slide['left_bottom']['number']; ?></div>
                                             <?php endif; ?>
                                             <?php if (!empty($slide['left_bottom']['text'])): ?>
                                                 <div class="text-primary-foreground/80"><?php echo $slide['left_bottom']['text']; ?></div>

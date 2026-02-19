@@ -67,7 +67,7 @@ $lists_type = [
                             <?php endif; ?>
                         </div>
                         <?php if (!empty($item['title'])): ?>
-                            <h3 class="font-display text-2xl font-semibold mb-4 text-foreground group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
+                            <h3 class=" text-2xl font-semibold mb-4 text-foreground group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
                         <?php endif; ?>
                         <?php if (!empty($item['text'])): ?>
                             <div class="text-muted-foreground mb-6 leading-relaxed maxwell-content"><?php echo $item['text']; ?></div>
@@ -100,7 +100,7 @@ $lists_type = [
                             <?php endif; ?>
                         </div>
                         <?php if (!empty($item['title'])): ?>
-                            <h3 class="font-display text-2xl font-semibold mb-4 text-foreground group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
+                            <h3 class=" text-2xl font-semibold mb-4 text-foreground group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
                         <?php endif; ?>
                         <?php if (!empty($item['text'])): ?>
                             <div class="text-muted-foreground mb-6 leading-relaxed maxwell-content"><?php echo $item['text']; ?></div>

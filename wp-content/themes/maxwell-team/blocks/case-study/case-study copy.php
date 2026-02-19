@@ -22,7 +22,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
                 <?php endif; ?>
                 <?php echo _heading($data['title'], 'mb-6 text-foreground'); ?>
                 <?php if (!empty($data['text'])) : ?>
-                    <p class="text-muted-foreground text-lg font-body"><?php echo $data['text']; ?></p>
+                    <p class="text-muted-foreground text-lg "><?php echo $data['text']; ?></p>
                 <?php endif; ?>
             </div>
             <?php if (!empty($data['link'])) : ?>
@@ -60,10 +60,10 @@ $color_mode = $data['color_mode'] ?? 'dark';
                                 </div>
                                 <div class="p-6">
                                     <?php if ($item['title']) : ?>
-                                        <h3 class="font-display text-2xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
+                                        <h3 class=" text-2xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
                                     <?php endif; ?>
                                     <?php if ($item['main_text']) : ?>
-                                        <p class="text-muted-foreground text-sm font-body mb-4 line-clamp-2"><?php echo $item['main_text']; ?></p>
+                                        <p class="text-muted-foreground text-sm  mb-4 line-clamp-2"><?php echo $item['main_text']; ?></p>
                                     <?php endif; ?>
                                     <?php if ($item['highlight_text']) : ?>
                                         <div class="p-3 rounded-xl bg-primary/5 border border-primary/10 mb-4">
