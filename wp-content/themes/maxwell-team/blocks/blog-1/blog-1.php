@@ -43,7 +43,7 @@ $bg_color = $data['bg_color'];
                     <h3 class="h3-responsive mb-3"><a href="<?php echo $post['link']; ?>" title="<?php echo $post['title']; ?>" target="_blank"><?php echo $post['title']; ?></a></h3>
                     <p class="mb-4"><?php echo $post['excerpt']; ?></p>
                     <div class="flex justify-between items-center">
-                        <span class="text-gray-500 text-sm"><?php echo $post['date']; ?></span>
+                        <span class=""><?php echo $post['date']; ?></span>
                         
                         <?php if (!empty($post['link'])) : ?>
                         <a href="<?php echo $post['link']['url']; ?>" title="<?php echo $post['title']; ?>" target="_blank" class="flex items-center group">

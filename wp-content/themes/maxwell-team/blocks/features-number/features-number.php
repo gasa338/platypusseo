@@ -14,7 +14,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
 <section class="py-24 bg-section-light <?php echo $blocks_class; ?>">
     <div class="container mx-auto px-6">
         <div style="opacity: 1;"><span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block text-center" style="opacity: 1; transform: none;">Why Us</span>
-            <h2 class=" text-4xl md:text-5xl font-bold mb-16 text-foreground text-center" style="opacity: 1; transform: none;">Consistent Results <span class="text-primary">Across Industries</span></h2>
+            <h2 class=" text-4xl md:text-5xl font-bold mb-16 text-center" style="opacity: 1; transform: none;">Consistent Results <span class="text-primary">Across Industries</span></h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors" style="opacity: 1; transform: none;">
                     <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up w-8 h-8 text-primary">

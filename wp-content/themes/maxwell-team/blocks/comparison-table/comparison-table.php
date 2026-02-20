@@ -47,7 +47,7 @@ $data = get_field('comparison_table');
     /* Plava pozadina za poslednju kolonu */
     tbody td:last-child {
         background-color: hsl(var(--primary));
-        color: white;
+        color: #fff !important;
         border-left: 1px solid hsl(var(--primary-dark));
         border-right: 1px solid hsl(var(--primary-dark));
     }
@@ -61,11 +61,9 @@ $data = get_field('comparison_table');
     }
 </style>
 
-<section class="py-20 bg-background">
+<section id="<?php echo esc_attr($anchor); ?>" class="py-24 relative overflow-hidden <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
     <div class="container mx-auto px-4">
-
         <div class="w-full max-w-5xl mx-auto">
-
             <div class="max-w-4xl">
                 <?php if ($data['top_title']): ?>
                     <span class="text-primary font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
@@ -86,12 +84,12 @@ $data = get_field('comparison_table');
                                 <?php foreach ($data['items'][0]['row'] as $key => $heading): ?>
                                     <?php if ($key === 0):?>
                                         <th class="px-3 md:px-3 py-2 first:pl-3 last:pr-3 bg-primary text-white first:sticky first:left-0 first:z-10">
-                                            <div class="font-medium text-left"><?php echo esc_html($heading['name']); ?></div>
+                                            <div class="font-medium text-left text-white"><?php echo esc_html($heading['name']); ?></div>
                                         </th>
                                     <?php else: ?>
 
                                         <th class="px-3 md:px-3 py-2 first:pl-3 last:pr-3 bg-primary text-white min-w-[140px] md:min-w-[200px]">
-                                            <div class="font-semibold text-left"><?php echo esc_html($heading['name']); ?></div>
+                                            <div class="font-semibold text-left text-white"><?php echo esc_html($heading['name']); ?></div>
                                         </th>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
@@ -114,16 +112,16 @@ $data = get_field('comparison_table');
                                                         <span class=""><?php echo esc_html($cell['name']); ?></span>
                                                         <?php if (!empty($cell['popup'])): ?>
                                                             <div class="tooltip-container">
-                                                                <button class="info-btn pulse-soft flex-shrink-0 text-slate-400 hover:text-slate-600 transition-colors">
+                                                                <button class="info-btn pulse-soft flex-shrink-0 hover:text-primary transition-colors">
                                                                     <svg class="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                                                                         <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
                                                                     </svg>
                                                                 </button>
-                                                                <div class="tooltip absolute z-50 bg-gray-900 text-white text-xs rounded-xl p-3 w-48 md:w-64 bottom-full left-1/2 transform -translate-x-1/2 mb-2 shadow-xl invisible">
+                                                                <div class="tooltip absolute z-50 bg-accent text-white text-xs rounded-xl p-3 w-48 md:w-64 bottom-full left-1/2 transform -translate-x-1/2 mb-2 shadow-xl invisible">
                                                                     <div class="mb-1 font-semibold"><?php echo esc_html($cell['name']); ?></div>
-                                                                    <div class="text-gray-300"><?php echo $cell['popup']; ?></div>
+                                                                    <div class="text-muted-foreground"><?php echo $cell['popup']; ?></div>
                                                                     <div class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
-                                                                        <div class="border-8 border-transparent border-t-gray-900"></div>
+                                                                        <div class="border-8 border-transparent border-t-accent"></div>
                                                                     </div>
                                                                 </div>
                                                             </div>

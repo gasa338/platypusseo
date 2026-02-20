@@ -24,17 +24,17 @@ $layout = $data['layout'] ?? 'default';
                                 <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
                             <?php endif; ?>
 
-                            <?php echo _heading($data['title'], "mb-6 text-foreground"); ?>
+                            <?php echo _heading($data['title'], "mb-6"); ?>
 
                             <?php if (!empty($data['text'])) : ?>
-                                <p class="text-muted-foreground text-lg  mb-8"><?php echo $data['text']; ?></p>
+                                <p class="text-lg mb-8"><?php echo $data['text']; ?></p>
                             <?php endif; ?>
 
                             <?php if (!empty($data['link'])) : ?>
                                 <a href="<?php echo $data['link']['url']; ?>"
                                     target="<?php echo $data['link']['target']; ?>"
                                     name="<?php echo $data['link']['title']; ?>"
-                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50 h-12 rounded-xl px-8 text-base">
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent  hover:bg-secondary hover:border-primary/50 h-12 rounded-xl px-8 text-base">
                                     <?php echo $data['link']['title']; ?>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4">
                                         <path d="M7 7h10v10"></path>
@@ -69,7 +69,7 @@ $layout = $data['layout'] ?? 'default';
                                                                 </span>
                                                             </div>
                                                             <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-5 h-5 text-foreground group-hover:text-primary transition-colors">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-5 h-5  group-hover:text-primary transition-colors">
                                                                     <path d="M7 7h10v10"></path>
                                                                     <path d="M7 17 17 7"></path>
                                                                 </svg>
@@ -77,7 +77,7 @@ $layout = $data['layout'] ?? 'default';
                                                         </div>
                                                         <div class="p-6">
                                                             <?php if ($item['title']) : ?>
-                                                                <h3 class=" text-2xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
+                                                                <h3 class=" text-2xl font-bold mb-2 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
                                                             <?php endif; ?>
                                                             <?php if ($item['main_text']) : ?>
                                                                 <div class="mb-4 maxwell-content"><?php echo apply_filters('the_content', $item['main_text']); ?></div>
@@ -102,13 +102,13 @@ $layout = $data['layout'] ?? 'default';
                         <?php if (!empty($data['top_title'])) : ?>
                             <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
                         <?php endif; ?>
-                        <?php echo _heading($data['title'], 'mb-6 text-foreground'); ?>
+                        <?php echo _heading($data['title'], 'mb-6'); ?>
                         <?php if (!empty($data['text'])) : ?>
                             <p class="text-muted-foreground text-lg "><?php echo $data['text']; ?></p>
                         <?php endif; ?>
                     </div>
                     <?php if (!empty($data['link'])) : ?>
-                        <a href="<?php echo $data['link']['url']; ?>" target="<?php echo $data['link']['target']; ?>" name="<?php echo $data['link']['title']; ?>" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50 h-12 rounded-xl px-8 text-base self-start md:self-auto"><?php echo $data['link']['title']; ?>
+                        <a href="<?php echo $data['link']['url']; ?>" target="<?php echo $data['link']['target']; ?>" name="<?php echo $data['link']['title']; ?>" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent  hover:bg-secondary hover:border-primary/50 h-12 rounded-xl px-8 text-base self-start md:self-auto"><?php echo $data['link']['title']; ?>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4">
                                 <path d="M7 7h10v10"></path>
                                 <path d="M7 17 17 7"></path>
@@ -134,7 +134,7 @@ $layout = $data['layout'] ?? 'default';
                                                 </span>
                                             </div>
                                             <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-5 h-5 text-foreground group-hover:text-primary transition-colors">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-5 h-5  group-hover:text-primary transition-colors">
                                                     <path d="M7 7h10v10"></path>
                                                     <path d="M7 17 17 7"></path>
                                                 </svg>
@@ -142,14 +142,14 @@ $layout = $data['layout'] ?? 'default';
                                         </div>
                                         <div class="p-6">
                                             <?php if ($item['title']) : ?>
-                                                <h3 class=" text-2xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
+                                                <h3 class=" text-2xl font-bold mb-2 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
                                             <?php endif; ?>
                                             <?php if ($item['main_text']) : ?>
                                                 <p class="text-muted-foreground text-sm  mb-4 line-clamp-2"><?php echo $item['main_text']; ?></p>
                                             <?php endif; ?>
                                             <?php if ($item['highlight_text']) : ?>
                                                 <div class="p-3 rounded-xl bg-primary/5 border border-primary/10 mb-4">
-                                                    <p class="text-sm font-medium text-foreground"><?php echo $item['highlight_text']; ?></p>
+                                                    <p class="text-sm font-medium "><?php echo $item['highlight_text']; ?></p>
                                                 </div>
                                             <?php endif; ?>
                                             <?php if ($item['review_text']) : ?>

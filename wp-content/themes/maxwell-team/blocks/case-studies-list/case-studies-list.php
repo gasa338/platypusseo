@@ -29,7 +29,7 @@ $data = get_field('case_studies_list');
                                             </div>
                                         <?php endif; ?>
                                         <?php if (!empty($item['title'])) : ?>
-                                            <h3 class=" text-2xl md:text-3xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
+                                            <h3 class=" text-2xl md:text-3xl font-bold mb-2 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
                                         <?php endif; ?>
                                         <?php if (!empty($item['name'])) : ?>
                                             <p class=" text-xl text-primary font-semibold mb-4"><?php echo $item['name']; ?></p>
@@ -44,7 +44,7 @@ $data = get_field('case_studies_list');
 
                                             <ul class="space-y-3">
                                                 <?php foreach ($item['outcomes'] as $outcome) : ?>
-                                                    <li class="flex items-start gap-3 text-foreground ">
+                                                    <li class="flex items-start gap-3  ">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-4 h-4 text-primary mt-0.5 shrink-0">
                                                             <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                                                             <path d="m9 11 3 3L22 4"></path>

@@ -610,7 +610,8 @@ body {
   font-family: Inter, sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  /* color: theme('colors.body'); */
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
   /* background-color: #F2F0EE !important; */
 }
 
@@ -626,10 +627,16 @@ h1,
   color: hsl(var(--foreground));
 }
 
-p, span, li, div {
+p, span, div {
   font-family: Inter, sans-serif;
   font-weight: 400;
   font-size: 1rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+}
+
+li {
+  color: hsl(var(--foreground));
 }
 
 .\!container {
@@ -1553,16 +1560,8 @@ p, span, li, div {
   scroll-behavior: smooth;
 }
 
-.whitespace-normal {
-  white-space: normal;
-}
-
 .whitespace-nowrap {
   white-space: nowrap;
-}
-
-.break-words {
-  overflow-wrap: break-word;
 }
 
 .rounded-2xl {
@@ -1675,9 +1674,8 @@ p, span, li, div {
   border-color: rgb(255 255 255 / 0.3);
 }
 
-.border-t-gray-900 {
-  --tw-border-opacity: 1;
-  border-top-color: rgb(17 24 39 / var(--tw-border-opacity, 1));
+.border-t-accent {
+  border-top-color: hsl(var(--accent));
 }
 
 .bg-\[\#25D366\] {
@@ -1739,11 +1737,6 @@ p, span, li, div {
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
-}
-
-.bg-gray-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
 }
 
 .bg-primary {
@@ -2277,16 +2270,6 @@ p, span, li, div {
   color: hsl(var(--foreground));
 }
 
-.text-gray-300 {
-  --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity, 1));
-}
-
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
-}
-
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity, 1));
@@ -2295,11 +2278,6 @@ p, span, li, div {
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity, 1));
-}
-
-.text-gray-900 {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity, 1));
 }
 
 .text-muted-foreground {
@@ -2324,11 +2302,6 @@ p, span, li, div {
 
 .text-secondary {
   color: hsl(var(--secondary));
-}
-
-.text-slate-400 {
-  --tw-text-opacity: 1;
-  color: rgb(148 163 184 / var(--tw-text-opacity, 1));
 }
 
 .text-white {
@@ -2822,17 +2795,16 @@ p, span, li, div {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
 }
 
+.hover\:text-primary:hover {
+  color: hsl(var(--primary));
+}
+
 .hover\:text-primary-foreground:hover {
   color: hsl(var(--primary-foreground));
 }
 
 .hover\:text-secondary:hover {
   color: hsl(var(--secondary));
-}
-
-.hover\:text-slate-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(71 85 105 / var(--tw-text-opacity, 1));
 }
 
 .hover\:underline:hover {

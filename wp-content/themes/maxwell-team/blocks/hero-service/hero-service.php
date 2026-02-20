@@ -40,7 +40,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
                 <?php endif; ?>
             </div>
             <?php if (!empty($data['title'])): ?>
-                <?php echo _heading($data['title'], 'mb-6 text-foreground'); ?>
+                <?php echo _heading($data['title'], 'mb-6'); ?>
             <?php endif; ?>
             <?php if (!empty($data['text'])): ?>
                 <div class="text-xl text-muted-foreground mb-10 max-w-2xl"><?php echo apply_filters('the_content', $data['text']); ?></div>

@@ -49,7 +49,7 @@ $lists_type = [
             <?php if (!empty($data['top_title'])) : ?>
                 <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
-            <?php echo _heading($data['title'], 'mb-6 text-foreground'); ?>
+            <?php echo _heading($data['title'], 'mb-6'); ?>
             <?php if (!empty($data['text'])) : ?>
                 <div class="maxwell-content mb-2 text-muted-foreground text-lg"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
@@ -67,7 +67,7 @@ $lists_type = [
                             <?php endif; ?>
                         </div>
                         <?php if (!empty($item['title'])): ?>
-                            <h3 class=" text-2xl font-semibold mb-4 text-foreground group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
+                            <h3 class=" text-2xl font-semibold mb-4 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
                         <?php endif; ?>
                         <?php if (!empty($item['text'])): ?>
                             <div class="text-muted-foreground mb-6 leading-relaxed maxwell-content"><?php echo $item['text']; ?></div>
@@ -100,7 +100,7 @@ $lists_type = [
                             <?php endif; ?>
                         </div>
                         <?php if (!empty($item['title'])): ?>
-                            <h3 class=" text-2xl font-semibold mb-4 text-foreground group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
+                            <h3 class=" text-2xl font-semibold mb-4 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
                         <?php endif; ?>
                         <?php if (!empty($item['text'])): ?>
                             <div class="text-muted-foreground mb-6 leading-relaxed maxwell-content"><?php echo $item['text']; ?></div>

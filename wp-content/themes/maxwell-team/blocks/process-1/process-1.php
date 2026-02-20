@@ -47,7 +47,7 @@ $layout = $data['layout'] ?? 'left';
                     </div>
                     <div class="max-w-md">
                         <?php if ($step['title']): ?>
-                        <h3 class="text-2xl font-semibold text-foreground mb-3">
+                        <h3 class="text-2xl font-semibold mb-3">
                             <?php echo $step['title']; ?>
                         </h3>
                         <?php endif; ?>

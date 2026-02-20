@@ -26,11 +26,11 @@ $layout_right = $data['layout_right'] ?? 'default';
                     <!-- Leva kolona - naslov i tekst -->
                     <div class="<?php echo esc_attr($layout_right == 'one_column' ? '' : 'md:col-span-2'); ?>">
                         <?php if ($data['top_title']): ?>
-                            <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
+                            <span class="text-primary font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                         <?php endif; ?>
-                        <?php echo _heading($data['title'], 'mb-8 text-foreground'); ?>
+                        <?php echo _heading($data['title'], 'mb-8'); ?>
                         <?php if (!empty($data['text'])): ?>
-                            <div class="text-lg text-muted-foreground mb-12 maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                            <div class="text-lg mb-12 maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                         <?php endif; ?>
                     </div>
 
@@ -55,7 +55,7 @@ $layout_right = $data['layout_right'] ?? 'default';
 
                                             <div class="flex-1">
                                                 <?php if (!empty($challenge['title'])) : ?>
-                                                    <h3 class="font-semibold mb-2 text-foreground group-hover:text-primary transition-colors"><?php echo esc_html($challenge['title']); ?></h3>
+                                                    <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors"><?php echo esc_html($challenge['title']); ?></h3>
                                                 <?php endif; ?>
                                                 <?php if (!empty($challenge['text'])) : ?>
                                                     <div class="mb-4"><?php echo apply_filters('the_content', $challenge['text']); ?></div>
@@ -74,9 +74,9 @@ $layout_right = $data['layout_right'] ?? 'default';
                     <?php if ($data['top_title']): ?>
                         <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                     <?php endif; ?>
-                    <?php echo _heading($data['title'], 'mb-8 text-foreground'); ?>
+                    <?php echo _heading($data['title'], 'mb-8'); ?>
                     <?php if (!empty($data['text'])): ?>
-                        <div class="text-lg text-muted-foreground mb-12" style="opacity: 1; transform: none;"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                        <div class="text-lg mb-12"><?php echo apply_filters('the_content', $data['text']); ?></div>
                     <?php endif; ?>
                 </div>
                 <?php if (!empty($data['challenges'])): ?>
@@ -98,7 +98,7 @@ $layout_right = $data['layout_right'] ?? 'default';
 
                                     <div class="flex-1">
                                         <?php if (!empty($challenge['title'])) : ?>
-                                            <h3 class="font-semibold mb-2 text-foreground group-hover:text-primary transition-colors"><?php echo esc_html($challenge['title']); ?></h3>
+                                            <h3 class="text-xl font-semibold mb-2 group-hover:text-primary transition-colors"><?php echo esc_html($challenge['title']); ?></h3>
                                         <?php endif; ?>
                                         <?php if (!empty($challenge['text'])) : ?>
                                             <div class="mb-4"><?php echo apply_filters('the_content', $challenge['text']); ?></div>

@@ -60,20 +60,20 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                         <?php if (!empty($data['top_title'])): ?>
                             <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                         <?php endif; ?>
-                        <?php echo _heading($data['title'], 'text-foreground'); ?>
+                        <?php echo _heading($data['title'], ''); ?>
                     </div>
 
                     <!-- Navigacioni dugmici IZNAD swiper-a -->
                     <div class="flex absolute bottom-0 right-0">
                         <div tabindex="0">
-                            <button class="feature-slider-prev inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50 h-10 w-10 rounded-full">
+                            <button class="feature-slider-prev inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-primary/50 h-10 w-10 rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left w-5 h-5">
                                     <path d="m15 18-6-6 6-6"></path>
                                 </svg>
                             </button>
                         </div>
                         <div tabindex="0">
-                            <button class="feature-slider-next inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50 h-10 w-10 rounded-full">
+                            <button class="feature-slider-next inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-primary/50 h-10 w-10 rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right w-5 h-5">
                                     <path d="m9 18 6-6-6-6"></path>
                                 </svg>
@@ -102,7 +102,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                             
                                             <div>
                                                 <?php if (!empty($slide['title'])): ?>
-                                                    <h3 class=" text-3xl md:text-4xl font-bold mb-4 text-foreground"><?php echo $slide['title']; ?></h3>
+                                                    <h3 class=" text-3xl md:text-4xl font-bold mb-4"><?php echo $slide['title']; ?></h3>
                                                 <?php endif; ?>
                                                 <?php if (!empty($slide['text'])): ?>
                                                     <div class="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed"><?php echo apply_filters('the_content', $slide['text']); ?></div>

@@ -15,7 +15,7 @@ $background_color = $data['background_color'] ?? "#000";
 
     <!-- Intro -->
     <div class="max-w-3xl mb-12">
-      <?php echo _heading($data['title'], 'text-foreground mb-8'); ?>
+      <?php echo _heading($data['title'], 'mb-8'); ?>
       <?php if (!empty($data['text'])): ?>
         <div class="text-xl text-muted-foreground leading-relaxed">
           <?php echo apply_filters('the_content', $data['text']); ?>
@@ -39,7 +39,7 @@ $background_color = $data['background_color'] ?? "#000";
           </div>
           <?php endif; ?>
           <?php if (!empty($data['left_title'])): ?>
-          <h3 class="text-2xl font-bold text-foreground">
+          <h3 class="text-2xl font-bold">
             <?php echo $data['left_title']; ?>
           </h3>
           <?php endif; ?>
@@ -65,7 +65,7 @@ $background_color = $data['background_color'] ?? "#000";
           <?php endif; ?>
           
           <?php if (!empty($data['right_title'])): ?>
-          <h3 class="text-2xl font-bold text-foreground">
+          <h3 class="text-2xl font-bold">
             <?php echo $data['right_title']; ?>
           </h3>
           <?php endif; ?>

@@ -131,7 +131,8 @@
     font-family: theme('fontFamily.body');
     font-weight: 400;
     font-size: 1rem;
-    /* color: theme('colors.body'); */
+    color: hsl(var(--muted-foreground));    
+    line-height: 1.6;
     /* background-color: #F2F0EE !important; */
   }
 
@@ -147,10 +148,16 @@
     color: hsl(var(--foreground));
   }
 
-  p, span, li, div {
+  p, span, div {
     font-family: theme('fontFamily.body');
     font-weight: 400;
     font-size: 1rem;
+    color: hsl(var(--muted-foreground));    
+    line-height: 1.6;
+  }
+
+  li {
+    color: hsl(var(--foreground));
   }
 }
 

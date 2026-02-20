@@ -21,7 +21,7 @@ $grid = $data['grid'] ?? 'default';
 
                     <!-- Leva kolona (2/3) -->
                     <div class="md:col-span-2 text-left">
-                        <?php echo _heading($data['title'], 'mb-6 text-foreground') ?>
+                        <?php echo _heading($data['title'], 'mb-6') ?>
 
                         <?php if ($data['text']) : ?>
                             <div class="text-lg text-muted-foreground max-w-2xl">
@@ -56,7 +56,7 @@ $grid = $data['grid'] ?? 'default';
 
             <!-- Default layout (postojeći) -->
             <div class="text-center">
-                <?php echo _heading($data['title'], 'mb-6 text-foreground') ?>
+                <?php echo _heading($data['title'], 'mb-6') ?>
 
                 <?php if ($data['text']) : ?>
                     <div class="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">

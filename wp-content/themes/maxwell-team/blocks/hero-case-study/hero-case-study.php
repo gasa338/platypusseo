@@ -25,7 +25,7 @@ $background_color = $data['background_color'] ?? "transparent";
             <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
             <?php endif; ?>
             
-            <?php echo _heading($data['title'], 'mb-6 text-foreground'); ?>
+            <?php echo _heading($data['title'], 'mb-6'); ?>
             
             <?php if (!empty($data['text'])): ?>
             <p class="text-xl text-muted-foreground mb-10 max-w-2xl"><?php echo apply_filters('the_content', $data['text']); ?></p>

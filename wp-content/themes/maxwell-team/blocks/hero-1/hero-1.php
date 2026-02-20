@@ -43,9 +43,9 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
     <div class="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-y-4 lg:items-center lg:grid-cols-2 xl:grid-cols-2">
             <div class="text-center xl:col-span-1 lg:text-left md:px-16 lg:px-0 xl:pr-20">
-                <?php echo _heading($data['title'], 'mb-8 text-foreground'); ?>
+                <?php echo _heading($data['title'], 'mb-8'); ?>
                 <?php if ($data['text']): ?>
-                    <div class="mt-2 sm:mt-6 break-words whitespace-normal maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                    <div class="mt-2 sm:mt-6 maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
 
                 <div class="mt-4 sm:mt-8">
@@ -66,7 +66,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
 
                     <?php if ($data['quote'] && $data['use_quote'] == 'yes'): ?>
                         <?php if ($data['quote']['text']): ?>
-                            <blockquote class="mt-6 text-sm maxwell-content">
+                            <blockquote class="mt-6 maxwell-content">
                                 <?php echo apply_filters('the_content', $data['quote']['text']); ?>
                             </blockquote>
                         <?php endif; ?>
@@ -74,13 +74,13 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
                             <?php if (!$data['quote']['link']): ?>
                                 <div class="flex items-center justify-center mt-3 lg:justify-start">
                                     <img class="flex-shrink-0 object-cover w-6 h-6 overflow-hidden rounded-full" src="<?php echo esc_url($data['quote']['avatar']['url']); ?>" alt="<?php echo esc_attr($data['quote']['avatar']['alt']); ?>" />
-                                    <p class="ml-2 text-base font-bold text-gray-900 font-pj"><?php echo esc_html($data['quote']['name']); ?></p>
+                                    <p class="ml-2"><?php echo esc_html($data['quote']['name']); ?></p>
                                 </div>
                             <?php else: ?>
                                 <a href="<?php echo esc_url($data['quote']['link']['url']); ?>" target="<?php echo esc_attr($data['quote']['link']['target']); ?>" title="<?php echo esc_attr($data['quote']['name']); ?>">
                                     <div class="flex items-center justify-center mt-3 lg:justify-start">
                                         <img class="flex-shrink-0 object-cover w-6 h-6 overflow-hidden rounded-full" src="<?php echo esc_url($data['quote']['avatar']['url']); ?>" alt="<?php echo esc_attr($data['quote']['avatar']['alt']); ?>" />
-                                        <p class="ml-2 text-base font-bold text-gray-900 font-pj"><?php echo esc_html($data['quote']['name']); ?></p>
+                                        <p class="ml-2"><?php echo esc_html($data['quote']['name']); ?></p>
                                     </div>
                                 </a>
                             <?php endif; ?>

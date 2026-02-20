@@ -38,18 +38,18 @@ switch ($grid_columns) {
     }
 </style>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="py-24 <?php echo esc_attr($color_mode == 'dark' ? 'bg-section-dark' : 'bg-background'); ?> relative overflow-hidden feature-solution-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
+<section id="<?php echo esc_attr($anchor); ?>" class="py-24 <?php echo esc_attr($color_mode == 'dark' ? 'bg-section-dark' : ''); ?> relative overflow-hidden feature-solution-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, <?php echo $color_mode == 'dark' ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)'; ?> 1px, transparent 0px); background-size: 32px 32px;"></div>
     <div class="container mx-auto px-6 relative z-10">
         <div style="opacity: 1;">
             <div class="<?php echo _title_position($data['title_position'], $data['title_size']); ?>">
             <?php if ($data['top_title']): ?>
-                <span class="<?php echo esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-primary'); ?> text-sm font-medium tracking-wider uppercase mb-4 block text-center" style="opacity: 1; transform: none;"><?php echo esc_html($data['top_title']); ?></span>
+                <span class="<?php echo esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-primary'); ?> font-medium tracking-wider uppercase mb-4 block text-center"><?php echo esc_html($data['top_title']); ?></span>
             <?php endif; ?>
-            <?php echo _heading($data['title'], 'mb-8 ' . esc_attr($color_mode == 'dark' ? 'text-white' : 'text-foreground') . ' text-center'); ?>
+            <?php echo _heading($data['title'], 'mb-8 ' . esc_attr($color_mode == 'dark' ? 'text-white' : '') . ' text-center'); ?>
 
             <?php if ($data['text']): ?>
-                <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?> text-lg text-center max-w-2xl mx-auto mb-16" style="opacity: 1; transform: none;"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?> text-lg text-center max-w-2xl mx-auto mb-16"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
             </div>
 
@@ -67,13 +67,13 @@ switch ($grid_columns) {
                                 </div>
                             <?php endif; ?>
                             <?php if ($solution['title']): ?>
-                                <h3 class=" font-bold <?php echo $box_title == "small" ? 'text-xl' : 'text-4xl'; ?> <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-gradient'); ?> mb-3">
+                                <h3 class=" font-bold <?php echo $box_title == "small" ? 'text-xl' : 'text-3xl'; ?> <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-gradient'); ?> mb-3">
                                     <?php echo esc_html($solution['title']); ?>
                                 </h3>
                             <?php endif; ?>
                             <?php if ($solution['text']): ?>
                                 <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?>">
-                                    <?php echo $solution['text']; ?>
+                                    <?php echo apply_filters('the_content', $solution['text']); ?>
                                 </div>
                             <?php endif; ?>
                         </div>

@@ -54,7 +54,7 @@ $reverse = $data['reverse'] ?? false;
 
             <div dir="ltr" data-orientation="horizontal" class="w-full tab-container">
                 <?php if (!empty($data['tabs'])): ?>
-                    <div class="items-center justify-center w-full max-w-fit mx-auto flex h-auto p-2 bg-card border border-border rounded-xl mb-12 tab-buttons">
+                    <div class="items-center justify-center w-full max-w-fit mx-auto flex p-2 bg-card border border-border rounded-xl mb-12 tab-buttons">
                         <?php foreach ($data['tabs'] as $key_tab => $tab): ?>
                             <div class="flex-1">
                                 <button
@@ -89,7 +89,7 @@ $reverse = $data['reverse'] ?? false;
                                     <div class="max-w-4xl mx-auto">
                                         <div class="text-center mb-12">
                                             <?php if (!empty($content['title'])): ?>
-                                                <h3 class=" text-3xl font-bold mb-4 text-foreground"><?php echo $content['title']; ?></h3>
+                                                <h3 class=" text-3xl font-bold mb-4"><?php echo $content['title']; ?></h3>
                                             <?php endif; ?>
                                             <?php if (!empty($content['content'])): ?>
                                                 <div class="text-lg text-muted-foreground max-w-2xl mx-auto"><?php echo apply_filters('the_content', $content['content']); ?></div>
