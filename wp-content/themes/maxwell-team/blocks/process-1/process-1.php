@@ -16,7 +16,7 @@ $layout = $data['layout'] ?? 'left';
         <!-- RIGHT: sticky panel -->
         <aside class="hidden lg:block sticky top-32 self-start">
             <?php if ($data['top_title']): ?>
-                <span class="text-sm font-semibold text-primary tracking-wider uppercase">
+                <span class="font-semibold text-primary tracking-wider uppercase">
                     <?php echo $data['top_title']; ?>
                 </span>
             <?php endif; ?>
@@ -34,34 +34,34 @@ $layout = $data['layout'] ?? 'left';
             <?php endif; ?>
         </aside>
         <?php if ($data['process']): ?>
-        <div class="relative">
+            <div class="relative">
 
-            <!-- Vertical line -->
-            <div class="absolute left-6 top-0 h-full w-px bg-border"></div>
+                <!-- Vertical line -->
+                <div class="absolute left-6 top-0 h-full w-px bg-border"></div>
 
-            <div class="space-y-16">
-                <?php foreach ($data['process'] as $key => $step): ?>
-                <div class="relative flex gap-10">
-                    <div class="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
-                        <?php echo $key + 1; ?>
-                    </div>
-                    <div class="max-w-md">
-                        <?php if ($step['title']): ?>
-                        <h3 class="text-2xl font-semibold mb-3">
-                            <?php echo $step['title']; ?>
-                        </h3>
-                        <?php endif; ?>
+                <div class="space-y-16">
+                    <?php foreach ($data['process'] as $key => $step): ?>
+                        <div class="relative flex gap-10">
+                            <div class="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
+                                <?php echo $key + 1; ?>
+                            </div>
+                            <div class="max-w-md">
+                                <?php if ($step['title']): ?>
+                                    <h3 class="text-xl font-semibold mb-3">
+                                        <?php echo $step['title']; ?>
+                                    </h3>
+                                <?php endif; ?>
 
-                        <?php if ($step['text']): ?>
-                        <div class="text-muted-foreground">
-                            <?php echo $step['text']; ?>
+                                <?php if ($step['text']): ?>
+                                    <div>
+                                        <?php echo apply_filters('the_content', $step['text']); ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
                         </div>
-                        <?php endif; ?>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
-                <?php endforeach; ?>
             </div>
-        </div>
         <?php endif; ?>
 
     </div>
