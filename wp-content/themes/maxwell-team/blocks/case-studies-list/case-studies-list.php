@@ -6,10 +6,9 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('case_studies_list');
 ?>
 
-<section class="py-20 md:py-24 bg-section-light">
+<section id="<?php echo esc_attr($anchor); ?>" class="case-studies-list-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
     <div class="container mx-auto px-6">
-        <div>
-
+        <div class="py-4 md:py-18">
             <?php if (!empty($data['top_title'])) : ?>
                 <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block "><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
