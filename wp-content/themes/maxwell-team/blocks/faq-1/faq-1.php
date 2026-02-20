@@ -13,7 +13,7 @@ $data = get_field('faq_1');
 <section class="py-8 sm:py-12 lg:py-18 faq-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" id="<?php echo esc_attr($anchor); ?>">
     <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
 
-        <div class="max-w-2xl mx-auto text-center">
+        <div class="max-w-2xl mx-auto text-center m-0 p-0">
             <?php if (!empty($data['top_title'])) : ?>
                 <p class="maxwell-top-title"><?php echo $data['top_title']; ?></p>
             <?php endif; ?>
@@ -27,9 +27,9 @@ $data = get_field('faq_1');
             <?php if (!empty($data['items'])) : ?>
                 <?php foreach ($data['items'] as $key => $item) : ?>
                     <div class="accordion-item transition-all duration-200 bg-white border-b border-gray-200 shadow-sm rounded-xl cursor-pointer hover:bg-gray-50">
-                        <button type="button" class="accordion-button flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                        <button type="button" class="accordion-button flex items-center justify-between w-full px-4 py-5 sm:p-6 ">
                             <div class="flex justify-between items-center w-full">
-                                <span class="text-left text-lg font-semibold"><?php echo $item['question']; ?></span>
+                                <h3 class="text-left text-xl font-bold"><?php echo $item['question']; ?></h3>
                                 <svg class="w-6 h-6 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                 </svg>

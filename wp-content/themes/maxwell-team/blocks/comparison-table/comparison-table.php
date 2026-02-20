@@ -51,6 +51,9 @@ $data = get_field('comparison_table');
         border-left: 1px solid hsl(var(--primary-dark));
         border-right: 1px solid hsl(var(--primary-dark));
     }
+    tbody td:last-child span {
+        color: #fff !important;
+    }
 
     /* Sticky prva kolona */
     tbody td:first-child {

@@ -905,6 +905,10 @@ li {
   order: 2;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -1966,6 +1970,10 @@ li {
      object-position: center;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .p-12 {
   padding: 3rem;
 }
@@ -2150,6 +2158,10 @@ li {
 
 .font-body {
   font-family: Inter, sans-serif;
+}
+
+.font-heading {
+  font-family: Manrope, sans-serif;
 }
 
 .\!text-lg {
