@@ -3329,6 +3329,26 @@ li {
   z-index: 20;
 }
 
+.\[\&_li\]\:\!text-white li {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
+}
+
+.\[\&_p\]\:\!text-white p {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
+}
+
+.\[\&_span\]\:\!text-white span {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
+}
+
+.\[\&_strong\]\:\!text-white strong {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
+}
+
 .\[\&_svg\]\:pointer-events-none svg {
   pointer-events: none;
 }

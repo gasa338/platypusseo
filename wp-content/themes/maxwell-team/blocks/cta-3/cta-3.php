@@ -28,7 +28,7 @@ $background_color = $data['background_color'] ?? "#000";
         <div class="max-w-3xl mx-auto text-center">
             <?php echo _heading($data['title'], 'mb-6 text-white'); ?>
             <?php if (!empty($data['text'])) : ?>
-                <div class="text-lg md:text-xl text-white mb-10"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                <div class="text-lg md:text-xl text-white mb-10 maxwell-content [&_p]:!text-white"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">

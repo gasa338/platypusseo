@@ -35,7 +35,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
                 <?php endif; ?>
                 <?php echo _heading($data['title'], 'mb-6 ' . esc_attr($color_mode == 'dark' ? 'text-white' : '')) ?>
                 <?php if (!empty($data['text'])): ?>
-                    <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white' : ''); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                    <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white [&_p]:!text-white [&_li]:!text-white [&_span]:!text-white [&_strong]:!text-white' : ''); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
                 <?php if (!empty($data['features'])): ?>
                     <div class="grid sm:grid-cols-2 gap-6 mb-6">
