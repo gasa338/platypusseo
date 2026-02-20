@@ -22,6 +22,15 @@ module.exports = {
         heading: ['Manrope', 'sans-serif'],
       },
       fontSize: {
+        'xs': ['12px', { lineHeight: '16px' }],
+        'sm': ['14px', { lineHeight: '18px' }],
+        'base': ['16px', { lineHeight: '20px' }],
+        'lg': ['18px', { lineHeight: '22px' }],
+        'xl': ['20px', { lineHeight: '22px' }],
+        '2xl': ['24px', { lineHeight: '28px' }],
+        '3xl': ['30px', { lineHeight: '32px' }],
+        '4xl': ['45px', { lineHeight: '1.2' }],
+        '5xl': ['70px', { lineHeight: '1.1' }],
         
         // Custom heading sizes za responsive
         'h1-mobile': ['40px', { lineHeight: '44px' }],
