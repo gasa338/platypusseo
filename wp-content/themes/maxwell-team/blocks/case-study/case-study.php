@@ -12,7 +12,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
 $layout = $data['layout'] ?? 'default';
 ?>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="py-16 case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
+<section id="<?php echo esc_attr($anchor); ?>" class="case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
     <div class="container mx-auto px-6">
         <?php if ($layout === 'horizontal') : ?>
             <div class="container mx-auto px-6">
@@ -104,7 +104,7 @@ $layout = $data['layout'] ?? 'default';
                         <?php endif; ?>
                         <?php echo _heading($data['title'], 'mb-6'); ?>
                         <?php if (!empty($data['text'])) : ?>
-                            <p class="text-muted-foreground text-lg "><?php echo $data['text']; ?></p>
+                            <p class="text-muted-foreground text-lg"><?php echo $data['text']; ?></p>
                         <?php endif; ?>
                     </div>
                     <?php if (!empty($data['link'])) : ?>

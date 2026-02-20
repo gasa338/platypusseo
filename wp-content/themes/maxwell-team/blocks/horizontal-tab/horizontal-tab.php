@@ -41,7 +41,7 @@ $reverse = $data['reverse'] ?? false;
     }
 </style>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="py-24 horizontal-tab-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
+<section id="<?php echo esc_attr($anchor); ?>" class="horizontal-tab-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
     <div class="container mx-auto px-6">
         <div class="max-w-2xl mb-12 text-center mx-auto">
             <?php if (!empty($data['top_title'])): ?>

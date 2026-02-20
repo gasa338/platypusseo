@@ -17,7 +17,7 @@ $layout_right = $data['layout_right'] ?? 'default';
     }
 </style>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="py-24 feature-challenge-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
+<section id="<?php echo esc_attr($anchor); ?>" class="feature-challenge-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-6">
         <div class="<?php echo esc_attr($layout == 'horizontal' ? 'max-w-7xl' : 'max-w-4xl'); ?> mx-auto">
             <?php if ($layout == 'horizontal'): ?>

@@ -38,7 +38,7 @@ switch ($grid_columns) {
     }
 </style>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="py-24 <?php echo esc_attr($color_mode == 'dark' ? 'bg-section-dark' : ''); ?> relative overflow-hidden feature-solution-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
+<section id="<?php echo esc_attr($anchor); ?>" class="<?php echo esc_attr($color_mode == 'dark' ? 'bg-section-dark' : ''); ?> relative overflow-hidden feature-solution-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, <?php echo $color_mode == 'dark' ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)'; ?> 1px, transparent 0px); background-size: 32px 32px;"></div>
     <div class="container mx-auto px-6 relative z-10">
         <div style="opacity: 1;">

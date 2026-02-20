@@ -55,7 +55,7 @@ $background_color = $data['background_color'] ?? "#000";
                 <?php endif; ?>
             </div>
             <?php if (!empty($data['bottom_text'])) : ?>
-                <p class="text-lg md:text-xl text-white mt-10"><?php echo $data['bottom_text']; ?></p>
+                <p class="text-white mt-10"><?php echo $data['bottom_text']; ?></p>
             <?php endif; ?>
         </div>
     </div>

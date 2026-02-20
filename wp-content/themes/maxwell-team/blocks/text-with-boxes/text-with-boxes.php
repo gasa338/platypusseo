@@ -17,7 +17,7 @@ $data = get_field('text_with_boxes');
             <?php if (!empty($data['content'])): ?>
                 <?php foreach ($data['content'] as $content): ?>
                     <?php if ($content['acf_fc_layout'] == 'text' && !empty($content['text'])): ?>
-                        <div class="text-xl text-primary-foreground/80  leading-relaxed mb-10 max-w-3xl maxwell-content">
+                        <div class="text-xl mb-10 max-w-3xl maxwell-content dark-text">
                             <?php echo apply_filters('the_content', $content['text']) ?>
                         </div>
                     <?php endif; ?>
@@ -34,7 +34,7 @@ $data = get_field('text_with_boxes');
                                         <img src="<?php echo esc_url($item['icon']['url']); ?>" alt="<?php echo esc_attr($item['icon']['alt']); ?>" class="w-6 h-6 text-primary transition-colors">
                                     <?php endif; ?>
                                     <?php if (!empty($item['title'])): ?>
-                                        <span class="text-primary-foreground  font-medium"><?php echo esc_html($item['title']); ?></span>
+                                        <span class="text-primary-foreground font-medium"><?php echo esc_html($item['title']); ?></span>
                                     <?php endif; ?>
                                 </div>
                             <?php endforeach; ?>

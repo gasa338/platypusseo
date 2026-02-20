@@ -159,6 +159,10 @@
   li {
     color: hsl(var(--foreground));
   }
+  
+  .dark-text p, .dark-text li, .dark-text span, .dark-text strong, .dark-text b, .dark-text em, .dark-text i {
+    color: #fff;
+  }
 }
 
 @layer utilities {
