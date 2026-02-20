@@ -11,7 +11,7 @@ $layout = $data['layout'] ?? 'left';
 ?>
 
 
-<section class="process-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> <?php echo esc_attr($color_mode == 'dark' ? 'bg-section-dark' : ''); ?>" <?php echo _spacing($data['spacing']); ?>>
+<section class="process-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
     <div class="container mx-auto px-6 max-w-7xl grid lg:grid-cols-2 gap-24">
         <!-- RIGHT: sticky panel -->
         <aside class="hidden lg:block sticky top-32 self-start">
