@@ -31,7 +31,7 @@ $color_scheme = $data['color_mode'] ?? 'light';
             <?php endif; ?>
             <?php echo _heading($data['title'], 'mb-6' . ($color_scheme == 'dark' ? ' text-white/80' : ' text-white')); ?>
             <?php if (!empty($data['text'])): ?>
-                <div class="text-xl mb-10 <?php echo esc_attr($color_scheme == 'dark' ? 'text-white/80' : 'text-white'); ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                <div class="text-xl mb-10 <?php echo esc_attr($color_scheme == 'dark' ? 'text-white/80 [&_p]:text-white/80 [&_span]:text-white/80 [&_strong]:text-white/80 [&_em]:text-white/80' : 'text-white'); ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
             <div class="flex flex-wrap gap-4">
                 <?php if (!empty($data['link_1'])): ?>

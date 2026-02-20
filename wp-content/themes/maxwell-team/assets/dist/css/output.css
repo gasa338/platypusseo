@@ -3325,6 +3325,10 @@ li {
   z-index: 20;
 }
 
+.\[\&_em\]\:text-white\/80 em {
+  color: rgb(255 255 255 / 0.8);
+}
+
 .\[\&_li\]\:\!text-white li {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
@@ -3335,14 +3339,26 @@ li {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
 }
 
+.\[\&_p\]\:text-white\/80 p {
+  color: rgb(255 255 255 / 0.8);
+}
+
 .\[\&_span\]\:\!text-white span {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
 }
 
+.\[\&_span\]\:text-white\/80 span {
+  color: rgb(255 255 255 / 0.8);
+}
+
 .\[\&_strong\]\:\!text-white strong {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
+}
+
+.\[\&_strong\]\:text-white\/80 strong {
+  color: rgb(255 255 255 / 0.8);
 }
 
 .\[\&_svg\]\:pointer-events-none svg {
