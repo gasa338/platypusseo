@@ -2147,6 +2147,10 @@ li {
   font-family: Inter, sans-serif;
 }
 
+.font-heading {
+  font-family: Manrope, sans-serif;
+}
+
 .\!text-lg {
   font-size: 18px !important;
   line-height: 22px !important;

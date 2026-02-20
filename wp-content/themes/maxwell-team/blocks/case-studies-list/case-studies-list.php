@@ -28,18 +28,18 @@ $data = get_field('case_studies_list');
                                             </div>
                                         <?php endif; ?>
                                         <?php if (!empty($item['title'])) : ?>
-                                            <h3 class=" text-2xl md:text-3xl font-bold mb-2 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
+                                            <h3 class="h3-reposponsive mb-4 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
                                         <?php endif; ?>
                                         <?php if (!empty($item['name'])) : ?>
-                                            <p class=" text-xl text-primary font-semibold mb-4"><?php echo $item['name']; ?></p>
+                                            <p class="text-xl text-primary font-semibold mb-4"><?php echo $item['name']; ?></p>
                                         <?php endif; ?>
                                         <?php if (!empty($item['text'])) : ?>
-                                            <div class=" mb-4 maxwell-content"><?php echo apply_filters('the_content', $item['text']); ?></div>
+                                            <div class="mb-4 maxwell-content"><?php echo apply_filters('the_content', $item['text']); ?></div>
                                         <?php endif; ?>
                                     </div>
                                     <?php if (!empty($item['outcomes'])) : ?>
                                         <div class=" lg:w-[380px] shrink-0 p-6 rounded-xl bg-section-light border border-border">
-                                            <p class="text-muted-foreground  uppercase tracking-wider mb-4 font-medium">Outcomes</p>
+                                            <p class="font-heading text-xl mb-4 font-medium">Outcomes</p>
 
                                             <ul class="space-y-3">
                                                 <?php foreach ($item['outcomes'] as $outcome) : ?>
