@@ -2115,10 +2115,6 @@ li {
   padding-top: 0.25rem;
 }
 
-.pt-12 {
-  padding-top: 3rem;
-}
-
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -2514,6 +2510,7 @@ li {
 }
 
 .maxwell-content ul li::marker {
+  padding-left: 0.125rem;
   color: hsl(var(--primary));
 }
 

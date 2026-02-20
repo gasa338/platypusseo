@@ -233,7 +233,7 @@
   }
 
   .maxwell-content ul li::marker {
-    @apply text-primary;
+    @apply text-primary pl-0.5;
   }
 
   .maxwell-content ul li {
