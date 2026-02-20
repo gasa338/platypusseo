@@ -10,7 +10,7 @@ $background_color = $data['background_color'] ?? "#000";
 ?>
 
 
-<section id="<?php echo esc_attr($anchor); ?>" class="bg-background overflow-hidden text-column-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _padding($data['padding']); ?>``>
+<section id="<?php echo esc_attr($anchor); ?>" class="overflow-hidden text-column-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _padding($data['padding']); ?>``>
   <div class="container mx-auto px-6 max-w-6xl">
 
     <!-- Intro -->

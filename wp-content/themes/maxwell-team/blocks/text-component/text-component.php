@@ -8,7 +8,7 @@ $color_mode = $data['color_mode'] ?? 'light';
 $layout = $data['layout'] ?? 'vertical';
 ?>
 
-<section class="py-24 text-component-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> <?php echo esc_attr($color_mode == 'dark' ? 'bg-section-dark' : 'bg-background'); ?>" <?php echo _spacing($data['spacing']); ?>>
+<section class="py-24 text-component-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> <?php echo esc_attr($color_mode == 'dark' ? 'bg-section-dark' : ''); ?>" <?php echo _spacing($data['spacing']); ?>>
   <div class="container mx-auto px-6">
     <?php if ($layout === 'horizontal') : ?>
       <div class="grid grid-cols-1 md:grid-cols-6 gap-12 max-w-7xl mx-auto">

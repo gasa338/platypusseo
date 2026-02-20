@@ -7,7 +7,7 @@ $data = get_field('hero_industry');
 $color_scheme = $data['color_mode'] ?? 'light';
 ?>
 
-<section class="py-24 relative hero-industry-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> <?php echo esc_attr($color_scheme == 'dark' ? 'bg-section-dark' : 'bg-background'); ?>" <?php echo _spacing($data['spacing']); ?>>
+<section class="py-24 relative hero-industry-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> <?php echo esc_attr($color_scheme == 'dark' ? 'bg-section-dark' : ''); ?>" <?php echo _spacing($data['spacing']); ?>>
     <?php if ($color_scheme == 'dark'): ?>
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgb(255, 255, 255) 1px, transparent 0px); background-size: 32px 32px;"></div>
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgb(0, 0, 0) 1px, transparent 0px); background-size: 32px 32px;"></div>
