@@ -41,11 +41,11 @@ $reverse = $data['reverse'] ?? false;
     }
 </style>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="py-24 bg-secondary/50 horizontal-tab-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
+<section id="<?php echo esc_attr($anchor); ?>" class="py-24 horizontal-tab-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
     <div class="container mx-auto px-6">
         <div class="max-w-2xl mb-12 text-center mx-auto">
             <?php if (!empty($data['top_title'])): ?>
-                <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
+                <span class="text-primary font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
             <?php endif; ?>
 
             <?php echo _heading($data['title'], ''); ?>
@@ -61,7 +61,7 @@ $reverse = $data['reverse'] ?? false;
                                     type="button"
                                     role="tab"
                                     data-tab-index="<?php echo $key_tab; ?>"
-                                    class="tab-button whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl transition-all <?php echo $key_tab === 0 ? 'bg-primary text-white' : 'bg-transparent text-muted-foreground'; ?>"
+                                    class="tab-button whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl transition-all <?php echo $key_tab === 0 ? 'bg-primary text-white' : 'bg-transparent text-muted-foreground'; ?>"
                                     <?php echo $key_tab === 0 ? 'aria-selected="true"' : 'aria-selected="false"'; ?>>
                                     <?php if (!empty($tab['icon']['subtype']) && $tab['icon']['subtype'] == 'svg+xml'): ?>
                                         <?php echo maxwell_render_svg($tab['icon']['url'], 'w-4 h-4'); ?>

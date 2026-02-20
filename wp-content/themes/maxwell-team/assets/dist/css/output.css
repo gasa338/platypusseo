@@ -627,7 +627,7 @@ h1,
   color: hsl(var(--foreground));
 }
 
-p, span, div {
+p, div {
   font-family: Inter, sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -1787,10 +1787,6 @@ li {
   background-color: hsl(var(--secondary) / 0.05);
 }
 
-.bg-secondary\/50 {
-  background-color: hsl(var(--secondary) / 0.5);
-}
-
 .bg-section-dark {
   background-color: hsl(var(--section-dark));
 }
@@ -2158,10 +2154,6 @@ li {
 
 .font-body {
   font-family: Inter, sans-serif;
-}
-
-.font-heading {
-  font-family: Manrope, sans-serif;
 }
 
 .\!text-lg {
