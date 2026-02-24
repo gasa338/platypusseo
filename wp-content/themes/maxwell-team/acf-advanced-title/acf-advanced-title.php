@@ -295,7 +295,7 @@ class acf_field_advanced_title extends acf_field
     {
         if (is_array($value)) {
             if (isset($value['text'])) {
-                $value['text'] = sanitize_text_field($value['text']);
+                $value['text'] = $value['text'];
             }
 
             $allowed_align = array('left', 'center', 'right');

@@ -136,6 +136,9 @@ module.exports = {
       },
     },
   },
+  safelist: [
+    'text-gradient-accent',
+  ],
   plugins: [
   ]
 }

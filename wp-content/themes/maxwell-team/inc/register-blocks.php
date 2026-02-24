@@ -394,6 +394,31 @@ if (function_exists('acf_register_block_type')) {
 		'render_template' => 'blocks/hero-1/hero-1.php',
 	));
 
+
+	/**
+	 * ==============================
+	 * Hero Text Block
+	 * ==============================
+	 */
+	acf_register_block_type(array(
+		'name' => 'hero-text',
+		'title' => 'Hero Text',
+		'description' => 'Hero Text',
+		'category' => 'maxwell-blocks',
+		'mode' => 'preview',
+		'icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+			<circle cx="12" cy="12" r="10" fill="none" stroke="#ff0000" stroke-width="2"/>
+			<text x="12" y="16" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" fill="#ff0000" font-weight="bold"> M </text>
+		</svg>',
+		'supports' => array(
+			'align' => true,
+			'mode' => true,
+			'jsx' => true,
+			'anchor' => true,
+		),
+		'render_template' => 'blocks/hero-text/hero-text.php',
+	));
+
 	/**
 	 * ==============================
 	 * Hero 2 Block
@@ -1178,5 +1203,29 @@ if (function_exists('acf_register_block_type')) {
 			'anchor' => true,
 		),
 		'render_template' => 'blocks/comparison-table/comparison-table.php',
+	));
+
+	/**
+	 * ==============================
+	 * Text with CTA Block
+	 * ==============================
+	 */
+	acf_register_block_type(array(
+		'name' => 'text-with-cta',
+		'title' => 'Text with CTA',
+		'description' => 'Text with CTA block',
+		'category' => 'maxwell-blocks',
+		'mode' => 'preview',
+		'icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+			<circle cx="12" cy="12" r="10" fill="none" stroke="#ff0000" stroke-width="2"/>
+			<text x="12" y="16" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" fill="#ff0000" font-weight="bold"> M </text>
+		</svg>',
+		'supports' => array(
+			'align' => true,
+			'mode' => true,
+			'jsx' => true,
+			'anchor' => true,
+		),
+		'render_template' => 'blocks/text-with-cta/text-with-cta.php',
 	));
 }

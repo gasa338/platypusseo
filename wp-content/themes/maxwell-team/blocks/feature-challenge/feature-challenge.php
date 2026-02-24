@@ -26,7 +26,7 @@ $layout_right = $data['layout_right'] ?? 'default';
                     <!-- Leva kolona - naslov i tekst -->
                     <div class="<?php echo esc_attr($layout_right == 'one_column' ? '' : 'md:col-span-2'); ?>">
                         <?php if ($data['top_title']): ?>
-                            <span class="text-primary font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
+                            <span class="text-accent font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                         <?php endif; ?>
                         <?php echo _heading($data['title'], 'mb-8'); ?>
                         <?php if (!empty($data['text'])): ?>
@@ -44,11 +44,11 @@ $layout_right = $data['layout_right'] ?? 'default';
                                             <?php if (!empty($challenge['icon'])) : ?>
                                                 <div class="flex-shrink-0">
                                                     <?php if ($challenge['icon']['subtype'] == 'svg+xml') : ?>
-                                                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all">
-                                                            <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 text-primary transition-colors group-hover:text-white'); ?>
+                                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white group-hover:scale-110 transition-all bg-primary group-hover:bg-accent-foreground">
+                                                            <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 transition-colors'); ?>
                                                         </div>
                                                     <?php else : ?>
-                                                        <img src="<?php echo esc_url($challenge['icon']['url']); ?>" alt="<?php echo esc_attr($challenge['icon']['alt']); ?>" class="w-6 h-6 text-primary transition-colors">
+                                                        <img src="<?php echo esc_url($challenge['icon']['url']); ?>" alt="<?php echo esc_attr($challenge['icon']['alt']); ?>" class="w-6 h-6 text-white transition-colors">
                                                     <?php endif; ?>
                                                 </div>
                                             <?php endif; ?>
@@ -82,16 +82,16 @@ $layout_right = $data['layout_right'] ?? 'default';
                 <?php if (!empty($data['challenges'])): ?>
                     <div class="grid md:grid-cols-2 gap-6">
                         <?php foreach ($data['challenges'] as $challenge): ?>
-                            <div class="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300">
+                            <div class="group p-6 rounded-xl border border-border bg-background p-7 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5">
                                 <div class="flex gap-4">
                                     <?php if (!empty($challenge['icon'])) : ?>
                                         <div class="flex-shrink-0">
                                             <?php if ($challenge['icon']['subtype'] == 'svg+xml') : ?>
-                                                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all">
-                                                    <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 text-primary transition-colors group-hover:text-white'); ?>
+                                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white group-hover:scale-110 transition-all bg-primary group-hover:bg-accent">
+                                                    <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 transition-colors'); ?>
                                                 </div>
                                             <?php else : ?>
-                                                <img src="<?php echo esc_url($challenge['icon']['url']); ?>" alt="<?php echo esc_attr($challenge['icon']['alt']); ?>" class="w-6 h-6 text-primary transition-colors">
+                                                <img src="<?php echo esc_url($challenge['icon']['url']); ?>" alt="<?php echo esc_attr($challenge['icon']['alt']); ?>" class="w-6 h-6 text-white transition-colors">
                                             <?php endif; ?>
                                         </div>
                                     <?php endif; ?>

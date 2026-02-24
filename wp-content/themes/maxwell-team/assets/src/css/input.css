@@ -5,20 +5,24 @@
 /* OPTIMIZOVANI FONTOVI - local() + woff2 */
 /* manrope-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/Manrope/manrope-v20-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/Manrope/manrope-v20-latin-600.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* manrope-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/Manrope/manrope-v20-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/Manrope/manrope-v20-latin-700.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* inter-regular - latin */
@@ -58,67 +62,72 @@
 }
 
 
-
 @layer base {
   :root {
-    --background: 210 30% 98%;
-    --foreground: 220 60% 15%;
+    --background: 40 20% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 60% 15%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 60% 15%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Deep blue from logo - #004CBF to #00255F */
-    --primary: 217 100% 37%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 222 55% 16%;
+    --primary-foreground: 40 20% 98%;
 
-    /* Darker primary variant */
-    --primary-dark: 220 100% 19%;
+    --secondary: 40 15% 94%;
+    --secondary-foreground: 222 47% 11%;
 
-    --secondary: 214 45% 93%;
-    --secondary-foreground: 220 60% 15%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
 
-    --muted: 214 35% 90%;
-    --muted-foreground: 220 25% 40%;
-
-    /* Light blue accent from logo - #96B9E6 */
-    --accent: 215 60% 74%;
-    --accent-foreground: 220 100% 19%;
-
-    /* Accent backgrounds */
-    --accent-light: 214 60% 95%;
-    --accent-medium: 215 55% 85%;
+    --accent: 12 80% 58%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 214 35% 85%;
-    --input: 214 35% 85%;
-    --ring: 217 100% 37%;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 222 55% 16%;
 
-    /* Custom tokens - deeper blues */
-    --glow-primary: 0 8px 30px hsl(217 100% 37% / 0.2);
-    --glow-subtle: 0 4px 20px hsl(217 100% 37% / 0.1);
-    --gradient-primary: linear-gradient(135deg, hsl(217 100% 37%), hsl(220 100% 19%));
-    --gradient-subtle: linear-gradient(180deg, hsl(214 45% 96%), hsl(0 0% 100%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(214 45% 98%));
-    --gradient-hero: radial-gradient(ellipse at top, hsl(217 100% 37% / 0.08), transparent 60%);
-    
-    /* Section backgrounds */
-    --section-dark: 220 100% 19%;
-    --section-medium: 217 80% 30%;
-    --section-light: 214 60% 95%;
+    --radius: 0.625rem;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 220 60% 15%;
-    --sidebar-primary: 217 100% 37%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 214 45% 93%;
-    --sidebar-accent-foreground: 220 60% 15%;
-    --sidebar-border: 214 35% 85%;
-    --sidebar-ring: 217 100% 37%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --hero-gradient: linear-gradient(135deg, hsl(222 55% 16%), hsl(222 45% 24%));
+    --accent-gradient: linear-gradient(135deg, hsl(12 80% 58%), hsl(16 85% 52%));
+    --surface-gradient: linear-gradient(180deg, hsl(40 20% 98%), hsl(220 14% 96%));
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 40 20% 98%;
+    --card: 222 47% 9%;
+    --card-foreground: 40 20% 98%;
+    --popover: 222 47% 9%;
+    --popover-foreground: 40 20% 98%;
+    --primary: 40 20% 98%;
+    --primary-foreground: 222 55% 16%;
+    --secondary: 222 30% 18%;
+    --secondary-foreground: 40 20% 98%;
+    --muted: 222 30% 18%;
+    --muted-foreground: 220 10% 65%;
+    --accent: 12 80% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 212 27% 84%;
   }
 }
 
@@ -128,12 +137,12 @@
   }
 
   body {
+    @apply bg-background text-foreground;
     font-family: theme('fontFamily.body');
     font-weight: 400;
     font-size: 1rem;
-    color: hsl(var(--muted-foreground));    
+    color: hsl(var(--muted-foreground));
     line-height: 1.6;
-    /* background-color: #F2F0EE !important; */
   }
 
   h1,
@@ -148,80 +157,34 @@
     color: hsl(var(--foreground));
   }
 
-  p, div {
+  p,
+  div {
     font-family: theme('fontFamily.body');
     font-weight: 400;
-    font-size: 1rem;
-    color: hsl(var(--muted-foreground));    
-    line-height: 1.6;
   }
 
   li {
     color: hsl(var(--foreground));
   }
-  
-  .dark-text p, .dark-text li, .dark-text span, .dark-text strong, .dark-text b, .dark-text em, .dark-text i {
+
+  .dark-text p,
+  .dark-text li,
+  .dark-text span,
+  .dark-text strong,
+  .dark-text b,
+  .dark-text em,
+  .dark-text i {
     color: #fff;
   }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-primary);
+  .bg-hero {
+    background: var(--hero-gradient);
   }
 
-  .glow-primary {
-    box-shadow: var(--glow-primary);
-  }
-
-  .glow-subtle {
-    box-shadow: var(--glow-subtle);
-  }
-
-  .bg-gradient-hero {
-    background-image: var(--gradient-hero);
-  }
-
-  .bg-gradient-card {
-    background-image: var(--gradient-card);
-  }
-
-  /* Section background utilities */
-  .bg-section-dark {
-    background-color: hsl(var(--section-dark));
-  }
-
-  .bg-section-medium {
-    background-color: hsl(var(--section-medium));
-  }
-
-  .bg-section-light {
-    background-color: hsl(var(--section-light));
-  }
-
-  .bg-accent-light {
-    background-color: hsl(var(--accent-light));
-  }
-
-  .bg-accent-medium {
-    background-color: hsl(var(--accent-medium));
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-pulse-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
-  }
-
-  .animate-slide-up {
-    animation: slide-up 0.6s ease-out forwards;
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.8s ease-out forwards;
+  .bg-surface {
+    background: var(--surface-gradient);
   }
 
   .maxwell-content p {
@@ -266,6 +229,14 @@
 }
 
 @layer components {
+  
+  /* Text Gradient Accent */
+  .text-gradient-accent {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
   /* H1 Styles */
   .h1-responsive {
@@ -295,51 +266,5 @@
   /* H6 Styles */
   .h6-responsive {
     @apply font-heading font-medium text-h6-mobile md:text-h6-tablet lg:text-h6-desktop;
-  }
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes pulse-glow {
-
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }
