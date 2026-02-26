@@ -14,7 +14,7 @@
 function _link_1($link, $class = '')
 {
 ?>
-    <a href="<?php echo esc_url($link['url']); ?>" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground font-semibold glow-primary hover:text-primary-foreground hover:scale-105 h-14 rounded-xl px-10 text-lg group no-underline <?php echo esc_attr($class); ?>">
+    <a href="<?php echo esc_url($link['url']); ?>" class="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity shadow-lg shadow-accent/20 no-underline <?php echo esc_attr($class); ?>">
         <?php echo esc_html($link['title']); ?>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5 transition-transform group-hover:translate-x-1">
             <path d="M5 12h14"></path>

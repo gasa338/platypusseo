@@ -36,7 +36,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
                 </svg>
 
                 <?php if (!empty($data['top_title'])): ?>
-                    <span class="mb-4 block maxwell-top-title text-accent text-sm font-medium tracking-wider uppercase"><?php echo esc_html($data['top_title']); ?></span>
+                    <span class="mb-4 block maxwell-top-title"><?php echo esc_html($data['top_title']); ?></span>
                 <?php endif; ?>
             </div>
             <?php if (!empty($data['title'])): ?>

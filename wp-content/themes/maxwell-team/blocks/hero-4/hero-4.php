@@ -41,7 +41,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
 
             <?php if ($data['use_top_title']) : ?>
             <?php if (!empty($data['top_title']) || !empty($data['icon'])) : ?>
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-primary/20 mb-8 animate-fade-in">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-primary/20 mb-8 animate-fade-in">
                     <?php if (!empty($data['icon'])) : ?>
                         <?php if (!empty($data['icon']['subtype'] == 'svg+xml')) : ?>
                             <?php echo maxwell_render_svg($data['icon']['url'], 'w-4 h-4 text-accent'); ?>
@@ -50,7 +50,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
                         <?php endif; ?>
                     <?php endif; ?>
                     <?php if (!empty($data['top_title'])) : ?>
-                        <span class="text-sm text-accent-foreground"><?php echo $data['top_title']; ?></span>
+                        <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>

@@ -8,12 +8,12 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('text_with_cta');
 ?>
 
-<section id="fit" class="py-20 bg-surface">
-    <div class="container mx-auto px-6">
+<section class="py-24 text-with-cta-<?php echo esc_attr($blocks_id); ?> <?php echo _background($data['background']); ?>" <?php echo _spacing($data['spacing']); ?>>
+<div class="container mx-auto px-6">
         <div class="max-w-3xl mx-auto">
 
             <?php if ($data['top_title']): ?>
-                <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-3"><?php echo $data['top_title']; ?></p>
+                <p class="maxwell-top-title mb-3"><?php echo $data['top_title']; ?></p>
             <?php endif; ?>
             <?php echo _heading($data['title'], "font-display text-3xl sm:text-4xl font-bold text-foreground mb-4"); ?>
             <?php if (!empty($data['text'])): ?>

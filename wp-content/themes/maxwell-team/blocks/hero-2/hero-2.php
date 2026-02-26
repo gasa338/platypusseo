@@ -42,7 +42,7 @@ $is_centered = str_contains($blocks_class, 'is-centered');
         <div class="container mx-auto px-4 relative z-10 <?php echo $is_centered ? 'text-center' : ''; ?>">
             <div class="<?php echo $is_centered ? 'mx-auto' : ''; ?> max-w-2xl <?php echo $is_centered ? 'text-center' : ''; ?>">
                 <?php if ($data['top_title']) : ?>
-                    <p class="hero-top-title"><?php echo $data['top_title']; ?></p>
+                    <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
                 <?php endif; ?>
                 <?php if ($data['title']) : ?>
                     <h1 class="h1-responsive mb-4"><?php echo $data['title']; ?></h1>

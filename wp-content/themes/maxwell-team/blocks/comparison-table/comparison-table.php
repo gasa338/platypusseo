@@ -69,7 +69,7 @@ $data = get_field('comparison_table');
         <div class="w-full max-w-5xl mx-auto">
             <div class="max-w-4xl">
                 <?php if ($data['top_title']): ?>
-                    <span class="text-primary font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
+                    <span class="maxwell-top-title mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                 <?php endif; ?>
                 <?php echo _heading($data['title'], 'mb-8'); ?>
                 <?php if (!empty($data['text'])): ?>

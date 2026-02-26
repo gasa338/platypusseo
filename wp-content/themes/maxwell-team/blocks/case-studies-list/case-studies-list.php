@@ -10,7 +10,7 @@ $data = get_field('case_studies_list');
     <div class="container mx-auto px-6">
         <div class="py-4 md:py-18">
             <?php if (!empty($data['top_title'])) : ?>
-                <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block "><?php echo $data['top_title']; ?></span>
+                <span class="maxwell-top-title mb-4 block "><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
             <?php if (!empty($data['title'])) : ?>
                 <?php echo _heading($data['title'], 'mb-16'); ?>

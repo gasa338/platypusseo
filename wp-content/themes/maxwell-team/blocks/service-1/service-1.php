@@ -3,46 +3,9 @@ $blocks_id = $block['id'];
 $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('service_1');
-$text_color = $data['text_color'] ?? '';
-$overlay_color = $data['overlay_color'] ?? '';
-$bg_color = $data['background_color'] ?? '';
-$border_color = $data['border_color'] ?? '';
-$link_color = $data['link_color'] ?? '';
-
-$lists_type = [
-    'list-maxwell-dics',
-    'list-maxwell-square',
-    'list-maxwell-decimal',
-    'list-maxwell-circle'
-];
 ?>
-<style>
-    .service-1-<?php echo esc_attr($blocks_id); ?>,
-    .service-1-<?php echo esc_attr($blocks_id); ?>p,
-    .service-1-<?php echo esc_attr($blocks_id); ?>h1,
-    .service-1-<?php echo esc_attr($blocks_id); ?>h2,
-    .service-1-<?php echo esc_attr($blocks_id); ?>h3,
-    .service-1-<?php echo esc_attr($blocks_id); ?>span,
-    .service-1-<?php echo esc_attr($blocks_id); ?>ul,
-    .service-1-<?php echo esc_attr($blocks_id); ?>li {
-        color: <?php echo esc_attr($text_color); ?> !important;
-    }
 
-    .service-1-<?php echo esc_attr($blocks_id); ?>.overlay {
-        background-color: <?php echo esc_attr($overlay_color); ?> !important;
-    }
-
-    .service-1-<?php echo esc_attr($blocks_id); ?>.bg-color {
-        background-color: <?php echo esc_attr($bg_color); ?> !important;
-
-    }
-
-    .service-1-<?php echo esc_attr($blocks_id); ?>.border-color {
-        border-color: <?php echo esc_attr($border_color); ?> !important;
-    }
-</style>
-
-<section class="py-24 bg-section-light relative" id="services">
+<section id="<?php echo esc_attr($anchor); ?>" class="service-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); echo ' '._background($data['background']); ?>" <?php echo _spacing($data['spacing']); ?>>
     <div class="absolute inset-0 opacity-50" style="background-image: radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.05) 1px, transparent 0); background-size: 32px 32px;"></div>
     <div class="container mx-auto px-6 relative z-10">
         <div class="max-w-2xl mb-16">

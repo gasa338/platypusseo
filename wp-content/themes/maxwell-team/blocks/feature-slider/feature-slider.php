@@ -58,7 +58,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                 <div class="relative mb-12 flex flex-col md:flex-row justify-between items-start gap-8">
                     <div class="max-w-4xl md: max-w-md">
                         <?php if (!empty($data['top_title'])): ?>
-                            <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
+                            <span class="maxwell-top-title mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                         <?php endif; ?>
                         <?php echo _heading($data['title'], ''); ?>
                     </div>

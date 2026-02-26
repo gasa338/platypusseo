@@ -27,7 +27,7 @@ $color_scheme = $data['color_mode'] ?? 'light';
                 </div>
             <?php endif; ?>
             <?php if (!empty($data['top_title'])): ?>
-                <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
+                <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
             <?php echo _heading($data['title'], 'mb-6' . ($color_scheme == 'dark' ? ' text-white/80' : ' text-white')); ?>
             <?php if (!empty($data['text'])): ?>

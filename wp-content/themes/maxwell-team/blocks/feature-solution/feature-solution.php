@@ -44,7 +44,7 @@ switch ($grid_columns) {
         <div>
             <div class="<?php echo _title_position($data['title_position'], $data['title_size']); ?>">
             <?php if ($data['top_title']): ?>
-                <span class="<?php echo esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-primary'); ?> font-medium tracking-wider uppercase mb-4 block text-center"><?php echo esc_html($data['top_title']); ?></span>
+                <span class="maxwell-top-title mb-4 block <?php echo esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-primary'); ?> "><?php echo esc_html($data['top_title']); ?></span>
             <?php endif; ?>
             <?php echo _heading($data['title'], 'mb-8 ' . esc_attr($color_mode == 'dark' ? 'text-white' : '') . ' text-center'); ?>
 

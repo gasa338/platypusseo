@@ -17,7 +17,7 @@ $layout_right = $data['layout_right'] ?? 'default';
     }
 </style>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="feature-challenge-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
+<section id="<?php echo esc_attr($anchor); ?>" class="<?php echo _background($data['background']) ?>feature-challenge-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
     <div class="container mx-auto px-6">
         <div class="<?php echo esc_attr($layout == 'horizontal' ? 'max-w-7xl' : 'max-w-4xl'); ?> mx-auto">
             <?php if ($layout == 'horizontal'): ?>
@@ -26,7 +26,7 @@ $layout_right = $data['layout_right'] ?? 'default';
                     <!-- Leva kolona - naslov i tekst -->
                     <div class="<?php echo esc_attr($layout_right == 'one_column' ? '' : 'md:col-span-2'); ?>">
                         <?php if ($data['top_title']): ?>
-                            <span class="text-accent font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
+                            <span class="maxwell-top-title mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                         <?php endif; ?>
                         <?php echo _heading($data['title'], 'mb-8'); ?>
                         <?php if (!empty($data['text'])): ?>
@@ -39,12 +39,12 @@ $layout_right = $data['layout_right'] ?? 'default';
                         <div class="<?php echo esc_attr($layout_right == 'one_column' ? '' : 'md:col-span-4'); ?>">
                             <div class="grid gap-6 <?php echo esc_attr($layout_right == 'one_column' ? 'md:grid-cols-1' : 'md:grid-cols-2'); ?> ">
                                 <?php foreach ($data['challenges'] as $challenge): ?>
-                                    <div class="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300">
+                                    <div class="group p-6 rounded-xl bg-card border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300">
                                         <div class="flex gap-4">
                                             <?php if (!empty($challenge['icon'])) : ?>
                                                 <div class="flex-shrink-0">
                                                     <?php if ($challenge['icon']['subtype'] == 'svg+xml') : ?>
-                                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white group-hover:scale-110 transition-all bg-primary group-hover:bg-accent-foreground">
+                                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white group-hover:scale-110 transition-all bg-accent group-hover:bg-primary">
                                                             <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 transition-colors'); ?>
                                                         </div>
                                                     <?php else : ?>
@@ -72,7 +72,7 @@ $layout_right = $data['layout_right'] ?? 'default';
                 <!-- Originalni vertikalni layout -->
                 <div>
                     <?php if ($data['top_title']): ?>
-                        <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
+                        <span class="maxwell-top-title mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                     <?php endif; ?>
                     <?php echo _heading($data['title'], 'mb-8'); ?>
                     <?php if (!empty($data['text'])): ?>
@@ -82,12 +82,12 @@ $layout_right = $data['layout_right'] ?? 'default';
                 <?php if (!empty($data['challenges'])): ?>
                     <div class="grid md:grid-cols-2 gap-6">
                         <?php foreach ($data['challenges'] as $challenge): ?>
-                            <div class="group p-6 rounded-xl border border-border bg-background p-7 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5">
+                            <div class="group p-6 rounded-xl border border-border bg-card p-7 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5">
                                 <div class="flex gap-4">
                                     <?php if (!empty($challenge['icon'])) : ?>
                                         <div class="flex-shrink-0">
                                             <?php if ($challenge['icon']['subtype'] == 'svg+xml') : ?>
-                                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white group-hover:scale-110 transition-all bg-primary group-hover:bg-accent">
+                                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white group-hover:scale-110 transition-all bg-accent group-hover:bg-primary">
                                                     <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 transition-colors'); ?>
                                                 </div>
                                             <?php else : ?>

@@ -714,6 +714,13 @@ li {
   }
 }
 
+.h1-responsive span{
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* H2 Styles */
 
 .h2-responsive {
@@ -737,6 +744,13 @@ li {
   }
 }
 
+.h2-responsive span{
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* H3 Styles */
 
 .h3-responsive {
@@ -758,6 +772,13 @@ li {
     font-size: 26px;
     line-height: 30px;
   }
+}
+
+.h3-responsive span{
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* H4 Styles */
@@ -981,6 +1002,11 @@ li {
   margin-bottom: 1rem;
 }
 
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .-mt-1 {
   margin-top: -0.25rem;
 }
@@ -1168,6 +1194,10 @@ li {
   height: 0.75rem;
 }
 
+.h-3\.5 {
+  height: 0.875rem;
+}
+
 .h-32 {
   height: 8rem;
 }
@@ -1232,10 +1262,6 @@ li {
   height: 100%;
 }
 
-.h-3\.5 {
-  height: 0.875rem;
-}
-
 .min-h-\[400px\] {
   min-height: 400px;
 }
@@ -1278,6 +1304,10 @@ li {
 
 .w-3 {
   width: 0.75rem;
+}
+
+.w-3\.5 {
+  width: 0.875rem;
 }
 
 .w-32 {
@@ -1351,10 +1381,6 @@ li {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-3\.5 {
-  width: 0.875rem;
 }
 
 .min-w-\[120px\] {
@@ -1780,6 +1806,18 @@ li {
   border-color: rgb(255 255 255 / 0.3);
 }
 
+.border-accent\/10 {
+  border-color: hsl(var(--accent) / 0.1);
+}
+
+.border-accent\/30 {
+  border-color: hsl(var(--accent) / 0.3);
+}
+
+.border-accent {
+  border-color: hsl(var(--accent));
+}
+
 .border-t-accent {
   border-top-color: hsl(var(--accent));
 }
@@ -1802,12 +1840,20 @@ li {
   background-color: hsl(var(--accent) / 0.1);
 }
 
+.bg-accent\/15 {
+  background-color: hsl(var(--accent) / 0.15);
+}
+
 .bg-accent\/20 {
   background-color: hsl(var(--accent) / 0.2);
 }
 
 .bg-accent\/30 {
   background-color: hsl(var(--accent) / 0.3);
+}
+
+.bg-background {
+  background-color: hsl(var(--background));
 }
 
 .bg-background\/80 {
@@ -1885,14 +1931,6 @@ li {
   background-color: hsl(var(--secondary) / 0.05);
 }
 
-.bg-section-dark {
-  background-color: hsl(var(--section-dark));
-}
-
-.bg-section-light {
-  background-color: hsl(var(--section-light));
-}
-
 .bg-transparent {
   background-color: transparent;
 }
@@ -1914,12 +1952,12 @@ li {
   background-color: rgb(255 255 255 / 0.05);
 }
 
-.bg-background {
-  background-color: hsl(var(--background));
+.bg-inherit {
+  background-color: inherit;
 }
 
-.bg-accent\/15 {
-  background-color: hsl(var(--accent) / 0.15);
+.bg-accent\/80 {
+  background-color: hsl(var(--accent) / 0.8);
 }
 
 .bg-opacity-20 {
@@ -2057,6 +2095,10 @@ li {
   background-position: center;
 }
 
+.fill-inherit {
+  fill: inherit;
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -2100,12 +2142,12 @@ li {
   padding: 1.5rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .p-7 {
   padding: 1.75rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .\!py-4 {
@@ -2460,6 +2502,10 @@ li {
   color: rgb(255 255 255 / 0.9);
 }
 
+.text-accent\/15 {
+  color: hsl(var(--accent) / 0.15);
+}
+
 .\!underline {
   text-decoration-line: underline !important;
 }
@@ -2674,6 +2720,12 @@ li {
   color: hsl(var(--primary));
 }
 
+.maxwell-top-title {
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  color: hsl(var(--accent));
+}
+
 /* OPTIMIZOVANI FONTOVI - local() + woff2 */
 
 /* manrope-600 - latin */
@@ -2814,6 +2866,10 @@ li {
   gap: 0.75rem;
 }
 
+.hover\:border-accent\/30:hover {
+  border-color: hsl(var(--accent) / 0.3);
+}
+
 .hover\:border-accent\/50:hover {
   border-color: hsl(var(--accent) / 0.5);
 }
@@ -2830,8 +2886,8 @@ li {
   border-color: rgb(255 255 255 / 0.5);
 }
 
-.hover\:border-accent\/30:hover {
-  border-color: hsl(var(--accent) / 0.3);
+.hover\:border-accent:hover {
+  border-color: hsl(var(--accent));
 }
 
 .hover\:bg-blue-50:hover {
@@ -2882,6 +2938,10 @@ li {
   background-color: rgb(255 255 255 / 0.9);
 }
 
+.hover\:bg-accent:hover {
+  background-color: hsl(var(--accent));
+}
+
 .hover\:\!text-white:hover {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
@@ -2897,6 +2957,11 @@ li {
 
 .hover\:text-secondary:hover {
   color: hsl(var(--secondary));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .hover\:underline:hover {
@@ -2990,6 +3055,10 @@ li {
   background-color: hsl(var(--accent));
 }
 
+.group:hover .group-hover\:bg-accent-foreground {
+  background-color: hsl(var(--accent-foreground));
+}
+
 .group:hover .group-hover\:bg-accent\/30 {
   background-color: hsl(var(--accent) / 0.3);
 }
@@ -3005,10 +3074,6 @@ li {
 .group:hover .group-hover\:bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.group:hover .group-hover\:bg-accent-foreground {
-  background-color: hsl(var(--accent-foreground));
 }
 
 .group:hover .group-hover\:text-accent {
@@ -3057,12 +3122,12 @@ li {
     flex-direction: row;
   }
 
-  .sm\:p-6 {
-    padding: 1.5rem;
-  }
-
   .sm\:p-10 {
     padding: 2.5rem;
+  }
+
+  .sm\:p-6 {
+    padding: 1.5rem;
   }
 
   .sm\:px-6 {
@@ -3089,11 +3154,6 @@ li {
     padding-bottom: 1.5rem;
   }
 
-  .sm\:text-xl {
-    font-size: 20px;
-    line-height: 22px;
-  }
-
   .sm\:text-2xl {
     font-size: 24px;
     line-height: 28px;
@@ -3102,6 +3162,11 @@ li {
   .sm\:text-4xl {
     font-size: 45px;
     line-height: 1.2;
+  }
+
+  .sm\:text-xl {
+    font-size: 20px;
+    line-height: 22px;
   }
 }
 
@@ -3296,11 +3361,6 @@ li {
   .md\:text-5xl {
     font-size: 70px;
     line-height: 1.1;
-  }
-
-  .md\:text-xl {
-    font-size: 20px;
-    line-height: 22px;
   }
 }
 

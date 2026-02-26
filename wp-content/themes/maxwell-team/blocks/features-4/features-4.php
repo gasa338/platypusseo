@@ -31,7 +31,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
             </div>
             <div class="<?php echo esc_attr($reverse == 'yes' ? 'order-2' : 'order-1'); ?>">
                 <?php if (!empty($data['top_title'])): ?>
-                    <span class="<?php echo esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-primary'); ?> text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
+                    <span class="maxwell-top-title <?php echo esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-primary'); ?> mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                 <?php endif; ?>
                 <?php echo _heading($data['title'], 'mb-6 ' . esc_attr($color_mode == 'dark' ? 'text-white' : '')) ?>
                 <?php if (!empty($data['text'])): ?>

@@ -20,7 +20,7 @@ $background_color = $data['background_color'] ?? "#000";
     }
 </style>
 
-<section class="py-24 bg-section-dark relative overflow-hidden cta-3-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
+<section class="py-24 bg-hero relative overflow-hidden cta-3-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgb(255, 255, 255) 1px, transparent 0px); background-size: 32px 32px;"></div>
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/10 rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/20 rounded-full blur-3xl"></div>
@@ -28,7 +28,7 @@ $background_color = $data['background_color'] ?? "#000";
         <div class="max-w-3xl mx-auto text-center">
             <?php echo _heading($data['title'], 'mb-6 text-white'); ?>
             <?php if (!empty($data['text'])) : ?>
-                <div class="text-lg md:text-xl text-white mb-10 maxwell-content [&_p]:!text-white"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                <div class="text-lg sm:text-xl text-primary-foreground/65 mb-10"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">

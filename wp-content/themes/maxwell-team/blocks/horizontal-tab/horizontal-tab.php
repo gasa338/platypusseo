@@ -45,7 +45,7 @@ $reverse = $data['reverse'] ?? false;
     <div class="container mx-auto px-6">
         <div class="max-w-2xl mb-12 text-center mx-auto">
             <?php if (!empty($data['top_title'])): ?>
-                <span class="text-primary font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
+                <span class="maxwell-top-title mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
             <?php endif; ?>
 
             <?php echo _heading($data['title'], ''); ?>

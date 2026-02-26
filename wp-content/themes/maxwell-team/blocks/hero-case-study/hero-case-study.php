@@ -22,7 +22,7 @@ $background_color = $data['background_color'] ?? "transparent";
             <a class="inline-flex items-center gap-2 text-primary mb-8 hover:underline" href="<?php echo esc_url($data['back_link']['url']); ?>"><?php echo esc_html($data['back_link']['title']); ?> →</a>
             <?php endif; ?>
             <?php if (!empty($data['top_title'])): ?>
-            <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
+            <span class="maxwell-top-title mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
             <?php endif; ?>
             
             <?php echo _heading($data['title'], 'mb-6'); ?>

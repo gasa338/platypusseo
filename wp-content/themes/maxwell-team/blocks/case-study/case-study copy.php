@@ -18,7 +18,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
             <div class="max-w-2xl">
                 <?php if (!empty($data['top_title'])) : ?>
-                    <span class="text-primary text-sm font-medium tracking-wider uppercase mb-4 block"><?php echo $data['top_title']; ?></span>
+                    <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
                 <?php endif; ?>
                 <?php echo _heading($data['title'], 'mb-6 '); ?>
                 <?php if (!empty($data['text'])) : ?>

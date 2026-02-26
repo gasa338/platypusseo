@@ -16,7 +16,7 @@ $layout = $data['layout'] ?? 'left';
         <!-- RIGHT: sticky panel -->
         <aside class="hidden lg:block sticky top-32 self-start">
             <?php if ($data['top_title']): ?>
-                <span class="font-semibold text-primary tracking-wider uppercase">
+                <span class="maxwell-top-title">
                     <?php echo $data['top_title']; ?>
                 </span>
             <?php endif; ?>

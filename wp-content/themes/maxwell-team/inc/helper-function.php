@@ -259,3 +259,18 @@ function populate_cf7_forms_in_acf($field) {
     
     return $field;
 }
+
+function _background ($data) {
+    if (empty($data)) {
+        return '';
+    }
+
+    if ($data == 'light') {
+        return 'bg-background';
+    } else {
+        return 'bg-surface';
+    }
+    
+    return $data;
+    
+}
