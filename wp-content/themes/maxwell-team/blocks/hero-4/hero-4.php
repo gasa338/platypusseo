@@ -28,9 +28,9 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
 
 <section id="<?php echo esc_attr($anchor); ?>" class="hero-4-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
     <?php if ($bg_image) : ?>
-    <div class="absolute inset-0">
-        <img class="w-full h-full object-cover" src="<?php echo $bg_image['url']; ?>" alt="<?php echo $bg_image['alt']; ?>" srcset="<?php echo $bg_image['srcset'] ?>">
-    </div>
+        <div class="absolute inset-0">
+            <img class="w-full h-full object-cover" src="<?php echo $bg_image['url']; ?>" alt="<?php echo $bg_image['alt']; ?>" srcset="<?php echo $bg_image['srcset'] ?>">
+        </div>
     <?php endif; ?>
     <div class="absolute inset-0 bg-gradient-hero"></div>
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-glow"></div>
@@ -40,20 +40,20 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
         <div class="max-w-4xl mx-auto text-center">
 
             <?php if ($data['use_top_title']) : ?>
-            <?php if (!empty($data['top_title']) || !empty($data['icon'])) : ?>
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-primary/20 mb-8 animate-fade-in">
-                    <?php if (!empty($data['icon'])) : ?>
-                        <?php if (!empty($data['icon']['subtype'] == 'svg+xml')) : ?>
-                            <?php echo maxwell_render_svg($data['icon']['url'], 'w-4 h-4 text-accent'); ?>
-                        <?php else : ?>
-                            <img src="<?php echo esc_url($data['icon']['url']); ?>" alt="<?php echo esc_attr($data['icon']['alt']); ?>" class="w-5 h-5 text-accent">
+                <?php if (!empty($data['top_title']) || !empty($data['icon'])) : ?>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-primary/20 mb-8 animate-fade-in">
+                        <?php if (!empty($data['icon'])) : ?>
+                            <?php if (!empty($data['icon']['subtype'] == 'svg+xml')) : ?>
+                                <?php echo maxwell_render_svg($data['icon']['url'], 'w-4 h-4 text-accent'); ?>
+                            <?php else : ?>
+                                <img src="<?php echo esc_url($data['icon']['url']); ?>" alt="<?php echo esc_attr($data['icon']['alt']); ?>" class="w-5 h-5 text-accent">
+                            <?php endif; ?>
                         <?php endif; ?>
-                    <?php endif; ?>
-                    <?php if (!empty($data['top_title'])) : ?>
-                        <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?>
+                        <?php if (!empty($data['top_title'])) : ?>
+                            <span class="maxwell-top-title"><?php echo $data['top_title']; ?></span>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
             <?php endif; ?>
 
             <?php echo _heading($data['title'], 'mb-6'); ?>
@@ -66,7 +66,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
                     <?php echo _link_1($data['link_1']); ?>
                 <?php endif; ?>
                 <?php if (!empty($data['link_2'])): ?>
-                    <?php echo _link_2($data['link_2']); ?>
+                    <?php echo _link_2($data['link_2'], 'border border-accent/20'); ?>
                 <?php endif; ?>
             </div>
         </div>

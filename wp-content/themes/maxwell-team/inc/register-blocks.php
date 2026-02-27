@@ -270,7 +270,7 @@ if (function_exists('acf_register_block_type')) {
 	 * ==============================
 	 */
 	acf_register_block_type(array(
-		'name' => 'features-number',
+		'name' => 'feature-number',
 		'title' => 'Feature Number',
 		'description' => 'Feature Number',
 		'category' => 'maxwell-blocks',
@@ -285,7 +285,7 @@ if (function_exists('acf_register_block_type')) {
 			'jsx' => true,
 			'anchor' => true,
 		),
-		'render_template' => 'blocks/features-number/features-number.php',
+		'render_template' => 'blocks/feature-number/feature-number.php',
 	));
 
 	/**
@@ -310,6 +310,30 @@ if (function_exists('acf_register_block_type')) {
 			'anchor' => true,
 		),
 		'render_template' => 'blocks/feature-challenge/feature-challenge.php',
+	));
+
+	/**
+	 * ==============================
+	 * Feature Box Block
+	 * ==============================
+	 */
+	acf_register_block_type(array(
+		'name' => 'feature-box',
+		'title' => 'Feature Box',
+		'description' => 'Feature Box',
+		'category' => 'maxwell-blocks',
+		'mode' => 'preview',
+		'icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+			<circle cx="12" cy="12" r="10" fill="none" stroke="#ff0000" stroke-width="2"/>
+			<text x="12" y="16" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" fill="#ff0000" font-weight="bold"> M </text>
+		</svg>',
+		'supports' => array(
+			'align' => true,
+			'mode' => true,
+			'jsx' => true,
+			'anchor' => true,
+		),
+		'render_template' => 'blocks/feature-box/feature-box.php',
 	));
 
 	/**
@@ -365,8 +389,7 @@ if (function_exists('acf_register_block_type')) {
 
 			if (!wp_style_is('swiper', 'enqueued')) {
 				wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
-			}
-			
+			}			
 		}
 	));
 
@@ -1227,5 +1250,38 @@ if (function_exists('acf_register_block_type')) {
 			'anchor' => true,
 		),
 		'render_template' => 'blocks/text-with-cta/text-with-cta.php',
+	));
+
+	/**
+	 * ==============================
+	 * Testimonial Block
+	 * ==============================
+	 */
+	acf_register_block_type(array(
+		'name' => 'testimonial',
+		'title' => 'Testimonial',
+		'description' => 'Testimonial block',
+		'category' => 'maxwell-blocks',
+		'mode' => 'preview',
+		'icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+			<circle cx="12" cy="12" r="10" fill="none" stroke="#ff0000" stroke-width="2"/>
+			<text x="12" y="16" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" fill="#ff0000" font-weight="bold"> M </text>
+		</svg>',
+		'supports' => array(
+			'align' => true,
+			'mode' => true,
+			'jsx' => true,
+			'anchor' => true,
+		),
+		'render_template' => 'blocks/testimonial/testimonial.php',
+		'enqueue_assets' => function () {
+			if (!wp_script_is('swiper', 'enqueued')) {
+				wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/dist/js/swiper-bundle.min.js', array(), _S_VERSION, true);
+			}
+
+			if (!wp_style_is('swiper', 'enqueued')) {
+				wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
+			}			
+		}
 	));
 }

@@ -223,16 +223,17 @@ add_filter('acf/load_field/name=choose_form', 'populate_cf7_forms_in_acf');
 // Ili ako koristite key umesto name:
 // add_filter('acf/load_field/key=field_choose_form', 'populate_cf7_forms_in_acf');
 
-function populate_cf7_forms_in_acf($field) {
+function populate_cf7_forms_in_acf($field)
+{
     // Proveri da li je to polje koje želimo da popunimo
     if ($field['name'] === 'choose_form' || $field['_name'] === 'choose_form') {
-        
+
         // Resetuj choices array
         $field['choices'] = array();
-        
+
         // Dodaj praznu opciju
         $field['choices'][''] = '— Izaberite formu —';
-        
+
         // Preuzmi sve CF7 forme
         $forms = get_posts(array(
             'post_type' => 'wpcf7_contact_form',
@@ -241,36 +242,45 @@ function populate_cf7_forms_in_acf($field) {
             'order' => 'ASC',
             'post_status' => 'publish'
         ));
-        
+
         // Popuni choices sa formama
         foreach ($forms as $form) {
             $field['choices'][$form->ID] = $form->post_title . ' (ID: ' . $form->ID . ')';
         }
-        
+
         // Opsionalno: dodaj poruku ako nema formi
         if (empty($forms)) {
             $field['choices'][''] = 'Nema dostupnih Contact Form 7 formi';
             $field['disabled'] = true;
         }
-        
+
         // Opsionalno: postavi defaultnu vrednost
         // $field['default_value'] = '';
     }
-    
+
     return $field;
 }
 
-function _background ($data) {
+function _background($data)
+{
     if (empty($data)) {
         return '';
     }
 
-    if ($data == 'light') {
-        return 'bg-background';
-    } else {
-        return 'bg-surface';
+    switch ($data) {
+        case 'dark':
+            $bg_class = 'bg-surface';
+            break;
+        case 'light':
+            $bg_class = 'bg-card';
+            break;
+        case 'dark_mode':
+            $bg_class = 'bg-hero';
+            break;
+        default:
+            $bg_class = 'bg-card';
+            break;
     }
-    
-    return $data;
-    
+
+    return $bg_class;
 }
