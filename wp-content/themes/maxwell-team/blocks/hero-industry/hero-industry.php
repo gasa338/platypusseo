@@ -4,10 +4,11 @@ $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('hero_industry');
 
-$color_scheme = $data['color_mode'] ?? 'light';
+$color_scheme = $data['background'] ?? 'light';
 ?>
 
-<section class="py-24 relative hero-industry-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> <?php echo esc_attr($color_scheme == 'dark' ? 'bg-section-dark' : ''); ?>" <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('hero-industry',$blocks_id,$data['margin'], $data['padding']); ?>
+<section class="py-24 relative hero-industry-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> <?php echo esc_attr($color_scheme == 'dark' ? 'bg-hero' : 'bg-card'); ?>">
     <?php if ($color_scheme == 'dark'): ?>
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgb(255, 255, 255) 1px, transparent 0px); background-size: 32px 32px;"></div>
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgb(0, 0, 0) 1px, transparent 0px); background-size: 32px 32px;"></div>
@@ -20,18 +21,18 @@ $color_scheme = $data['color_mode'] ?? 'light';
             <?php if (!empty($data['icon'])): ?>
                 <div class="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center mb-8">
                     <?php if (!empty($data['icon']['subtype'] == 'svg+xml')) : ?>
-                        <?php echo maxwell_render_svg($data['icon']['url'], 'w-8 h-8 text-primary'); ?>
+                        <?php echo maxwell_render_svg($data['icon']['url'], 'w-8 h-8 text-white'); ?>
                     <?php else : ?>
-                        <img src="<?php echo esc_url($data['icon']['url']); ?>" alt="<?php echo esc_attr($data['icon']['alt']); ?>" class="w-5 h-5 text-accent">
+                        <img src="<?php echo esc_url($data['icon']['url']); ?>" alt="<?php echo esc_attr($data['icon']['alt']); ?>" class="w-5 h-5 text-white">
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
             <?php if (!empty($data['top_title'])): ?>
                 <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
-            <?php echo _heading($data['title'], 'mb-6' . ($color_scheme == 'dark' ? ' text-white/80' : ' text-white')); ?>
+            <?php echo _heading($data['title'], 'mb-6' . ($color_scheme == 'dark' ? ' text-white/80' : ' text-primary')); ?>
             <?php if (!empty($data['text'])): ?>
-                <div class="text-xl mb-10 <?php echo esc_attr($color_scheme == 'dark' ? 'text-white/80 [&_p]:text-white/80 [&_span]:text-white/80 [&_strong]:text-white/80 [&_em]:text-white/80' : 'text-white'); ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                <div class="text-xl mb-10 <?php echo esc_attr($color_scheme == 'dark' ? 'text-white/80 [&_p]:text-white/80 [&_span]:text-white/80 [&_strong]:text-white/80 [&_em]:text-white/80' : 'text-muted-foreground'); ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
             <div class="flex flex-wrap gap-4">
                 <?php if (!empty($data['link_1'])): ?>

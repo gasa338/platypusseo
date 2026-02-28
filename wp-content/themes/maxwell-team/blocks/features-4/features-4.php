@@ -11,8 +11,8 @@ $reverse = $data['revers'] ?? 'no';
 $color_mode = $data['color_mode'] ?? 'dark';
 // dd($data['spacing']);
 ?>
-
-<section id="<?php echo esc_attr($anchor); ?>" class="<?php echo esc_attr($color_mode == 'dark' ? 'bg-section-dark' : ''); ?> relative overflow-hidden features-4-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('features-4',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="<?php echo esc_attr($color_mode == 'dark' ? 'bg-hero' : ''); ?> relative overflow-hidden features-4-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, rgb(255, 255, 255) 1px, transparent 0px); background-size: 32px 32px;"></div>
     <div class="container mx-auto px-6 relative z-10" <?php echo _padding($data['padding']); ?>>
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center lg:flex-row-reverse">
@@ -41,9 +41,9 @@ $color_mode = $data['color_mode'] ?? 'dark';
                     <div class="grid sm:grid-cols-2 gap-6 mb-6">
                         <?php foreach ($data['features'] as $key => $value): ?>
                             <div class="flex gap-4">
-                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 <?php echo esc_attr($color_mode == 'dark' ? 'bg-white/10' : 'bg-primary/10'); ?>">
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 <?php echo esc_attr($color_mode == 'dark' ? 'bg-accent/10' : 'bg-accent/10'); ?>">
                                     <?php if (!empty($value['icon']['subtype'] == 'svg+xml')) : ?>
-                                        <?php echo maxwell_render_svg($value['icon']['url'], 'w-6 h-6 ' . esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-primary')); ?>
+                                        <?php echo maxwell_render_svg($value['icon']['url'], 'w-6 h-6 ' . esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-accent')); ?>
                                     <?php else : ?>
                                         <img src="<?php echo esc_url($value['icon']['url']); ?>" alt="<?php echo esc_attr($value['icon']['alt']); ?>" class="w-5 h-5 text-accent">
                                     <?php endif; ?>

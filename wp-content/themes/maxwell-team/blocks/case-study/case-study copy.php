@@ -13,7 +13,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
 <style>
 </style>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="py-16 case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
+<section id="<?php echo esc_attr($anchor); ?>" class="py-16 case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
             <div class="max-w-2xl">

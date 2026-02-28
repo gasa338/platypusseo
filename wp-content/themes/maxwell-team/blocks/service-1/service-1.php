@@ -5,7 +5,8 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('service_1');
 ?>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="service-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); echo ' '._background($data['background']); ?>" <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('service-1',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="service-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); echo ' '._background($data['background']); ?>">
     <div class="absolute inset-0 opacity-50" style="background-image: radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.05) 1px, transparent 0); background-size: 32px 32px;"></div>
     <div class="container mx-auto px-6 relative z-10">
         <div class="max-w-2xl mb-10">

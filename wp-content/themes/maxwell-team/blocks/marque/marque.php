@@ -32,8 +32,8 @@ $bg_color = $data['background_color'] ?? '';
     }
 </style>
 
-<!-- Start marq -->
-<section id="<?php echo esc_attr($anchor); ?>" class="marque-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing_spacing']); ?>>
+<?php echo _spacing_full('marque',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="marque-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="relative m-auto flex gap-28 overflow-hidden py-6 bg-color">
         <?php if (!empty($data['items'])): ?>
             <div class="marquee__group flex min-w-full flex-shrink-0 items-center justify-around gap-28">

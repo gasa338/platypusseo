@@ -568,6 +568,8 @@ video {
   --muted: 220 14% 96%;
   --muted-foreground: 220 10% 46%;
   --accent: 12 80% 58%;
+  --accent-light: 12 20% 98%;
+  --accent-dark: 12 60% 58%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
@@ -852,8 +854,8 @@ li {
   right: -1rem;
 }
 
-.-top-12 {
-  top: -3rem;
+.-top-14 {
+  top: -3.5rem;
 }
 
 .-top-4 {
@@ -920,6 +922,10 @@ li {
   right: 25%;
 }
 
+.right-2 {
+  right: 0.5rem;
+}
+
 .right-4 {
   right: 1rem;
 }
@@ -970,14 +976,6 @@ li {
 
 .top-full {
   top: 100%;
-}
-
-.-top-14 {
-  top: -3.5rem;
-}
-
-.right-2 {
-  right: 0.5rem;
 }
 
 .z-0 {
@@ -1767,8 +1765,8 @@ li {
   border-color: hsl(var(--accent) / 0.2);
 }
 
-.border-accent\/80 {
-  border-color: hsl(var(--accent) / 0.8);
+.border-accent\/50 {
+  border-color: hsl(var(--accent) / 0.5);
 }
 
 .border-border {
@@ -1829,6 +1827,10 @@ li {
   border-color: rgb(255 255 255 / 0.3);
 }
 
+.border-accent\/30 {
+  border-color: hsl(var(--accent) / 0.3);
+}
+
 .border-t-accent {
   border-top-color: hsl(var(--accent));
 }
@@ -1861,6 +1863,10 @@ li {
 
 .bg-accent\/30 {
   background-color: hsl(var(--accent) / 0.3);
+}
+
+.bg-accent\/5 {
+  background-color: hsl(var(--accent) / 0.05);
 }
 
 .bg-accent\/60 {
@@ -1940,10 +1946,6 @@ li {
 
 .bg-secondary\/5 {
   background-color: hsl(var(--secondary) / 0.05);
-}
-
-.bg-secondary\/50 {
-  background-color: hsl(var(--secondary) / 0.5);
 }
 
 .bg-transparent {
@@ -2410,10 +2412,6 @@ li {
   letter-spacing: 0.05em;
 }
 
-.tracking-widest {
-  letter-spacing: 0.1em;
-}
-
 .\!text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
@@ -2478,10 +2476,6 @@ li {
 
 .text-primary-foreground\/65 {
   color: hsl(var(--primary-foreground) / 0.65);
-}
-
-.text-primary-foreground\/80 {
-  color: hsl(var(--primary-foreground) / 0.8);
 }
 
 .text-secondary {
@@ -2710,17 +2704,19 @@ li {
 }
 
 .maxwell-content blockquote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   border-top-right-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
   border-left-width: 4px;
-  border-color: hsl(var(--primary));
-  background-color: hsl(var(--primary) / 0.05);
+  border-color: hsl(var(--accent));
+  background-color: hsl(var(--accent) / 0.05);
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-bottom: 0.5rem;
   padding-top: 1rem;
   font-weight: 500;
-  color: hsl(var(--primary));
+  color: hsl(var(--accent));
 }
 
 .maxwell-top-title {
@@ -2897,8 +2893,8 @@ li {
   border-color: rgb(255 255 255 / 0.5);
 }
 
-.hover\:bg-accent\/60:hover {
-  background-color: hsl(var(--accent) / 0.6);
+.hover\:bg-accent:hover {
+  background-color: hsl(var(--accent));
 }
 
 .hover\:bg-blue-50:hover {
@@ -2949,14 +2945,6 @@ li {
   background-color: rgb(255 255 255 / 0.9);
 }
 
-.hover\:bg-accent:hover {
-  background-color: hsl(var(--accent));
-}
-
-.hover\:bg-accent\/50:hover {
-  background-color: hsl(var(--accent) / 0.5);
-}
-
 .hover\:\!text-white:hover {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
@@ -2970,9 +2958,8 @@ li {
   color: hsl(var(--secondary));
 }
 
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+.hover\:text-accent:hover {
+  color: hsl(var(--accent));
 }
 
 .hover\:underline:hover {

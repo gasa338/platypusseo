@@ -8,19 +8,9 @@ $data = get_field('cta_3');
 $text_color = $data['text_color'] ?? '#fff';
 $background_color = $data['background_color'] ?? "#000";
 ?>
-<style>
-    /* Koristite istu klasu kao u HTML-u - cta-2- */
-    .cta-3-<?php echo esc_attr($blocks_id); ?> {
-        background-color: <?php echo esc_attr($background_color); ?> !important;
-        color: <?php echo esc_attr($text_color); ?> !important;
-    }
+<?php echo _spacing_full('cta-3',$blocks_id,$data['margin'], $data['padding']); ?>
 
-    .cta-3-<?php echo esc_attr($blocks_id); ?>*:not(a) {
-        color: inherit !important;
-    }
-</style>
-
-<section class="py-24 bg-hero relative overflow-hidden cta-3-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
+<section class="bg-hero relative overflow-hidden cta-3-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> ">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgb(255, 255, 255) 1px, transparent 0px); background-size: 32px 32px;"></div>
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/10 rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/20 rounded-full blur-3xl"></div>

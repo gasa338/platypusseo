@@ -83,6 +83,8 @@
     --muted-foreground: 220 10% 46%;
 
     --accent: 12 80% 58%;
+    --accent-light: 12 20% 98%;
+    --accent-dark: 12 60% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -208,7 +210,7 @@
   }
 
   .maxwell-content blockquote {
-    @apply text-primary font-medium pt-4 border-l-4 border-primary px-6 bg-primary/5 py-2 rounded-r-lg;
+    @apply text-accent font-medium pt-4 border-l-4 border-accent px-6 bg-accent/5 py-2 rounded-r-lg my-4;
   }
 
   .maxwell-top-title {

@@ -63,8 +63,9 @@ $data = get_field('comparison_table');
         background-color: white;
     }
 </style>
+<?php echo _spacing_full('comparison-table',$blocks_id,$data['margin'], $data['padding']); ?>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="py-24 relative overflow-hidden <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
+<section id="<?php echo esc_attr($anchor); ?>" class="relative overflow-hidden <?php echo esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-4">
         <div class="w-full max-w-5xl mx-auto">
             <div class="max-w-4xl">

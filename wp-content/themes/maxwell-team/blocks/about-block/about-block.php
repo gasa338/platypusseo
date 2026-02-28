@@ -41,8 +41,8 @@ $lists_type = [
         border-color: <?php echo esc_attr($border_color); ?> !important;
     }
 </style>
-
-<section id="<?php echo esc_attr($anchor); ?>" class="about-block-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing_spacing']); ?>>
+<?php echo _spacing_full('about-block',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="about-block-<?php echo esc_attr($blocks_id) . ' ' . esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-6">
         <div class="grid gap-6 grid-cols-1 md:grid-cols-2">
             <?php if (!empty($data['image'])): $image = get_image($data['image']); ?>
@@ -67,7 +67,7 @@ $lists_type = [
                     <div class="mb-10 mt-6 grid gap-6 md:grid-cols-2">
                         <?php foreach ($data['items'] as $item): ?>
                             <div class="flex items-center gap-3">
-                                <div class="flex w-8 h-8 rounded-xl items-center justify-center bg-primary text-white">
+                                <div class="flex w-8 h-8 rounded-xl items-center justify-center bg-accent/20 text-white">
                                     <?php if (!empty($data['icon_box']['subtype'] == 'svg+xml')) : ?>
                                         <?php echo maxwell_render_svg($data['icon_box']['url'], 'w-4 h-4 text-accent'); ?>
                                     <?php else : ?>

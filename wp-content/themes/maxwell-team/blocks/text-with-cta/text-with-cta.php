@@ -8,7 +8,8 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('text_with_cta');
 ?>
 
-<section class="py-24 text-with-cta-<?php echo esc_attr($blocks_id); ?> <?php echo _background($data['background']); ?>" <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('text-with-cta',$blocks_id,$data['margin'], $data['padding']); ?>
+<section class="text-with-cta-<?php echo esc_attr($blocks_id); ?> <?php echo _background($data['background']); ?>">
 <div class="container mx-auto px-6">
         <div class="max-w-3xl mx-auto">
 

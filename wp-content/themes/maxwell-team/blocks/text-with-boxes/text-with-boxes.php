@@ -6,7 +6,7 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('text_with_boxes');
 ?>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="py-20 md:py-24 bg-section-dark relative overflow-hidden text-with-boxes-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
+<section id="<?php echo esc_attr($anchor); ?>" class="py-20 md:py-24 bg-hero relative overflow-hidden text-with-boxes-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(rgb(255, 255, 255) 1px, transparent 1px), linear-gradient(90deg, rgb(255, 255, 255) 1px, transparent 1px); background-size: 80px 80px;"></div>
     <div class="container mx-auto px-6 relative z-10">
         <div class="max-w-4xl mx-auto">
@@ -27,7 +27,7 @@ $data = get_field('text_with_boxes');
                             <?php foreach ($content['items'] as $item): ?>
                                 <div class="group flex items-center gap-4 p-5 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-primary/50 hover:shadow-lg transition-all duration-300">
                                     <?php if ($item['icon']['subtype'] == 'svg+xml') : ?>
-                                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all">
+                                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all">
                                             <?php echo maxwell_render_svg($item['icon']['url'], 'w-5 h-5 text-accent shrink-0 group-hover:text-white'); ?>
                                         </div>
                                     <?php else : ?>

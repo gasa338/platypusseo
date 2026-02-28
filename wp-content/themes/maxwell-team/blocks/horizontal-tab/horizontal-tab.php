@@ -20,7 +20,7 @@ $reverse = $data['reverse'] ?? false;
         transition: all 0.2s ease;
     }
 
-    .tab-button:hover:not(.bg-primary) {
+    .tab-button:hover:not(.bg-accent) {
         background-color: rgba(var(--accent-rgb), 0.1);
     }
 
@@ -41,7 +41,8 @@ $reverse = $data['reverse'] ?? false;
     }
 </style>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="horizontal-tab-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('horizontal-tab',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="horizontal-tab-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> ">
     <div class="container mx-auto px-6">
         <div class="max-w-2xl mb-12 text-center mx-auto">
             <?php if (!empty($data['top_title'])): ?>
@@ -61,7 +62,7 @@ $reverse = $data['reverse'] ?? false;
                                     type="button"
                                     role="tab"
                                     data-tab-index="<?php echo $key_tab; ?>"
-                                    class="tab-button whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl transition-all <?php echo $key_tab === 0 ? 'bg-primary text-white' : 'bg-transparent text-muted-foreground'; ?>"
+                                    class="tab-button whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl transition-all <?php echo $key_tab === 0 ? 'bg-accent text-white' : 'bg-transparent text-muted-foreground'; ?>"
                                     <?php echo $key_tab === 0 ? 'aria-selected="true"' : 'aria-selected="false"'; ?>>
                                     <?php if (!empty($tab['icon']['subtype']) && $tab['icon']['subtype'] == 'svg+xml'): ?>
                                         <?php echo maxwell_render_svg($tab['icon']['url'], 'w-4 h-4'); ?>
@@ -99,11 +100,11 @@ $reverse = $data['reverse'] ?? false;
                                         <?php if (!empty($content['items'])): ?>
                                             <div class="grid md:grid-cols-2 gap-6">
                                                 <?php foreach ($content['items'] as $item): ?>
-                                                    <div class="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors">
+                                                    <div class="p-6 rounded-xl bg-accent/5 border border-border hover:border-accent/50 transition-colors">
                                                         <div class="flex items-start gap-4">
                                                             <div class="w-8 h-8 rounded-xl bg-accent flex items-center justify-center shrink-0">
                                                                 <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
-                                                                    <?php echo maxwell_render_svg($item['icon']['url'], 'w-4 h-4 text-primary'); ?>
+                                                                    <?php echo maxwell_render_svg($item['icon']['url'], 'w-4 h-4 text-white'); ?>
                                                                 <?php else : ?>
                                                                     <img src="<?php echo esc_url($item['icon']['url']); ?>" alt="<?php echo esc_attr($item['icon']['alt']); ?>" class="w-5 h-5 text-accent">
                                                                 <?php endif; ?>
@@ -173,7 +174,7 @@ $reverse = $data['reverse'] ?? false;
         function switchTab(tabIndex) {
             // Ukloni active klase sa svih tab dugmadi
             tabButtons.forEach(button => {
-                button.classList.remove('bg-primary', 'text-white');
+                button.classList.remove('bg-accent', 'text-white');
                 button.classList.add('bg-transparent', 'text-muted-foreground');
                 button.setAttribute('aria-selected', 'false');
             });
@@ -189,7 +190,7 @@ $reverse = $data['reverse'] ?? false;
 
             if (activeButton) {
                 activeButton.classList.remove('bg-transparent', 'text-muted-foreground');
-                activeButton.classList.add('bg-primary', 'text-white');
+                activeButton.classList.add('bg-accent', 'text-white');
                 activeButton.setAttribute('aria-selected', 'true');
             }
 
@@ -233,7 +234,7 @@ $reverse = $data['reverse'] ?? false;
 
         // Inicijalno postavi prvi tab kao aktivan (ako već nije)
         if (tabButtons.length > 0) {
-            const firstActive = Array.from(tabButtons).find(btn => btn.classList.contains('bg-primary'));
+            const firstActive = Array.from(tabButtons).find(btn => btn.classList.contains('bg-accent'));
             if (!firstActive) {
                 switchTab(0);
             }

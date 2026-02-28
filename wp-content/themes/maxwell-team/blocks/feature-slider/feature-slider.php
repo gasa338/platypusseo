@@ -49,9 +49,10 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
         /* primarna boja */
     }
 </style>
+<?php echo _spacing_full('feature-slider',$blocks_id,$data['margin'], $data['padding']); ?>
 
-
-<section class="py-24 bg-primary/5">
+<section id="<?php echo esc_attr($anchor); ?>" class="<?php echo $bg_class; ?> feature-slider-<?php echo esc_attr($blocks_id);
+                                                                                                    echo ' ' . _background($data['background']); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-6">
         <?php if (!empty($data['sliders'])): ?>
             <div class="relative">
@@ -88,24 +89,24 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                             <div class="swiper-slide">
                                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]">
                                     <div class="lg:col-span-2 bg-card rounded-2xl p-8 md:p-12 border border-border relative overflow-hidden left-side">
-                                        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                                        <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                                         <div class="relative z-10">
                                             <div class="flex items-center gap-4 mb-6">
-                                                <div class="w-12 h-12 rounded-xl bg-accent flex items-center justify-center">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up w-6 h-6 text-primary">
+                                                <div class="w-12 h-12 rounded-xl bg-accent flex items-center justify-center bg-accent group-hover:bg-accent/30 transition-colors">
+                                                    <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up w-6 h-6 text-primary">
                                                         <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
                                                         <polyline points="16 7 22 7 22 13"></polyline>
                                                     </svg>
                                                 </div>
-                                                <span class="text-sm text-muted-foreground"><?php echo $counter; ?> / <?php echo count($data['sliders']); ?></span>
+                                                <span class="text-sm text-primary"><?php echo $counter; ?> / <?php echo count($data['sliders']); ?></span>
                                             </div>
                                             
                                             <div>
                                                 <?php if (!empty($slide['title'])): ?>
-                                                    <h3 class=" text-3xl md:text-4xl font-bold mb-4"><?php echo $slide['title']; ?></h3>
+                                                    <h3 class="text-3xl md:text-4xl font-bold mb-4"><?php echo $slide['title']; ?></h3>
                                                 <?php endif; ?>
                                                 <?php if (!empty($slide['text'])): ?>
-                                                    <div class="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed"><?php echo apply_filters('the_content', $slide['text']); ?></div>
+                                                    <div class="text-lg text-primary mb-8 max-w-xl leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $slide['text']); ?></div>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
@@ -114,19 +115,19 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                         <div class="flex-1 bg-card rounded-2xl p-6 border border-border flex flex-col justify-center">
                                             <div class="w-10 h-10 rounded-xl bg-accent flex items-center justify-center mb-4">
                                                 <?php if ($slide['left_top']['icon']['subtype'] == 'svg+xml') : ?>
-                                                    <?php echo maxwell_render_svg($slide['left_top']['icon']['url'], 'w-5 h-5 text-primary'); ?>
+                                                    <?php echo maxwell_render_svg($slide['left_top']['icon']['url'], 'w-5 h-5 text-white'); ?>
                                                 <?php else : ?>
-                                                    <img src="<?php echo esc_url($slide['left_top']['icon']['url']); ?>" alt="<?php echo esc_attr($slide['left_top']['icon']['alt']); ?>" class="w-5 h-5 text-accent">
+                                                    <img src="<?php echo esc_url($slide['left_top']['icon']['url']); ?>" alt="<?php echo esc_attr($slide['left_top']['icon']['alt']); ?>" class="w-5 h-5 text-white">
                                                 <?php endif; ?>
                                             </div>
                                             <?php if (!empty($slide['left_top']['number'])): ?>
-                                                <div class=" text-4xl font-bold text-gradient mb-2"><?php echo $slide['left_top']['number']; ?></div>
+                                                <div class=" text-4xl font-bold text-accent mb-2"><?php echo $slide['left_top']['number']; ?></div>
                                             <?php endif; ?>
                                             <?php if (!empty($slide['left_top']['text'])): ?>
-                                                <div class="text-muted-foreground"><?php echo $slide['left_top']['text']; ?></div>
+                                                <div class="text-foreground"><?php echo $slide['left_top']['text']; ?></div>
                                             <?php endif; ?>
                                         </div>
-                                        <div class="flex-1 bg-primary rounded-2xl p-6 flex flex-col justify-center text-primary-foreground" style="opacity: 1; transform: none; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;">
+                                        <div class="flex-1 bg-accent rounded-2xl p-6 flex flex-col justify-center text-white">
                                             <div class="w-10 h-10 rounded-xl bg-primary-foreground/20 flex items-center justify-center mb-4">
                                                 <?php if ($slide['left_bottom']['icon']['subtype'] == 'svg+xml') : ?>
                                                     <?php echo maxwell_render_svg($slide['left_bottom']['icon']['url'], 'w-5 h-5 text-primary-foreground'); ?>
@@ -138,7 +139,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                                 <div class=" text-4xl font-bold mb-2"><?php echo $slide['left_bottom']['number']; ?></div>
                                             <?php endif; ?>
                                             <?php if (!empty($slide['left_bottom']['text'])): ?>
-                                                <div class="text-primary-foreground/80"><?php echo $slide['left_bottom']['text']; ?></div>
+                                                <div class=""><?php echo $slide['left_bottom']['text']; ?></div>
                                             <?php endif; ?>
                                         </div>
                                     </div>

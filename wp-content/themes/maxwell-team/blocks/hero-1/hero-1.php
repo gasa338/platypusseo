@@ -30,8 +30,8 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
 </style>
 
 
-
-<section id="<?php echo esc_attr($anchor); ?>" class="relative hero-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('hero-1',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="relative hero-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> ">
     <?php if ($bg_image): ?>
         <div class="absolute inset-0 overflow-hidden">
             <img class="w-full h-auto object-contain object-bottom-right" src="<?php echo esc_url($bg_image['url']); ?>" alt="<?php echo esc_attr($bg_image['alt']); ?>" srcset="<?php echo esc_attr($bg_image['srcset']); ?>" />

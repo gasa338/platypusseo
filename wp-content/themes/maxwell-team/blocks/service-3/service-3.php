@@ -39,7 +39,8 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
 </style>
 
 
-<section id="<?php echo esc_attr($anchor); ?>" class="py-24 bg-section-dark relative service-3-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('service-3',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="py-24 bg-section-dark relative service-3-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> ">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgba(3, 14, 65, 1) 1px, transparent 0px); background-size: 40px 40px;"></div>
     <div class="container mx-auto px-6 relative z-10">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">

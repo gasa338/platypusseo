@@ -14,7 +14,7 @@ $data = get_field('contact_form_1');
                 <?php if (!empty($data['data'])) : ?>
                     <div class="space-y-6">
                         <?php foreach ($data['data'] as $item): ?>
-                            <div class="flex items-start gap-4 px-6 py-4 rounded-xl bg-accent/20 border border-accent/80 transition-transform duration-300 group">
+                            <div class="group flex items-start gap-4 px-6 py-4 rounded-xl bg-accent/10 border border-accent/30 transition-transform duration-300 group">
                                 <?php if (!empty($item['icon'])): ?>
                                     <div class="w-18 h-18 rounded-xl bg-accent flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-105 transition-all">
                                         <?php
@@ -27,7 +27,7 @@ $data = get_field('contact_form_1');
                                     </div>
                                 <?php endif; ?>
                                 <?php if (!empty($item['text'])) : ?>
-                                    <div class="content-list-link ul">
+                                    <div class="maxwell-content ul">
                                         <?php echo apply_filters('the_content', $item['text']); ?>
                                     </div>
                                 <?php endif; ?>
@@ -36,7 +36,7 @@ $data = get_field('contact_form_1');
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="lg:col-span-4 bg-white rounded-2xl p-8 border border-border/50 shadow-lg">
+            <div class="lg:col-span-4 bg-white/5 rounded-2xl p-8 shadow-lg">
                 <?php if (!empty($data['form_title'])) : ?>
                     <h2 class="text-3xl mb-6"><?php echo esc_html($data['form_title']); ?></h2>
                 <?php endif; ?>

@@ -31,8 +31,9 @@ if ($color_mode == 'dark_mode') {
 }
 ?>
 
-
-<section class="py-24 bg-secondary/50">
+<?php echo _spacing_full('testimonial',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="py-24 <?php echo $bg_class; ?> testimonial-<?php echo esc_attr($blocks_id);
+                                                                                                    echo ' ' . _background($data['background']); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-6">
         <?php if ($data['top_title'] || $data['title'] || $data['text']): ?>
             <div class="max-w-2xl mb-12 text-center mx-auto">

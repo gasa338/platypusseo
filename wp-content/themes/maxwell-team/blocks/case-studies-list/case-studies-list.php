@@ -5,8 +5,8 @@ $block_name = $block['name'];
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('case_studies_list');
 ?>
-
-<section id="<?php echo esc_attr($anchor); ?>" class="case-studies-list-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('case-studies-list',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="case-studies-list-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" >
     <div class="container mx-auto px-6">
         <div class="py-4 md:py-18">
             <?php if (!empty($data['top_title'])) : ?>
@@ -18,13 +18,13 @@ $data = get_field('case_studies_list');
             <?php if (!empty($data['items'])) : ?>
                 <div class="space-y-6">
                     <?php foreach ($data['items'] as $item) : ?>
-                        <div class="group rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-500 overflow-hidden">
+                        <div class="group rounded-2xl bg-card border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-500 overflow-hidden">
                             <div class="p-8 md:p-10">
                                 <div class="flex flex-col lg:flex-row lg:items-start gap-8">
                                     <div class="flex-1">
                                         <?php if (!empty($item['tag'])) : ?>
                                             <div class="flex flex-wrap gap-2 mb-4">
-                                                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium "><?php echo $item['tag']; ?></span>
+                                                <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium "><?php echo $item['tag']; ?></span>
                                             </div>
                                         <?php endif; ?>
                                         <?php if (!empty($item['title'])) : ?>
@@ -38,13 +38,12 @@ $data = get_field('case_studies_list');
                                         <?php endif; ?>
                                     </div>
                                     <?php if (!empty($item['outcomes'])) : ?>
-                                        <div class=" lg:w-[380px] shrink-0 p-6 rounded-xl bg-section-light border border-border">
+                                        <div class=" lg:w-[380px] shrink-0 p-6 rounded-xl bg-accent/10 border border-accent/30">
                                             <p class="font-heading text-xl mb-4 font-medium">Outcomes</p>
-
                                             <ul class="space-y-3">
                                                 <?php foreach ($item['outcomes'] as $outcome) : ?>
                                                     <li class="flex items-start gap-3  ">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-4 h-4 text-primary mt-0.5 shrink-0">
+                                                        <svg class="text-accent" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-4 h-4 text-primary mt-0.5 shrink-0">
                                                             <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                                                             <path d="m9 11 3 3L22 4"></path>
                                                         </svg><span><?php echo $outcome['text']; ?></span>
@@ -53,7 +52,7 @@ $data = get_field('case_studies_list');
                                             </ul>
                                             <?php if (!empty($item['link'])) : ?>
                                                 <div class="mt-6 pt-4 border-t border-border">
-                                                    <a class="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all " href="<?php echo $item['link']['url']; ?>"><?php echo $item['link']['title']; ?>
+                                                    <a class="no-underline inline-flex items-center gap-2 text-accent font-medium hover:gap-3 hover:text-accent transition-all " href="<?php echo $item['link']['url']; ?>"><?php echo $item['link']['title']; ?>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4">
                                                             <path d="M5 12h14"></path>
                                                             <path d="m12 5 7 7-7 7"></path>

@@ -26,7 +26,8 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
     }
 </style>
 
-<section class="py-24 bg-gradient-hero relative hero-service-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('hero-service',$blocks_id,$data['margin'], $data['padding']); ?>
+<section class="py-24 bg-gradient-hero relative hero-service-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> ">
     <div class="container mx-auto px-6">
         <div class="max-w-4xl">
             <div class="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center mb-8">

@@ -10,8 +10,8 @@ $color_mode = $data['color_mode'] ?? 'dark';
 $layout = $data['layout'] ?? 'left';
 ?>
 
-
-<section class="process-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('process-1',$blocks_id,$data['margin'], $data['padding']); ?>
+<section class="process-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-6 max-w-7xl grid lg:grid-cols-2 gap-24">
         <!-- RIGHT: sticky panel -->
         <aside class="hidden lg:block sticky top-32 self-start">

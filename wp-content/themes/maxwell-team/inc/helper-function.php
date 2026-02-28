@@ -218,11 +218,6 @@ function _title_position($position = 'left', $width = 'medium')
     return $positionClasses[$position] . ' ' . $widthClasses[$width];
 }
 
-// U functions.php ili custom plugin
-add_filter('acf/load_field/name=choose_form', 'populate_cf7_forms_in_acf');
-// Ili ako koristite key umesto name:
-// add_filter('acf/load_field/key=field_choose_form', 'populate_cf7_forms_in_acf');
-
 function populate_cf7_forms_in_acf($field)
 {
     // Proveri da li je to polje koje želimo da popunimo
@@ -260,6 +255,7 @@ function populate_cf7_forms_in_acf($field)
 
     return $field;
 }
+add_filter('acf/load_field/name=choose_form', 'populate_cf7_forms_in_acf');
 
 function _background($data)
 {
@@ -283,4 +279,62 @@ function _background($data)
     }
 
     return $bg_class;
+}
+
+
+
+function _spacing_full($block_name, $block_id, $data_margin, $data_padding)
+{
+    $block_class = $block_name . '-' . $block_id;
+    $styles = [];
+
+    // DESKTOP
+    $desktop = [];
+
+    if (isset($data_margin['desktop']) && is_numeric($data_margin['desktop'])) {
+        $desktop[] = "margin-bottom: {$data_margin['desktop']}px;";
+    }
+
+    if (isset($data_padding['desktop']) && is_numeric($data_padding['desktop'])) {
+        $desktop[] = "padding-top: {$data_padding['desktop']}px;";
+        $desktop[] = "padding-bottom: {$data_padding['desktop']}px;";
+    }
+
+    if (!empty($desktop)) {
+        $styles[] = ".{$block_class} { " . implode(' ', $desktop) . " }";
+    }
+
+    // TABLET
+    $tablet = [];
+
+    if (isset($data_margin['tablet']) && is_numeric($data_margin['tablet'])) {
+        $tablet[] = "margin-bottom: {$data_margin['tablet']}px;";
+    }
+
+    if (isset($data_padding['tablet']) && is_numeric($data_padding['tablet'])) {
+        $tablet[] = "padding-top: {$data_padding['tablet']}px;";
+        $tablet[] = "padding-bottom: {$data_padding['tablet']}px;";
+    }
+
+    if (!empty($tablet)) {
+        $styles[] = "@media (max-width: 1024px) { .{$block_class} { " . implode(' ', $tablet) . " } }";
+    }
+
+    // MOBILE
+    $mobile = [];
+
+    if (isset($data_margin['mobile']) && is_numeric($data_margin['mobile'])) {
+        $mobile[] = "margin-bottom: {$data_margin['mobile']}px;";
+    }
+
+    if (isset($data_padding['mobile']) && is_numeric($data_padding['mobile'])) {
+        $mobile[] = "padding-top: {$data_padding['mobile']}px;";
+        $mobile[] = "padding-bottom: {$data_padding['mobile']}px;";
+    }
+
+    if (!empty($mobile)) {
+        $styles[] = "@media (max-width: 768px) { .{$block_class} { " . implode(' ', $mobile) . " } }";
+    }
+
+    return '<style>' . implode("\n", $styles) . '</style>';
 }

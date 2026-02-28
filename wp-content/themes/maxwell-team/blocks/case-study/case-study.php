@@ -12,8 +12,8 @@ $color_mode = $data['color_mode'] ?? 'dark';
 $layout = $data['layout'] ?? 'default';
 $layout_number = $data['layout_number'] ?? 'two';
 ?>
-
-<section id="<?php echo esc_attr($anchor); ?>" class="case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); echo ' '._background($data['background']); ?>" <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('case-study',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); echo ' '._background($data['background']); ?>">
     <div class="container mx-auto px-6">
         <?php if ($layout === 'horizontal') : ?>
             <div class="container mx-auto px-6">

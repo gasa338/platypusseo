@@ -15,7 +15,8 @@ $background_color = $data['background_color'] ?? "transparent";
     }
 </style>
 
-<section id="<?php echo esc_attr($anchor); ?>" class="py-24 bg-gradient-hero relative hero-case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> " <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('hero-case-study',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="py-24 bg-gradient-hero relative hero-case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> ">
     <div class="container mx-auto px-6">
         <div class="max-w-4xl">
             <?php if (!empty($data['back_link'])): ?>

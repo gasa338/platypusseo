@@ -30,8 +30,9 @@ if ($color_mode == 'dark_mode') {
     $bg_box = $card_bg == 'inherit' ? '' : 'bg-card border-border hover:border-accent/50';
 }
 ?>
+<?php echo _spacing_full('feature-number',$blocks_id,$data['margin'], $data['padding']); ?>
 <section id="<?php echo esc_attr($anchor); ?>" class="py-24 <?php echo $bg_class; ?> feature-number-<?php echo esc_attr($blocks_id);
-                                                                                                    echo ' ' . _background($data['background']); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
+                                                                                                    echo ' ' . _background($data['background']); ?> <?php echo esc_attr($blocks_class); ?>">
 
     <div class="container mx-auto px-6">
         <div>

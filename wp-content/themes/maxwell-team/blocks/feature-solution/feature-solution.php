@@ -47,8 +47,8 @@ switch ($color_mode) {
 }
 
 ?>
-
-<section id="<?php echo esc_attr($anchor); ?>" class="<?php echo $bg_class; ?> relative overflow-hidden feature-solution-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _spacing($data['spacing']); ?>>
+<?php echo _spacing_full('feature-solution',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="<?php echo $bg_class; ?> relative overflow-hidden feature-solution-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, <?php echo $color_mode !== 'dark' ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)'; ?> 1px, transparent 0px); background-size: 32px 32px;"></div>
     <div class="container mx-auto px-6 relative z-10" <?php echo _padding($data['padding']); ?>>
         <div>

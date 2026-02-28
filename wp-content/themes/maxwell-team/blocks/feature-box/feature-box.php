@@ -32,7 +32,7 @@ $background = $data['background'] ?? 'dark_mode';
                                 </div>
                             <?php endif; ?>
                             <?php if (!empty($feature['title'])) : ?>
-                                <h3 class="font-display text-xl font-bold text-white mb-3"><?php echo $feature['title']; ?></h3>
+                                <h3 class="font-display text-xl font-bold text-white mb-3 "><?php echo $feature['title']; ?></h3>
                             <?php endif; ?>
                             <?php if (!empty($feature['text'])) : ?>
                                 <div class="text-white/70"><?php echo $feature['text']; ?></div>
