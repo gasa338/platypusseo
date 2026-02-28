@@ -3,7 +3,6 @@ $blocks_id = $block['id'];
 $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('marque');
-
 ?>
 <style>
     @keyframes scroll {

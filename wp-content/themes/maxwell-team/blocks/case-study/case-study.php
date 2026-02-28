@@ -14,7 +14,7 @@ $layout_number = $data['layout_number'] ?? 'two';
 ?>
 <?php echo _spacing_full('case-study',$blocks_id,$data['margin'], $data['padding']); ?>
 <section id="<?php echo esc_attr($anchor); ?>" class="case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); echo ' '._background($data['background']); ?>">
-    <div class="container mx-auto px-6">
+    <div class="container mx-auto px-6 <?php echo $layout_number === 'two' ? 'max-w-5xl' : ''; ?>">
         <?php if ($layout === 'horizontal') : ?>
             <div class="container mx-auto px-6">
                 <div class="flex flex-col lg:flex-row gap-12">
@@ -83,7 +83,7 @@ $layout_number = $data['layout_number'] ?? 'two';
             </div>
         <?php else : ?>
             <!-- Originalni vertikalni layout -->
-            <div class="container mx-auto px-6">
+            <!-- <div class="container mx-auto px-6"> -->
                 <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
                     <div class="max-w-2xl">
                         <?php if (!empty($data['top_title'])) : ?>
@@ -138,7 +138,7 @@ $layout_number = $data['layout_number'] ?? 'two';
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
-            </div>
+            <!-- </div> -->
         <?php endif; ?>
     </div>
 </section>
