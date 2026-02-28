@@ -37,7 +37,7 @@ $layout = $data['layout'] ?? 'left';
             <div class="relative">
 
                 <!-- Vertical line -->
-                <div class="absolute left-6 top-0 h-full w-px bg-border"></div>
+                <div class="absolute left-6 top-0 h-full w-px bg-accent/5"></div>
 
                 <div class="space-y-16">
                     <?php foreach ($data['process'] as $key => $step): ?>

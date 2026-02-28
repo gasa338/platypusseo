@@ -3,20 +3,9 @@ $blocks_id = $block['id'];
 $blocks_class = isset($block['class']) ? $block['class'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('marque');
-$text_color = $data['text_color'] ?? '';
-$bg_color = $data['background_color'] ?? '';
+
 ?>
 <style>
-    .marque-<?php echo esc_attr($blocks_id); ?>,
-    .marque-<?php echo esc_attr($blocks_id); ?> h2 {
-        color: <?php echo esc_attr($text_color); ?> !important;
-    }
-
-    .marque-<?php echo esc_attr($blocks_id); ?> .bg-color {
-        background-color: <?php echo esc_attr($bg_color); ?> !important;
-
-    }
-
     @keyframes scroll {
         0% {
             transform: translateX(0);
