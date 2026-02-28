@@ -7,10 +7,8 @@ $data = get_field('features_challenge');
 $layout = $data['layout'] ?? 'default';
 $layout_right = $data['layout_right'] ?? 'default';
 $color_mode = $data['background'] ?? 'dark';
-var_dump($color_mode);
 ?>
 <?php echo _spacing_full('feature-challenge',$blocks_id,$data['margin'], $data['padding']); ?>
-
 <section id="<?php echo esc_attr($anchor); ?>" class="<?php echo _background($data['background']) ?> feature-challenge-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-6">
         <div class="<?php echo esc_attr($layout == 'horizontal' ? 'max-w-7xl' : 'max-w-4xl'); ?> mx-auto">
