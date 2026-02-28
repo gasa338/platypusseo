@@ -58,7 +58,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
 
             <?php echo _heading($data['title'], 'mb-6'); ?>
             <?php if (!empty($data['text'])): ?>
-                <div class="maxwell-content mb-6 text-xl"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                <div class="maxwell-content mb-6 text-xl text-primary"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
