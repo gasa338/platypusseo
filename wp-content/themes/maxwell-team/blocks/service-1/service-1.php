@@ -23,7 +23,7 @@ $data = get_field('service_1');
                 <?php if (!empty($item['link'])): ?>
                     <a class="group relative p-8 rounded-2xl bg-card border border-border hover:border-accent/50 hover:shadow-xl transition-all duration-500 no-underline" href="<?php echo esc_url($item['link']['url']); ?>" title="<?php echo esc_attr($item['link']['title']); ?>">
 
-                        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-accent group-hover:bg-primary group-hover:scale-110 transition-all">
+                        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-accent/60 group-hover:bg-accent group-hover:scale-110 transition-all">
                             <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
                                 <?php echo maxwell_render_svg($item['icon']['url'], 'w-7 h-7 text-white transition-colors'); ?>
                             <?php else : ?>
