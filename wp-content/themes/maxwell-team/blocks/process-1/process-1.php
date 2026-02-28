@@ -42,7 +42,7 @@ $layout = $data['layout'] ?? 'left';
                 <div class="space-y-16">
                     <?php foreach ($data['process'] as $key => $step): ?>
                         <div class="relative flex gap-10">
-                            <div class="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
+                            <div class="relative z-10 w-12 h-12 rounded-full bg-accent/5 text-accent flex items-center justify-center font-semibold">
                                 <?php echo $key + 1; ?>
                             </div>
                             <div class="max-w-md">
