@@ -9,8 +9,8 @@ $text_color = $data['text_color'] ?? '#fff';
 $background_color = $data['background_color'] ?? "#000";
 ?>
 
-
-<section id="<?php echo esc_attr($anchor); ?>" class="overflow-hidden text-column-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>" <?php echo _padding($data['padding']); ?>``>
+<?php echo _spacing_full('text-column',$blocks_id,$data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="overflow-hidden text-column-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
   <div class="container mx-auto px-6 max-w-6xl">
     <!-- Intro -->
     <div class="max-w-3xl mb-8">
