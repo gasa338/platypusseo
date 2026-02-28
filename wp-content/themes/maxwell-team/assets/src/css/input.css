@@ -198,7 +198,7 @@
   }
 
   .maxwell-content ul li::marker {
-    @apply text-primary pl-0.5;
+    @apply text-accent pl-0.5;
   }
 
   .maxwell-content ul li {

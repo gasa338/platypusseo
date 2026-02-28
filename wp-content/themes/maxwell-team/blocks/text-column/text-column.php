@@ -29,11 +29,11 @@ $background_color = $data['background_color'] ?? "#000";
       <div>
         <div class="flex items-center gap-4 mb-6">
           <?php if (!empty($data['left_icon'])): ?>
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/30">
               <?php if ($data['left_icon']['subtype'] == 'svg+xml') : ?>
-                <?php echo maxwell_render_svg($data['left_icon']['url'], 'h-5 w-5 text-primary'); ?>
+                <?php echo maxwell_render_svg($data['left_icon']['url'], 'h-5 w-5 text-accent'); ?>
               <?php else : ?>
-                <img src="<?php echo esc_url($data['left_icon']['url']); ?>" alt="<?php echo esc_attr($data['left_icon']['alt']); ?>" class="h-5 w-5 text-primary">
+                <img src="<?php echo esc_url($data['left_icon']['url']); ?>" alt="<?php echo esc_attr($data['left_icon']['alt']); ?>" class="h-5 w-5 text-accent">
               <?php endif; ?>
             </div>
           <?php endif; ?>
@@ -53,12 +53,12 @@ $background_color = $data['background_color'] ?? "#000";
       <div class="pt-1">
         <div class="flex items-center gap-4 mb-6">
           <?php if (!empty($data['right_icon'])): ?>
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/30">
               <!-- Decision / constraint icon -->
               <?php if ($data['right_icon']['subtype'] == 'svg+xml') : ?>
-                <?php echo maxwell_render_svg($data['right_icon']['url'], 'h-5 w-5 text-primary'); ?>
+                <?php echo maxwell_render_svg($data['right_icon']['url'], 'h-5 w-5 text-accent'); ?>
               <?php else : ?>
-                <img src="<?php echo esc_url($data['right_icon']['url']); ?>" alt="<?php echo esc_attr($data['right_icon']['alt']); ?>" class="w-5 h-5 text-primary">
+                <img src="<?php echo esc_url($data['right_icon']['url']); ?>" alt="<?php echo esc_attr($data['right_icon']['alt']); ?>" class="w-5 h-5 text-accent">
               <?php endif; ?>
             </div>
           <?php endif; ?>

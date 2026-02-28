@@ -5,29 +5,7 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('hero_1');
 // dd($data);
 $bg_image = get_image($data['bg_image']);
-
-$text_color = $data['text_color'] ?? '#fff';
-$overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
 ?>
-<style>
-    .hero-1-<?php echo esc_attr($blocks_id); ?>,
-    .hero-1-<?php echo esc_attr($blocks_id); ?>p,
-    .hero-1-<?php echo esc_attr($blocks_id); ?>h1,
-    .hero-1-<?php echo esc_attr($blocks_id); ?>h2,
-    .hero-1-<?php echo esc_attr($blocks_id); ?>h3,
-    .hero-1-<?php echo esc_attr($blocks_id); ?>h4,
-    .hero-1-<?php echo esc_attr($blocks_id); ?>h5,
-    .hero-1-<?php echo esc_attr($blocks_id); ?>h6,
-    .hero-1-<?php echo esc_attr($blocks_id); ?>span,
-    .hero-1-<?php echo esc_attr($blocks_id); ?>ul,
-    .hero-1-<?php echo esc_attr($blocks_id); ?>li {
-        color: <?php echo esc_attr($text_color); ?> !important;
-    }
-
-    .hero-1-<?php echo esc_attr($blocks_id); ?>.overlay {
-        background-color: <?php echo esc_attr($overlay_color); ?> !important;
-    }
-</style>
 
 
 <?php echo _spacing_full('hero-1',$blocks_id,$data['margin'], $data['padding']); ?>
@@ -45,7 +23,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
             <div class="text-center xl:col-span-1 lg:text-left md:px-16 lg:px-0 xl:pr-20">
                 <?php echo _heading($data['title'], 'mb-8'); ?>
                 <?php if ($data['text']): ?>
-                    <div class="mt-2 sm:mt-6 maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                    <div class="mt-2 sm:mt-6 maxwell-content text-foreground"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
 
                 <div class="mt-4 sm:mt-8">
@@ -66,7 +44,7 @@ $overlay_color = $data['overlay_color'] ?? 'rgba(0, 0, 0, 0.5)';
 
                     <?php if ($data['quote'] && $data['use_quote'] == 'yes'): ?>
                         <?php if ($data['quote']['text']): ?>
-                            <blockquote class="mt-6 maxwell-content">
+                            <blockquote class="mt-6 maxwell-content text-foreground">
                                 <?php echo apply_filters('the_content', $data['quote']['text']); ?>
                             </blockquote>
                         <?php endif; ?>

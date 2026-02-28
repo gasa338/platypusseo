@@ -1765,8 +1765,8 @@ li {
   border-color: hsl(var(--accent) / 0.2);
 }
 
-.border-accent\/50 {
-  border-color: hsl(var(--accent) / 0.5);
+.border-accent\/30 {
+  border-color: hsl(var(--accent) / 0.3);
 }
 
 .border-border {
@@ -1825,10 +1825,6 @@ li {
 
 .border-white\/30 {
   border-color: rgb(255 255 255 / 0.3);
-}
-
-.border-accent\/30 {
-  border-color: hsl(var(--accent) / 0.3);
 }
 
 .border-t-accent {
@@ -1955,10 +1951,6 @@ li {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-white\/10 {
-  background-color: rgb(255 255 255 / 0.1);
 }
 
 .bg-white\/20 {
@@ -2686,7 +2678,7 @@ li {
 
 .maxwell-content ul li::marker {
   padding-left: 0.125rem;
-  color: hsl(var(--primary));
+  color: hsl(var(--accent));
 }
 
 .maxwell-content ul li {
@@ -2950,16 +2942,16 @@ li {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
 }
 
+.hover\:text-accent:hover {
+  color: hsl(var(--accent));
+}
+
 .hover\:text-primary:hover {
   color: hsl(var(--primary));
 }
 
 .hover\:text-secondary:hover {
   color: hsl(var(--secondary));
-}
-
-.hover\:text-accent:hover {
-  color: hsl(var(--accent));
 }
 
 .hover\:underline:hover {
