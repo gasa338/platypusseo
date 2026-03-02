@@ -37,7 +37,7 @@ $color_mode = $data['background'] ?? 'dark';
                                             <?php if (!empty($challenge['icon'])) : ?>
                                                 <div class="flex-shrink-0">
                                                     <?php if ($challenge['icon']['subtype'] == 'svg+xml') : ?>
-                                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white group-hover:scale-110 transition-all bg-accent/30 group-hover:bg-accent/80">
+                                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white  transition-all bg-accent/30 group-hover:bg-accent/80">
                                                             <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 text-accent group-hover:text-white transition-colors'); ?>
                                                         </div>
                                                     <?php else : ?>
@@ -80,7 +80,7 @@ $color_mode = $data['background'] ?? 'dark';
                                     <?php if (!empty($challenge['icon'])) : ?>
                                         <div class="flex-shrink-0">
                                             <?php if ($challenge['icon']['subtype'] == 'svg+xml') : ?>
-                                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white group-hover:scale-110 transition-all bg-accent group-hover:bg-accent/80">
+                                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white transition-all bg-accent group-hover:bg-accent/80">
                                                     <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 transition-colors'); ?>
                                                 </div>
                                             <?php else : ?>
