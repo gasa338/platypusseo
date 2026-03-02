@@ -16,7 +16,7 @@ $data = get_field('text_with_cta');
             <?php if ($data['top_title']): ?>
                 <p class="maxwell-top-title mb-3"><?php echo $data['top_title']; ?></p>
             <?php endif; ?>
-            <?php echo _heading($data['title'], "font-display text-3xl sm:text-4xl font-bold text-foreground mb-4"); ?>
+            <?php echo _heading($data['title'], "mb-4"); ?>
             <?php if (!empty($data['text'])): ?>
                 <div class="text-muted-foreground leading-relaxed mb-8"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
