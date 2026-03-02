@@ -5,22 +5,9 @@ $blocks_class = isset($block['class']) ? $block['class'] : '';
 $block_name = $block['name'];
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('cta_2');
-$text_color = $data['text_color'] ?? '#fff';
-$background_color = $data['background_color'] ?? "#000";
 
-$block_list = get_post_meta(get_the_ID(), '_acf_blocks_list', true);
+$color_mode = $data['background'] ?? 'dark';
 ?>
-<style>
-    /* Koristite istu klasu kao u HTML-u - cta-2- */
-    .cta-2-<?php echo esc_attr($blocks_id); ?> {
-        background-color: <?php echo esc_attr($background_color); ?> !important;
-        color: <?php echo esc_attr($text_color); ?> !important;
-    }
-
-    .cta-2-<?php echo esc_attr($blocks_id); ?>*:not(a) {
-        color: inherit !important;
-    }
-</style>
 
 <?php echo _spacing_full('cta-2', $blocks_id, $data['margin'], $data['padding']); ?>
 <section id="<?php echo esc_attr($anchor); ?>" class="cta-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> <?php echo _background($data['background'])?>">
@@ -30,9 +17,9 @@ $block_list = get_post_meta(get_the_ID(), '_acf_blocks_list', true);
             <div class="absolute bottom-8 right-12 w-16 h-16 rounded-full border border-primary-foreground/5"></div>
             <div class="absolute top-1/3 right-1/4 w-2 h-2 rounded-full bg-accent"></div>
             <div class="relative z-10 max-w-xl mx-auto">
-                <?php echo _heading($data['title'], 'mb-4') ?>
+                <?php echo _heading($data['title'], 'text-primary-foreground mb-4') ?>
                 <?php if (!empty($data['text'])): ?>
-                    <div class="text-primary-foreground/60 mb-8 leading-relaxed"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                    <div class="text-lg text-primary-foreground/60 mb-8 leading-relaxed"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
                 <?php if (!empty($data['link'])): ?>
                     <a href="<?php echo esc_url($data['link']['url']); ?>" class="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity shadow-lg shadow-accent/20"><?php echo esc_html($data['link']['title']); ?>
