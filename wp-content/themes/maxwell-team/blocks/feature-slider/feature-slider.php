@@ -108,7 +108,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
 
                                             <div>
                                                 <?php if (!empty($slide['title'])): ?>
-                                                    <h3 class="text-3xl md:text-4xl font-bold mb-4"><?php echo $slide['title']; ?></h3>
+                                                    <h3 class="text-xl md:text-2xl font-bold mb-4"><?php echo $slide['title']; ?></h3>
                                                 <?php endif; ?>
                                                 <?php if (!empty($slide['text'])): ?>
                                                     <div class="text-lg text-primary mb-8 max-w-xl leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $slide['text']); ?></div>

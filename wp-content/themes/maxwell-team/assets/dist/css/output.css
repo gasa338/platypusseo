@@ -3142,11 +3142,6 @@ li {
     line-height: 28px;
   }
 
-  .sm\:text-4xl {
-    font-size: 45px;
-    line-height: 1.2;
-  }
-
   .sm\:text-xl {
     font-size: 20px;
     line-height: 22px;
@@ -3329,6 +3324,11 @@ li {
 
   .md\:text-center {
     text-align: center;
+  }
+
+  .md\:text-2xl {
+    font-size: 24px;
+    line-height: 28px;
   }
 
   .md\:text-3xl {
