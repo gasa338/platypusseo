@@ -31,7 +31,8 @@ $color_mode = $data['background'] ?? 'dark';
                         <div class="<?php echo esc_attr($layout_right == 'one_column' ? '' : 'md:col-span-4'); ?>">
                             <div class="grid gap-6 <?php echo esc_attr($layout_right == 'one_column' ? 'md:grid-cols-1' : 'md:grid-cols-2'); ?> ">
                                 <?php foreach ($data['challenges'] as $challenge): ?>
-                                    <div class="group p-4 rounded-xl transition-all duration-300 <?php echo esc_attr($color_mode == 'dark_mode' ? 'bg-white/5 border border-white/10 hover:border-accent/50' : 'bg-card border-border hover:border-accent/50'); ?>">
+                                    <div class="group p-4 rounded-xl border <?php echo esc_attr($color_mode == 'dark_mode' ? 'bg-white/5 border border-white/10' : 'bg-card border-border '); ?> hover:shadow-md hover:shadow-accent/5 hover:border-accent/50 transition-all duration-300">
+                                         
                                         <div class="flex gap-4">
                                             <?php if (!empty($challenge['icon'])) : ?>
                                                 <div class="flex-shrink-0">
@@ -47,10 +48,10 @@ $color_mode = $data['background'] ?? 'dark';
 
                                             <div class="flex-1">
                                                 <?php if (!empty($challenge['title'])) : ?>
-                                                    <h3 class="text-xl font-bold mb-2 transition-colors <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground'); ?>"><?php echo esc_html($challenge['title']); ?></h3>
+                                                    <h3 class="text-lg font-bold mb-1 transition-colors <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground'); ?>"><?php echo esc_html($challenge['title']); ?></h3>
                                                 <?php endif; ?>
                                                 <?php if (!empty($challenge['text'])) : ?>
-                                                    <div class="mb-4 <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground'); ?>"><?php echo apply_filters('the_content', $challenge['text']); ?></div>
+                                                    <div class="<?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground'); ?>"><?php echo apply_filters('the_content', $challenge['text']); ?></div>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
@@ -74,7 +75,7 @@ $color_mode = $data['background'] ?? 'dark';
                 <?php if (!empty($data['challenges'])): ?>
                     <div class="grid md:grid-cols-2 gap-6">
                         <?php foreach ($data['challenges'] as $challenge): ?>
-                            <div class="group p-6 rounded-xl p-7 hover:shadow-lg hover:shadow-accent/5 <?php echo esc_attr($color_mode == 'dark_mode' ? 'bg-white/5 border border-white/10 hover:border-accent/50' : 'bg-card border-border hover:border-accent/50'); ?>">
+                            <div class="group p-4 rounded-xl border <?php echo esc_attr($color_mode == 'dark_mode' ? 'bg-white/5 border border-white/10' : 'bg-card border-border'); ?>  hover:shadow-md hover:shadow-accent/5 hover:border-accent/50 transition-all duration-300">
                                 <div class="flex gap-4">
                                     <?php if (!empty($challenge['icon'])) : ?>
                                         <div class="flex-shrink-0">
@@ -90,10 +91,10 @@ $color_mode = $data['background'] ?? 'dark';
 
                                     <div class="flex-1">
                                         <?php if (!empty($challenge['title'])) : ?>
-                                            <h3 class="text-xl font-bold mb-2 transition-colors <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground'); ?>"><?php echo esc_html($challenge['title']); ?></h3>
+                                            <h3 class="text-lg font-bold mb-1 transition-colors <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground'); ?>"><?php echo esc_html($challenge['title']); ?></h3>
                                         <?php endif; ?>
                                         <?php if (!empty($challenge['text'])) : ?>
-                                            <div class="mb-4 <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground'); ?>"><?php echo apply_filters('the_content', $challenge['text']); ?></div>
+                                            <div class="<?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground'); ?>"><?php echo apply_filters('the_content', $challenge['text']); ?></div>
                                         <?php endif; ?>
                                     </div>
                                 </div>
