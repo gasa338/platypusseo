@@ -23,7 +23,7 @@ $block_list = get_post_meta(get_the_ID(), '_acf_blocks_list', true);
 </style>
 
 <?php echo _spacing_full('cta-2', $blocks_id, $data['margin'], $data['padding']); ?>
-<section id="<?php echo esc_attr($anchor); ?>" class="cta-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
+<section id="<?php echo esc_attr($anchor); ?>" class="cta-2-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> <?php echo _background($data['background'])?>">
     <div class="container mx-auto px-6">
         <div class="relative rounded-3xl bg-hero overflow-hidden px-8 py-16 sm:px-16 sm:py-20 text-center">
             <div class="absolute top-8 left-8 w-24 h-24 rounded-full border border-primary-foreground/10"></div>
