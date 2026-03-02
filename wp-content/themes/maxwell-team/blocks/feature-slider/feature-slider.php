@@ -49,10 +49,10 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
         /* primarna boja */
     }
 </style>
-<?php echo _spacing_full('feature-slider',$blocks_id,$data['margin'], $data['padding']); ?>
+<?php echo _spacing_full('feature-slider', $blocks_id, $data['margin'], $data['padding']); ?>
 
 <section id="<?php echo esc_attr($anchor); ?>" class="<?php echo $bg_class; ?> feature-slider-<?php echo esc_attr($blocks_id);
-                                                                                                    echo ' ' . _background($data['background']); ?> <?php echo esc_attr($blocks_class); ?>">
+                                                                                                echo ' ' . _background($data['background']); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-6">
         <?php if (!empty($data['sliders'])): ?>
             <div class="relative">
@@ -61,7 +61,12 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                         <?php if (!empty($data['top_title'])): ?>
                             <span class="maxwell-top-title mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
                         <?php endif; ?>
-                        <?php echo _heading($data['title'], ''); ?>
+                        <?php echo _heading($data['title'], 'mb-3'); ?>
+
+
+                        <?php if (!empty($data['text'])) : ?>
+                            <div class="text-lg text-muted-foreground mb-5"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                        <?php endif; ?>
                     </div>
 
                     <!-- Navigacioni dugmici IZNAD swiper-a -->
@@ -100,7 +105,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                                 </div>
                                                 <span class="text-sm text-primary"><?php echo $counter; ?> / <?php echo count($data['sliders']); ?></span>
                                             </div>
-                                            
+
                                             <div>
                                                 <?php if (!empty($slide['title'])): ?>
                                                     <h3 class="text-3xl md:text-4xl font-bold mb-4"><?php echo $slide['title']; ?></h3>
