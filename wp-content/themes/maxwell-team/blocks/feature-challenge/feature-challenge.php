@@ -31,7 +31,7 @@ $color_mode = $data['background'] ?? 'dark';
                         <div class="<?php echo esc_attr($layout_right == 'one_column' ? '' : 'md:col-span-4'); ?>">
                             <div class="grid gap-6 <?php echo esc_attr($layout_right == 'one_column' ? 'md:grid-cols-1' : 'md:grid-cols-2'); ?> ">
                                 <?php foreach ($data['challenges'] as $challenge): ?>
-                                    <div class="group p-6 rounded-xl hover:shadow-lg transition-all duration-300 <?php echo esc_attr($color_mode == 'dark_mode' ? 'bg-white/5 border border-white/10 hover:border-accent/50' : 'bg-card border-border hover:border-accent/50'); ?>">
+                                    <div class="group p-4 rounded-xl transition-all duration-300 <?php echo esc_attr($color_mode == 'dark_mode' ? 'bg-white/5 border border-white/10 hover:border-accent/50' : 'bg-card border-border hover:border-accent/50'); ?>">
                                         <div class="flex gap-4">
                                             <?php if (!empty($challenge['icon'])) : ?>
                                                 <div class="flex-shrink-0">
