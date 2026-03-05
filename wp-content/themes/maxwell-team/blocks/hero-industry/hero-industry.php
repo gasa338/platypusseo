@@ -6,6 +6,8 @@ $data = get_field('hero_industry');
 
 $color_scheme = $data['background'] ?? 'light';
 $top_title_as_h1 = $data['top_title_as_h1'] ?? 'no';
+
+$align = $data['title']['align'] ?? 'left';
 ?>
 
 <?php echo _spacing_full('hero-industry',$blocks_id,$data['margin'], $data['padding']); ?>
@@ -18,7 +20,7 @@ $top_title_as_h1 = $data['top_title_as_h1'] ?? 'no';
     <?php endif; ?>
 
     <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-4xl">
+        <div class="max-w-4xl <?php echo $align == 'center' ? 'text-center mx-auto' : ''; ?>">
             <?php if (!empty($data['icon'])): ?>
                 <div class="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center mb-8">
                     <?php if (!empty($data['icon']['subtype'] == 'svg+xml')) : ?>
@@ -30,16 +32,16 @@ $top_title_as_h1 = $data['top_title_as_h1'] ?? 'no';
             <?php endif; ?>
             <?php if (!empty($data['top_title'])): ?>
                 <?php if ($top_title_as_h1): ?>
-                    <h1 class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></h1>
+                    <h1 class="maxwell-top-title mb-4 block <?php echo $align == 'center' ? 'text-center mx-auto' : ''; ?>"><?php echo $data['top_title']; ?></h1>
                 <?php else: ?>
-                    <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
+                    <span class="maxwell-top-title mb-4 block <?php echo $align == 'center' ? 'text-center mx-auto' : ''; ?>"><?php echo $data['top_title']; ?></span>
                 <?php endif; ?>
             <?php endif; ?>
             <?php echo _heading($data['title'], 'mb-6' . ($color_scheme == 'dark' ? ' text-white/80' : ' text-primary')); ?>
             <?php if (!empty($data['text'])): ?>
                 <div class="text-xl mb-10 <?php echo esc_attr($color_scheme == 'dark' ? 'text-white/80 [&_p]:text-white/80 [&_span]:text-white/80 [&_strong]:text-white/80 [&_em]:text-white/80' : 'text-muted-foreground'); ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-wrap gap-4 <?php echo $align == 'center' ? 'items-center justify-center' : ''; ?>">
                 <?php if (!empty($data['link_1'])): ?>
                     <?php echo _link_1($data['link_1']); ?>
                 <?php endif; ?>
