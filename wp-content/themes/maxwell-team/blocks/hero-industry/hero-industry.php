@@ -5,6 +5,7 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('hero_industry');
 
 $color_scheme = $data['background'] ?? 'light';
+$top_title_as_h1 = $data['top_title_as_h1'] ?? 'no';
 ?>
 
 <?php echo _spacing_full('hero-industry',$blocks_id,$data['margin'], $data['padding']); ?>
@@ -28,7 +29,11 @@ $color_scheme = $data['background'] ?? 'light';
                 </div>
             <?php endif; ?>
             <?php if (!empty($data['top_title'])): ?>
-                <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
+                <?php if ($top_title_as_h1): ?>
+                    <h1 class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></h1>
+                <?php else: ?>
+                    <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
+                <?php endif; ?>
             <?php endif; ?>
             <?php echo _heading($data['title'], 'mb-6' . ($color_scheme == 'dark' ? ' text-white/80' : ' text-primary')); ?>
             <?php if (!empty($data['text'])): ?>
