@@ -270,3 +270,21 @@ if (defined('JETPACK__VERSION')) {
 require_once get_template_directory() . '/acf-image-select/acf-image-select.php';
 require_once get_template_directory() . '/acf-advanced-title/acf-advanced-title.php';
 require_once get_template_directory() . '/acf-wysiwyg/acf-wysiwyg.php';
+
+add_action('admin_head', function() {
+    echo '<style>
+        #schema_meta_json_ld .inside .widefat,
+        #schema_meta_json_ld .inside .fixed,
+        #schema_meta_json_ld .inside .wp-list-table,
+        #schema_meta_json_ld .inside h4 {
+            display: none !important;
+        }
+
+		#schema_meta_json_ld .inside #MetaSchemaMarkupNote,
+		#schema_meta_json_ld .inside strong,
+		#schema_meta_json_ld .inside #schemapostlinks button:not(:last-child)
+		{
+			display: none !important;
+		}
+    </style>';
+});
