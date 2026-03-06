@@ -389,7 +389,7 @@ if (function_exists('acf_register_block_type')) {
 
 			if (!wp_style_is('swiper', 'enqueued')) {
 				wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
-			}			
+			}
 		}
 	));
 
@@ -640,7 +640,6 @@ if (function_exists('acf_register_block_type')) {
 			if (!wp_style_is('swiper', 'enqueued')) {
 				wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
 			}
-			
 		}
 	));
 
@@ -1281,11 +1280,9 @@ if (function_exists('acf_register_block_type')) {
 
 			if (!wp_style_is('swiper', 'enqueued')) {
 				wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
-			}			
+			}
 		}
 	));
-
-	
 
 	/**
 	 * ==============================
@@ -1309,5 +1306,48 @@ if (function_exists('acf_register_block_type')) {
 			'anchor' => true,
 		),
 		'render_template' => 'blocks/feature-posts/feature-posts.php',
+	));
+
+	/**
+	 * ==============================
+	 * Posts list Block
+	 * ==============================
+	 */
+	acf_register_block_type(array(
+		'name' => 'posts-list',
+		'title' => 'Posts list',
+		'description' => 'Posts list block',
+		'category' => 'maxwell-blocks',
+		'mode' => 'preview',
+		'icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+			<circle cx="12" cy="12" r="10" fill="none" stroke="#ff0000" stroke-width="2"/>
+			<text x="12" y="16" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" fill="#ff0000" font-weight="bold"> M </text>
+		</svg>',
+		'supports' => array(
+			'align' => true,
+			'mode' => true,
+			'jsx' => true,
+			'anchor' => true,
+		),
+		'render_template' => 'blocks/posts-list/posts-list.php',
+		'enqueue_assets' => function () {
+			
+
+			wp_enqueue_script(
+            'blog-js', 
+            get_template_directory_uri() . '/blocks/posts-list/blog.js', 
+            array('jquery'), 
+            '1.0.0', 
+            true
+        );
+        
+        // Prosledi PHP varijable JavaScriptu
+        wp_localize_script('blog-js', 'blogConfig', array(
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'postsPerPage' => 6,
+            'currentCategory' => isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '',
+            'maxPages' => 1 // Ovo će biti ažurirano u template-u
+        ));
+		}
 	));
 }

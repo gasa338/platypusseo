@@ -76,6 +76,7 @@ function get_primary_category($post_id = null)
 
 	// Provjeri da li Yoast postoji i ima li primarnu kategoriju
 	if (class_exists('WPSEO_Primary_Term')) {
+		/** @var WPSEO_Primary_Term $primary_term */
 		$primary_term = new WPSEO_Primary_Term('category', $post_id);
 		$primary_category_id = $primary_term->get_primary_term();
 
@@ -159,3 +160,28 @@ function get_post_by_type($type = 'last', $post_type = 'post', $posts_per_page =
 
 	return $output;
 }
+
+
+/**
+ * Hide unnecessary options in the Schema Meta JSON-LD settings page.
+ *
+ * This function adds inline CSS to hide certain elements on the Schema Meta JSON-LD settings page.
+ * These elements are not needed for our purposes and only clutter the page.
+ */
+function disable_schema_meta_json_ld_options () {
+    echo '<style>
+        #schema_meta_json_ld .inside .widefat,
+        #schema_meta_json_ld .inside .fixed,
+        #schema_meta_json_ld .inside .wp-list-table,
+        #schema_meta_json_ld .inside h4 { 
+            display: none !important;
+        }
+
+		#schema_meta_json_ld .inside #MetaSchemaMarkupNote,
+		#schema_meta_json_ld .inside strong,
+		#schema_meta_json_ld .inside #schemapostlinks button:not(:last-child) {
+			display: none !important;
+		}
+    </style>';
+}
+add_action('admin_head', 'disable_schema_meta_json_ld_options');

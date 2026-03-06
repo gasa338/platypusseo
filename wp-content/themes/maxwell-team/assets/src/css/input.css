@@ -293,3 +293,10 @@
     @apply font-heading font-medium text-h6-mobile md:text-h6-tablet lg:text-h6-desktop;
   }
 }
+
+.wp-block-heading {
+  @apply h2-responsive mb-3;
+}
+.maxwell-post-content p {
+  @apply !mb-2;
+}

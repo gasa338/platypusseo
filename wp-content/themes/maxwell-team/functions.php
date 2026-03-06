@@ -212,9 +212,9 @@ function mma_future_admin_scripts($hook)
 		wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/dist/js/swiper-bundle.min.js', array(), _S_VERSION, true);
 		wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.min.css');
 	}
+
 }
 add_action('admin_enqueue_scripts', 'mma_future_admin_scripts');
-
 
 /**
  * Include helper functions
@@ -271,20 +271,8 @@ require_once get_template_directory() . '/acf-image-select/acf-image-select.php'
 require_once get_template_directory() . '/acf-advanced-title/acf-advanced-title.php';
 require_once get_template_directory() . '/acf-wysiwyg/acf-wysiwyg.php';
 
-add_action('admin_head', function() {
-    echo '<style>
-        #schema_meta_json_ld .inside .widefat,
-        #schema_meta_json_ld .inside .fixed,
-        #schema_meta_json_ld .inside .wp-list-table,
-        #schema_meta_json_ld .inside h4 {
-            display: none !important;
-        }
 
-		#schema_meta_json_ld .inside #MetaSchemaMarkupNote,
-		#schema_meta_json_ld .inside strong,
-		#schema_meta_json_ld .inside #schemapostlinks button:not(:last-child)
-		{
-			display: none !important;
-		}
-    </style>';
-});
+/**
+ * Include include load more for post
+ */
+require_once get_template_directory() . '/blocks/posts-list/posts-list-fn.php';

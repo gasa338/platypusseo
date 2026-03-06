@@ -338,3 +338,15 @@ function _spacing_full($block_name, $block_id, $data_margin, $data_padding)
 
     return '<style>' . implode("\n", $styles) . '</style>';
 }
+
+
+/**
+ * Helper function for estimated reading time
+ */
+function maxwell_estimated_reading_time($post_id) {
+    $content = get_post_field('post_content', $post_id);
+    $word_count = str_word_count(strip_tags($content));
+    $reading_time = ceil($word_count / 200); // 200 words per minute
+    
+    return $reading_time;
+}
