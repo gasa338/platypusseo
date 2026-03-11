@@ -193,6 +193,10 @@ function mma_future_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 
+	if (is_singular('post')) {
+		wp_enqueue_script('blog-main', get_template_directory_uri() . '/assets/dist/js/blog-main.js', array(), _S_VERSION, true);
+	}
+
 	wp_dequeue_style('wp-block-library');
 	wp_dequeue_style('wp-block-library-theme');
 	wp_dequeue_style('wc-blocks-style'); // Ako koristite WooCommerce
@@ -276,3 +280,8 @@ require_once get_template_directory() . '/acf-wysiwyg/acf-wysiwyg.php';
  * Include include load more for post
  */
 require_once get_template_directory() . '/blocks/posts-list/posts-list-fn.php';
+
+/**
+ * Include table of content
+ */
+require get_template_directory() . '/inc/table_of_content.php';

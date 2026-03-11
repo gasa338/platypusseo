@@ -818,6 +818,10 @@ li {
   visibility: hidden;
 }
 
+.collapse {
+  visibility: collapse;
+}
+
 .static {
   position: static;
 }
@@ -1580,6 +1584,10 @@ li {
   cursor: pointer;
 }
 
+.scroll-mt-32 {
+  scroll-margin-top: 8rem;
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -2273,6 +2281,11 @@ li {
   padding-bottom: 0.25rem;
 }
 
+.py-1\.5 {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -2362,6 +2375,10 @@ li {
 
 .pl-3 {
   padding-left: 0.75rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
 }
 
 .pl-8 {
@@ -2538,6 +2555,11 @@ li {
   color: hsl(var(--foreground));
 }
 
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+}
+
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity, 1));
@@ -2599,6 +2621,10 @@ li {
 
 .\!underline {
   text-decoration-line: underline !important;
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .no-underline {
@@ -2949,6 +2975,64 @@ li {
   margin-bottom: 0.5rem !important;
 }
 
+/** blog post style */
+
+.wp-block-image {
+  margin-bottom: 0.5rem !important;
+  border-radius: var(--radius);
+  background-color: hsl(var(--accent) / 0.05);
+  padding: 0.5rem;
+}
+
+.wp-block-image img {
+  border-radius: var(--radius);
+}
+
+/* Blog table compact style */
+
+.wp-block-table {
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+.wp-block-table table {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border-width: 1px;
+  border-color: hsl(var(--accent) / 0.3) !important;
+}
+
+.wp-block-table tbody {
+  border-bottom-width: 1px !important;
+  border-color: hsl(var(--accent) / 0.3) !important;
+}
+
+.wp-block-table tbody tr {
+  border-bottom-width: 1px;
+  border-color: hsl(var(--accent) / 0.3) !important;
+}
+
+.wp-block-table tbody tr:last-child {
+  border-bottom-width: 0px;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.wp-block-table tbody tr:nth-child(even) {
+  background-color: hsl(var(--accent) / 0.05);
+}
+
+.wp-block-table tbody tr:hover {
+  background-color: hsl(var(--accent) / 0.1);
+}
+
 .file\:border-0::file-selector-button {
   border-width: 0px;
 }
@@ -3119,6 +3203,11 @@ li {
 
 .hover\:text-accent:hover {
   color: hsl(var(--accent));
+}
+
+.hover\:text-gray-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-primary:hover {
