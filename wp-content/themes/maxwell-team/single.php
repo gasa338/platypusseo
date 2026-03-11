@@ -159,13 +159,32 @@ get_header();
 						</div>
 					</article>
 					<aside class="space-y-8">
-						<div class="sticky top-28">
+						
+						
+						<div class="bg-card border border-border rounded-xl p-6">
+							<?php
+							// Uzmi podatke o autoru
+							$author_id = get_the_author_meta('ID');
+							$author_name = get_the_author();
+							$author_first_name = get_the_author_meta('first_name');
+							$author_last_name = get_the_author_meta('last_name');
+							$full_name = $author_first_name . ' ' . $author_last_name;
 
-							<div class="mb-6 bg-card border border-border rounded-xl p-6 ">
-								<?php rockit_render_toc(get_the_content()); ?>
+							$author_avatar = get_avatar_url($author_id, array('size' => 56));
+							$author_bio = get_the_author_meta('description');
+							?>
+							<h3 class="font-semibold text-foreground mb-4">About the Author</h3>
+							<div class="flex items-center gap-3 mb-4">
+								<img src="<?php echo $author_avatar; ?>" alt="<?php echo $full_name; ?>" class="w-14 h-14 rounded-full object-cover">
+								<div>
+									<p class="font-medium text-foreground"><?php echo $full_name; ?></p>
+								</div>
 							</div>
+							<p class="text-muted-foreground text-sm"><?php echo $author_bio; ?></p>
+						</div>
+						<div class="sticky top-16">					
 
-							<div class="bg-card border border-border rounded-xl p-6 ">
+							<div class="bg-card border border-border rounded-xl p-6 mb-6">
 								<h3 class="font-semibold text-foreground mb-4 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share2 w-4 h-4">
 										<circle cx="18" cy="5" r="3"></circle>
 										<circle cx="6" cy="12" r="3"></circle>
@@ -197,28 +216,10 @@ get_header();
 										</svg></button>
 								</div>
 							</div>
-						</div>
-						
-						<div class="bg-card border border-border rounded-xl p-6">
-							<?php
-							// Uzmi podatke o autoru
-							$author_id = get_the_author_meta('ID');
-							$author_name = get_the_author();
-							$author_first_name = get_the_author_meta('first_name');
-							$author_last_name = get_the_author_meta('last_name');
-							$full_name = $author_first_name . ' ' . $author_last_name;
 
-							$author_avatar = get_avatar_url($author_id, array('size' => 56));
-							$author_bio = get_the_author_meta('description');
-							?>
-							<h3 class="font-semibold text-foreground mb-4">About the Author</h3>
-							<div class="flex items-center gap-3 mb-4">
-								<img src="<?php echo $author_avatar; ?>" alt="<?php echo $full_name; ?>" class="w-14 h-14 rounded-full object-cover">
-								<div>
-									<p class="font-medium text-foreground"><?php echo $full_name; ?></p>
-								</div>
+							<div class="mb-6 bg-card border border-border rounded-xl p-6 ">
+								<?php rockit_render_toc(get_the_content()); ?>
 							</div>
-							<p class="text-muted-foreground text-sm"><?php echo $author_bio; ?></p>
 						</div>
 					</aside>
 

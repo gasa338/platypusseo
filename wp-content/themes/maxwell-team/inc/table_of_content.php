@@ -71,7 +71,7 @@ function rockit_render_toc($content) {
 
     <nav class="hidden lg:block sticky top-32">
     
-    <h3 class="mb-4 font-semibold"> Table ofcontents</h3>
+    <h3 class="h3-responsive mb-4 font-semibold">Table of contents</h3>
 
         <ul class="space-y-2">
 
