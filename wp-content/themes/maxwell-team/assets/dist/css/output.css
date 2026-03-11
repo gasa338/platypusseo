@@ -716,7 +716,7 @@ li {
   }
 }
 
-.h1-responsive span{
+.h1-responsive span {
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -746,7 +746,7 @@ li {
   }
 }
 
-.h2-responsive span{
+.h2-responsive span {
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -776,7 +776,7 @@ li {
   }
 }
 
-.h3-responsive span{
+.h3-responsive span {
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2960,7 +2960,7 @@ li {
   }
 }
 
-.wp-block-heading span{
+.wp-block-heading span {
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -3031,6 +3031,20 @@ li {
 
 .wp-block-table tbody tr:hover {
   background-color: hsl(var(--accent) / 0.1);
+}
+
+.wp-block-list {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+.wp-block-list li::marker {
+  padding-left: 0.125rem;
+  color: hsl(var(--accent));
+}
+
+.wp-block-list li {
+  margin-bottom: 0.5rem;
 }
 
 .file\:border-0::file-selector-button {

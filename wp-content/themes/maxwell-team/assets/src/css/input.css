@@ -235,7 +235,7 @@
 }
 
 @layer components {
-  
+
   /* Text Gradient Accent */
   .text-gradient-accent {
     background: var(--accent-gradient);
@@ -248,7 +248,8 @@
   .h1-responsive {
     @apply font-heading font-bold text-h1-mobile md:text-h1-tablet lg:text-h1-desktop;
   }
-  .h1-responsive span{
+
+  .h1-responsive span {
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -259,8 +260,8 @@
   .h2-responsive {
     @apply font-heading font-semibold text-h2-mobile md:text-h2-tablet lg:text-h2-desktop;
   }
-  
-  .h2-responsive span{
+
+  .h2-responsive span {
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -272,12 +273,13 @@
     @apply font-heading font-semibold text-h3-mobile md:text-h3-tablet lg:text-h3-desktop;
   }
 
-  .h3-responsive span{
+  .h3-responsive span {
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
   /* H4 Styles */
   .h4-responsive {
     @apply font-heading font-medium text-h4-mobile md:text-h4-tablet lg:text-h4-desktop;
@@ -297,6 +299,7 @@
 .wp-block-heading {
   @apply h2-responsive mb-3;
 }
+
 .maxwell-post-content p {
   @apply !mb-2;
 }
@@ -344,4 +347,17 @@
 
 .wp-block-table tbody tr:hover {
   @apply bg-accent/10;
+}
+
+
+.wp-block-list {
+  @apply list-disc list-inside;
+}
+
+.wp-block-list li::marker {
+  @apply text-accent pl-0.5;
+}
+
+.wp-block-list li {
+  @apply mb-2;
 }
