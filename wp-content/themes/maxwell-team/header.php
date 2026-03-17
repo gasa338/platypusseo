@@ -14,7 +14,7 @@
 	<!-- <div id="page" class="site"> -->
 	<a class="skip-link screen-reader-text hidden" href="#primary"><?php esc_html_e('Skip to content', 'mma-future'); ?></a>
 	<?php do_action('qm/start', 'header'); ?>
-	<header class="bg-white shadow-lg font-body">
+	<header class="bg-white shadow-lg font-body sticky top-0">
 		<div class="mx-auto px-4 sm:px-6 lg:px-8">
 			<nav class="flex justify-between items-center h-16">
 				<!-- Logo -->
