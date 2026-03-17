@@ -36,13 +36,7 @@ $color_mode = $data['background'] ?? 'dark';
                                         <div class="flex gap-4">
                                             <?php if (!empty($challenge['icon'])) : ?>
                                                 <div class="flex-shrink-0">
-                                                    <?php if ($challenge['icon']['subtype'] == 'svg+xml') : ?>
-                                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white  transition-all bg-accent/30 group-hover:bg-accent/80">
-                                                            <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 text-accent group-hover:text-white transition-colors'); ?>
-                                                        </div>
-                                                    <?php else : ?>
-                                                        <img src="<?php echo esc_url($challenge['icon']['url']); ?>" alt="<?php echo esc_attr($challenge['icon']['alt']); ?>" class="w-6 h-6 text-white transition-colors">
-                                                    <?php endif; ?>
+                                                    <?php echo maxwell_render_icon($challenge['icon'], 'w-6 h-6 text-accent '); ?>
                                                 </div>
                                             <?php endif; ?>
 
@@ -79,13 +73,7 @@ $color_mode = $data['background'] ?? 'dark';
                                 <div class="flex gap-4">
                                     <?php if (!empty($challenge['icon'])) : ?>
                                         <div class="flex-shrink-0">
-                                            <?php if ($challenge['icon']['subtype'] == 'svg+xml') : ?>
-                                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-white transition-all bg-accent group-hover:bg-accent/80">
-                                                    <?php echo maxwell_render_svg($challenge['icon']['url'], 'w-6 h-6 transition-colors'); ?>
-                                                </div>
-                                            <?php else : ?>
-                                                <img src="<?php echo esc_url($challenge['icon']['url']); ?>" alt="<?php echo esc_attr($challenge['icon']['alt']); ?>" class="w-6 h-6 text-white transition-colors">
-                                            <?php endif; ?>
+                                            <?php echo maxwell_render_icon($challenge['icon'], 'w-6 h-6 text-accent'); ?>
                                         </div>
                                     <?php endif; ?>
 

@@ -51,11 +51,7 @@ if ($color_mode == 'dark_mode') {
                         <div class="group text-center p-8 rounded-2xl <?php echo esc_attr($bg_box); ?> transition-colors">
                             <?php if ($number['icon']): ?>
                                 <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white bg-accent/60 group-hover:bg-accent transition-all">
-                                    <?php if (!empty($number['icon']['subtype'] == 'svg+xml')) : ?>
-                                        <?php echo maxwell_render_svg($number['icon']['url'], 'w-7 h-7 !text-white transition-colors'); ?>
-                                    <?php else : ?>
-                                        <img src="<?php echo esc_url($number['icon']['url']); ?>" alt="<?php echo esc_attr($number['icon']['alt']); ?>" class="w-7 h-7 text-white transition-colors">
-                                    <?php endif; ?>
+                                    <?php echo maxwell_render_icon($number['icon'], 'w-7 h-7 !text-white transition-colors'); ?>
                                 </div>
                             <?php endif; ?>
 

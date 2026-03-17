@@ -64,11 +64,7 @@ $reverse = $data['reverse'] ?? false;
                                     data-tab-index="<?php echo $key_tab; ?>"
                                     class="tab-button whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl transition-all <?php echo $key_tab === 0 ? 'bg-accent text-white' : 'bg-transparent text-muted-foreground'; ?>"
                                     <?php echo $key_tab === 0 ? 'aria-selected="true"' : 'aria-selected="false"'; ?>>
-                                    <?php if (!empty($tab['icon']['subtype']) && $tab['icon']['subtype'] == 'svg+xml'): ?>
-                                        <?php echo maxwell_render_svg($tab['icon']['url'], 'w-4 h-4'); ?>
-                                    <?php elseif (!empty($tab['icon']['url'])): ?>
-                                        <img src="<?php echo esc_url($tab['icon']['url']); ?>" alt="<?php echo esc_attr($tab['icon']['alt']); ?>" class="w-4 h-4">
-                                    <?php endif; ?>
+                                        <?php echo maxwell_render_icon($tab['icon'], 'w-4 h-4'); ?>
                                     <span class="hidden sm:inline"><?php echo esc_html($tab['title']); ?></span>
                                 </button>
                             </div>
@@ -103,11 +99,7 @@ $reverse = $data['reverse'] ?? false;
                                                     <div class="p-6 rounded-xl bg-accent/5 border border-border hover:border-accent/50 transition-colors">
                                                         <div class="flex items-start gap-4">
                                                             <div class="w-8 h-8 rounded-xl bg-accent flex items-center justify-center shrink-0">
-                                                                <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
-                                                                    <?php echo maxwell_render_svg($item['icon']['url'], 'w-4 h-4 text-white'); ?>
-                                                                <?php else : ?>
-                                                                    <img src="<?php echo esc_url($item['icon']['url']); ?>" alt="<?php echo esc_attr($item['icon']['alt']); ?>" class="w-5 h-5 text-accent">
-                                                                <?php endif; ?>
+                                                                <?php echo maxwell_render_icon($item['icon'], 'w-4 h-4 text-white'); ?>
                                                             </div>
                                                             <?php if (!empty($item['text'])): ?>
                                                                 <div>

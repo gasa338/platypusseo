@@ -24,11 +24,7 @@ $background = $data['background'] ?? 'dark_mode';
                         <div class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-accent/50 transition-colors group">
                             <?php if (!empty($feature['icon'])) : ?>
                                 <div class="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-6 group-hover:bg-accent/30 transition-colors">
-                                    <?php if (!empty($feature['icon']['subtype'] == 'svg+xml')) : ?>
-                                        <?php echo maxwell_render_svg($feature['icon']['url'], 'w-7 h-7 text-accent'); ?>
-                                    <?php else : ?>
-                                        <img src="<?php echo esc_url($feature['icon']['url']); ?>" alt="<?php echo esc_attr($feature['icon']['alt']); ?>" class="w-7 h-7 text-accent">
-                                    <?php endif; ?>
+                                    <?php echo maxwell_render_icon($feature['icon'], 'w-7 h-7 text-accent'); ?>
                                 </div>
                             <?php endif; ?>
                             <?php if (!empty($feature['title'])) : ?>

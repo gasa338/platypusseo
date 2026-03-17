@@ -35,7 +35,7 @@ $contact_data = get_field('contact_options', 'options');
                 <div class="flex flex-col items-center text-center gap-4">
                     <?php if (!empty($contact_data['viber_icon']['subtype'] == 'svg+xml')) : ?>
                         <div class="w-20 h-20 rounded-full flex items-center justify-center">
-                            <?php echo maxwell_render_svg($contact_data['viber_icon']['url'], 'w-12 h-12'); ?>
+                            <?php echo maxwell_render_icon($contact_data['viber_icon'], 'w-12 h-12'); ?>
                         </div>
                     <?php endif; ?>
                     <div>
@@ -56,7 +56,7 @@ $contact_data = get_field('contact_options', 'options');
                 <div class="flex flex-col items-center text-center gap-4">
                     <?php if (!empty($contact_data['whatsapp_icon']['subtype'] == 'svg+xml')) : ?>
                         <div class="w-20 h-20 rounded-full flex items-center justify-center">
-                            <?php echo maxwell_render_svg($contact_data['whatsapp_icon']['url'], 'w-12 h-12'); ?>
+                            <?php echo maxwell_render_icon($contact_data['whatsapp_icon'], 'w-12 h-12'); ?>
                         </div>
                     <?php endif; ?>
                     <div>

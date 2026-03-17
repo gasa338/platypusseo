@@ -20,11 +20,7 @@ $data = get_field('info_box');
                     <div class="flex items-center gap-3">
                         <?php if ($item['icon']) : ?>
                             <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center">
-                                <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
-                                    <?php echo maxwell_render_svg($item['icon']['url'], 'text-secondary w-8 h-8'); ?>
-                                <?php else: ?>
-                                    <img src="<?php echo esc_url($item['icon']['url']); ?>" alt="<?php echo esc_attr($item['icon']['alt']); ?>">
-                                <?php endif; ?>
+                                    <?php echo maxwell_render_icon($item['icon'], 'w-8 h-8 text-secondary'); ?>
                             </div>
                         <?php endif; ?>
                         <div>

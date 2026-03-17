@@ -44,11 +44,7 @@ $background_color = $data['background_color'] ?? '#fff';
                             <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
                             <?php if ($item['icon']) : ?>
                                 <div class="absolute bottom-4 left-4">
-                                    <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
-                                        <div class="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
-                                            <?php echo maxwell_render_svg($item['icon']['url'], 'w-6 h-6 text-primary'); ?>
-                                        </div>
-                                    <?php endif; ?>
+                                    <?php echo maxwell_render_icon($item['icon'], 'w-12 h-12 rounded-xl bg-secondary flex items-center justify-center'); ?>
                                 </div>
                             <?php endif; ?>
                         </div>

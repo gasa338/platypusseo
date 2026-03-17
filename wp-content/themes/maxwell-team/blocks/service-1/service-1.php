@@ -5,8 +5,9 @@ $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('service_1');
 ?>
 
-<?php echo _spacing_full('service-1',$blocks_id,$data['margin'], $data['padding']); ?>
-<section id="<?php echo esc_attr($anchor); ?>" class="service-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); echo ' '._background($data['background']); ?>">
+<?php echo _spacing_full('service-1', $blocks_id, $data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="service-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class);
+                                                                                                    echo ' ' . _background($data['background']); ?>">
     <div class="absolute inset-0 opacity-50" style="background-image: radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.05) 1px, transparent 0); background-size: 32px 32px;"></div>
     <div class="container mx-auto px-6 relative z-10">
         <div class="max-w-2xl mb-10">
@@ -24,11 +25,7 @@ $data = get_field('service_1');
                     <a class="group relative p-8 rounded-2xl bg-card border border-border hover:border-accent/50 hover:shadow-xl transition-all duration-500 no-underline" href="<?php echo esc_url($item['link']['url']); ?>" title="<?php echo esc_attr($item['link']['title']); ?>">
 
                         <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-accent/60 group-hover:bg-accent group-hover:scale-110 transition-all">
-                            <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
-                                <?php echo maxwell_render_svg($item['icon']['url'], 'w-7 h-7 text-white transition-colors'); ?>
-                            <?php else : ?>
-                                <img src="<?php echo esc_url($item['icon']['url']); ?>" alt="<?php echo esc_attr($item['icon']['alt']); ?>" class="w-7 h-7 text-accent group-hover:text-white transition-colors">
-                            <?php endif; ?>
+                            <?php echo maxwell_render_icon($item['icon'], 'w-7 h-7 text-white transition-colors'); ?>
                         </div>
                         <?php if (!empty($item['title'])): ?>
                             <h3 class="text-2xl font-semibold mb-4 group-hover:text-accent transition-colors"><?php echo $item['title']; ?></h3>
@@ -48,11 +45,7 @@ $data = get_field('service_1');
                     <div class="group relative p-8 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-xl transition-all duration-500" style="animation-delay: 0s;">
 
                         <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
-                            <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
-                                <?php echo maxwell_render_svg($item['icon']['url'], 'lucide lucide-search w-7 h-7 text-primary group-hover:text-white transition-colors'); ?>
-                            <?php else : ?>
-                                <img src="<?php echo esc_url($item['icon']['url']); ?>" alt="<?php echo esc_attr($item['icon']['alt']); ?>" class="lucide lucide-search w-7 h-7 text-primary group-hover:text-white transition-colors">
-                            <?php endif; ?>
+                            <?php echo maxwell_render_icon($item['icon'], 'w-7 h-7 text-primary group-hover:text-white transition-colors'); ?>
                         </div>
                         <?php if (!empty($item['title'])): ?>
                             <h3 class=" text-2xl font-semibold mb-4 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
@@ -62,7 +55,7 @@ $data = get_field('service_1');
                         <?php endif; ?>
                         <?php if (!empty($item['link'])): ?>
                             <span class="inline-flex items-center gap-1.5 font-semibold text-accent mt-5 hover:gap-2.5 transition-all"><?php echo $item['link']['title']; ?>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                     <path d="M7 7h10v10"></path>
                                     <path d="M7 17 17 7"></path>
                                 </svg>

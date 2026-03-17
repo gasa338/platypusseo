@@ -715,3 +715,28 @@ function maxwell_related_posts($post_id = null, $posts_per_page = 2) {
 
     wp_reset_postdata();
 }
+
+
+/**
+ * Renderuje ikonicu (SVG ili sliku) sa uniformnim klasama
+ *
+ * @param array $icon_data Podaci o ikonici (url, alt, subtype)
+ * @param string $classes CSS klase koje se primenjuju
+ * @return void
+ */
+function maxwell_render_icon($icon_data, $classes = 'w-5 h-5 text-white') {
+    if (empty($icon_data['url'])) {
+        return;
+    }
+    
+    if (isset($icon_data['subtype']) && $icon_data['subtype'] == 'svg+xml') {
+        echo maxwell_render_svg($icon_data['url'], $classes);
+    } else {
+        $alt = isset($icon_data['alt']) ? $icon_data['alt'] : '';
+        ?>
+        <img src="<?php echo esc_url($icon_data['url']); ?>" 
+             alt="<?php echo esc_attr($alt); ?>" 
+             class="<?php echo esc_attr($classes); ?>">
+        <?php
+    }
+}

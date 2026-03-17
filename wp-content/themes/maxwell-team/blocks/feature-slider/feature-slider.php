@@ -118,13 +118,11 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                     </div>
                                     <div class="flex flex-row md:flex-col gap-6 right-side">
                                         <div class="flex-1 bg-card rounded-2xl p-6 border border-border flex flex-col justify-center">
-                                            <div class="w-10 h-10 rounded-xl bg-accent flex items-center justify-center mb-4">
-                                                <?php if ($slide['left_top']['icon']['subtype'] == 'svg+xml') : ?>
-                                                    <?php echo maxwell_render_svg($slide['left_top']['icon']['url'], 'w-5 h-5 text-white'); ?>
-                                                <?php else : ?>
-                                                    <img src="<?php echo esc_url($slide['left_top']['icon']['url']); ?>" alt="<?php echo esc_attr($slide['left_top']['icon']['alt']); ?>" class="w-5 h-5 text-white">
-                                                <?php endif; ?>
-                                            </div>
+                                            <?php if (!empty($slide['left_top']['icon'])): ?>
+                                                <div class="w-10 h-10 rounded-xl bg-accent flex items-center justify-center mb-4">
+                                                    <?php echo maxwell_render_icon($slide['left_top']['icon'], 'w-5 h-5 text-white'); ?>
+                                                </div>
+                                            <?php endif; ?>
                                             <?php if (!empty($slide['left_top']['number'])): ?>
                                                 <div class=" text-4xl font-bold text-accent mb-2"><?php echo $slide['left_top']['number']; ?></div>
                                             <?php endif; ?>
@@ -133,13 +131,11 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                             <?php endif; ?>
                                         </div>
                                         <div class="flex-1 bg-accent rounded-2xl p-6 flex flex-col justify-center text-white">
-                                            <div class="w-10 h-10 rounded-xl bg-primary-foreground/20 flex items-center justify-center mb-4">
-                                                <?php if ($slide['left_bottom']['icon']['subtype'] == 'svg+xml') : ?>
-                                                    <?php echo maxwell_render_svg($slide['left_bottom']['icon']['url'], 'w-5 h-5 text-primary-foreground'); ?>
-                                                <?php else : ?>
-                                                    <img src="<?php echo esc_url($slide['left_bottom']['icon']['url']); ?>" alt="<?php echo esc_attr($slide['left_bottom']['icon']['alt']); ?>" class="w-5 h-5 text-primary-foreground">
-                                                <?php endif; ?>
-                                            </div>
+                                            <?php if (!empty($slide['left_bottom']['icon'])): ?>
+                                                <div class="w-10 h-10 rounded-xl bg-primary-foreground/20 flex items-center justify-center mb-4">
+                                                    <?php echo maxwell_render_icon($slide['left_bottom']['icon'], 'w-5 h-5 text-primary-foreground'); ?>
+                                                </div>
+                                            <?php endif; ?>
                                             <?php if (!empty($slide['left_bottom']['number'])): ?>
                                                 <div class=" text-4xl font-bold mb-2"><?php echo $slide['left_bottom']['number']; ?></div>
                                             <?php endif; ?>

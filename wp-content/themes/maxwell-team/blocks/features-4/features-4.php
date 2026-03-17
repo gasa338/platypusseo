@@ -42,11 +42,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
                         <?php foreach ($data['features'] as $key => $value): ?>
                             <div class="flex gap-4">
                                 <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 <?php echo esc_attr($color_mode == 'dark' ? 'bg-accent/10' : 'bg-accent/10'); ?>">
-                                    <?php if (!empty($value['icon']['subtype'] == 'svg+xml')) : ?>
-                                        <?php echo maxwell_render_svg($value['icon']['url'], 'w-6 h-6 ' . esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-accent')); ?>
-                                    <?php else : ?>
-                                        <img src="<?php echo esc_url($value['icon']['url']); ?>" alt="<?php echo esc_attr($value['icon']['alt']); ?>" class="w-5 h-5 text-accent">
-                                    <?php endif; ?>
+                                    <?php echo maxwell_render_icon($value['icon'], 'w-6 h-6 ' . esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-accent')); ?>
                                 </div>
                                 <div>
                                     <?php if (!empty($value['title'])): ?>

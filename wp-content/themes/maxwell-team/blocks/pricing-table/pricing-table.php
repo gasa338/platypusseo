@@ -113,11 +113,7 @@ $data = get_field('pricing_table');
                     <div class="rounded-xl p-6 mobile-box-<?php echo $blocks_id; ?>">
                         <?php if (!empty($item['title'])) : ?>
                             <h3 class="font-bold text-lg mb-4 text-primary">
-                                <?php if (!empty($item['icon'])) : ?>
-                                    <?php if (!empty($item['icon']['subtype'] == 'svg+xml')) : ?>
-                                        <?php maxwell_render_svg($item['icon']['url']); ?>
-                                    <?php endif; ?>
-                                <?php endif; ?>
+                                <?php echo maxwell_render_svg($item['icon']['url']); ?>
                                 <?php echo esc_html($item['title']); ?>
                             </h3>
                         <?php endif; ?>

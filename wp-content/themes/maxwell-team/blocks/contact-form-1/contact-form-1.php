@@ -17,13 +17,7 @@ $data = get_field('contact_form_1');
                             <div class="group flex items-start gap-4 px-6 py-4 rounded-xl bg-accent/10 border border-accent/30 transition-transform duration-300 group">
                                 <?php if (!empty($item['icon'])): ?>
                                     <div class="w-18 h-18 rounded-xl bg-accent flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:scale-105 transition-all">
-                                        <?php
-                                        if (!empty($item['icon']['subtype'] == 'svg+xml')) {
-                                            echo maxwell_render_svg($item['icon']['url'], 'w-16 h-16 rounded-md p-2 text-white shrink-0 group-hover:text-white');
-                                        } else {
-                                        ?>
-                                            <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-20 h-20">
-                                        <?php } ?>
+                                        <?php echo maxwell_render_icon($item['icon'], 'w-16 h-16 rounded-md p-2 text-white shrink-0 group-hover:text-white'); ?>
                                     </div>
                                 <?php endif; ?>
                                 <?php if (!empty($item['text'])) : ?>

@@ -68,11 +68,7 @@ $lists_type = [
                         <?php foreach ($data['items'] as $item): ?>
                             <div class="flex items-center gap-3">
                                 <div class="flex w-8 h-8 rounded-xl items-center justify-center bg-accent/20 text-white">
-                                    <?php if (!empty($data['icon_box']['subtype'] == 'svg+xml')) : ?>
-                                        <?php echo maxwell_render_svg($data['icon_box']['url'], 'w-4 h-4 text-accent'); ?>
-                                    <?php else : ?>
-                                        <img src="<?php echo esc_url($data['icon_box']['url']); ?>" alt="<?php echo esc_attr($data['icon_box']['alt']); ?>" class="w-5 h-5 text-accent">
-                                    <?php endif; ?>
+                                    <?php echo maxwell_render_icon($item['icon'], 'w-4 h-4 text-accent'); ?>
                                 </div>
                                 <?php if (!empty($item['title'])): ?>
                                     <h3 class="text-lg ">

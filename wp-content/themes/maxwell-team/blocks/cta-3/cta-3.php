@@ -25,11 +25,7 @@ $background_color = $data['background_color'] ?? "#000";
                 <?php if (!empty($data['link_1'])) : ?>
                     <a href="<?php echo esc_url($data['link_1']['url']); ?>" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 font-semibold glow-primary hover:scale-105 h-14 rounded-xl px-10 text-lg group bg-white text-primary hover:bg-white/90">
 
-                        <?php if (!empty($data['icon_button']['subtype'] == 'svg+xml')) : ?>
-                            <?php echo maxwell_render_svg($data['icon_button']['url'], 'w-5 h-5 text-primary'); ?>
-                        <?php else : ?>
-                            <img src="<?php echo esc_url($data['icon_button']['url']); ?>" alt="<?php echo esc_attr($data['icon_button']['alt']); ?>" class="w-5 h-5 text-primary">
-                        <?php endif; ?>
+                        <?php echo maxwell_render_icon($data['icon_button'], 'w-5 h-5 text-primary'); ?>
 
                         <?php echo esc_html($data['link_1']['title']); ?>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5 transition-transform group-hover:translate-x-1">

@@ -23,11 +23,7 @@ $align = $data['title']['align'] ?? 'left';
         <div class="max-w-4xl <?php echo $align == 'center' ? 'text-center mx-auto' : ''; ?>">
             <?php if (!empty($data['icon'])): ?>
                 <div class="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center mb-8">
-                    <?php if (!empty($data['icon']['subtype'] == 'svg+xml')) : ?>
-                        <?php echo maxwell_render_svg($data['icon']['url'], 'w-8 h-8 text-white'); ?>
-                    <?php else : ?>
-                        <img src="<?php echo esc_url($data['icon']['url']); ?>" alt="<?php echo esc_attr($data['icon']['alt']); ?>" class="w-5 h-5 text-white">
-                    <?php endif; ?>
+                    <?php echo maxwell_render_icon($data['icon'], 'w-8 h-8 text-white'); ?>
                 </div>
             <?php endif; ?>
             <?php if (!empty($data['top_title'])): ?>
