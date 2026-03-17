@@ -2050,6 +2050,16 @@ li {
   background-color: rgb(255 255 255 / 0.05);
 }
 
+.bg-\[\#ffffff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#eeeee4\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 238 228 / var(--tw-bg-opacity, 1));
+}
+
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
 }
