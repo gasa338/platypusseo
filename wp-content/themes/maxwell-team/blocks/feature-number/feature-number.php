@@ -50,8 +50,8 @@ if ($color_mode == 'dark_mode') {
                     <?php foreach ($data['numbers'] as $number): ?>
                         <div class="group text-center p-8 rounded-2xl <?php echo esc_attr($bg_box); ?> transition-colors">
                             <?php if ($number['icon']): ?>
-                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white bg-accent/60 group-hover:bg-accent transition-all">
-                                    <?php echo maxwell_render_icon($number['icon'], 'w-7 h-7 !text-white transition-colors'); ?>
+                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white bg-accent transition-all">
+                                    <?php echo maxwell_render_icon($number['icon'], 'w-7 h-7 !text-white'); ?>
                                 </div>
                             <?php endif; ?>
 

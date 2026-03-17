@@ -1930,6 +1930,11 @@ li {
   background-color: rgb(115 96 242 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#eeeee4\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 238 228 / var(--tw-bg-opacity, 1));
+}
+
 .bg-accent {
   background-color: hsl(var(--accent));
 }
@@ -2048,16 +2053,6 @@ li {
 
 .bg-white\/5 {
   background-color: rgb(255 255 255 / 0.05);
-}
-
-.bg-\[\#ffffff\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#eeeee4\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(238 238 228 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-20 {
@@ -3164,6 +3159,10 @@ li {
   border-color: rgb(255 255 255 / 0.5);
 }
 
+.hover\:border-accent-foreground:hover {
+  border-color: hsl(var(--accent-foreground));
+}
+
 .hover\:bg-accent:hover {
   background-color: hsl(var(--accent));
 }
@@ -3218,6 +3217,18 @@ li {
 
 .hover\:bg-white\/90:hover {
   background-color: rgb(255 255 255 / 0.9);
+}
+
+.hover\:bg-accent\/80:hover {
+  background-color: hsl(var(--accent) / 0.8);
+}
+
+.hover\:bg-accent\/5:hover {
+  background-color: hsl(var(--accent) / 0.05);
+}
+
+.hover\:bg-accent\/10:hover {
+  background-color: hsl(var(--accent) / 0.1);
 }
 
 .hover\:\!text-white:hover {

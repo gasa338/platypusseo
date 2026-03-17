@@ -72,15 +72,16 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                     <!-- Navigacioni dugmici IZNAD swiper-a -->
                     <div class="flex absolute bottom-0 right-0">
                         <div tabindex="0">
-                            <button class="feature-slider-prev inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-primary/50 h-10 w-10 rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left w-5 h-5">
+                            <button class="feature-slider-prev inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300  border border-border bg-transparent hover:bg-accent/10 text-foreground hover:bg-accent/5 hover:border-accent/50 h-10 w-10 rounded-full
+                            ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
                                     <path d="m15 18-6-6 6-6"></path>
                                 </svg>
                             </button>
                         </div>
                         <div tabindex="0">
-                            <button class="feature-slider-next inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-primary/50 h-10 w-10 rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right w-5 h-5">
+                            <button class="feature-slider-next inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300  border border-border bg-transparent hover:bg-accent/10 text-foreground hover:bg-accent/5 hover:border-accent/50 h-10 w-10 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
                                     <path d="m9 18 6-6-6-6"></path>
                                 </svg>
                             </button>
@@ -94,7 +95,7 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                             <div class="swiper-slide">
                                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]">
                                     <div class="lg:col-span-2 bg-card rounded-2xl p-8 md:p-12 border border-border relative overflow-hidden left-side">
-                                        <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                                        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                                         <div class="relative z-10">
                                             <div class="flex items-center gap-4 mb-6">
                                                 <div class="w-12 h-12 rounded-xl bg-accent flex items-center justify-center bg-accent group-hover:bg-accent/30 transition-colors">
@@ -130,10 +131,10 @@ $link_color = $data['link_color'] ?? 'rgba(0, 0, 0, 0.5)';
                                                 <div class="text-foreground"><?php echo $slide['left_top']['text']; ?></div>
                                             <?php endif; ?>
                                         </div>
-                                        <div class="flex-1 bg-accent rounded-2xl p-6 flex flex-col justify-center text-white">
+                                        <div class="flex-1 bg-hero rounded-2xl p-6 flex flex-col justify-center text-white">
                                             <?php if (!empty($slide['left_bottom']['icon'])): ?>
                                                 <div class="w-10 h-10 rounded-xl bg-primary-foreground/20 flex items-center justify-center mb-4">
-                                                    <?php echo maxwell_render_icon($slide['left_bottom']['icon'], 'w-5 h-5 text-primary-foreground'); ?>
+                                                    <?php echo maxwell_render_icon($slide['left_bottom']['icon'], 'w-5 h-5 text-white'); ?>
                                                 </div>
                                             <?php endif; ?>
                                             <?php if (!empty($slide['left_bottom']['number'])): ?>

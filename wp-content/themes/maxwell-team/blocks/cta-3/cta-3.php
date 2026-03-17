@@ -35,7 +35,7 @@ $background_color = $data['background_color'] ?? "#000";
                     </a>
                 <?php endif; ?>
                 <?php if (!empty($data['link_2'])) : ?>
-                    <a href="<?php echo esc_url($data['link_2']['url']); ?>" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-transparent h-14 rounded-xl px-10 text-lg border-white/30 text-white hover:bg-white/10 hover:border-white/50">
+                    <a href="<?php echo esc_url($data['link_2']['url']); ?>" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-transparent h-14 rounded-xl px-10 text-lg border-white/30 text-white hover:bg-white/10 hover:border-white/50 no-underline">
                         <?php echo esc_html($data['link_2']['title']); ?>
                     </a>
                 <?php endif; ?>
