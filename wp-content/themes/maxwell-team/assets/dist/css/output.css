@@ -2055,6 +2055,10 @@ li {
   background-color: rgb(255 255 255 / 0.05);
 }
 
+.bg-opacity-10 {
+  --tw-bg-opacity: 0.1;
+}
+
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
 }
@@ -2622,6 +2626,11 @@ li {
 
 .text-white\/90 {
   color: rgb(255 255 255 / 0.9);
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 .\!underline {

@@ -69,7 +69,7 @@ $reverse = $data['reverse'] ?? false;
                                 </button>
                             </div>
                         <?php endforeach; ?>
-                    </div>s
+                    </div>
 
                     <?php foreach ($data['tabs'] as $key => $tab): ?>
                         <div
