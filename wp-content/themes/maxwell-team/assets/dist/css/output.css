@@ -559,7 +559,10 @@ video {
   --foreground: 222 47% 11%;
   --card: 0 0% 98%;
   --card-foreground: 222 47% 11%;
-  --popover: 0 0% 100%;
+  --light: 30 20% 98%
+    
+
+    --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
   --primary: 222 55% 16%;
   --primary-foreground: 40 20% 98%;
@@ -1993,6 +1996,10 @@ li {
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+}
+
+.bg-light {
+  background-color: hsl(var(--light));
 }
 
 .bg-primary {
