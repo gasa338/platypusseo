@@ -23,7 +23,7 @@ $bg_image = get_image($data['bg_image']);
             <div class="text-center xl:col-span-1 lg:text-left md:px-16 lg:px-0 xl:pr-20">
                 <?php echo _heading($data['title'], 'mb-8'); ?>
                 <?php if ($data['text']): ?>
-                    <div class="mt-2 sm:mt-6 maxwell-content text-foreground"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                    <div class="mt-2 sm:mt-6 maxwell-content text-muted-foreground"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
 
                 <div class="mt-4 sm:mt-8">

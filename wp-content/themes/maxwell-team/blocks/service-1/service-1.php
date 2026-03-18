@@ -44,11 +44,11 @@ $data = get_field('service_1');
                 <?php else: ?>
                     <div class="group relative p-8 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-xl transition-all duration-500" style="animation-delay: 0s;">
 
-                        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
-                            <?php echo maxwell_render_icon($item['icon'], 'w-7 h-7 text-primary group-hover:text-white transition-colors'); ?>
+                        <div class="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-6">
+                            <?php echo maxwell_render_icon($item['icon'], 'w-7 h-7 text-white'); ?>
                         </div>
                         <?php if (!empty($item['title'])): ?>
-                            <h3 class=" text-2xl font-semibold mb-4 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
+                            <h3 class=" text-2xl font-semibold mb-4 group-hover:text-accent transition-colors"><?php echo $item['title']; ?></h3>
                         <?php endif; ?>
                         <?php if (!empty($item['text'])): ?>
                             <div class="text-muted-foreground mb-6 leading-relaxed maxwell-content"><?php echo $item['text']; ?></div>

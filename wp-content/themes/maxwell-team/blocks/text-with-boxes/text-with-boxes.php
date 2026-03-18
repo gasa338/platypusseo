@@ -27,8 +27,8 @@ $data = get_field('text_with_boxes');
                             <?php foreach ($content['items'] as $item): ?>
                                 <div class="group flex items-center gap-4 p-5 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-primary/50 hover:shadow-lg transition-all duration-300">
                                     <?php if ($item['icon']['subtype'] == 'svg+xml') : ?>
-                                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all">
-                                            <?php echo maxwell_render_svg($item['icon']['url'], 'w-5 h-5 text-accent shrink-0 group-hover:text-white'); ?>
+                                        <div class="w-12 h-12 rounded-xl bg-accent flex items-center justify-center shrink-0">
+                                            <?php echo maxwell_render_svg($item['icon']['url'], 'w-5 h-5 text-white shrink-0'); ?>
                                         </div>
                                     <?php else : ?>
                                         <img src="<?php echo esc_url($item['icon']['url']); ?>" alt="<?php echo esc_attr($item['icon']['alt']); ?>" class="w-6 h-6 text-primary transition-colors">

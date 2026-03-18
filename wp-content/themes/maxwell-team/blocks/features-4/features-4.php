@@ -35,21 +35,21 @@ $color_mode = $data['color_mode'] ?? 'dark';
                 <?php endif; ?>
                 <?php echo _heading($data['title'], 'mb-6 ' . esc_attr($color_mode == 'dark' ? 'text-white' : '')) ?>
                 <?php if (!empty($data['text'])): ?>
-                    <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white [&_p]:!text-white [&_li]:!text-white [&_span]:!text-white [&_strong]:!text-white' : ''); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                    <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/60 [&_li]:!text-white [&_span]:!text-white [&_strong]:!text-white' : 'text-muted-foreground [&_li]:!text-foreground [&_span]:!text-muted-foreground [&_strong]:!text-muted-foreground'); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
                 <?php if (!empty($data['features'])): ?>
                     <div class="grid sm:grid-cols-2 gap-6 mb-6">
                         <?php foreach ($data['features'] as $key => $value): ?>
                             <div class="flex gap-4">
-                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 <?php echo esc_attr($color_mode == 'dark' ? 'bg-accent/10' : 'bg-accent/10'); ?>">
-                                    <?php echo maxwell_render_icon($value['icon'], 'w-6 h-6 ' . esc_attr($color_mode == 'dark' ? 'text-accent' : 'text-accent')); ?>
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-accent">
+                                    <?php echo maxwell_render_icon($value['icon'], 'w-6 h-6 text-white'); ?>
                                 </div>
                                 <div>
                                     <?php if (!empty($value['title'])): ?>
                                         <h3 class="font-semibold mb-1 text-xl <?php echo esc_attr($color_mode == 'dark' ? 'text-white' : ''); ?>"><?php echo esc_html($value['title']); ?></h3>
                                     <?php endif; ?>
                                     <?php if (!empty($value['text'])): ?>
-                                        <p class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white' : ''); ?>"><?php echo esc_html($value['text']); ?></p>
+                                        <p class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/60' : 'text-muted-foreground'); ?>"><?php echo esc_html($value['text']); ?></p>
                                     <?php endif; ?>
                                 </div>
                             </div>

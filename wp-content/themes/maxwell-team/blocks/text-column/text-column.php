@@ -49,9 +49,9 @@ $background_color = $data['background_color'] ?? "#000";
       <div class="pt-1">
         <div class="flex items-center gap-4 mb-6">
           <?php if (!empty($data['right_icon'])): ?>
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/30">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent">
               <!-- Decision / constraint icon -->
-                <?php echo maxwell_render_icon($data['right_icon'], 'h-5 w-5 text-accent'); ?>
+                <?php echo maxwell_render_icon($data['right_icon'], 'h-5 w-5 text-white'); ?>
             </div>
           <?php endif; ?>
 

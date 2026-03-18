@@ -5,7 +5,7 @@ $block_name = $block['name'];
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('horizontal_tab');
 $text_color = $data['text_color'] ?? 'inherit';
-$background_color = $data['background_color'] ?? "transparent";
+$color_mode = $data['background'] ?? 'dark';
 $reverse = $data['reverse'] ?? false;
 ?>
 <style>
@@ -42,14 +42,14 @@ $reverse = $data['reverse'] ?? false;
 </style>
 
 <?php echo _spacing_full('horizontal-tab',$blocks_id,$data['margin'], $data['padding']); ?>
-<section id="<?php echo esc_attr($anchor); ?>" class="horizontal-tab-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> ">
+<section id="<?php echo esc_attr($anchor); ?>" class="horizontal-tab-<?php echo esc_attr($blocks_id); ?> <?php echo _background($data['background']) ?> <?php echo esc_attr($blocks_class); ?> ">
     <div class="container mx-auto px-6">
         <div class="max-w-2xl mb-12 text-center mx-auto">
             <?php if (!empty($data['top_title'])): ?>
                 <span class="maxwell-top-title mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
             <?php endif; ?>
 
-            <?php echo _heading($data['title'], ''); ?>
+            <?php echo _heading($data['title'], '' . $color_mode == "dark_mode" ? "text-white" : ""); ?>
         </div>
         <div>
 
@@ -57,7 +57,7 @@ $reverse = $data['reverse'] ?? false;
                 <?php if (!empty($data['tabs'])): ?>
                     <div class="items-center justify-center w-full max-w-fit mx-auto flex p-2 bg-card border border-border rounded-xl mb-12 tab-buttons">
                         <?php foreach ($data['tabs'] as $key_tab => $tab): ?>
-                            <div class="flex-1">
+                            <div class="flex-1 ">
                                 <button
                                     type="button"
                                     role="tab"
@@ -69,7 +69,7 @@ $reverse = $data['reverse'] ?? false;
                                 </button>
                             </div>
                         <?php endforeach; ?>
-                    </div>
+                    </div>s
 
                     <?php foreach ($data['tabs'] as $key => $tab): ?>
                         <div
@@ -86,7 +86,7 @@ $reverse = $data['reverse'] ?? false;
                                     <div class="max-w-4xl mx-auto">
                                         <div class="text-center mb-12">
                                             <?php if (!empty($content['title'])): ?>
-                                                <h3 class=" text-3xl font-bold mb-4"><?php echo $content['title']; ?></h3>
+                                                <h3 class=" text-3xl font-bold mb-4 <?php echo $key === 0 ? 'text-primary' : ''; ?>"><?php echo $content['title']; ?></h3>
                                             <?php endif; ?>
                                             <?php if (!empty($content['content'])): ?>
                                                 <div class="text-lg text-muted-foreground max-w-2xl mx-auto"><?php echo apply_filters('the_content', $content['content']); ?></div>
