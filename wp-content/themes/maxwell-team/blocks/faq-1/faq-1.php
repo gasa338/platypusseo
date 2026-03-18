@@ -22,13 +22,16 @@ $color_mode = $data['background'] ?? 'dark';
         <div class="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16 accordion-container-<?php echo $blocks_id; ?>">
             <?php if (!empty($data['items'])) : ?>
                 <?php foreach ($data['items'] as $key => $item) : ?>
-                    <div class="accordion-item transition-all duration-200 <?php echo $color_mode === 'dark_mode' ? 'bg-transparent' : ''; ?> border-b border-gray-200 shadow-sm rounded-xl cursor-pointer">
+                    <div class="accordion-item transition-all duration-200 <?php echo $color_mode === 'dark_mode' ? 'bg-transparent' : ''; ?> border-b border-accent/5">
                         <button type="button" class="accordion-button flex items-center justify-between w-full px-4 py-5 sm:p-6 ">
                             <div class="flex justify-between items-center w-full">
-                                <h3 class="text-left text-xl font-bold <?php echo $color_mode === 'dark_mode' ? 'text-white' : ''; ?>"><?php echo $item['question']; ?></h3>
-                                <svg class="w-6 h-6 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
+                                <h3 class="text-left text-2xl font-bold <?php echo $color_mode === 'dark_mode' ? 'text-white' : ''; ?>"><?php echo $item['question']; ?></h3>
+                                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full border border-accent/50">
+                                    <svg class="w-6 h-6 <?php echo $color_mode === 'dark_mode' ? 'text-accent' : ''; ?> transition-transform duration-200 <?php echo $key === 0 ? 'rotate-180' : ''; ?>" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
+                            </div>
                         </button>
                         <div class="<?php echo $key === 0 ? '' : 'hidden'; ?> accordion-content px-4 pb-5 sm:px-6 sm:pb-6 <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : ''; ?>">
                             <?php echo apply_filters('the_content', $item['answer']); ?>

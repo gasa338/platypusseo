@@ -115,13 +115,11 @@ if ($color_mode == 'dark_mode') {
 <style>
     /* Stil za pagination bulletove */
     .swiper-pagination-bullet {
-        /* background-color: #3b82f6 !important; */
         opacity: 0.3 !important;
         transition: all 0.3s ease !important;
     }
 
     .swiper-pagination-bullet-active {
-        /* background-color: #3b82f6 !important; */
         opacity: 1 !important;
         width: 32px !important;
         border-radius: 9999px !important;
