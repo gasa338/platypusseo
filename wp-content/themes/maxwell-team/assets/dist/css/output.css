@@ -866,10 +866,6 @@ li {
   top: -3.5rem;
 }
 
-.-top-32 {
-  top: -8rem;
-}
-
 .-top-4 {
   top: -1rem;
 }
@@ -1855,6 +1851,10 @@ li {
   border-color: hsl(var(--accent) / 0.05);
 }
 
+.border-accent\/50 {
+  border-color: hsl(var(--accent) / 0.5);
+}
+
 .border-border {
   border-color: hsl(var(--border));
 }
@@ -1911,10 +1911,6 @@ li {
 
 .border-white\/30 {
   border-color: rgb(255 255 255 / 0.3);
-}
-
-.border-accent\/50 {
-  border-color: hsl(var(--accent) / 0.5);
 }
 
 .border-t-accent {
@@ -2054,10 +2050,6 @@ li {
 
 .bg-white\/5 {
   background-color: rgb(255 255 255 / 0.05);
-}
-
-.bg-card\/50 {
-  background-color: hsl(var(--card) / 0.5);
 }
 
 .bg-opacity-20 {
