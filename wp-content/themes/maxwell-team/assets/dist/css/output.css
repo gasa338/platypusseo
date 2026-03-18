@@ -557,7 +557,7 @@ video {
 :root {
   --background: 40 20% 98%;
   --foreground: 222 47% 11%;
-  --card: 0 0% 100%;
+  --card: 0 0% 98%;
   --card-foreground: 222 47% 11%;
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
@@ -1931,9 +1931,9 @@ li {
   background-color: rgb(115 96 242 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\#eeeee4\] {
+.bg-\[\#FEFDFC\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(238 238 228 / var(--tw-bg-opacity, 1));
+  background-color: rgb(254 253 252 / var(--tw-bg-opacity, 1));
 }
 
 .bg-accent {

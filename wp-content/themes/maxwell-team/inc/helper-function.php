@@ -268,7 +268,7 @@ function _background($data)
             $bg_class = 'bg-surface';
             break;
         case 'light':
-            $bg_class = 'bg-card';
+            $bg_class = 'bg-light';
             break;
         case 'dark_mode':
             $bg_class = 'bg-hero';

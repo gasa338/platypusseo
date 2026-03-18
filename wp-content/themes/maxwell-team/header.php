@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class('font-body scroll-smooth bg-[#eeeee4]'); ?>>
+<body <?php body_class('font-body scroll-smooth bg-[#FEFDFC]'); ?>>
 	<?php wp_body_open(); ?>
 	<!-- <div id="page" class="site"> -->
 	<a class="skip-link screen-reader-text hidden" href="#primary"><?php esc_html_e('Skip to content', 'mma-future'); ?></a>
