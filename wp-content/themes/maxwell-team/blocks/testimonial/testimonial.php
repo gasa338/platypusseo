@@ -4,7 +4,7 @@ $blocks_class = isset($block['className']) ? $block['className'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('testimonial');
 $color_mode = $data['background'] ?? 'dark';
-$card_bg = $data['card_bg'] ?? 'dark';
+$card_bg = $data['card_bg'] ?? 'inherit';
 
 $bg_class = '';
 switch ($color_mode) {
@@ -43,7 +43,7 @@ if ($color_mode == 'dark_mode') {
                 <?php echo _heading($data['title'], 'mb-8 ' . esc_attr($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground') . ''); ?>
 
                 <?php if ($data['text']): ?>
-                    <div class="text-center <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/80' : 'text-muted-foreground'); ?> mb-12"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                    <div class="text-center <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?> mb-12"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
@@ -54,10 +54,10 @@ if ($color_mode == 'dark_mode') {
                     <div class="swiper-wrapper">
                         <?php foreach ($data['testimonials'] as $testimonial): ?>
                             <div class="swiper-slide">
-                                <div class="bg-white rounded-2xl p-8 md:p-12 border border-gray-200 relative overflow-hidden">
+                                <div class="rounded-2xl p-8 md:p-12 relative overflow-hidden <?php echo $color_mode == 'dark_mode' ? 'border border-accent/50 bg-transparent ' : 'bg-card border border-border'; ?>">
                                     <!-- Quote ikonica -->
                                     <div class="absolute top-8 left-8 w-12 h-12 rounded-xl text-accent bg-accent/10 flex items-center justify-center mb-6">
-                                        <svg class="w-7 h-7 text-accent" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+                                        <svg class="w-7 h-7 text-accent " width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
                                             <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
                                             <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
                                         </svg>
@@ -65,16 +65,16 @@ if ($color_mode == 'dark_mode') {
                                     <!-- Content -->
                                     <div class="pt-8">
                                         <?php if ($testimonial['text']): ?>
-                                            <blockquote class="text-2xl md:text-3xl mb-8 leading-relaxed text-foreground"><?php echo apply_filters('the_content', $testimonial['text']); ?></blockquote>
+                                            <blockquote class="text-2xl md:text-3xl mb-8 <?php echo $color_mode == 'dark_mode' ? "text-white" : "text-foreground-muted"; ?>"><?php echo apply_filters('the_content', $testimonial['text']); ?></blockquote>
                                         <?php endif; ?>
                                         <div class="flex items-center justify-between">
                                             <?php if ($testimonial['name'] || $testimonial['position']): ?>
                                                 <div>
                                                     <?php if ($testimonial['name']): ?>
-                                                        <div class="font-semibold text-foreground"><?php echo esc_html($testimonial['name']); ?></div>
+                                                        <div class="font-bold text-xl <?php echo $color_mode == 'dark_mode' ? "text-white" : "text-foreground-muted"; ?>"><?php echo esc_html($testimonial['name']); ?></div>
                                                     <?php endif; ?>
                                                     <?php if ($testimonial['position']): ?>
-                                                        <div class="text-foreground-muted"><?php echo esc_html($testimonial['position']); ?></div>
+                                                        <div class="<?php echo $color_mode == 'dark_mode' ? "text-white" : "text-foreground-muted"; ?>"><?php echo esc_html($testimonial['position']); ?></div>
                                                     <?php endif; ?>
                                                 </div>
                                             <?php endif; ?>
