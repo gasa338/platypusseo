@@ -13,8 +13,9 @@ $layout = $data['layout'] ?? 'default';
 $layout_number = $data['layout_number'] ?? 'two';
 $color_mode = $data['background'];
 ?>
-<?php echo _spacing_full('case-study',$blocks_id,$data['margin'], $data['padding']); ?>
-<section id="<?php echo esc_attr($anchor); ?>" class="case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); echo ' '._background($data['background']); ?>">
+<?php echo _spacing_full('case-study', $blocks_id, $data['margin'], $data['padding']); ?>
+<section id="<?php echo esc_attr($anchor); ?>" class="case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class);
+                                                                                                        echo ' ' . _background($data['background']); ?>">
     <div class="container mx-auto px-6 <?php echo $layout_number === 'two' ? 'max-w-5xl' : ''; ?>">
         <?php if ($layout === 'horizontal') : ?>
             <div class="container mx-auto px-6">
@@ -49,31 +50,33 @@ $color_mode = $data['background'];
                                 ?>
                                     <div class="grid md:grid-cols-2 gap-6">
                                         <?php foreach ($chunk as $item) : ?>
-                                            <div>
-                                                <a class="group block h-full no-underline" href="<?php echo $item['link']['url']; ?>">
-                                                    <div class="relative h-full rounded-2xl overflow-hidden <?php echo $color_mode === 'dark_mode' ? 'bg-transparent bg-opacity-20' : 'bg-card'; ?> border border-border hover:border-accent/50 transition-all duration-500">
-                                                        <div class="relative h-48 overflow-hidden">
-                                                            <?php if ($item['image']) : $image = get_image($item['image']); ?>
-                                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                                                            <?php endif; ?>
-                                                            <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
-                                                            <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-5 h-5  group-hover:text-primary transition-colors">
-                                                                    <path d="M7 7h10v10"></path>
-                                                                    <path d="M7 17 17 7"></path>
-                                                                </svg>
-                                                            </div>
-                                                        </div>
-                                                        <div class="p-6">
-                                                            <?php if ($item['title']) : ?>
-                                                                <h3 class="text-2xl font-bold mb-2 group-hover:text-accent <?php echo $color_mode === 'dark_mode' ? 'text-white' : ''; ?> transition-colors"><?php echo $item['title']; ?></h3>
-                                                            <?php endif; ?>
-                                                            <?php if ($item['main_text']) : ?>
-                                                                <div class="mb-4 <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : ''; ?> maxwell-content"><?php echo apply_filters('the_content', $item['main_text']); ?></div>
-                                                            <?php endif; ?>
+                                            <div class="group block h-full no-underline">
+                                                <div class="relative h-full rounded-2xl overflow-hidden <?php echo $color_mode === 'dark_mode' ? 'bg-white/5' : 'bg-card'; ?> border border-border hover:border-accent/50 transition-all duration-500">
+                                                    <div class="relative h-48 overflow-hidden">
+                                                        <?php if ($item['image']) : $image = get_image($item['image']); ?>
+                                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                                        <?php endif; ?>
+                                                        <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
+                                                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-5 h-5  group-hover:text-primary transition-colors">
+                                                                <path d="M7 7h10v10"></path>
+                                                                <path d="M7 17 17 7"></path>
+                                                            </svg>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                    <div class="p-6">
+                                                        <?php if ($item['title']) : ?>
+                                                            <h3 class="text-2xl font-bold mb-2 group-hover:text-accent <?php echo $color_mode === 'dark_mode' ? 'text-white' : ''; ?> transition-colors"><?php echo $item['title']; ?></h3>
+                                                        <?php endif; ?>
+                                                        <?php if ($item['main_text']) : ?>
+                                                            <div class="mb-4 <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : ''; ?> maxwell-content"><?php echo apply_filters('the_content', $item['main_text']); ?></div>
+                                                        <?php endif; ?>
+
+                                                        <?php if ($item['link']) : ?>
+                                                            <?php echo _link_3($item['link'], '!text-accent no-underline'); ?>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                </div>
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
@@ -86,60 +89,64 @@ $color_mode = $data['background'];
         <?php else : ?>
             <!-- Originalni vertikalni layout -->
             <!-- <div class="container mx-auto px-6"> -->
-                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-                    <div class="max-w-2xl">
-                        <?php if (!empty($data['top_title'])) : ?>
-                            <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
-                        <?php endif; ?>
-                            <?php echo _heading($data['title'], "mb-6" . ($color_mode === 'dark_mode' ? ' text-white' : '')); ?>
-                        <?php if (!empty($data['text'])) : ?>
-                            <div class="text-lg maxwell-content <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : ''; ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
-                        <?php endif; ?>
-                    </div>
-                    <?php if (!empty($data['link'])) : ?>                        
-                        <?php echo _link_1($data['link'], ''); ?>
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+                <div class="max-w-2xl">
+                    <?php if (!empty($data['top_title'])) : ?>
+                        <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
+                    <?php endif; ?>
+                    <?php echo _heading($data['title'], "mb-6" . ($color_mode === 'dark_mode' ? ' text-white' : '')); ?>
+                    <?php if (!empty($data['text'])) : ?>
+                        <div class="text-lg maxwell-content <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : ''; ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
                     <?php endif; ?>
                 </div>
+                <?php if (!empty($data['link'])) : ?>
+                    <?php echo _link_1($data['link'], ''); ?>
+                <?php endif; ?>
+            </div>
 
-                <?php if (!empty($data['items'])) : ?>
-                    <div class="grid <?php echo $layout_number === 'two' ? 'md:grid-cols-2' : 'md:grid-cols-3'; ?> gap-6 ">
-                        <?php foreach ($data['items'] as $item) : ?>
-                            <div>
-                                <a class="group block h-full no-underline" href="<?php echo $item['link']['url']; ?>">
-                                    <div class="relative h-full rounded-2xl overflow-hidden bg-card border border-border hover:border-accent/30 transition-all duration-500">
-                                        <div class="relative h-48 overflow-hidden">
-                                            <?php if ($item['image']) : $image = get_image($item['image']); ?>
-                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                                            <?php endif; ?>
-                                            <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
-                                            <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-accent/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-accent transition-opacity duration-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-5 h-5  group-hover:text-primary transition-colors">
-                                                    <path d="M7 7h10v10"></path>
-                                                    <path d="M7 17 17 7"></path>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div class="p-6">
-                                            <?php if ($item['title']) : ?>
-                                                <h3 class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors"><?php echo $item['title']; ?></h3>
-                                            <?php endif; ?>
-                                            <?php if ($item['tag']) : ?>
-                                                <div class="mb-3">
-                                                    <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent text-white">
-                                                        <?php echo $item['tag']; ?>
-                                                    </span>
-                                                </div>
-                                            <?php endif; ?>
-                                            <?php if ($item['main_text']) : ?>
-                                                <div class="mb-4 maxwell-content"><?php echo $item['main_text']; ?></div>
-                                            <?php endif; ?>
+            <?php if (!empty($data['items'])) : ?>
+                <div class="grid <?php echo $layout_number === 'two' ? 'md:grid-cols-2' : 'md:grid-cols-3'; ?> gap-6 ">
+                    <?php foreach ($data['items'] as $item) : ?>
+                        <div>
+                            <div class="group block h-full no-underline">
+                                <div class="relative h-full rounded-2xl overflow-hidden <?php echo $color_mode === 'dark_mode' ? 'bg-white/5' : 'bg-card'; ?> border border-border hover:border-accent/30 transition-all duration-500">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <?php if ($item['image']) : $image = get_image($item['image']); ?>
+                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                        <?php endif; ?>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
+                                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-accent/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-accent transition-opacity duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-5 h-5  group-hover:text-primary transition-colors">
+                                                <path d="M7 7h10v10"></path>
+                                                <path d="M7 17 17 7"></path>
+                                            </svg>
                                         </div>
                                     </div>
-                                </a>
+                                    <div class="p-6">
+                                        <?php if ($item['title']) : ?>
+                                            <h3 class="text-2xl font-bold mb-2 <?php echo $color_mode === 'dark_mode' ? 'text-white' : ''; ?> transition-colors"><?php echo $item['title']; ?></h3>
+                                        <?php endif; ?>
+                                        <?php if ($item['tag']) : ?>
+                                            <div class="mb-3">
+                                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent text-white">
+                                                    <?php echo $item['tag']; ?>
+                                                </span>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if ($item['main_text']) : ?>
+                                            <div class="mb-4 maxwell-content <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : 'text-foreground-muted'; ?>"><?php echo $item['main_text']; ?></div>
+                                        <?php endif; ?>
+
+                                        <?php if ($item['link']) : ?>
+                                            <?php echo _link_3($item['link'], '!text-accent no-underline'); ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
                             </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
             <!-- </div> -->
         <?php endif; ?>
     </div>

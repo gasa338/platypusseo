@@ -274,7 +274,7 @@ function _background($data)
             $bg_class = 'bg-hero';
             break;
         default:
-            $bg_class = 'bg-card';
+            $bg_class = 'bg-light';
             break;
     }
 

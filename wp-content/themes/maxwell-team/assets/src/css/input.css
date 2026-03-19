@@ -67,10 +67,10 @@
     --background: 40 20% 98%;
     --foreground: 222 47% 11%;
 
-    --card: 0 0% 98%;
+    --card: 180 9% 98%;
     --card-foreground: 222 47% 11%;
 
-    --light: 30 20% 98%
+    --light: 30 20% 98%;
     
 
     --popover: 0 0% 100%;
@@ -112,28 +112,6 @@
     --accent-gradient: linear-gradient(135deg, hsl(12 80% 58%), hsl(16 85% 52%));
     --surface-gradient: linear-gradient(180deg, hsl(40 20% 98%), hsl(220 14% 96%));
   }
-
-  .dark {
-    --background: 222 47% 6%;
-    --foreground: 40 20% 98%;
-    --card: 222 47% 9%;
-    --card-foreground: 40 20% 98%;
-    --popover: 222 47% 9%;
-    --popover-foreground: 40 20% 98%;
-    --primary: 40 20% 98%;
-    --primary-foreground: 222 55% 16%;
-    --secondary: 222 30% 18%;
-    --secondary-foreground: 40 20% 98%;
-    --muted: 222 30% 18%;
-    --muted-foreground: 220 10% 65%;
-    --accent: 12 80% 58%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 212 27% 84%;
-  }
 }
 
 @layer base {
@@ -171,16 +149,6 @@
   li {
     color: hsl(var(--foreground));
   }
-
-  .dark-text p,
-  .dark-text li,
-  .dark-text span,
-  .dark-text strong,
-  .dark-text b,
-  .dark-text em,
-  .dark-text i {
-    color: #fff;
-  }
 }
 
 @layer utilities {
@@ -190,6 +158,10 @@
 
   .bg-surface {
     background: var(--surface-gradient);
+  }
+
+  .bg-background {
+    background: var(--background);
   }
 
   .maxwell-content p {

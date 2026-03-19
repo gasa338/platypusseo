@@ -41,7 +41,7 @@ $reverse = $data['reverse'] ?? false;
     }
 </style>
 
-<?php echo _spacing_full('horizontal-tab',$blocks_id,$data['margin'], $data['padding']); ?>
+<?php echo _spacing_full('horizontal-tab', $blocks_id, $data['margin'], $data['padding']); ?>
 <section id="<?php echo esc_attr($anchor); ?>" class="horizontal-tab-<?php echo esc_attr($blocks_id); ?> <?php echo _background($data['background']) ?> <?php echo esc_attr($blocks_class); ?> ">
     <div class="container mx-auto px-6">
         <div class="max-w-2xl mb-12 text-center mx-auto">
@@ -55,7 +55,7 @@ $reverse = $data['reverse'] ?? false;
 
             <div dir="ltr" data-orientation="horizontal" class="w-full tab-container">
                 <?php if (!empty($data['tabs'])): ?>
-                    <div class="items-center justify-center w-full max-w-fit mx-auto flex p-2 bg-card border border-border rounded-xl mb-12 tab-buttons">
+                    <div class="items-center justify-center w-full max-w-fit mx-auto flex p-2 <?php echo $color_mode == 'dark_mode' ? 'bg-white/5' : 'bg-card' ?> border border-border rounded-xl mb-12 tab-buttons">
                         <?php foreach ($data['tabs'] as $key_tab => $tab): ?>
                             <div class="flex-1 ">
                                 <button
@@ -64,7 +64,7 @@ $reverse = $data['reverse'] ?? false;
                                     data-tab-index="<?php echo $key_tab; ?>"
                                     class="tab-button whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl transition-all <?php echo $key_tab === 0 ? 'bg-accent text-white' : 'bg-transparent text-muted-foreground'; ?>"
                                     <?php echo $key_tab === 0 ? 'aria-selected="true"' : 'aria-selected="false"'; ?>>
-                                        <?php echo maxwell_render_icon($tab['icon'], 'w-4 h-4'); ?>
+                                    <?php echo maxwell_render_icon($tab['icon'], 'w-4 h-4 text-white'); ?>
                                     <span class="hidden sm:inline"><?php echo esc_html($tab['title']); ?></span>
                                 </button>
                             </div>
@@ -86,23 +86,23 @@ $reverse = $data['reverse'] ?? false;
                                     <div class="max-w-4xl mx-auto">
                                         <div class="text-center mb-12">
                                             <?php if (!empty($content['title'])): ?>
-                                                <h3 class=" text-3xl font-bold mb-4 <?php echo $key === 0 ? 'text-primary' : ''; ?>"><?php echo $content['title']; ?></h3>
+                                                <h3 class=" text-3xl font-bold mb-4 <?php echo $key === 0 ? 'text-primary' : ''; ?> <?php echo $color_mode == "dark_mode" ? "!text-white" : ""; ?>"><?php echo $content['title']; ?></h3>
                                             <?php endif; ?>
                                             <?php if (!empty($content['content'])): ?>
-                                                <div class="text-lg text-muted-foreground max-w-2xl mx-auto"><?php echo apply_filters('the_content', $content['content']); ?></div>
+                                                <div class="text-lg <?php echo $color_mode == "dark_mode" ? "text-white/60" : "text-muted-foreground"; ?>  max-w-2xl mx-auto"><?php echo apply_filters('the_content', $content['content']); ?></div>
                                             <?php endif; ?>
                                         </div>
 
                                         <?php if (!empty($content['items'])): ?>
                                             <div class="grid md:grid-cols-2 gap-6">
                                                 <?php foreach ($content['items'] as $item): ?>
-                                                    <div class="p-6 rounded-xl bg-accent/5 border border-border hover:border-accent/50 transition-colors">
+                                                    <div class="p-6 rounded-xl bg-white/5 border border-accent/5 hover:border-accent/50 transition-colors">
                                                         <div class="flex items-start gap-4">
                                                             <div class="w-8 h-8 rounded-xl bg-accent flex items-center justify-center shrink-0">
                                                                 <?php echo maxwell_render_icon($item['icon'], 'w-4 h-4 text-white'); ?>
                                                             </div>
                                                             <?php if (!empty($item['text'])): ?>
-                                                                <div>
+                                                                <div class="<?php echo $color_mode == "dark_mode" ? "text-white/60" : ""; ?>">
                                                                     <?php echo apply_filters('the_content', $item['text']); ?>
                                                                 </div>
                                                             <?php endif; ?>
@@ -116,7 +116,6 @@ $reverse = $data['reverse'] ?? false;
                                 <?php if ($tab['variable_content'][0]['acf_fc_layout'] == 'image_text'):
                                     $data = $tab['variable_content'][0];
                                 ?>
-
                                     <div class="max-w-4xl mx-auto">
                                         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center lg:flex-row-reverse">
                                             <div class="<?php echo esc_attr($reverse == 'yes' ? 'order-1' : 'order-2'); ?>">
@@ -130,15 +129,13 @@ $reverse = $data['reverse'] ?? false;
                                                 </div>
                                             </div>
                                             <div class="<?php echo esc_attr($reverse == 'yes' ? 'order-2' : 'order-1'); ?>">
-                                                <h3 class=" text-4xl md:text-5xl font-bold mb-6"><?php echo esc_html($data['title']); ?></h3>
+                                                <h3 class=" text-4xl md:text-5xl font-bold mb-6 <?php echo $color_mode == "dark_mode" ? "text-white" : ""; ?>"><?php echo esc_html($data['title']); ?></h3>
                                                 <?php if (!empty($data['text'])): ?>
-                                                    <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white' : 'text-muted-foreground'); ?> text-lg mb-10 leading-relaxed maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                                                    <div class="<?php echo esc_attr($color_mode == 'dark' ? 'text-white/60' : 'text-muted-foreground'); ?> text-lg mb-10 maxwell-content"><?php echo apply_filters('the_content', $data['text']); ?></div>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
                                     </div>
-
-
                                 <?php endif; ?>
                             <?php endif; ?>
                             <!-- end content -->
