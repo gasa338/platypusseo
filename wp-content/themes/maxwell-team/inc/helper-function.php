@@ -740,3 +740,168 @@ function maxwell_render_icon($icon_data, $classes = 'w-5 h-5 text-white') {
         <?php
     }
 }
+
+
+/**
+ * Generiše HTML za share opcije (LinkedIn, Twitter, Facebook, Copy Link i Save/Bookmark)
+ * 
+ * @param string $url URL članka koji se deli
+ * @param string $title Naslov članka koji se deli (opciono)
+ * @param string $additionalClasses Dodatne CSS klase za wrapper (opciono)
+ * @return string HTML za share komponentu
+ */
+function _share_component($url, $title = '', $additionalClasses = '') {
+    // Enkodiranje URL-a i naslova za deljenje
+    $encodedUrl = urlencode($url);
+    $encodedTitle = urlencode($title ?: 'Check this out!');
+    
+    // Generisanje share linkova
+    $linkedinUrl = "https://www.linkedin.com/sharing/share-offsite/?url={$encodedUrl}";
+    $twitterUrl = "https://twitter.com/intent/tweet?url={$encodedUrl}&text={$encodedTitle}";
+    $facebookUrl = "https://www.facebook.com/sharer/sharer.php?u={$encodedUrl}";
+    ?>
+    <div class="bg-card border border-border rounded-xl p-6 mb-6 {$additionalClasses}">
+        <h3 class="font-semibold text-foreground mb-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share2 w-4 h-4">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+            </svg> 
+            Share Article
+        </h3>
+        <div class="flex gap-3">
+            <a href="<?php echo $linkedinUrl; ?>" target="_blank" rel="noopener noreferrer" 
+               class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-accent transition-all bg-accent/30 hover:bg-accent group cursor-pointer"
+               title="Share on LinkedIn">
+                <svg class="w-5 h-5 text-accent group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect width="4" height="12" x="2" y="9"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+            
+            <a href="<?php echo $twitterUrl; ?>" target="_blank" rel="noopener noreferrer" 
+               class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-accent transition-all bg-accent/30 hover:bg-accent group cursor-pointer"
+               title="Share on Twitter">
+                <svg class="w-5 h-5 text-accent group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+            </a>
+            
+            <a href="<?php echo $facebookUrl; ?>" target="_blank" rel="noopener noreferrer" 
+               class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-accent transition-all bg-accent/30 hover:bg-accent group cursor-pointer"
+               title="Share on Facebook">
+                <svg class="w-5 h-5 text-accent group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+            </a>
+            
+            <button onclick="copyToClipboard('<?php echo $url; ?>', this)" 
+                    class="relative w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-accent transition-all bg-accent/30 hover:bg-accent group cursor-pointer"
+                    title="Copy link"
+                    id="{$uniqueId}">
+                <svg class="w-4 h-4 text-accent group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                    <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                </svg>
+                <span class="copy-tooltip absolute -top-8 left-1/2 -translate-x-1/2 bg-accent/30 text-accent text-xs py-1 px-2 rounded opacity-0 transition-opacity pointer-events-none whitespace-nowrap z-10 group-hover:opacity-100">
+                    Copy link
+                </span>
+                <span class="copy-success-tooltip absolute -top-8 left-1/2 -translate-x-1/2 bg-accent text-white text-xs py-1 px-2 rounded opacity-0 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                    ✓ Copied!
+                </span>
+            </button>
+        </div>
+    </div>
+    
+    <style>
+    .copy-tooltip, .copy-success-tooltip {
+        transition: opacity 0.2s ease-in-out;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    
+    .copy-success-tooltip.show {
+        opacity: 1;
+    }
+    
+    .copy-tooltip.hide {
+        opacity: 0;
+    }
+    </style>
+    
+    <script>
+    function copyToClipboard(text, buttonElement) {
+        // Proveri da li je Clipboard API podržan
+        if (!navigator.clipboard) {
+            fallbackCopyTextToClipboard(text, buttonElement);
+            return;
+        }
+        
+        // Sakrij regular tooltip
+        const regularTooltip = buttonElement.querySelector('.copy-tooltip');
+        regularTooltip.style.opacity = '0';
+        
+        navigator.clipboard.writeText(text).then(function() {
+            // Prikaži success tooltip
+            const successTooltip = buttonElement.querySelector('.copy-success-tooltip');
+            successTooltip.classList.add('show');
+            
+            // Sakrij success tooltip posle 2 sekunde
+            setTimeout(function() {
+                successTooltip.classList.remove('show');
+                // Vrati regular tooltip
+                setTimeout(() => {
+                    regularTooltip.style.opacity = '';
+                }, 200);
+            }, 2000);
+        }, function(err) {
+            console.error('Could not copy text: ', err);
+            fallbackCopyTextToClipboard(text, buttonElement);
+        });
+    }
+    
+    function fallbackCopyTextToClipboard(text, buttonElement) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        
+        // Make the textarea out of viewport
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                // Sakrij regular tooltip
+                const regularTooltip = buttonElement.querySelector('.copy-tooltip');
+                regularTooltip.style.opacity = '0';
+                
+                // Prikaži success tooltip
+                const successTooltip = buttonElement.querySelector('.copy-success-tooltip');
+                successTooltip.classList.add('show');
+                
+                // Sakrij success tooltip posle 2 sekunde
+                setTimeout(function() {
+                    successTooltip.classList.remove('show');
+                    // Vrati regular tooltip
+                    setTimeout(() => {
+                        regularTooltip.style.opacity = '';
+                    }, 200);
+                }, 2000);
+            }
+        } catch (err) {
+            console.error('Fallback: Could not copy text: ', err);
+            alert('Press Ctrl+C (or Cmd+C on Mac) to copy the link:\n' + text);
+        }
+        
+        document.body.removeChild(textArea);
+    }
+    </script>
+    <?php
+}
