@@ -14,7 +14,7 @@ $layout = $data['layout'] ?? 'left';
 <section class="process-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-6 max-w-7xl grid lg:grid-cols-2 gap-24">
         <!-- RIGHT: sticky panel -->
-        <aside class="hidden lg:block sticky top-32 self-start">
+        <aside class="hidden lg:block self-start">
             <?php if ($data['top_title']): ?>
                 <span class="maxwell-top-title">
                     <?php echo $data['top_title']; ?>
