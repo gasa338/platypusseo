@@ -1907,6 +1907,10 @@ li {
   border-top-color: transparent;
 }
 
+.\!bg-accent {
+  background-color: hsl(var(--accent)) !important;
+}
+
 .bg-\[\#25D366\] {
   --tw-bg-opacity: 1;
   background-color: rgb(37 211 102 / var(--tw-bg-opacity, 1));
@@ -1974,16 +1978,6 @@ li {
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
-}
-
-.bg-gray-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
-}
-
-.bg-green-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1));
 }
 
 .bg-light {
@@ -2705,6 +2699,10 @@ li {
 .shadow-accent\/20 {
   --tw-shadow-color: hsl(var(--accent) / 0.2);
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+.outline {
+  outline-style: solid;
 }
 
 .ring-2 {

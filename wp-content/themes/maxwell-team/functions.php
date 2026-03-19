@@ -285,3 +285,4 @@ require_once get_template_directory() . '/blocks/posts-list/posts-list-fn.php';
  * Include table of content
  */
 require get_template_directory() . '/inc/table_of_content.php';
+require get_template_directory() . '/inc/gutenberg_native.php';
