@@ -138,11 +138,11 @@
             this.$categoryFilters.each(function() {
                 const $this = $(this);
                 if ($this.data('category') === category) {
-                    $this.removeClass('border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50')
-                         .addClass('bg-primary text-primary-foreground hover:bg-primary/90');
+                    $this.removeClass('bg-light text-accent')
+                         .addClass('bg-accent text-white');
                 } else {
-                    $this.removeClass('bg-primary text-primary-foreground hover:bg-primary/90')
-                         .addClass('border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50');
+                    $this.removeClass('bg-accent text-white')
+                         .addClass('bg-light text-accent');
                 }
             });
             

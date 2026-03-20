@@ -71,7 +71,7 @@
     --card-foreground: 222 47% 11%;
 
     --light: 30 20% 98%;
-    
+    --footer: 36 16.13% 93.92%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
@@ -162,6 +162,10 @@
 
   .bg-background {
     background: var(--background);
+  }
+  
+  .bg-footer {
+    background: var(--footer);
   }
 
   .maxwell-content p {
@@ -335,4 +339,8 @@
 
 .wp-block-list li {
   @apply mb-2;
+}
+
+.nav-links a {
+  @apply no-underline text-accent;
 }

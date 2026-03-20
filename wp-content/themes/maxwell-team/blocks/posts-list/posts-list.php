@@ -44,18 +44,28 @@ $max_pages = $blog_posts->max_num_pages;
     <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row gap-6 items-center justify-between">
             <!-- Search polje -->
-            <div class="relative w-full md:w-96">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.3-4.3"></path>
-                </svg>
-                <input type="text" id="search-input" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-12" placeholder="Search articles..." value="<?php echo get_search_query(); ?>">
-            </div>
+<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+    <div class="relative w-full md:w-96">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input type="text" 
+               name="s" 
+               id="search-input" 
+               class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-12" 
+               placeholder="Search articles..." 
+               value="<?php echo get_search_query(); ?>">
+        
+        <!-- Opciono: sakriveno polje da ograniči pretragu samo na postove -->
+        <input type="hidden" name="post_type" value="post" />
+    </div>
+</form>
             
             <!-- Filter dugmad -->
             <div class="flex flex-wrap gap-2" id="category-filters">
                 <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" 
-                   class="category-filter inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3 <?php echo !$current_category ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50'; ?> no-underline"
+                   class="category-filter inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3 <?php echo !$current_category ? 'bg-accent text-white' : 'bg-light text-accent'; ?> no-underline"
                    data-category="">
                     All
                 </a>
@@ -66,7 +76,7 @@ $max_pages = $blog_posts->max_num_pages;
                     $is_active = ($current_category == $category->slug);
                     ?>
                     <a href="<?php echo esc_url($category_url); ?>" 
-                       class="category-filter inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3 <?php echo $is_active ? 'bg-accent text-accent-foreground hover:bg-accent/90' : 'border border-accent bg-accent text-foreground hover:bg-accent hover:border-accent/50'; ?> no-underline"
+                       class="category-filter inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3 <?php echo !$current_category ? 'bg-accent text-white' : 'bg-light text-accent'; ?> no-underline"
                        data-category="<?php echo esc_attr($category->slug); ?>">
                         <?php echo esc_html($category->name); ?>
                     </a>

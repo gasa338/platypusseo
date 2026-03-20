@@ -33,7 +33,7 @@ if (!$thumbnail_url) {
             </div>
             <div class="p-6 flex flex-col flex-grow">
                 <div class="flex items-center gap-3 mb-3">
-                    <span class="px-2 py-1 bg-accent/20 text-accent font-medium rounded-full">
+                    <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent text-white">
                         <?php echo !empty($category_names) ? esc_html($category_names[0]) : 'Uncategorized'; ?>
                     </span>
                     <span class="text-muted-foreground flex items-center gap-1">

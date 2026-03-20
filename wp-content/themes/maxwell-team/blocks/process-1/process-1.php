@@ -11,7 +11,7 @@ $layout = $data['layout'] ?? 'left';
 ?>
 
 <?php echo _spacing_full('process-1',$blocks_id,$data['margin'], $data['padding']); ?>
-<section class="process-1-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
+<section class="process-1-<?php echo esc_attr($blocks_id); ?> <?php echo _background($data['background']) ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="container mx-auto px-6 max-w-7xl grid lg:grid-cols-2 gap-24">
         <!-- RIGHT: sticky panel -->
         <aside class="hidden lg:block self-start">
