@@ -1950,16 +1950,8 @@ li {
   background-color: hsl(var(--accent) / 0.6);
 }
 
-.bg-accent\/80 {
-  background-color: hsl(var(--accent) / 0.8);
-}
-
 .bg-background {
   background-color: hsl(var(--background));
-}
-
-.bg-background\/80 {
-  background-color: hsl(var(--background) / 0.8);
 }
 
 .bg-black {
@@ -2337,11 +2329,6 @@ li {
   padding-bottom: 2rem;
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -2545,10 +2532,6 @@ li {
 
 .text-accent-foreground {
   color: hsl(var(--accent-foreground));
-}
-
-.text-accent\/60 {
-  color: hsl(var(--accent) / 0.6);
 }
 
 .text-amber-400 {
@@ -3180,6 +3163,10 @@ li {
   background-color: hsl(var(--accent) / 0.05);
 }
 
+.hover\:bg-accent\/80:hover {
+  background-color: hsl(var(--accent) / 0.8);
+}
+
 .hover\:bg-accent\/90:hover {
   background-color: hsl(var(--accent) / 0.9);
 }
@@ -3252,11 +3239,6 @@ li {
 
 .hover\:text-secondary:hover {
   color: hsl(var(--secondary));
-}
-
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .hover\:underline:hover {

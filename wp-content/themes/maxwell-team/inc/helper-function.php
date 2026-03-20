@@ -18,7 +18,6 @@ function get_image($image_id): array
     ];
 }
 
-
 /**
  * Renders an SVG image.
  *
@@ -678,7 +677,8 @@ function custom_admin_post_title_style()
 
 
 
-function maxwell_related_posts($post_id = null, $posts_per_page = 2) {
+function maxwell_related_posts($post_id = null, $posts_per_page = 2)
+{
 
     if (!$post_id) {
         $post_id = get_the_ID();
@@ -724,20 +724,21 @@ function maxwell_related_posts($post_id = null, $posts_per_page = 2) {
  * @param string $classes CSS klase koje se primenjuju
  * @return void
  */
-function maxwell_render_icon($icon_data, $classes = 'w-5 h-5 text-white') {
+function maxwell_render_icon($icon_data, $classes = 'w-5 h-5 text-white')
+{
     if (empty($icon_data['url'])) {
         return;
     }
-    
+
     if (isset($icon_data['subtype']) && $icon_data['subtype'] == 'svg+xml') {
         echo maxwell_render_svg($icon_data['url'], $classes);
     } else {
         $alt = isset($icon_data['alt']) ? $icon_data['alt'] : '';
-        ?>
-        <img src="<?php echo esc_url($icon_data['url']); ?>" 
-             alt="<?php echo esc_attr($alt); ?>" 
-             class="<?php echo esc_attr($classes); ?>">
-        <?php
+?>
+        <img src="<?php echo esc_url($icon_data['url']); ?>"
+            alt="<?php echo esc_attr($alt); ?>"
+            class="<?php echo esc_attr($classes); ?>">
+    <?php
     }
 }
 
@@ -750,11 +751,12 @@ function maxwell_render_icon($icon_data, $classes = 'w-5 h-5 text-white') {
  * @param string $additionalClasses Dodatne CSS klase za wrapper (opciono)
  * @return string HTML za share komponentu
  */
-function _share_component($url, $title = '', $additionalClasses = '') {
+function _share_component($url, $title = '', $additionalClasses = '')
+{
     // Enkodiranje URL-a i naslova za deljenje
     $encodedUrl = urlencode($url);
     $encodedTitle = urlencode($title ?: 'Check this out!');
-    
+
     // Generisanje share linkova
     $linkedinUrl = "https://www.linkedin.com/sharing/share-offsite/?url={$encodedUrl}";
     $twitterUrl = "https://twitter.com/intent/tweet?url={$encodedUrl}&text={$encodedTitle}";
@@ -768,40 +770,40 @@ function _share_component($url, $title = '', $additionalClasses = '') {
                 <circle cx="18" cy="19" r="3"></circle>
                 <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
                 <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
-            </svg> 
+            </svg>
             Share
         </h3>
         <div class="flex gap-3">
-            <a href="<?php echo $linkedinUrl; ?>" target="_blank" rel="noopener noreferrer" 
-               class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-white transition-all bg-accent hover:bg-accent group cursor-pointer"
-               title="Share on LinkedIn">
+            <a href="<?php echo $linkedinUrl; ?>" target="_blank" rel="noopener noreferrer"
+                class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-white transition-all bg-accent hover:bg-accent group cursor-pointer"
+                title="Share on LinkedIn">
                 <svg class="w-5 h-5 text-white group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                     <rect width="4" height="12" x="2" y="9"></rect>
                     <circle cx="4" cy="4" r="2"></circle>
                 </svg>
             </a>
-            
-            <a href="<?php echo $twitterUrl; ?>" target="_blank" rel="noopener noreferrer" 
-               class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-white transition-all bg-accent hover:bg-accent group cursor-pointer"
-               title="Share on Twitter">
+
+            <a href="<?php echo $twitterUrl; ?>" target="_blank" rel="noopener noreferrer"
+                class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-white transition-all bg-accent hover:bg-accent group cursor-pointer"
+                title="Share on Twitter">
                 <svg class="w-5 h-5 text-white group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                 </svg>
             </a>
-            
-            <a href="<?php echo $facebookUrl; ?>" target="_blank" rel="noopener noreferrer" 
-               class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-accent transition-all bg-accent hover:bg-accent group cursor-pointer"
-               title="Share on Facebook">
+
+            <a href="<?php echo $facebookUrl; ?>" target="_blank" rel="noopener noreferrer"
+                class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-accent transition-all bg-accent hover:bg-accent group cursor-pointer"
+                title="Share on Facebook">
                 <svg class="w-5 h-5 text-white group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
             </a>
-            
-            <button onclick="copyToClipboard('<?php echo $url; ?>', this)" 
-                    class="relative w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-white transition-all bg-accent hover:bg-accent group cursor-pointer"
-                    title="Copy link"
-                    id="{$uniqueId}">
+
+            <button onclick="copyToClipboard('<?php echo $url; ?>', this)"
+                class="relative w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-white transition-all bg-accent hover:bg-accent group cursor-pointer"
+                title="Copy link"
+                id="{$uniqueId}">
                 <svg class="w-4 h-4 text-white group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
                     <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
@@ -815,77 +817,40 @@ function _share_component($url, $title = '', $additionalClasses = '') {
             </button>
         </div>
     </div>
-    
+
     <style>
-    .copy-tooltip, .copy-success-tooltip {
-        transition: opacity 0.2s ease-in-out;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    
-    .copy-success-tooltip.show {
-        opacity: 1;
-    }
-    
-    .copy-tooltip.hide {
-        opacity: 0;
-    }
-    </style>
-    
-    <script>
-    function copyToClipboard(text, buttonElement) {
-        // Proveri da li je Clipboard API podržan
-        if (!navigator.clipboard) {
-            fallbackCopyTextToClipboard(text, buttonElement);
-            return;
+        .copy-tooltip,
+        .copy-success-tooltip {
+            transition: opacity 0.2s ease-in-out;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
-        
-        // Sakrij regular tooltip
-        const regularTooltip = buttonElement.querySelector('.copy-tooltip');
-        regularTooltip.style.opacity = '0';
-        
-        navigator.clipboard.writeText(text).then(function() {
-            // Prikaži success tooltip
-            const successTooltip = buttonElement.querySelector('.copy-success-tooltip');
-            successTooltip.classList.add('show');
-            
-            // Sakrij success tooltip posle 2 sekunde
-            setTimeout(function() {
-                successTooltip.classList.remove('show');
-                // Vrati regular tooltip
-                setTimeout(() => {
-                    regularTooltip.style.opacity = '';
-                }, 200);
-            }, 2000);
-        }, function(err) {
-            console.error('Could not copy text: ', err);
-            fallbackCopyTextToClipboard(text, buttonElement);
-        });
-    }
-    
-    function fallbackCopyTextToClipboard(text, buttonElement) {
-        const textArea = document.createElement("textarea");
-        textArea.value = text;
-        
-        // Make the textarea out of viewport
-        textArea.style.position = "fixed";
-        textArea.style.left = "-999999px";
-        textArea.style.top = "-999999px";
-        document.body.appendChild(textArea);
-        
-        textArea.focus();
-        textArea.select();
-        
-        try {
-            const successful = document.execCommand('copy');
-            if (successful) {
-                // Sakrij regular tooltip
-                const regularTooltip = buttonElement.querySelector('.copy-tooltip');
-                regularTooltip.style.opacity = '0';
-                
+
+        .copy-success-tooltip.show {
+            opacity: 1;
+        }
+
+        .copy-tooltip.hide {
+            opacity: 0;
+        }
+    </style>
+
+    <script>
+        function copyToClipboard(text, buttonElement) {
+            // Proveri da li je Clipboard API podržan
+            if (!navigator.clipboard) {
+                fallbackCopyTextToClipboard(text, buttonElement);
+                return;
+            }
+
+            // Sakrij regular tooltip
+            const regularTooltip = buttonElement.querySelector('.copy-tooltip');
+            regularTooltip.style.opacity = '0';
+
+            navigator.clipboard.writeText(text).then(function() {
                 // Prikaži success tooltip
                 const successTooltip = buttonElement.querySelector('.copy-success-tooltip');
                 successTooltip.classList.add('show');
-                
+
                 // Sakrij success tooltip posle 2 sekunde
                 setTimeout(function() {
                     successTooltip.classList.remove('show');
@@ -894,14 +859,98 @@ function _share_component($url, $title = '', $additionalClasses = '') {
                         regularTooltip.style.opacity = '';
                     }, 200);
                 }, 2000);
-            }
-        } catch (err) {
-            console.error('Fallback: Could not copy text: ', err);
-            alert('Press Ctrl+C (or Cmd+C on Mac) to copy the link:\n' + text);
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+                fallbackCopyTextToClipboard(text, buttonElement);
+            });
         }
-        
-        document.body.removeChild(textArea);
-    }
+
+        function fallbackCopyTextToClipboard(text, buttonElement) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+
+            // Make the textarea out of viewport
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            document.body.appendChild(textArea);
+
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    // Sakrij regular tooltip
+                    const regularTooltip = buttonElement.querySelector('.copy-tooltip');
+                    regularTooltip.style.opacity = '0';
+
+                    // Prikaži success tooltip
+                    const successTooltip = buttonElement.querySelector('.copy-success-tooltip');
+                    successTooltip.classList.add('show');
+
+                    // Sakrij success tooltip posle 2 sekunde
+                    setTimeout(function() {
+                        successTooltip.classList.remove('show');
+                        // Vrati regular tooltip
+                        setTimeout(() => {
+                            regularTooltip.style.opacity = '';
+                        }, 200);
+                    }, 2000);
+                }
+            } catch (err) {
+                console.error('Fallback: Could not copy text: ', err);
+                alert('Press Ctrl+C (or Cmd+C on Mac) to copy the link:\n' + text);
+            }
+
+            document.body.removeChild(textArea);
+        }
     </script>
-    <?php
+<?php
+}
+
+/**
+ * @param $post_id
+ * get post excerpt by 260 karacer
+ *
+ * @return bool|string
+ */
+function maxxwell_get_the_excerpt($post_id)
+{
+
+    $excerpt = get_the_excerpt($post_id);
+
+    $excerpt = substr($excerpt, 0, 95);
+    $result = substr($excerpt, 0, strrpos($excerpt, ' '));
+
+    return $result;
+}
+
+
+function maxwell_get_cpt($post_type = 'case-study', int $post_number = 4): array
+{
+    $args = array(
+        'post_type' => $post_type,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'posts_per_page' => $post_number,
+    );
+    $query = new WP_Query($args);
+    // The Loop.
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            $post_id = get_the_ID();
+            $output[] = [
+                'title' => get_the_title(),
+                'link' => ['url' => get_the_permalink(), 'title'=> get_the_title() , 'target'=> '_blank'],
+                'image' => get_image(get_post_thumbnail_id($post_id)),
+                'main_text' => maxxwell_get_the_excerpt($post_id),
+            ];
+        }
+
+        wp_reset_postdata();
+    }
+
+    return $output;
 }

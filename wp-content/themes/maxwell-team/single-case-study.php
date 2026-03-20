@@ -17,7 +17,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'fighter' );
+			get_template_part( 'template-parts/content', 'simple' );
 
 		endwhile; // End of the loop.
 		?>

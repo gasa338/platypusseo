@@ -12,7 +12,38 @@ $color_mode = $data['color_mode'] ?? 'dark';
 $layout = $data['layout'] ?? 'default';
 $layout_number = $data['layout_number'] ?? 'two';
 $color_mode = $data['background'];
+
+$load_element = $data['load_element'] ?? 'four';
+$dynamic_load = $data['dynamic_load'] ?? "no";
 ?>
+<style>
+    .case-item.hidden-case-item {
+        display: none;
+    }
+
+    .case-study-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* Animacija za prikazivanje novih elemenata */
+    .case-item.show-case-item {
+        animation: fadeInUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
 <?php echo _spacing_full('case-study', $blocks_id, $data['margin'], $data['padding']); ?>
 <section id="<?php echo esc_attr($anchor); ?>" class="case-study-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class);
                                                                                                         echo ' ' . _background($data['background']); ?>">
@@ -34,6 +65,7 @@ $color_mode = $data['background'];
                                     <?php echo apply_filters('the_content', $data['text']); ?></div>
                             <?php endif; ?>
 
+
                             <?php if (!empty($data['link'])) : ?>
                                 <?php echo _link_1($data['link'], ''); ?>
                             <?php endif; ?>
@@ -50,19 +82,13 @@ $color_mode = $data['background'];
                                 ?>
                                     <div class="grid md:grid-cols-2 gap-6">
                                         <?php foreach ($chunk as $item) : ?>
-                                            <div class="group block h-full no-underline">
+                                            <div class="block h-full">
                                                 <div class="relative h-full rounded-2xl overflow-hidden <?php echo $color_mode === 'dark_mode' ? 'bg-white/5' : 'bg-card'; ?> border border-border hover:border-accent/50 transition-all duration-500">
                                                     <div class="relative h-48 overflow-hidden">
                                                         <?php if ($item['image']) : $image = get_image($item['image']); ?>
                                                             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                                         <?php endif; ?>
                                                         <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
-                                                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-5 h-5  group-hover:text-primary transition-colors">
-                                                                <path d="M7 7h10v10"></path>
-                                                                <path d="M7 17 17 7"></path>
-                                                            </svg>
-                                                        </div>
                                                     </div>
                                                     <div class="p-6">
                                                         <?php if ($item['title']) : ?>
@@ -87,8 +113,6 @@ $color_mode = $data['background'];
                 </div>
             </div>
         <?php else : ?>
-            <!-- Originalni vertikalni layout -->
-            <!-- <div class="container mx-auto px-6"> -->
             <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
                 <div class="max-w-2xl">
                     <?php if (!empty($data['top_title'])) : ?>
@@ -99,28 +123,51 @@ $color_mode = $data['background'];
                         <div class="text-lg maxwell-content <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : ''; ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
                     <?php endif; ?>
                 </div>
-                <?php if (!empty($data['link'])) : ?>
-                    <?php echo _link_1($data['link'], ''); ?>
+                <?php if ($load_element == 'no') : ?>
+                    <?php if (!empty($data['link'])) : ?>
+                        <?php echo _link_1($data['link'], ''); ?>
+                    <?php endif; ?>
                 <?php endif; ?>
             </div>
 
+            <?php if ($data['dynamic_load'] === 'yes') :
+                $data['items'] = maxwell_get_cpt('case-study', -1);
+            endif; ?>
+
             <?php if (!empty($data['items'])) : ?>
+                <?php
+                switch ($load_element) {
+                    case 'four':
+                        $initial_count = 4;
+                        break;
+                    case 'six':
+                        $initial_count = 6;
+                        break;
+                    default:
+                        $initial_count = 4;
+                }
+
+
+                $counter = 0;
+                ?>
                 <div class="grid <?php echo $layout_number === 'two' ? 'md:grid-cols-2' : 'md:grid-cols-3'; ?> gap-6 ">
-                    <?php foreach ($data['items'] as $item) : ?>
-                        <div>
-                            <div class="group block h-full no-underline">
+
+                    <?php foreach ($data['items'] as $item) :
+                        $counter++;
+                        $hidden_class = ($counter > $initial_count) ? 'hidden-case-item' : '';
+                    ?>
+                        <div class="case-item <?php echo $hidden_class; ?>">
+                            <div class="block h-full">
                                 <div class="relative h-full rounded-2xl overflow-hidden <?php echo $color_mode === 'dark_mode' ? 'bg-white/5' : 'bg-card'; ?> border border-border hover:border-accent/30 transition-all duration-500">
                                     <div class="relative h-48 overflow-hidden">
-                                        <?php if ($item['image']) : $image = get_image($item['image']); ?>
-                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                        <?php if ($data['dynamic_load'] === 'yes') : ?>
+                                            <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                        <?php else: ?>
+                                            <?php if ($item['image']) : $image = get_image($item['image']); ?>
+                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                            <?php endif; ?>
                                         <?php endif; ?>
                                         <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
-                                        <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-accent/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-accent transition-opacity duration-300">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-5 h-5  group-hover:text-primary transition-colors">
-                                                <path d="M7 7h10v10"></path>
-                                                <path d="M7 17 17 7"></path>
-                                            </svg>
-                                        </div>
                                     </div>
                                     <div class="p-6">
                                         <?php if ($item['title']) : ?>
@@ -146,8 +193,63 @@ $color_mode = $data['background'];
                         </div>
                     <?php endforeach; ?>
                 </div>
+
+                <?php if (count($data['items']) > $initial_count) : ?>
+                    <div class="text-center mt-8">
+                        <button id="load-more-btn" class="px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/80 transition-colors">
+                            Load More
+                        </button>
+                    </div>
+                <?php endif; ?>
             <?php endif; ?>
-            <!-- </div> -->
         <?php endif; ?>
     </div>
 </section>
+<?php if ($load_element != 'no') : ?>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    
+    if (loadMoreBtn) {
+        let itemsToShow = <?php echo ($load_element === 'four') ? 4 : 6; ?>;
+        const allItems = document.querySelectorAll('.case-item');
+        const totalItems = allItems.length;
+        
+        // Prikazujemo inicijalni broj elemenata
+        function showItems(count) {
+            allItems.forEach((item, index) => {
+                if (index < count) {
+                    item.classList.remove('hidden-case-item');
+                    if (index >= itemsToShow - <?php echo ($load_element === 'four') ? 4 : 6; ?>) {
+                        item.classList.add('show-case-item');
+                    }
+                } else {
+                    item.classList.add('hidden-case-item');
+                    item.classList.remove('show-case-item');
+                }
+            });
+        }
+        
+        // Inicijalno prikazivanje
+        showItems(itemsToShow);
+        
+        // Load more funkcionalnost
+        loadMoreBtn.addEventListener('click', function() {
+            // Određujemo koliko još elemenata ima za prikazati
+            const remainingItems = totalItems - itemsToShow;
+            const nextBatch = Math.min(<?php echo ($load_element === 'four') ? 4 : 6; ?>, remainingItems);
+            
+            if (nextBatch > 0) {
+                itemsToShow += nextBatch;
+                showItems(itemsToShow);
+            }
+            
+            // Sakrivamo gumb ako su svi elementi prikazani
+            if (itemsToShow >= totalItems) {
+                loadMoreBtn.style.display = 'none';
+            }
+        });
+    }
+});
+</script>
+<?php endif; ?>
