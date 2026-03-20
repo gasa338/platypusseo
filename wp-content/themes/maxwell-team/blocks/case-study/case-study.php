@@ -185,7 +185,7 @@ $dynamic_load = $data['dynamic_load'] ?? "no";
                                         <?php endif; ?>
 
                                         <?php if ($item['link']) : ?>
-                                            <?php echo _link_3($item['link'], '!text-accent no-underline'); ?>
+                                            <?php echo _link_3(['url' => $item['link']['url'], 'title' => $data['button_text']], '!text-accent no-underline'); ?>
                                         <?php endif; ?>
                                     </div>
                                 </div>
