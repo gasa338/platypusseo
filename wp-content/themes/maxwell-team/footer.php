@@ -73,11 +73,11 @@ $social_network = get_field('social_network', 'option');
                 if ($menu_1) :
             ?>
                     <div>
-                        <h2 class="text-white font-bold text-lg mb-6"><?php echo $menu_1->name ?></h2>
+                        <h2 class="text-primary font-bold text-lg mb-6"><?php echo $menu_1->name ?></h2>
                         <ul class="space-y-3">
                             <?php foreach ($menu_1_items as $item) : ?>
                                 <li>
-                                    <a class="text-white hover:text-secondary transition-colors" href="<?php echo esc_url($item->url) ?>">
+                                    <a class="text-primary hover:text-secondary transition-colors" href="<?php echo esc_url($item->url) ?>">
                                         <?php echo esc_html($item->title) ?>
                                     </a>
                                 </li>
@@ -96,11 +96,11 @@ $social_network = get_field('social_network', 'option');
                 if ($menu_2) :
             ?>
                     <div>
-                        <h2 class="text-white font-bold text-lg mb-6"><?php echo $menu_2->name ?></h2>
+                        <h2 class="text-primary font-bold text-lg mb-6"><?php echo $menu_2->name ?></h2>
                         <ul class="space-y-3">
                             <?php foreach ($menu_2_items as $item) : ?>
                                 <li>
-                                    <a class="text-white hover:text-secondary transition-colors" href="<?php echo esc_url($item->url) ?>">
+                                    <a class="text-primary hover:text-secondary transition-colors" href="<?php echo esc_url($item->url) ?>">
                                         <?php echo esc_html($item->title) ?>
                                     </a>
                                 </li>
@@ -120,11 +120,11 @@ $social_network = get_field('social_network', 'option');
                 if ($menu_3) :
             ?>
                     <div>
-                        <h2 class="text-white font-bold text-lg mb-6"><?php echo $menu_3->name ?></h2>
+                        <h2 class="text-primary font-bold text-lg mb-6"><?php echo $menu_3->name ?></h2>
                         <ul class="space-y-3">
                             <?php foreach ($menu_3_items as $item) : ?>
                                 <li>
-                                    <a class="text-white hover:text-secondary transition-colors" href="<?php echo esc_url($item->url) ?>">
+                                    <a class="text-primary hover:text-secondary transition-colors" href="<?php echo esc_url($item->url) ?>">
                                         <?php echo esc_html($item->title) ?>
                                     </a>
                                 </li>
@@ -144,11 +144,11 @@ $social_network = get_field('social_network', 'option');
                 if ($menu_4) :
             ?>
                     <div>
-                        <h2 class="text-white font-bold text-lg mb-6"><?php echo $menu_4->name ?></h2>
+                        <h2 class="text-primary font-bold text-lg mb-6"><?php echo $menu_4->name ?></h2>
                         <ul class="space-y-3">
                             <?php foreach ($menu_4_items as $item) : ?>
                                 <li>
-                                    <a class="text-white hover:text-secondary transition-colors" href="<?php echo esc_url($item->url) ?>">
+                                    <a class="text-primary hover:text-secondary transition-colors" href="<?php echo esc_url($item->url) ?>">
                                         <?php echo esc_html($item->title) ?>
                                     </a>
                                 </li>
@@ -170,14 +170,14 @@ $social_network = get_field('social_network', 'option');
             ?>
                     <div class="flex gap-4">
                         <?php foreach ($menu_5_items as $item) : ?>
-                            <a class="text-white hover:text-secondary transition-colors" href="<?php echo esc_url($item->url) ?>">
+                            <a class="text-primary hover:text-secondary transition-colors" href="<?php echo esc_url($item->url) ?>">
                                 <?php echo esc_html($item->title) ?>
                             </a>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
-            <span>© <?php echo date('Y'); ?> TLD team All rights reserved.</span>
+            <span>© <?php echo date('Y'); ?> All rights reserved.</span>
         </div>
     </div>
 
