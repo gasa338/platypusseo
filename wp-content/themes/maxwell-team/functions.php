@@ -195,6 +195,7 @@ function mma_future_scripts()
 
 	if (is_singular('post')) {
 		wp_enqueue_script('blog-main', get_template_directory_uri() . '/assets/dist/js/blog-main.js', array(), _S_VERSION, true);
+		wp_enqueue_style('blog', get_template_directory_uri() . '/assets/dist/css/blog.css', array(), _S_VERSION, 'all');
 	}
 
 	wp_dequeue_style('wp-block-library');

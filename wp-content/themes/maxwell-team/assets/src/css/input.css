@@ -293,41 +293,6 @@
   @apply rounded-lg;
 }
 
-/* Blog table compact style */
-
-.wp-block-table {
-  @apply mb-4 overflow-x-auto;
-}
-
-.wp-block-table table {
-  @apply w-full border !border-accent/30 rounded-lg overflow-hidden;
-}
-
-.wp-block-table tbody {
-  @apply !border-b !border-accent/30;
-}
-
-.wp-block-table tbody tr {
-  @apply border-b !border-accent/30;
-}
-
-.wp-block-table tbody tr:last-child {
-  @apply border-b-0;
-}
-
-.wp-block-table td,
-.wp-block-table th {
-  @apply px-4 py-2;
-}
-
-.wp-block-table tbody tr:nth-child(even) {
-  @apply bg-accent/5;
-}
-
-.wp-block-table tbody tr:hover {
-  @apply bg-accent/10;
-}
-
 
 .wp-block-list {
   @apply list-disc list-inside;

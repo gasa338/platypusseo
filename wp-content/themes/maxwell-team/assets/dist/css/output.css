@@ -2988,51 +2988,6 @@ li {
   border-radius: var(--radius);
 }
 
-/* Blog table compact style */
-
-.wp-block-table {
-  margin-bottom: 1rem;
-  overflow-x: auto;
-}
-
-.wp-block-table table {
-  width: 100%;
-  overflow: hidden;
-  border-radius: var(--radius);
-  border-width: 1px;
-  border-color: hsl(var(--accent) / 0.3) !important;
-}
-
-.wp-block-table tbody {
-  border-bottom-width: 1px !important;
-  border-color: hsl(var(--accent) / 0.3) !important;
-}
-
-.wp-block-table tbody tr {
-  border-bottom-width: 1px;
-  border-color: hsl(var(--accent) / 0.3) !important;
-}
-
-.wp-block-table tbody tr:last-child {
-  border-bottom-width: 0px;
-}
-
-.wp-block-table td,
-.wp-block-table th {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.wp-block-table tbody tr:nth-child(even) {
-  background-color: hsl(var(--accent) / 0.05);
-}
-
-.wp-block-table tbody tr:hover {
-  background-color: hsl(var(--accent) / 0.1);
-}
-
 .wp-block-list {
   list-style-position: inside;
   list-style-type: disc;
