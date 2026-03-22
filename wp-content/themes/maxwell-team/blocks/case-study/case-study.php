@@ -132,6 +132,7 @@ $dynamic_load = $data['dynamic_load'] ?? "no";
 
             <?php if ($data['dynamic_load'] === 'yes') :
                 $data['items'] = maxwell_get_cpt('case-study', -1);
+                
             endif; ?>
 
             <?php if (!empty($data['items'])) : ?>
@@ -171,13 +172,23 @@ $dynamic_load = $data['dynamic_load'] ?? "no";
                                     </div>
                                     <div class="p-6">
                                         <?php if ($item['title']) : ?>
-                                            <h3 class="text-2xl font-bold mb-2 <?php echo $color_mode === 'dark_mode' ? 'text-white' : ''; ?> transition-colors"><?php echo $item['title']; ?></h3>
+                                            <?php if ( !empty($item['link'])): ?>
+                                                <a href="<?php echo $item['link']['url'] ?>" title="<?php echo $item['link']['title'] ?>" class="text-2xl font-bold mb-4 <?php echo $color_mode === 'dark_mode' ? 'text-white' : 'text-primary'; ?> transition-colors no-underline"><?php echo $item['title']; ?></a>
+                                            <?php else: ?>
+                                                <h3 class="text-2xl font-bold mb-4 <?php echo $color_mode === 'dark_mode' ? 'text-white' : ''; ?> transition-colors"><?php echo $item['title']; ?></h3>
+                                            <?php endif; ?>
                                         <?php endif; ?>
-                                        <?php if ($item['tag']) : ?>
+                                        <?php if (!empty($item['tag'])) : ?>
                                             <div class="mb-3">
-                                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent text-white">
-                                                    <?php echo $item['tag']; ?>
-                                                </span>
+                                                <?php if (is_array($item['tag'])): ?>
+                                                    <a href="<?php echo $item['tag']['link']; ?>" class="px-3 py-1 rounded-full text-xs font-medium bg-accent text-white no-underline">
+                                                        <?php echo $item['tag']['name']; ?>
+                                                    </a>
+                                                <?php else: ?>
+                                                    <span class="px-3 py-1 rounded-full text-xs font-medium bg-accent text-white">
+                                                        <?php echo $item['tag']; ?>
+                                                    </span>
+                                                <?php endif; ?>
                                             </div>
                                         <?php endif; ?>
                                         <?php if ($item['main_text']) : ?>

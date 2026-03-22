@@ -2487,10 +2487,6 @@ li {
   text-transform: uppercase;
 }
 
-.italic {
-  font-style: italic;
-}
-
 .leading-\[1\.08\] {
   line-height: 1.08;
 }
@@ -2609,10 +2605,6 @@ li {
 
 .\!underline {
   text-decoration-line: underline !important;
-}
-
-.underline {
-  text-decoration-line: underline;
 }
 
 .no-underline {
@@ -2973,33 +2965,6 @@ li {
 
 .maxwell-post-content p {
   margin-bottom: 0.5rem !important;
-}
-
-/** blog post style */
-
-.wp-block-image {
-  margin-bottom: 0.5rem !important;
-  border-radius: var(--radius);
-  background-color: hsl(var(--accent) / 0.05);
-  padding: 0.5rem;
-}
-
-.wp-block-image img {
-  border-radius: var(--radius);
-}
-
-.wp-block-list {
-  list-style-position: inside;
-  list-style-type: disc;
-}
-
-.wp-block-list li::marker {
-  padding-left: 0.125rem;
-  color: hsl(var(--accent));
-}
-
-.wp-block-list li {
-  margin-bottom: 0.5rem;
 }
 
 .nav-links a {

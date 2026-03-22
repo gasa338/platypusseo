@@ -283,29 +283,6 @@
   @apply !mb-2;
 }
 
-
-/** blog post style */
-.wp-block-image {
-  @apply !mb-2 p-2 rounded-lg bg-accent/5;
-}
-
-.wp-block-image img {
-  @apply rounded-lg;
-}
-
-
-.wp-block-list {
-  @apply list-disc list-inside;
-}
-
-.wp-block-list li::marker {
-  @apply text-accent pl-0.5;
-}
-
-.wp-block-list li {
-  @apply mb-2;
-}
-
 .nav-links a {
   @apply no-underline text-accent;
 }

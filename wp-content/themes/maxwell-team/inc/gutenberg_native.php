@@ -137,6 +137,81 @@ add_action('enqueue_block_assets', function () {
         .wp-block-table tr:first-child th:last-child {
             border-top-right-radius: 12px;
         }
+
+
+
+    /* Kompaktna lista sa kontrolisanim razmacima */
+    .wp-block-list {
+        margin: 0 0 1rem 0;
+        padding-left: 1.2rem;
+    }
+        
+    .wp-block-list li:marker {
+        display: flex;
+    }
+    .wp-block-list li {
+        display: flex;
+    }
+    .wp-block-list .block-editor-rich-text__editable {
+        margin-left: 10px;
+    }
+
+    .wp-block-list li {
+        margin-bottom: 0.35rem;
+        line-height: 1.3;
+        padding-left: 0.25rem;
+    }
+
+    /* Za mobilne uređaje */
+    @media (max-width: 768px) {
+        .wp-block-list {
+            padding-left: 1rem;
+        }
+        
+        .wp-block-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+    }
+
+    /** blog post style */
+    .wp-block-image {
+    margin-bottom: 0.5rem !important;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: hsl(var(--accent) / 0.05);
+    }
+
+    .wp-block-image img {
+    border-radius: 0.5rem;
+    }
+
+/* Za glavnu listu u editoru */
+.block-editor-block-list__block.wp-block-list {
+  list-style-type: disc !important;
+  list-style-position: inside !important;
+}
+
+/* Za marker (bullet point) u editoru */
+.block-editor-block-list__block.wp-block-list li:marker {
+  color: #000 !important;
+  padding-left: 0.125rem !important;
+}
+
+/* Za stavke liste u editoru */
+.block-editor-block-list__block.wp-block-list li {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Alternativno, ako želite da pokrijete i specifične list item blokove */
+.wp-block-list-item {
+  margin-bottom: 0.5rem !important;
+}
+
+.wp-block-list-item::marker {
+  color: hsl(var(--accent)) !important;
+  padding-left: 0.125rem !important;
+}
     ');
 });
 

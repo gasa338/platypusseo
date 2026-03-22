@@ -107,6 +107,47 @@ function get_primary_category($post_id = null)
 }
 
 /**
+ * Funkcija koja vraća primarnu kategoriju odredenog posta.
+ * Ako postoji, primarna kategorija je ona koja je postavljena u Yoast SEO pluginu.
+ * U suprotnom, prva kategorija posta se uzima kao primarna kategorija.
+ *
+ * @param int|null $post_id ID posta. Ako nije proslijeđen, uzima se trenutni post.
+ * @return mixed Objekt primarne kategorije ili false ako nema primarne kategorije.
+ */
+function _case_study_primary_category($post_id = null)
+{
+	$taxonomy = 'category-case-study';
+
+	// 1. POKUŠAJ DA DOBIJEŠ PRIMARNU KATEGORIJU PREKO RANK MATH-A
+	$primary_cat_id = get_post_meta($post_id, 'rank_math_primary_category-case-study', true);
+
+	if (! empty($primary_cat_id)) {
+		$primary_cat = get_term($primary_cat_id, $taxonomy);
+
+		if ($primary_cat && ! is_wp_error($primary_cat)) {
+
+			return [
+				'link' => get_term_link($primary_cat),
+				'name' => $primary_cat->name
+			];
+		}
+	}
+
+	// 2. FALLBACK: VRATI PRVU KATEGORIJU (prvu po redu)
+	$categories = wp_get_post_terms($post_id, $taxonomy);
+
+	if (! empty($categories) && ! is_wp_error($categories)) {
+		$first_cat = $categories[0];
+		return [
+			'link' => get_term_link($first_cat),
+			'name' => $first_cat->name
+		];
+	}
+
+	return '';
+}
+
+/**
  * Funkcija koja vraća array s ID-evima poslednjih postova,
  * određenog tipa i broja po želji.
  *
@@ -168,8 +209,9 @@ function get_post_by_type($type = 'last', $post_type = 'post', $posts_per_page =
  * This function adds inline CSS to hide certain elements on the Schema Meta JSON-LD settings page.
  * These elements are not needed for our purposes and only clutter the page.
  */
-function disable_schema_meta_json_ld_options () {
-    echo '<style>
+function disable_schema_meta_json_ld_options()
+{
+	echo '<style>
         #schema_meta_json_ld .inside .widefat,
         #schema_meta_json_ld .inside .fixed,
         #schema_meta_json_ld .inside .wp-list-table,

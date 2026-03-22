@@ -9,6 +9,7 @@
  */
 
 get_header();
+$post_id = get_the_ID();
 ?>
 <div class="min-h-screen bg-background">
 
@@ -136,7 +137,7 @@ get_header();
 
 						<div class="flex flex-wrap gap-2 mt-8 pt-8 border-t border-border mb-12">
 							<h3 class="h3-responsive font-semibold text-foreground mb-4">Related Posts</h3>
-							<?php maxwell_related_posts(); ?>
+							<?php maxwell_related_posts($post_id); ?>
 						</div>
 					</article>
 					<aside class="space-y-8">
