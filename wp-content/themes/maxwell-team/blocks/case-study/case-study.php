@@ -1,12 +1,8 @@
 <?php
-
-use SimplePie\Item;
-
 $blocks_id = $block['id'];
 $blocks_class = isset($block['className']) ? $block['className'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('case_study');
-$background_color = $data['background_color'] ?? '#fff';
 $reverse = $data['revers'] ?? 'no';
 $color_mode = $data['color_mode'] ?? 'dark';
 $layout = $data['layout'] ?? 'default';
