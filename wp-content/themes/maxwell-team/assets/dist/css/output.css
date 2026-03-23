@@ -965,6 +965,10 @@ li {
   top: 2rem;
 }
 
+.top-10 {
+  top: 2.5rem;
+}
+
 .z-0 {
   z-index: 0;
 }

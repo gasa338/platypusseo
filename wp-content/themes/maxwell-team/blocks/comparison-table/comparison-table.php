@@ -4,6 +4,7 @@ $blocks_id = $block['id'];
 $blocks_class = isset($block['className']) ? $block['className'] : '';
 $anchor = isset($block['anchor']) ? $block['anchor'] : $blocks_id;
 $data = get_field('comparison_table');
+$color_mode = $data['background'] ?? 'dark';
 ?>
 <style>
     .tooltip-wrap {
@@ -155,7 +156,7 @@ $data = get_field('comparison_table');
 
         <div class="max-w-7xl">
             <table class="w-full border-separate border-spacing-x-2">
-                <thead>
+                <thead class="sticky top-16 z-10">
                     <tr>
                         <?php foreach ($data['items'][0]['row'] as $kh => $header): ?>
                             <?php if ($kh == 0): ?>
