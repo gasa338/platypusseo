@@ -1015,6 +1015,10 @@ li {
   margin-bottom: 0.25rem;
 }
 
+.mb-1\.5 {
+  margin-bottom: 0.375rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -1125,10 +1129,6 @@ li {
 
 .mt-9 {
   margin-top: 2.25rem;
-}
-
-.mb-1\.5 {
-  margin-bottom: 0.375rem;
 }
 
 .block {
@@ -1974,10 +1974,6 @@ li {
   background-color: hsl(var(--primary-foreground) / 0.2);
 }
 
-.bg-primary-foreground\/5 {
-  background-color: hsl(var(--primary-foreground) / 0.05);
-}
-
 .bg-primary\/10 {
   background-color: hsl(var(--primary) / 0.1);
 }
@@ -2657,10 +2653,6 @@ li {
   opacity: 0.03;
 }
 
-.opacity-\[0\.04\] {
-  opacity: 0.04;
-}
-
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -3057,10 +3049,6 @@ li {
 
 .hover\:border-primary\/50:hover {
   border-color: hsl(var(--primary) / 0.5);
-}
-
-.hover\:border-accent\/70:hover {
-  border-color: hsl(var(--accent) / 0.7);
 }
 
 .hover\:bg-accent:hover {
@@ -3489,11 +3477,6 @@ li {
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }
-
-  .md\:py-24 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
   }
 
   .md\:text-center {
