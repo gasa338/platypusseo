@@ -161,7 +161,7 @@ $data = get_field('comparison_table');
                             <?php if ($kh == 0): ?>
                                 <th class="w-48 bg-transparent"></th>
                             <?php else: ?>
-                                <th class="text-center py-5 px-6 font-bold tracking-wide rounded-tl-2xl border-b  <?php echo $kh == 4 ? 'bg-hero text-white border-border' : 'bg-slate-50 text-primary border-border'; ?>">
+                                <th class="text-xl font-bold text-center py-5 px-6 tracking-wide rounded-tl-2xl border-b  <?php echo $kh == 4 ? 'bg-hero text-white border-border' : 'bg-slate-50 text-primary border-border'; ?>">
                                     <?php echo $header['name']; ?>
                                 </th>
                             <?php endif; ?>
@@ -176,7 +176,7 @@ $data = get_field('comparison_table');
                                 <?php foreach ($item['row'] as $k => $el): ?>
                                     <?php if ($k == 0): ?>
                                         <td class="py-6 pr-6 pl-4 align-middle">
-                                            <span class="text-primary font-bold"><?php echo $el['name']; ?></span>
+                                            <span class="text-primary text-xl font-bold"><?php echo $el['name']; ?></span>
                                         </td>
                                     <?php else: ?>
                                         <?php
@@ -190,7 +190,7 @@ $data = get_field('comparison_table');
                                         ?>
                                         <td class="<?php echo $tdClasses; ?>">
                                             <div class="flex items-center justify-center gap-2">
-                                                <span class="font-semibold <?php echo $k == 4 ? 'text-white' : 'text-primary'; ?>">
+                                                <span class="font-bold text-lg <?php echo $k == 4 ? 'text-white' : 'text-primary'; ?>">
                                                     <?php echo $el['name']; ?>
                                                 </span>
                                                 <?php if (!empty($el['popup'])): ?>
