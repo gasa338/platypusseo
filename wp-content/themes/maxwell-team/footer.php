@@ -22,6 +22,7 @@ $social_network = get_field('social_network', 'option');
                     <div class="flex items-center gap-3 mb-6">
                         <ul class="space-y-4 text-foreground-muted">
                             <?php foreach ($footer_data['contact_data'] as $item) : ?>
+                                <?php if (!empty($item['text'])): ?>
                                 <li>
                                     <?php if (isset($item['text']['url']) && $item['text']['url'] == '#'): ?>
                                         <div class="flex items-center gap-3 transition-colors">
@@ -39,6 +40,7 @@ $social_network = get_field('social_network', 'option');
                                         </a>
                                     <?php endif; ?>
                                 </li>
+                                <?php endif; ?>
                             <?php endforeach; ?>
                         </ul>
                     </div>
