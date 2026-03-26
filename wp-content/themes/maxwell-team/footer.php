@@ -23,7 +23,7 @@ $social_network = get_field('social_network', 'option');
                         <ul class="space-y-4 text-foreground-muted">
                             <?php foreach ($footer_data['contact_data'] as $item) : ?>
                                 <li>
-                                    <?php if ($item['text']['url'] == '#'): ?>
+                                    <?php if (isset($item['text']['url']) && $item['text']['url'] == '#'): ?>
                                         <div class="flex items-center gap-3 transition-colors">
                                             <?php if (!empty($item['icon'])): ?>
                                                 <?php echo maxwell_render_svg($item['icon']['url'], 'w-6 h-6'); ?>
