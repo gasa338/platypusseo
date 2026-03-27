@@ -965,10 +965,6 @@ li {
   top: 2rem;
 }
 
-.top-10 {
-  top: 2.5rem;
-}
-
 .z-0 {
   z-index: 0;
 }
@@ -3662,6 +3658,12 @@ li {
   color: rgb(255 255 255 / 0.8);
 }
 
+.\[\&_li\]\:space-y-2 li > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
 .\[\&_li\]\:\!text-foreground li {
   color: hsl(var(--foreground)) !important;
 }
@@ -3669,6 +3671,11 @@ li {
 .\[\&_li\]\:\!text-white li {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
+}
+
+.\[\&_li\]\:text-white li {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .\[\&_p\]\:text-white\/80 p {
