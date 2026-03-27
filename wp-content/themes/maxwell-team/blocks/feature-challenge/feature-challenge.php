@@ -47,7 +47,7 @@ $color_mode = $data['background'] ?? 'dark';
                                                     <h3 class="text-lg font-bold mb-1 transition-colors <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground'); ?>"><?php echo esc_html($challenge['title']); ?></h3>
                                                 <?php endif; ?>
                                                 <?php if (!empty($challenge['text'])) : ?>
-                                                    <div class="<?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?>"><?php echo apply_filters('the_content', $challenge['text']); ?></div>
+                                                    <div class="maxwell-content <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?>"><?php echo apply_filters('the_content', $challenge['text']); ?></div>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
@@ -86,7 +86,7 @@ $color_mode = $data['background'] ?? 'dark';
                                             <h3 class="text-xl font-bold mb-2 transition-colors <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground'); ?>"><?php echo esc_html($challenge['title']); ?></h3>
                                         <?php endif; ?>
                                         <?php if (!empty($challenge['text'])) : ?>
-                                            <div class="<?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?>"><?php echo apply_filters('the_content', $challenge['text']); ?></div>
+                                            <div class="maxwell-content <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?>"><?php echo apply_filters('the_content', $challenge['text']); ?></div>
                                         <?php endif; ?>
                                     </div>
                                 </div>
