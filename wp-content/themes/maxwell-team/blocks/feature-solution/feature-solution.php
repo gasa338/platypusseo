@@ -59,7 +59,7 @@ switch ($grid_columns) {
                                 </h3>
                             <?php endif; ?>
                             <?php if ($solution['text']): ?>
-                                <div class="<?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?>">
+                                <div class="maxwell-content <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?>">
                                     <?php echo apply_filters('the_content', $solution['text']); ?>
                                 </div>
                             <?php endif; ?>
