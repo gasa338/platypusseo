@@ -1,3 +1,84 @@
+/* Mobile (default) */
+.maxwell-post-content h2 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.maxwell-post-content h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.maxwell-post-content h4 {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.maxwell-post-content h5 {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.maxwell-post-content h6 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* Tablet (min-width: 768px) */
+@media (min-width: 768px) {
+  .maxwell-post-content h2 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  
+  .maxwell-post-content h3 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  
+  .maxwell-post-content h4 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  .maxwell-post-content h5 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  .maxwell-post-content h6 {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+/* Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .maxwell-post-content h2 {
+    font-size: 32px;
+    line-height: 44px;
+  }
+  
+  .maxwell-post-content h3 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  
+  .maxwell-post-content h4 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  
+  .maxwell-post-content h5 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  
+  .maxwell-post-content h6 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
 /* Modern table styling for Gutenberg block */
 .wp-block-table {
     overflow-x: auto;

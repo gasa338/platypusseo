@@ -953,6 +953,10 @@ li {
   top: 5rem;
 }
 
+.top-24 {
+  top: 6rem;
+}
+
 .top-32 {
   top: 8rem;
 }
@@ -2018,10 +2022,6 @@ li {
 
 .bg-white\/5 {
   background-color: rgb(255 255 255 / 0.05);
-}
-
-.bg-white\/60 {
-  background-color: rgb(255 255 255 / 0.6);
 }
 
 .bg-opacity-20 {

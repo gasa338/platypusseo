@@ -31,7 +31,7 @@ $post_id = get_the_ID();
 					$categories = get_the_category();
 					?>
 					<?php if (!empty($categories)) : ?>
-						<span class="inline-block px-2 py-1 bg-accent/20 text-accent font-medium rounded-full mb-6">
+						<span class="inline-block px-4 py-1 bg-accent text-white font-medium rounded-full mb-6">
 							<?php echo esc_html($categories[0]->name); ?>
 						</span>
 					<?php endif; ?>
@@ -59,13 +59,13 @@ $post_id = get_the_ID();
 
 							<div>
 								<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="text-xl text-white font-medium no-underline" rel="author" title="Posts by <?php the_author(); ?>"><?php the_author(); ?></a>
-								<p class="text-white/60 text-sm">
+								<p class="text-white text-sm">
 									<?php echo get_the_date('F j, Y'); ?>
 								</p>
 							</div>
 						</div>
 
-						<div class="flex items-center gap-2 text-white/60">
+						<div class="flex items-center gap-2 text-white">
 							<svg xmlns="http://www.w3.org/2000/svg"
 								width="24" height="24"
 								viewBox="0 0 24 24"
@@ -74,7 +74,7 @@ $post_id = get_the_ID();
 								stroke-width="2"
 								stroke-linecap="round"
 								stroke-linejoin="round"
-								class="w-4 h-4">
+								class="w-4 h-4 text-accent">
 								<circle cx="12" cy="12" r="10"></circle>
 								<polyline points="12 6 12 12 16 14"></polyline>
 							</svg>
@@ -141,7 +141,7 @@ $post_id = get_the_ID();
 						</div>
 					</article>
 					<aside class="space-y-8">
-						<div class="sticky top-16">
+						<div class="sticky top-24">
 
 							<?php _share_component(get_permalink(), get_the_title()); ?>
 
