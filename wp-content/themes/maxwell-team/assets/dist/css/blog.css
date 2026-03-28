@@ -93,6 +93,30 @@
     overflow: hidden;
 }
 
+/* Zamenjuje # sa ikonicom 🔗 */
+.wp-block-heading a[href*="#"] {
+    font-size: 0;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.wp-block-heading a[href*="#"]:before {
+    content: "🔗";
+    font-size: 18px;
+    display: inline-block;
+    color: hsl(var(--accent));
+    transition: all 0.3s ease;
+}
+
+/* Hover efekat */
+.wp-block-heading a[href*="#"]:hover:before {
+    color: hsl(var(--accent));
+    transform: scale(1.1); /* Opciono: lagano uvećanje */
+}
+
 /* Header styling */
 .wp-block-table th {
     color: hsl(var(--muted-foreground)) !important;
