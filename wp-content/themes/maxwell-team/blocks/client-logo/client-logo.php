@@ -30,6 +30,8 @@ $color_mode = $data['background'] ?? 'dark';
         }
     }
 </style>
+
+<?php echo _spacing_full('client-logo',$blocks_id,$data['margin'], $data['padding']); ?>
 <section id="<?php echo esc_attr($anchor); ?>" class="overflow-hidden client-logo-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?> <?php echo _background($data['background']); ?>" <?php echo _padding($data['padding']); ?>>
     <div class="container mx-auto px-6 text-center">
         <?php if (!empty($data['title']) && $data['use_title'] == 'yes'): ?>
@@ -46,7 +48,7 @@ $color_mode = $data['background'] ?? 'dark';
         <?php endif; ?>
 
         <?php if (!empty($data['gallery'])): ?>
-            <div class="flex w-max logo-scroll pb-8">
+            <div class="flex w-max logo-scroll">
                 <?php foreach ($data['gallery'] as $logo): ?>
                     <img src="<?php echo $logo['url']; ?>" class="h-10 w-auto opacity-70 hover:opacity-100 transition shrink-0" alt="<?php echo $logo['alt']; ?>">
                 <?php endforeach; ?>
