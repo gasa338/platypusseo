@@ -1935,10 +1935,6 @@ li {
   background-color: hsl(var(--accent) / 0.05);
 }
 
-.bg-accent\/60 {
-  background-color: hsl(var(--accent) / 0.6);
-}
-
 .bg-background {
   background-color: hsl(var(--background));
 }
@@ -2022,6 +2018,10 @@ li {
 
 .bg-white\/5 {
   background-color: rgb(255 255 255 / 0.05);
+}
+
+.bg-white\/60 {
+  background-color: rgb(255 255 255 / 0.6);
 }
 
 .bg-opacity-20 {
@@ -3218,10 +3218,6 @@ li {
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:bg-accent {
-  background-color: hsl(var(--accent));
 }
 
 .group:hover .group-hover\:bg-accent\/30 {
