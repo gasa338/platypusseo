@@ -49,8 +49,8 @@ $social_network = get_field('social_network', 'option');
                     <div class="flex items-center gap-3 mb-6">
                         <?php foreach ($social_network as $key => $social) : ?>
                             <?php if (!empty($social['link']['url']) && !empty($social['link']['url'])) : ?>
-                                <a href="<?php echo $social['link']['url']; ?>" class="hover:text-secondary hover:scale-110 transition-all duration-300 w-10 h-10 no-underline" aria-label="<?php echo $social['link']['title']; ?> social media link">
-                                    <div class="w-12 h-12 rounded-xl bg-accent flex items-center justify-center text-white">
+                                <a href="<?php echo $social['link']['url']; ?>" class="hover:text-secondary transition-all duration-300 w-10 h-10 no-underline" aria-label="<?php echo $social['link']['title']; ?> social media link">
+                                    <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white">
                                         <?php echo maxwell_render_icon($social['icon'], 'w-6 h-6 !text-white'); ?>
                                     </div>
                                 </a>
