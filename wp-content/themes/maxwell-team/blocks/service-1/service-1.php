@@ -44,10 +44,11 @@ $color_mode = $data['background'] ?? 'light';
                     </a>
                 <?php else: ?>
                     <div class="group relative p-8 rounded-2xl <?php echo $color_mode === 'dark_mode' ? ' bg-white/5' : 'bg-card'; ?> border border-border hover:border-accent/50 hover:shadow-xl transition-all duration-500">
-
-                        <div class="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-6">
-                            <?php echo maxwell_render_icon($item['icon'], 'w-7 h-7 text-white'); ?>
-                        </div>
+                        <?php if (!empty($item['icon'])): ?>
+                            <div class="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-6">
+                                <?php echo maxwell_render_icon($item['icon'], 'w-7 h-7 text-white'); ?>
+                            </div>
+                        <?php endif; ?>
                         <?php if (!empty($item['title'])): ?>
                             <h3 class=" text-2xl font-semibold mb-4 group-hover:text-accent transition-colors <?php echo $color_mode === 'dark_mode' ? ' text-white' : ''; ?>"><?php echo $item['title']; ?></h3>
                         <?php endif; ?>
