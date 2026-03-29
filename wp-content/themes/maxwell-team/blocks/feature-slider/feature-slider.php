@@ -7,6 +7,14 @@ $bg_image = isset($data['bg_image']) ? get_image($data['bg_image']) : 0;
 $color_mode = $data['background'] ?? 'light';
 ?>
 <style>
+    .feature-slider-swiper .swiper-pagination {
+        width: auto;
+        left: auto;
+        bottom: -40px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
     .swiper-pagination-bullet {
         width: 8px;
         height: 8px;
@@ -26,37 +34,36 @@ $color_mode = $data['background'] ?? 'light';
         <?php if (!empty($data['sliders'])): ?>
             <div class=" relative">
                 <!-- <div class=" mb-12 flex flex-col md:flex-row justify-between items-start gap-8"> -->
-                    <div class="max-w-4xl md:max-w-md mb-8">
-                        <?php if (!empty($data['top_title'])): ?>
-                            <span class="maxwell-top-title mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
-                        <?php endif; ?>
-                        <?php echo _heading($data['title'], 'mb-3' . ($color_mode === 'dark_mode' ? ' text-white' : '')); ?>
+                <div class="max-w-4xl md:max-w-md mb-8">
+                    <?php if (!empty($data['top_title'])): ?>
+                        <span class="maxwell-top-title mb-4 block"><?php echo esc_html($data['top_title']); ?></span>
+                    <?php endif; ?>
+                    <?php echo _heading($data['title'], 'mb-3' . ($color_mode === 'dark_mode' ? ' text-white' : '')); ?>
 
 
-                        <?php if (!empty($data['text'])) : ?>
-                            <div class="text-lg text-muted-foreground mb-5 <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : ''; ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
-                        <?php endif; ?>
-                    </div>
+                    <?php if (!empty($data['text'])) : ?>
+                        <div class="text-lg text-muted-foreground mb-5 <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : ''; ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                    <?php endif; ?>
+                </div>
 
-                    <div class="flex gap-2 absolute top-4 right-0 z-50">
+
+                <div class="feature-slider-swiper swiper relative overflow-visible">
+                    <div class="flex gap-2 absolute -top-4 right-0 z-50">
                         <div class="feature-slider-prev-custom">
-                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent/50 bg-transparent bg-opacity-60 text-white hover:border-accent ": "border border-accent/20 bg-accent/10 hover:bg-accent/10 text-primary hover:bg-accent/5 hover:border-accent/50 " ?> h-10 w-10 rounded-full">
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent/50 bg-transparent bg-opacity-60 text-white hover:border-accent " : "border border-accent/20 bg-accent/10 hover:bg-accent/10 text-primary hover:bg-accent/5 hover:border-accent/50 " ?> h-10 w-10 rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
                                     <path d="m15 18-6-6 6-6"></path>
                                 </svg>
                             </button>
                         </div>
                         <div class="feature-slider-next-custom">
-                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent/50 bg-transparent bg-opacity-60 text-white hover:border-accent ": "border border-accent/20 bg-accent/10 hover:bg-accent/10 text-primary hover:bg-accent/5 hover:border-accent/50 " ?> h-10 w-10 rounded-full">
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent/50 bg-transparent bg-opacity-60 text-white hover:border-accent " : "border border-accent/20 bg-accent/10 hover:bg-accent/10 text-primary hover:bg-accent/5 hover:border-accent/50 " ?> h-10 w-10 rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
                                     <path d="m9 18 6-6-6-6"></path>
                                 </svg>
                             </button>
                         </div>
                     </div>
-                <div class="feature-slider-swiper swiper relative overflow-visible">
-
-                    
                     <div class="swiper-wrapper">
                         <?php $counter = 1; ?>
                         <?php foreach ($data['sliders'] as $slide): ?>
@@ -136,10 +143,11 @@ $color_mode = $data['background'] ?? 'light';
                         <?php endforeach; ?>
                     </div>
 
-
-                    <!-- <div class="flex max-w-xl items-end justify-between">                        
-                        <div class="swiper-pagination"></div>
-                    </div> -->
+                    <div class="flex justify-end">
+                        <div class="flex w-fit items-end">
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         <?php endif; ?>

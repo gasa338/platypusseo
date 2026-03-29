@@ -993,6 +993,10 @@ li {
   top: 2rem;
 }
 
+.-top-12 {
+  top: -3rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -1159,8 +1163,8 @@ li {
   margin-top: 2.25rem;
 }
 
-.mt-16 {
-  margin-top: 4rem;
+.ml-auto {
+  margin-left: auto;
 }
 
 .block {
@@ -1434,6 +1438,11 @@ li {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .min-w-full {
