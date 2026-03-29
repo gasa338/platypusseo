@@ -23,7 +23,7 @@
 				</div>
 
 				<!-- Center Navigation Links -->
-				<div class="hidden md:flex items-center space-x-6">
+				<div class="hidden md:flex items-center space-x-6 font-bold">
 
 					<?php
 					// Get the primary menu
@@ -108,7 +108,7 @@
 		</div>
 
 		<!-- Mobile Menu -->
-		<div id="mobile-menu" class="hidden md:hidden z-50 absolute top-16 right-0 w-full bg-white">
+		<div id="mobile-menu" class="hidden md:hidden z-50 absolute top-16 right-0 w-full bg-card">
 			<nav class="px-2 pt-2 pb-3 space-y-1">
 				<?php
 				foreach ($menu_1_items as $item) :

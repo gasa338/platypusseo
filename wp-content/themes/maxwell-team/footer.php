@@ -10,7 +10,7 @@ $social_network = get_field('social_network', 'option');
             <div>
                 <div class="flex items-center gap-3 mb-6">
                     <?php if (!empty($footer_data['logo'])) : ?>
-                        <img src="<?php echo $footer_data['logo']['url']; ?>" alt="<?php echo $footer_data['logo']['alt']; ?>">
+                        <img height="32" width="auto" src="<?php echo $footer_data['logo']['url']; ?>" alt="<?php echo $footer_data['logo']['alt']; ?>">
                     <?php endif; ?>
                 </div>
 

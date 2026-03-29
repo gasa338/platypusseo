@@ -136,7 +136,7 @@ $color_mode = $data['background'] ?? 'dark';
 <section id="<?php echo esc_attr($anchor); ?>" class="comparison-table-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class);
                                                                                                             echo ' ' . _background($data['background']); ?>">
     <div class="container mx-auto px-4">
-        <div class="max-w-2xl items-center justify-center">
+        <div class="max-w-2xl items-center justify-center mx-auto text-center">
             <?php if (!empty($data['top_title'])) : ?>
                 <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
@@ -154,7 +154,7 @@ $color_mode = $data['background'] ?? 'dark';
             <?php endif; ?>
         </div>
 
-        <div class="max-w-7xl">
+        <div class="mx-auto">
             <table class="w-full border-separate border-spacing-x-2">
                 <thead class="sticky top-16 z-10">
                     <tr>
@@ -177,7 +177,7 @@ $color_mode = $data['background'] ?? 'dark';
                                 <?php foreach ($item['row'] as $k => $el): ?>
                                     <?php if ($k == 0): ?>
                                         <td class="py-6 pr-6 pl-4 align-middle">
-                                            <span class="text-primary text-xl font-bold"><?php echo $el['name']; ?></span>
+                                            <span class="text-primary text-xl font-semibold"><?php echo $el['name']; ?></span>
                                         </td>
                                     <?php else: ?>
                                         <?php
@@ -191,7 +191,7 @@ $color_mode = $data['background'] ?? 'dark';
                                         ?>
                                         <td class="<?php echo $tdClasses; ?>">
                                             <div class="flex items-center justify-center gap-2">
-                                                <span class="font-bold text-lg <?php echo $k == 4 ? 'text-white' : 'text-primary'; ?>">
+                                                <span class="text-lg <?php echo $k == 4 ? 'text-white' : 'text-primary'; ?>">
                                                     <?php echo $el['name']; ?>
                                                 </span>
                                                 <?php if (!empty($el['popup'])): ?>

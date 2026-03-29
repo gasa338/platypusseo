@@ -10,7 +10,6 @@ $color_mode = $data['background'] ?? 'light';
     .feature-slider-swiper .swiper-pagination {
         width: auto;
         left: auto;
-        bottom: -40px;
         right: 50%;
         transform: translateX(50%);
     }
@@ -50,14 +49,14 @@ $color_mode = $data['background'] ?? 'light';
                 <div class="feature-slider-swiper swiper relative overflow-visible">
                     <div class="flex gap-2 absolute -top-4 right-0 z-50">
                         <div class="feature-slider-prev-custom">
-                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent/50 bg-transparent bg-opacity-60 text-white hover:border-accent " : "border border-accent/20 bg-accent/10 hover:bg-accent/10 text-primary hover:bg-accent/5 hover:border-accent/50 " ?> h-10 w-10 rounded-full">
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
                                     <path d="m15 18-6-6 6-6"></path>
                                 </svg>
                             </button>
                         </div>
                         <div class="feature-slider-next-custom">
-                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent/50 bg-transparent bg-opacity-60 text-white hover:border-accent " : "border border-accent/20 bg-accent/10 hover:bg-accent/10 text-primary hover:bg-accent/5 hover:border-accent/50 " ?> h-10 w-10 rounded-full">
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
                                     <path d="m9 18 6-6-6-6"></path>
                                 </svg>
@@ -112,12 +111,12 @@ $color_mode = $data['background'] ?? 'light';
                                     <div class="flex flex-row md:flex-col gap-6 right-side">
                                         <div class="flex-1 <?php echo $color_mode === 'dark_mode' ? 'bg-hero ' : 'bg-card border border-border'; ?> rounded-2xl p-6 flex flex-col justify-center">
                                             <?php if (!empty($slide['left_top']['icon'])): ?>
-                                                <div class="w-10 h-10 rounded-xl bg-accent flex items-center justify-center mb-4">
+                                                <div class="w-10 h-10 rounded-xl bg-hero flex items-center justify-center mb-4">
                                                     <?php echo maxwell_render_icon($slide['left_top']['icon'], 'w-5 h-5 text-white'); ?>
                                                 </div>
                                             <?php endif; ?>
                                             <?php if (!empty($slide['left_top']['number'])): ?>
-                                                <div class=" text-4xl font-bold text-accent mb-2"><?php echo $slide['left_top']['number']; ?></div>
+                                                <div class=" text-4xl font-bold text-[#213157] mb-2"><?php echo $slide['left_top']['number']; ?></div>
                                             <?php endif; ?>
                                             <?php if (!empty($slide['left_top']['text'])): ?>
                                                 <div class="<?php echo $color_mode === 'dark_mode' ? 'text-white' : 'text-foreground-muted'; ?>"><?php echo $slide['left_top']['text']; ?></div>

@@ -2548,6 +2548,11 @@ li {
   color: rgb(15 23 41 / var(--tw-text-opacity, 1));
 }
 
+.text-\[\#213157\] {
+  --tw-text-opacity: 1;
+  color: rgb(33 49 87 / var(--tw-text-opacity, 1));
+}
+
 .text-\[\#3F454F\] {
   --tw-text-opacity: 1;
   color: rgb(63 69 79 / var(--tw-text-opacity, 1));
@@ -3160,6 +3165,10 @@ li {
 
 .hover\:text-secondary:hover {
   color: hsl(var(--secondary));
+}
+
+.hover\:text-primary:hover {
+  color: hsl(var(--primary));
 }
 
 .hover\:underline:hover {
