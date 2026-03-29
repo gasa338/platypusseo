@@ -115,7 +115,7 @@
 
 
   .custom-logo-link img {
-    height: 43px !important;
+    height: 32px !important;
     width: auto !important;
   }
 
@@ -126,13 +126,13 @@
   /* Samo dva breakpoint-a */
   @media (max-width: 992px) {
     .custom-logo-link img {
-      max-height: 35px !important;
+      max-height: 29px !important;
     }
   }
 
   @media (max-width: 576px) {
     .custom-logo-link img {
-      max-height: 30px !important;
+      max-height: 27px !important;
     }
   }
 }
