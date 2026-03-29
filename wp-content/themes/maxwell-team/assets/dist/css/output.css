@@ -2813,10 +2813,6 @@ li {
   background: var(--background);
 }
 
-.bg-footer {
-  background: var(--footer);
-}
-
 .maxwell-content p {
   margin-bottom: 0.75rem;
 }
@@ -3163,12 +3159,12 @@ li {
   color: rgb(55 65 81 / var(--tw-text-opacity, 1));
 }
 
-.hover\:text-secondary:hover {
-  color: hsl(var(--secondary));
-}
-
 .hover\:text-primary:hover {
   color: hsl(var(--primary));
+}
+
+.hover\:text-secondary:hover {
+  color: hsl(var(--secondary));
 }
 
 .hover\:underline:hover {

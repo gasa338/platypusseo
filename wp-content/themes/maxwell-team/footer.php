@@ -4,7 +4,7 @@ $footer_data = get_field('footer_data', 'option');
 $social_network = get_field('social_network', 'option');
 ?>
 
-<footer class="bg-footer text-primary no-underline">
+<footer class="bg-surface text-primary no-underline">
     <div class="container py-16 px-4 mx-auto">
         <div class="grid sm:grid-cols-2 lg:grid-cols-[1.4fr,repeat(4,1fr)] gap-8">
             <div>
