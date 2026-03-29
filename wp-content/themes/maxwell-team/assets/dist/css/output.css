@@ -592,7 +592,31 @@ video {
   --surface-gradient: linear-gradient(180deg, hsl(40 20% 98%), hsl(220 14% 96%));
 }
 
+.custom-logo-link img {
+  height: 43px !important;
+  width: auto !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+/* Samo dva breakpoint-a */
+
+@media (max-width: 992px) {
+  .custom-logo-link img {
+    max-height: 35px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-logo-link img {
+    max-height: 30px !important;
+  }
+}
+
 * {
+  scroll-margin-top: 80px;
   border-color: hsl(var(--border));
 }
 
@@ -1133,6 +1157,10 @@ li {
 
 .mt-9 {
   margin-top: 2.25rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .block {

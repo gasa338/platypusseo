@@ -112,10 +112,34 @@
     --accent-gradient: linear-gradient(135deg, hsl(12 80% 58%), hsl(16 85% 52%));
     --surface-gradient: linear-gradient(180deg, hsl(40 20% 98%), hsl(220 14% 96%));
   }
+
+
+  .custom-logo-link img {
+    height: 43px !important;
+    width: auto !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  /* Samo dva breakpoint-a */
+  @media (max-width: 992px) {
+    .custom-logo-link img {
+      max-height: 35px !important;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .custom-logo-link img {
+      max-height: 30px !important;
+    }
+  }
 }
 
 @layer base {
   * {
+    scroll-margin-top: 80px;
     @apply border-border;
   }
 
@@ -163,7 +187,7 @@
   .bg-background {
     background: var(--background);
   }
-  
+
   .bg-footer {
     background: var(--footer);
   }
