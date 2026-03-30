@@ -7,6 +7,23 @@ $data = get_field('horizontal_tab');
 $text_color = $data['text_color'] ?? 'inherit';
 $color_mode = $data['background'] ?? 'dark';
 $reverse = $data['reverse'] ?? false;
+$text_align = $data['text_align'] ?? 'left';
+$text_width = $data['text_width'] ?? 'medium';
+
+switch ($text_width) {
+    case 'narrow':
+        $text_width_class = 'max-w-2xl';
+        break;
+    case 'medium':
+        $text_width_class = 'max-w-4xl';
+        break;
+    case 'wide':
+        $text_width_class = 'max-w-6xl';
+        break;
+    default:
+        $text_width_class = 'max-w-4xl';
+        break;
+}
 ?>
 <style>
     /* Koristite istu klasu kao u HTML-u - cta-2- */
@@ -86,10 +103,10 @@ $reverse = $data['reverse'] ?? false;
                                     <div class="max-w-4xl mx-auto">
                                         <div class="text-center mb-12">
                                             <?php if (!empty($content['title'])): ?>
-                                                <h3 class=" text-3xl font-bold mb-4 <?php echo $key === 0 ? 'text-primary' : ''; ?> <?php echo $color_mode == "dark_mode" ? "!text-white" : ""; ?>"><?php echo $content['title']; ?></h3>
+                                                <h3 class="text-3xl font-bold mb-4 <?php echo $key === 0 ? 'text-primary' : ''; ?> <?php echo $color_mode == "dark_mode" ? "!text-white" : ""; ?> <?php echo $text_align == 'left' ? 'text-left' : 'text-center'; ?>"><?php echo $content['title']; ?></h3>
                                             <?php endif; ?>
                                             <?php if (!empty($content['content'])): ?>
-                                                <div class="text-lg <?php echo $color_mode == "dark_mode" ? "text-white/60" : "text-muted-foreground"; ?>  max-w-2xl mx-auto"><?php echo apply_filters('the_content', $content['content']); ?></div>
+                                                <div class="text-lg maxwell-content <?php echo $color_mode == "dark_mode" ? "text-white/60 [&_li]:text-white" : "text-muted-foreground"; ?> <?php echo $text_align == 'left' ? 'text-left' : 'text-center'; ?> <?php echo $text_width_class; ?> mx-auto"><?php echo apply_filters('the_content', $content['content']); ?></div>
                                             <?php endif; ?>
                                         </div>
 
@@ -102,7 +119,7 @@ $reverse = $data['reverse'] ?? false;
                                                                 <?php echo maxwell_render_icon($item['icon'], 'w-4 h-4 text-white'); ?>
                                                             </div>
                                                             <?php if (!empty($item['text'])): ?>
-                                                                <div class="<?php echo $color_mode == "dark_mode" ? "text-white/60" : ""; ?>">
+                                                                <div class="<?php echo $color_mode == "dark_mode" ? "text-white/60" : ""; ?> maxwell-content">
                                                                     <?php echo apply_filters('the_content', $item['text']); ?>
                                                                 </div>
                                                             <?php endif; ?>

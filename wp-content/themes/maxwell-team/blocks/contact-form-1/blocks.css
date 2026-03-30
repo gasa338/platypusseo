@@ -38,23 +38,11 @@
 }
 
 /* Dugme */
-.wpcf7-form input[type="submit"] {
-    background-color: hsl(var(--input));
-    color: hsl(var(--foreground));
-    border: none;
-    padding: 15px 30px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
 
 .wpcf7-form input[type="submit"] {
     border: 2px solid hsl(var(--primary));
     color: white;
-    background-color: hsl(var(--primary));
+    background-color: hsl(var(--accent));
     padding: 8px 16px; /* px-4 py-2 */
     border-radius: 12px; /* rounded-xl */
     transition: all 0.3s ease;
@@ -69,7 +57,7 @@
 }
 
 .wpcf7-form input[type="submit"]:hover {
-    background-color: hsl(var(--primary));
+    background-color: hsl(var(--accent));
     color: hsl(var(--accent-light)) !important; /* hover:!text-[#F06F40] */
     transform: scale(0.98); /* hover:scale-[1.02] */
     box-shadow: 0 4px 8px -1px hsl(var(--primary-foreground)); /* hover:shadow-lg hover:shadow-[#F06F40]/20 */
