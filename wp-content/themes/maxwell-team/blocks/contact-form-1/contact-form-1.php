@@ -32,7 +32,7 @@ $color_mode = $data['background'];
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="lg:col-span-4 bg-white/5 rounded-2xl p-8 shadow-lg">
+            <div class="lg:col-span-4 bg-white/5 rounded-xl p-8 border border-border">
                 <?php if (!empty($data['form_title'])) : ?>
                     <h2 class="text-3xl mb-6 <?php echo $color_mode === 'dark_mode' ? ' text-white' : ' text-foreground'; ?>"><?php echo esc_html($data['form_title']); ?></h2>
                 <?php endif; ?>
