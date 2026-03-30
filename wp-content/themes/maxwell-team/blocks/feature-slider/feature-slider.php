@@ -156,14 +156,14 @@ $color_mode = $data['background'] ?? 'light';
                         <!-- Navigacione strelice -->
                         <div class="flex gap-2" style="z-index: 9999">
                             <div class="feature-slider-prev-custom">
-                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
+                                <button aria-label="Previous slide" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
                                         <path d="m15 18-6-6 6-6"></path>
                                     </svg>
                                 </button>
                             </div>
                             <div class="feature-slider-next-custom">
-                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
+                                <button aria-label="Next slide" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
                                         <path d="m9 18 6-6-6-6"></path>
                                     </svg>
@@ -216,7 +216,7 @@ $color_mode = $data['background'] ?? 'light';
                 },
                 pagination: {
                     el: '.swiper-pagination',
-                    clickable: true,
+                    clickable: false,
                 },
                 on: {
                     init: function() {
