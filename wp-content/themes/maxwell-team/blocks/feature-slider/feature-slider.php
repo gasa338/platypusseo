@@ -47,22 +47,7 @@ $color_mode = $data['background'] ?? 'light';
 
 
                 <div class="feature-slider-swiper swiper relative overflow-visible">
-                    <div class="flex gap-2 absolute -top-4 right-0 z-50">
-                        <div class="feature-slider-prev-custom">
-                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
-                                    <path d="m15 18-6-6 6-6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="feature-slider-next-custom">
-                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
-                                    <path d="m9 18 6-6-6-6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+
                     <div class="swiper-wrapper">
                         <?php $counter = 1; ?>
                         <?php foreach ($data['sliders'] as $slide): ?>
@@ -142,9 +127,48 @@ $color_mode = $data['background'] ?? 'light';
                         <?php endforeach; ?>
                     </div>
 
-                    <div class="flex justify-end">
+                    <!-- <div class="flex justify-end">
                         <div class="flex w-fit items-end">
                             <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 absolute -top-4 right-0 z-50">
+                        <div class="feature-slider-prev-custom">
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
+                                    <path d="m15 18-6-6 6-6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="feature-slider-next-custom">
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
+                                    <path d="m9 18 6-6-6-6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div> -->
+
+                    <div class="flex items-center justify-center gap-4 w-fit" style="position: absolute; bottom: 15px; left: 50%;">
+                        <!-- Bullet navigacija -->
+                        <div class="swiper-pagination !w-auto !relative my-auto flex items-center justify-center"></div>
+
+                        <!-- Navigacione strelice -->
+                        <div class="flex gap-2" style="z-index: 9999">
+                            <div class="feature-slider-prev-custom">
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
+                                        <path d="m15 18-6-6 6-6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="feature-slider-next-custom">
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-all duration-300 <?php echo $color_mode == 'dark_mode' ? "border border-accent bg-transparent text-white hover:border-accent " : "border border-border bg-transparent text-foreground hover:text-primary" ?> h-10 w-10 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
+                                        <path d="m9 18 6-6-6-6"></path>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

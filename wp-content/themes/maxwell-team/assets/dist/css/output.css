@@ -833,6 +833,10 @@ li {
   position: absolute;
 }
 
+.\!relative {
+  position: relative !important;
+}
+
 .relative {
   position: relative;
 }
@@ -993,6 +997,14 @@ li {
   top: 2rem;
 }
 
+.-top-10 {
+  top: -2.5rem;
+}
+
+.left-10 {
+  left: 2.5rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -1037,6 +1049,11 @@ li {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .mb-1 {
@@ -1321,6 +1338,10 @@ li {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.\!w-auto {
+  width: auto !important;
 }
 
 .w-10 {
