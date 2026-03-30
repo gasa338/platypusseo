@@ -997,14 +997,6 @@ li {
   top: 2rem;
 }
 
-.-top-10 {
-  top: -2.5rem;
-}
-
-.left-10 {
-  left: 2.5rem;
-}
-
 .z-0 {
   z-index: 0;
 }
@@ -2839,7 +2831,7 @@ li {
 }
 
 .maxwell-content ul {
-  list-style-position: inside;
+  list-style-position: outside;
   list-style-type: disc;
 }
 

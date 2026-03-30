@@ -197,7 +197,7 @@
   }
 
   .maxwell-content ul {
-    @apply list-disc list-inside;
+    @apply list-disc list-outside;
   }
 
   .maxwell-content ul li::marker {
