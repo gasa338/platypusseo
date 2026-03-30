@@ -30,6 +30,12 @@ $data = get_field('hero_text');
                     </svg>
                     </a>
                 <?php endif; ?>
+
+                <?php if (!empty($data['clutch']) && $data['use_clutch'] == 'yes'): ?>
+                    <div>
+                        <?php echo $data['clutch']; ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary-foreground/30">
