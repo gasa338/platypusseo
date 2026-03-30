@@ -212,7 +212,7 @@
     @apply hover:text-secondary transition-colors duration-200;
   }
 
-  .maxwell-content blockquote {
+  blockquote {
     @apply text-accent font-medium pt-4 border-l-4 border-accent px-6 bg-accent/5 py-2 rounded-r-lg my-4;
   }
 
