@@ -155,6 +155,8 @@ $color_mode = $data['background'] ?? 'dark';
         </div>
 
         <div class="mx-auto">
+            <!-- Wrapper div za skrolovanje -->
+  <div class="overflow-x-auto md:overflow-x-visible">
             <table class="w-full border-separate border-spacing-x-2">
                 <thead class="sticky top-16 z-10">
                     <tr>
@@ -215,6 +217,7 @@ $color_mode = $data['background'] ?? 'dark';
 
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 </section>
