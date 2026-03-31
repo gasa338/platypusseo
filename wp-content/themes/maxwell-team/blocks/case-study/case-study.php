@@ -109,14 +109,14 @@ $dynamic_load = $data['dynamic_load'] ?? "no";
                 </div>
             </div>
         <?php else : ?>
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6 md:mb-16">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                 <div class="max-w-2xl">
                     <?php if (!empty($data['top_title'])) : ?>
                         <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
                     <?php endif; ?>
                     <?php echo _heading($data['title'], "mb-6" . ($color_mode === 'dark_mode' ? ' text-white' : '')); ?>
                     <?php if (!empty($data['text'])) : ?>
-                        <div class="text-lg maxwell-content <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : ''; ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                        <div class="text-lg mb-6 maxwell-content <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : ''; ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
                     <?php endif; ?>
                 </div>
                 <?php if ($load_element == 'no') : ?>
