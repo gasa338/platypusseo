@@ -1755,6 +1755,12 @@ li {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -3633,6 +3639,10 @@ blockquote {
 
   .lg\:grid-cols-\[1\.4fr\2c repeat\(4\2c 1fr\)\] {
     grid-template-columns: 1.4fr repeat(4,1fr);
+  }
+
+  .lg\:grid-cols-\[1fr_280px\] {
+    grid-template-columns: 1fr 280px;
   }
 
   .lg\:flex-row {
