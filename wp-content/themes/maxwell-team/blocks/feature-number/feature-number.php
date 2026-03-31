@@ -29,8 +29,24 @@ if ($color_mode == 'dark_mode') {
 } else {
     $bg_box = $card_bg == 'inherit' ? '' : 'bg-card border-border hover:border-accent/50';
 }
+
+$count_numbers = count($data['numbers']);
+switch ($count_numbers) {
+    case 2:
+        $grid_class = 'lg:grid-cols-2 md:px-48 px-0';
+        break;
+    case 3:
+        $grid_class = 'lg:grid-cols-3 md:px-24 px-0';
+        break;
+    case 4:
+        $grid_class = 'lg:grid-cols-4';
+        break;
+    default:
+        $grid_class = 'lg:grid-cols-4';
+        break;
+}
 ?>
-<?php echo _spacing_full('feature-number',$blocks_id,$data['margin'], $data['padding']); ?>
+<?php echo _spacing_full('feature-number', $blocks_id, $data['margin'], $data['padding']); ?>
 <section id="<?php echo esc_attr($anchor); ?>" class="py-24 <?php echo $bg_class; ?> feature-number-<?php echo esc_attr($blocks_id);
                                                                                                     echo ' ' . _background($data['background']); ?> <?php echo esc_attr($blocks_class); ?>">
 
@@ -45,27 +61,28 @@ if ($color_mode == 'dark_mode') {
                 <div class="text-center <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/80' : 'text-muted-foreground'); ?> mb-12"><?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <?php if ($data['numbers']): ?>
-                    <?php foreach ($data['numbers'] as $number): ?>
-                        <div class="group text-center p-8 rounded-2xl <?php echo esc_attr($bg_box); ?> transition-colors">
-                            <?php if ($number['icon']): ?>
-                                <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white bg-accent transition-all">
-                                    <?php echo maxwell_render_icon($number['icon'], 'w-7 h-7 !text-white'); ?>
-                                </div>
-                            <?php endif; ?>
+        </div>
 
-                            <?php if ($number['title']): ?>
-                                <div class="text-4xl font-bold mb-3 text-accent"><?php echo esc_html($number['title']); ?></div>
-                            <?php endif; ?>
-                            <?php if ($number['text']): ?>
-                                <div class="maxwell-content <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/80' : 'text-muted-foreground'); ?>"><?php echo apply_filters('the_content', $number['text']); ?></div>
-                            <?php endif; ?>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+        <?php if ($data['numbers']): ?>
+            <div class="grid md:grid-cols-2 <?php echo $grid_class; ?> gap-8 justify-center">
+                <?php foreach ($data['numbers'] as $number): ?>
+                    <div class="group text-center p-8 rounded-2xl <?php echo esc_attr($bg_box); ?> transition-colors">
+                        <?php if ($number['icon']): ?>
+                            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white bg-accent transition-all">
+                                <?php echo maxwell_render_icon($number['icon'], 'w-7 h-7 !text-white'); ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($number['title']): ?>
+                            <div class="text-4xl font-bold mb-3 text-accent"><?php echo esc_html($number['title']); ?></div>
+                        <?php endif; ?>
+                        <?php if ($number['text']): ?>
+                            <div class="maxwell-content <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/80' : 'text-muted-foreground'); ?>"><?php echo apply_filters('the_content', $number['text']); ?></div>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
 
             </div>
-        </div>
+        <?php endif; ?>
     </div>
 </section>
