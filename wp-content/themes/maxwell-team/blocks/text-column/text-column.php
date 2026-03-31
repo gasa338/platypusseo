@@ -22,7 +22,7 @@ $color_mode = $data['background'] ?? 'dark';
     </div>
 
     <!-- Framework -->
-    <div class="grid lg:grid-cols-2 gap-x-20 gap-y-16">
+    <div class="grid lg:grid-cols-2 gap-8 md:gap-16">
 
       <!-- Criteria -->
       <div>

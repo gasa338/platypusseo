@@ -1704,18 +1704,9 @@ li {
   gap: 2rem;
 }
 
-.gap-x-20 {
-  -moz-column-gap: 5rem;
-       column-gap: 5rem;
-}
-
 .gap-x-6 {
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
-}
-
-.gap-y-16 {
-  row-gap: 4rem;
 }
 
 .gap-y-4 {
@@ -3495,6 +3486,10 @@ blockquote {
 
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:gap-16 {
+    gap: 4rem;
   }
 
   .md\:overflow-x-visible {
