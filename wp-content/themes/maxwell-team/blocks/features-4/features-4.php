@@ -40,7 +40,7 @@ $color_mode = $data['color_mode'] ?? 'dark';
                 <?php if (!empty($data['features'])): ?>
                     <div class="grid sm:grid-cols-2 gap-6 my-6">
                         <?php foreach ($data['features'] as $key => $value): ?>
-                            <div class="flex gap-4">
+                            <div class="flex gap-4 items-center">
                                 <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-accent">
                                     <?php echo maxwell_render_icon($value['icon'], 'w-6 h-6 text-white'); ?>
                                 </div>
