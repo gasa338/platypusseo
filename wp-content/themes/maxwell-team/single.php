@@ -31,7 +31,7 @@ $post_id = get_the_ID();
 					$categories = get_the_category();
 					?>
 					<?php if (!empty($categories)) : ?>
-						<span class="inline-block px-2 py-1 bg-accent/20 text-accent font-medium rounded-full mb-6">
+						<span class="inline-block px-2 py-1 bg-accent text-white font-medium rounded-full mb-6">
 							<?php echo esc_html($categories[0]->name); ?>
 						</span>
 					<?php endif; ?>
