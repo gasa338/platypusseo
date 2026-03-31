@@ -13,12 +13,12 @@ $verical_alignment = $data['verical_alignment'] ?? 'center';
 <section class="text-component-<?php echo esc_attr($blocks_id); ?> <?php echo _background($data['background']); ?> <?php echo esc_attr($blocks_class); ?>">
   <div class="container mx-auto px-6">
     <?php if ($layout === 'horizontal') : ?>
-      <div class="grid grid-cols-1 md:grid-cols-6 gap-12 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-6 max-w-7xl mx-auto">
         <div class="md:col-span-2">
           <?php if ($data['top_title']): ?>
             <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
           <?php endif; ?>
-          <?php echo _heading($data['title'], 'mb-10 '. esc_attr($color_mode == 'dark_mode' ? 'text-white' : '')); ?>
+          <?php echo _heading($data['title'], 'mb-6 '. esc_attr($color_mode == 'dark_mode' ? 'text-white' : '')); ?>
         </div>
         <div class="md:col-span-4">
           <?php if ($data['text']): ?>
