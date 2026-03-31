@@ -112,7 +112,7 @@ get_header();
 
 	<section class="py-12 bg-background">
 		<div class="container mx-auto px-6">
-			<div class="max-w-6xl mx-auto">
+			<div class="max-w-5xl mx-auto">
 				<article class="prose prose-lg max-w-none maxwell-post-content">
 					<?php
 					while (have_posts()) :

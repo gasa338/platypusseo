@@ -11,6 +11,7 @@ $color_mode = $data['background'];
 
 $load_element = $data['load_element'] ?? 'four';
 $dynamic_load = $data['dynamic_load'] ?? "no";
+$cpt = $data['cpt'] ?? 'case-study';
 ?>
 <style>
     .case-item.hidden-case-item {
@@ -127,7 +128,7 @@ $dynamic_load = $data['dynamic_load'] ?? "no";
             </div>
 
             <?php if ($data['dynamic_load'] === 'yes') :
-                $data['items'] = maxwell_get_cpt('case-study', -1);
+                $data['items'] = maxwell_get_cpt($cpt, -1);
                 
             endif; ?>
 
