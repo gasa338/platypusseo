@@ -94,7 +94,7 @@ function _heading($data, $class = '')
     // Tailwind klase za align
     $align_classes = [
         'left' => 'text-left',
-        'center' => 'text-center',
+        'center' => 'text-left md:text-center',
         'right' => 'text-right'
     ];
 
