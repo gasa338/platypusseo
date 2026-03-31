@@ -136,7 +136,7 @@ $color_mode = $data['background'] ?? 'dark';
 <section id="<?php echo esc_attr($anchor); ?>" class="comparison-table-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class);
                                                                                                             echo ' ' . _background($data['background']); ?>">
     <div class="container mx-auto px-4">
-        <div class="max-w-2xl items-center justify-center mx-auto text-center">
+        <div class="max-w-2xl items-center justify-center mx-auto md:text-center text-left">
             <?php if (!empty($data['top_title'])) : ?>
                 <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
             <?php endif; ?>
@@ -144,7 +144,7 @@ $color_mode = $data['background'] ?? 'dark';
             <?php echo _heading($data['title'], "mb-6" . ($color_mode === 'dark_mode' ? ' text-white' : '')); ?>
 
             <?php if (!empty($data['text'])) : ?>
-                <div class="text-lg mb-8 <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'; ?>">
+                <div class="text-lg mb-8  <?php echo $color_mode === 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'; ?>">
                     <?php echo apply_filters('the_content', $data['text']); ?></div>
             <?php endif; ?>
 
@@ -158,7 +158,7 @@ $color_mode = $data['background'] ?? 'dark';
             <!-- Wrapper div za skrolovanje -->
             <div class="overflow-x-auto md:overflow-x-visible">
                 <table class="w-full border-separate border-spacing-x-2">
-                    <thead class="sticky top-16 z-10">
+                    <thead class="sticky top-0 md:top-16 z-10">
                         <tr>
                             <?php foreach ($data['items'][0]['row'] as $kh => $header): ?>
                                 <?php if ($kh == 0): ?>
@@ -184,7 +184,7 @@ $color_mode = $data['background'] ?? 'dark';
                                         <?php else: ?>
                                             <?php
                                             // Odredi klase na osnovu indeksa
-                                            $tdClasses = "text-center py-6 px-4 align-middle  ";
+                                            $tdClasses = "text-center py-3 px-2 md:py-6 md:px-4 align-middle  ";
                                             if ($k == 4) {
                                                 $tdClasses .= "bg-hero";
                                             } else {

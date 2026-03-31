@@ -3374,6 +3374,10 @@ blockquote {
     top: 6rem;
   }
 
+  .md\:top-16 {
+    top: 4rem;
+  }
+
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -3512,9 +3516,19 @@ blockquote {
     padding-right: 4rem;
   }
 
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .md\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .md\:text-center {
