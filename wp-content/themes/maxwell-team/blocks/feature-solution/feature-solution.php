@@ -59,9 +59,19 @@ switch ($grid_columns) {
                                 </h3>
                             <?php endif; ?>
                             <?php if ($solution['text']): ?>
-                                <div class="maxwell-content <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?>">
+                                <div class="maxwell-content mb-4 <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?>">
                                     <?php echo apply_filters('the_content', $solution['text']); ?>
                                 </div>
+                            <?php endif; ?>
+                            
+                            <?php if ($solution['link']): ?>
+                                <a href="<?php echo esc_url($solution['link']['url']); ?>" class="inline-flex items-center gap-1 text-accent font-medium no-underline" title="<?php echo "read more about " . esc_attr($solution['title']); ?>">
+                                    <?php echo esc_html($solution['link']['title']); ?>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
