@@ -8,11 +8,11 @@ $social_network = get_field('social_network', 'option');
     <div class="container py-16 px-4 mx-auto">
         <div class="grid sm:grid-cols-2 lg:grid-cols-[1.4fr,repeat(4,1fr)] gap-8">
             <div>
-                <div class="flex items-center gap-3 mb-6">
-                    <?php if (!empty($footer_data['logo'])) : ?>
+                <?php if (!empty($footer_data['logo'])) : ?>
+                    <div class="flex items-center gap-3 mb-6 custom-logo-link">
                         <img height="32" width="auto" src="<?php echo $footer_data['logo']['url']; ?>" alt="<?php echo $footer_data['logo']['alt']; ?>">
-                    <?php endif; ?>
-                </div>
+                    </div>
+                <?php endif; ?>
 
                 <?php if (!empty($footer_data['description'])) : ?>
                     <div class="mb-6"><?php echo apply_filters('the_content', $footer_data['description']); ?></div>
@@ -23,23 +23,23 @@ $social_network = get_field('social_network', 'option');
                         <ul class="space-y-4 text-foreground-muted">
                             <?php foreach ($footer_data['contact_data'] as $item) : ?>
                                 <?php if (!empty($item['text'])): ?>
-                                <li>
-                                    <?php if (isset($item['text']['url']) && $item['text']['url'] == '#'): ?>
-                                        <div class="flex items-center gap-3 transition-colors">
-                                            <?php if (!empty($item['icon'])): ?>
-                                                <?php echo maxwell_render_svg($item['icon']['url'], 'w-6 h-6'); ?>
-                                            <?php endif; ?>
-                                            <?php echo $item['text']['title']; ?>
-                                        </div>
-                                    <?php else: ?>
-                                        <a href="<?php echo esc_url($item['text']['url']); ?>" class="flex items-center gap-3 hover:text-accent transition-colors no-underline">
-                                            <?php if (!empty($item['icon'])): ?>
-                                                <?php echo maxwell_render_svg($item['icon']['url'], 'w-6 h-6'); ?>
-                                            <?php endif; ?>
-                                            <?php echo $item['text']['title']; ?>
-                                        </a>
-                                    <?php endif; ?>
-                                </li>
+                                    <li>
+                                        <?php if (isset($item['text']['url']) && $item['text']['url'] == '#'): ?>
+                                            <div class="flex items-center gap-3 transition-colors">
+                                                <?php if (!empty($item['icon'])): ?>
+                                                    <?php echo maxwell_render_svg($item['icon']['url'], 'w-6 h-6'); ?>
+                                                <?php endif; ?>
+                                                <?php echo $item['text']['title']; ?>
+                                            </div>
+                                        <?php else: ?>
+                                            <a href="<?php echo esc_url($item['text']['url']); ?>" class="flex items-center gap-3 hover:text-accent transition-colors no-underline">
+                                                <?php if (!empty($item['icon'])): ?>
+                                                    <?php echo maxwell_render_svg($item['icon']['url'], 'w-6 h-6'); ?>
+                                                <?php endif; ?>
+                                                <?php echo $item['text']['title']; ?>
+                                            </a>
+                                        <?php endif; ?>
+                                    </li>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </ul>
