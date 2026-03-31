@@ -109,7 +109,7 @@ $dynamic_load = $data['dynamic_load'] ?? "no";
                 </div>
             </div>
         <?php else : ?>
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6 md:mb-16">
                 <div class="max-w-2xl">
                     <?php if (!empty($data['top_title'])) : ?>
                         <span class="maxwell-top-title mb-4 block"><?php echo $data['top_title']; ?></span>
