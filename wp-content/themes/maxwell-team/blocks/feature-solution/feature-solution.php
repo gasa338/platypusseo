@@ -40,7 +40,7 @@ switch ($grid_columns) {
                 <?php echo _heading($data['title'], 'mb-4 ' . ($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground')); ?>
 
                 <?php if ($data['text']): ?>
-                    <div class="<?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?> mb-12"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                    <div class="<?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?> mb-6 md:mb-12"><?php echo apply_filters('the_content', $data['text']); ?></div>
                 <?php endif; ?>
             </div>
 

@@ -22,7 +22,7 @@ $color_mode = $data['background'] ?? 'dark';
                         <?php endif; ?>
                         <?php echo _heading($data['title'], 'mb-8 ' . ($color_mode == 'dark_mode' ? 'text-white' : 'text-foreground')); ?>
                         <?php if (!empty($data['text'])): ?>
-                            <div class="text-lg md:mb-6 md:mb-12 maxwell-content <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
+                            <div class="text-lg mb-6 md:mb-12 maxwell-content <?php echo esc_attr($color_mode == 'dark_mode' ? 'text-white/60' : 'text-muted-foreground'); ?>"><?php echo apply_filters('the_content', $data['text']); ?></div>
                         <?php endif; ?>
                     </div>
 
