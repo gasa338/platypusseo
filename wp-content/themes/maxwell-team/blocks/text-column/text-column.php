@@ -26,14 +26,14 @@ $color_mode = $data['background'] ?? 'dark';
 
       <!-- Criteria -->
       <div>
-        <div class="flex items-center gap-4 mb-6">
+        <div class="flex items-center gap-4 mb-4">
           <?php if (!empty($data['left_icon'])): ?>
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent">
               <?php echo maxwell_render_icon($data['left_icon'], 'h-5 w-5 text-white'); ?>
             </div>
           <?php endif; ?>
           <?php if (!empty($data['left_title'])): ?>
-            <h3 class="text-2xl font-bold <?php echo ($color_mode === 'dark_mode' ? 'text-white' : ''); ?>">
+            <h3 class="text-xl md:text-2xl font-bold <?php echo ($color_mode === 'dark_mode' ? 'text-white' : ''); ?>">
               <?php echo $data['left_title']; ?>
             </h3>
           <?php endif; ?>
@@ -46,7 +46,7 @@ $color_mode = $data['background'] ?? 'dark';
 
       <!-- Implications -->
       <div class="pt-1">
-        <div class="flex items-center gap-4 mb-6">
+        <div class="flex items-center gap-4 mb-4">
           <?php if (!empty($data['right_icon'])): ?>
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent">
               <!-- Decision / constraint icon -->
@@ -55,7 +55,7 @@ $color_mode = $data['background'] ?? 'dark';
           <?php endif; ?>
 
           <?php if (!empty($data['right_title'])): ?>
-            <h3 class="text-2xl font-bold <?php echo ($color_mode === 'dark_mode' ? 'text-white' : ''); ?>">
+            <h3 class="text-xl md:text-2xl font-bold <?php echo ($color_mode === 'dark_mode' ? 'text-white' : ''); ?>">
               <?php echo $data['right_title']; ?>
             </h3>
           <?php endif; ?>
