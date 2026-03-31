@@ -14,8 +14,8 @@ $color_mode = $data['color_mode'] ?? 'dark';
 <?php echo _spacing_full('features-4',$blocks_id,$data['margin'], $data['padding']); ?>
 <section id="<?php echo esc_attr($anchor); ?>" class="<?php echo esc_attr($color_mode == 'dark' ? 'bg-hero' : ''); ?> relative overflow-hidden features-4-<?php echo esc_attr($blocks_id); ?> <?php echo esc_attr($blocks_class); ?>">
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, rgb(255, 255, 255) 1px, transparent 0px); background-size: 32px 32px;"></div>
-    <div class="container mx-auto px-6 relative z-10" <?php echo _padding($data['padding']); ?>>
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center lg:flex-row-reverse">
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-6 lg:gap-20 items-center lg:flex-row-reverse">
             <div class="<?php echo esc_attr($reverse == 'yes' ? 'order-1' : 'order-2'); ?>">
                 <div class="relative">
                     <div class="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-2xl opacity-50"></div>
