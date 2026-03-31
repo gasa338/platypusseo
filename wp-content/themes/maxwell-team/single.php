@@ -27,64 +27,14 @@ $post_id = get_the_ID();
 
 			<div class="grid lg:grid-cols-2 items-center mx-auto">
 				<div>
-					<?php
-					$categories = get_the_category();
-					?>
-					<?php if (!empty($categories)) : ?>
-						<span class="inline-block px-4 py-1 bg-accent text-white font-medium rounded-full mb-6">
-							<?php echo esc_html($categories[0]->name); ?>
-						</span>
-					<?php endif; ?>
+					<span class="inline-block px-4 py-1 bg-accent text-white font-medium rounded-full mb-6">
+						SaaS SEO Audit
+					</span>
 
 					<!-- Title -->
 					<h1 class="h1-responsive font-bold text-white mb-6 leading-tight">
 						<?php the_title(); ?>
 					</h1>
-
-					<!-- Meta -->
-					 
-					<div class="flex flex-wrap items-center gap-6">
-
-						<div class="flex items-center gap-3">
-							<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"  rel="author" title="Posts by <?php the_author(); ?>">
-							<?php echo get_avatar(
-								get_the_author_meta('ID'),
-								48,
-								'',
-								'',
-								array('class' => 'w-12 h-12 rounded-full object-cover')
-							); ?>
-							</a>
-
-
-							<div>
-								<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="text-xl text-white font-medium no-underline" rel="author" title="Posts by <?php the_author(); ?>"><?php the_author(); ?></a>
-								<p class="text-white text-sm">
-									<?php echo get_the_date('F j, Y'); ?>
-								</p>
-							</div>
-						</div>
-
-						<div class="flex items-center gap-2 text-white">
-							<svg xmlns="http://www.w3.org/2000/svg"
-								width="24" height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="w-4 h-4 text-accent">
-								<circle cx="12" cy="12" r="10"></circle>
-								<polyline points="12 6 12 12 16 14"></polyline>
-							</svg>
-
-							<span>
-								<?php echo maxwell_estimated_reading_time(get_the_ID()); ?> min read
-							</span>
-						</div>
-
-					</div>
 
 				</div>
 
@@ -112,8 +62,7 @@ $post_id = get_the_ID();
 
 	<section class="py-12 bg-background">
 		<div class="container mx-auto px-6">
-			<div class="max-w-6xl mx-auto">
-				<div class="grid lg:grid-cols-[1fr_280px] gap-12">
+			<div class="max-w-xl mx-auto">
 					<article class="prose prose-lg max-w-none maxwell-post-content">
 						<?php
 						while (have_posts()) :
@@ -134,31 +83,10 @@ $post_id = get_the_ID();
 							}
 							?>
 						</div>
-
-						<div class="flex flex-wrap gap-2 mt-8 pt-8 border-t border-border mb-12">
-							<h3 class="h3-responsive font-semibold text-foreground mb-4">Related Posts</h3>
-							<?php maxwell_related_posts($post_id); ?>
-						</div>
 					</article>
-					<aside class="space-y-8">
-						<div class="sticky top-24">
-
-							<?php _share_component(get_permalink(), get_the_title()); ?>
-
-							<div class="mb-6 bg-card border border-border rounded-xl p-6 ">
-								<?php rockit_render_toc(get_the_content()); ?>
-							</div>
-						</div>
-					</aside>
-
-				</div>
 			</div>
 		</div>
 	</section>
-
-
-
-
 </div>
 
 <?php

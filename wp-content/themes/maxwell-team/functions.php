@@ -193,7 +193,7 @@ function mma_future_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 
-	if (is_singular('post')) {
+	if (is_singular('post') || is_singular( 'saas-seo-audit' ) ) {
 		wp_enqueue_script('blog-main', get_template_directory_uri() . '/assets/dist/js/blog-main.js', array(), _S_VERSION, true);
 		wp_enqueue_style('blog', get_template_directory_uri() . '/assets/dist/css/blog.css', array(), _S_VERSION, 'all');
 	}
