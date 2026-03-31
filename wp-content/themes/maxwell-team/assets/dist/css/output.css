@@ -1792,14 +1792,6 @@ li {
   overflow-x: auto;
 }
 
-.overflow-x-visible {
-  overflow-x: visible;
-}
-
-.overflow-x-scroll {
-  overflow-x: scroll;
-}
-
 .scroll-smooth {
   scroll-behavior: smooth;
 }
@@ -3415,10 +3407,6 @@ blockquote {
     display: flex;
   }
 
-  .md\:table {
-    display: table;
-  }
-
   .md\:hidden {
     display: none;
   }
@@ -3493,14 +3481,6 @@ blockquote {
 
   .md\:justify-between {
     justify-content: space-between;
-  }
-
-  .md\:overflow-x-auto {
-    overflow-x: auto;
-  }
-
-  .md\:overflow-x-hidden {
-    overflow-x: hidden;
   }
 
   .md\:overflow-x-visible {
