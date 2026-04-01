@@ -85,17 +85,23 @@
 					<?php endforeach; ?>
 				</div>
 
-				<!-- Call to Action Button -->
-				<div class="hidden md:block">
-					<a href="#" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground glow-primary hover:scale-105 rounded-xl px-10 py-2 group no-underline">
-						<?php echo esc_html('Get Started'); ?>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5 transition-transform group-hover:translate-x-1">
-							<path d="M5 12h14"></path>
-							<path d="m12 5 7 7-7 7"></path>
-						</svg>
-					</a>
-				</div>
+				<?php $header = get_field('header', 'option');
 
+				if (!empty($header)) :
+					if (!empty($header['link'])) :
+				?>
+						<!-- Call to Action Button -->
+						<div class="hidden md:block">
+							<a href="<?php echo $header['link']['url']; ?>" title="<?php echo esc_attr($header['link']['title']); ?>" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground glow-primary hover:scale-105 rounded-xl px-10 py-2 group no-underline">
+								<?php echo esc_html($header['link']['title']); ?>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-5 h-5 transition-transform group-hover:translate-x-1">
+									<path d="M5 12h14"></path>
+									<path d="m12 5 7 7-7 7"></path>
+								</svg>
+							</a>
+						</div>
+					<?php endif; ?>
+				<?php endif; ?>
 				<!-- Mobile menu button -->
 				<div class="block md:hidden z-50 w-12 h-12 flex item-center justify-end">
 					<button id="mobile-menu-button" aria-label="Toggle mobile menu">
