@@ -15,7 +15,7 @@ $align = $data['title']['align'] ?? 'left';
     <?php if ($color_scheme == 'dark'): ?>
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgb(255, 255, 255) 1px, transparent 0px); background-size: 32px 32px;"></div>
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgb(0, 0, 0) 1px, transparent 0px); background-size: 32px 32px;"></div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[350px] h-[250px] md:w-[800px] md:h-[400px] bg-accent/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/20 rounded-full blur-3xl"></div>
     <?php endif; ?>
 

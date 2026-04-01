@@ -1313,6 +1313,10 @@ li {
   height: 24rem;
 }
 
+.h-\[250px\] {
+  height: 250px;
+}
+
 .h-\[400px\] {
   height: 400px;
 }
@@ -1415,6 +1419,10 @@ li {
 
 .w-96 {
   width: 24rem;
+}
+
+.w-\[350px\] {
+  width: 350px;
 }
 
 .w-\[400px\] {
@@ -3424,6 +3432,10 @@ blockquote {
     height: 1.5rem;
   }
 
+  .md\:h-\[400px\] {
+    height: 400px;
+  }
+
   .md\:w-2\/5 {
     width: 40%;
   }
@@ -3438,6 +3450,10 @@ blockquote {
 
   .md\:w-96 {
     width: 24rem;
+  }
+
+  .md\:w-\[800px\] {
+    width: 800px;
   }
 
   .md\:max-w-md {
